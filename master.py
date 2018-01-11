@@ -1,17 +1,23 @@
 #!/usr/bin/env python
 import websocket
-import googler
+from answerer import Answerer
 import requests
 import json 
 
+BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMzU4NjAsInVzZXJuYW1lIjoiYmFscGhpIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9kMnh1MWhkb21oM25yeC5jbG91ZGZyb250Lm5ldC9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAyX3B1cnBsZS5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4yLjYgYjY1IiwiZ3Vlc3RJZCI6bnVsbCwiaWF0IjoxNTE1NTQ5OTgxLCJleHAiOjE1MjMzMjU5ODEsImlzcyI6Imh5cGVxdWl6LzEifQ.7yeagYnF7UdXjMlar_rEzau7HClx0FgXLpVPxMTMB2c"
+
 def on_message(ws, message):
+    on_message.logger.write(message)
+    on_message.logger.write('\n')
     data = json.loads(message)
-    print data
     if data['type'] == 'question':
         question = data['question']
         answers = data['answers']
+        print answerer.answer(question, answers)
     elif data['type'] == 'broadcastEnded':
         ws.close()
+on_message.solver = Answerer()
+on_message.logger = open('log', 'a+')
 
 def on_error(ws, error):
     print(error)
@@ -41,7 +47,6 @@ def prompt_continue():
             return False
 
 def get_show_status():
-    BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMzU4NjAsInVzZXJuYW1lIjoiYmFscGhpIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9kMnh1MWhkb21oM25yeC5jbG91ZGZyb250Lm5ldC9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAyX3B1cnBsZS5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4yLjYgYjY1IiwiZ3Vlc3RJZCI6bnVsbCwiaWF0IjoxNTE1NTQ5OTgxLCJleHAiOjE1MjMzMjU5ODEsImlzcyI6Imh5cGVxdWl6LzEifQ.7yeagYnF7UdXjMlar_rEzau7HClx0FgXLpVPxMTMB2c"
     GET_SHOW_URL = 'https://api-quiz.hype.space/shows/now?type=hq&userId=5135860' 
     r = requests.get(GET_SHOW_URL, headers={"Authorization": BEARER_TOKEN});
     return r.json()
@@ -49,16 +54,35 @@ def get_show_status():
 if __name__ == "__main__":
     while True:
         # Send GET request to receive live show status and socketUrl
+        print 'QUERYING SHOW STATUS'
         show_status = get_show_status()
         if not show_status['active']: # Reset if show is not acrtive
             print 'The show is not live.'
-            exit()
+            # if prompt_continue():
+                # print
+                # continue
+            # else:
+                # exit()
 
-        websocket_url = show_status['broadcast']['socketUrl']
+        try:
+            # websocket_url = show_status['broadcast']['socketUrl'] # 'https://ws-quiz.hype.space/ws/43041' 
+            websocket_url = 'https://ws-quiz.hype.space/ws/43041' 
+        except KeyError:
+            print 'HQ Trivia has changed their schema, update the code!'
+            exit()
+        websocket_url = websocket_url.replace('https', 'wss')
+
+        print 'The show is live!'
+        print
+        print 'SETTING UP WEBSOCKET TO URL: ' + websocket_url
         # Set up websocket to socketUrl and connect
         ws = setup_websocket(websocket_url, {'Sec-WebSocket-Protocol': 'permessage-deflate', 'Authorization': BEARER_TOKEN})
         ws.run_forever()
+
+        # Conclude broadcast
+        print 'The broadcast ended'
         if prompt_continue():
+            print
             continue
         else:
             break
