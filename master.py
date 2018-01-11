@@ -12,11 +12,19 @@ def on_message(ws, message):
     data = json.loads(message)
     if data['type'] == 'question':
         question = data['question']
-        answers = data['answers']
-        print answerer.answer(question, answers)
+        answers = [answer['text'] for answer in data['answers']]
+        print "Question: " + question
+        print "Answers: " + str(answers)
+        if question in on_message.memo:
+            return
+        else:
+            answer = on_message.solver.answer(question, answers)
+            on_message.memo[question] = answer
+            print answer
     elif data['type'] == 'broadcastEnded':
         ws.close()
 on_message.solver = Answerer()
+on_message.memo = {}
 on_message.logger = open('log', 'a+')
 
 def on_error(ws, error):
@@ -29,7 +37,7 @@ def on_open(ws):
     print("### opened ###")
 
 def setup_websocket(url, header):
-    # websocket.enableTrace(True)
+    websocket.enableTrace(True)
     ws = websocket.WebSocketApp(url, header)
     ws.on_open = on_open
     ws.on_close = on_close
@@ -67,6 +75,7 @@ if __name__ == "__main__":
         try:
             # websocket_url = show_status['broadcast']['socketUrl'] # 'https://ws-quiz.hype.space/ws/43041' 
             websocket_url = 'https://ws-quiz.hype.space/ws/43041' 
+            websocket_url = 'ws://localhost:8080' 
         except KeyError:
             print 'HQ Trivia has changed their schema, update the code!'
             exit()

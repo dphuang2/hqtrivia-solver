@@ -19,7 +19,6 @@ return_lowered_content.memo = {}
 class Answerer():
     def __init__(self):
         self.nlp = spacy.load('en')
-        self.google_query = 'https://www.google.com/search?num=200&q=' 
         self.approaches = [self.word_count_nlp, self.word_count_raw, self.word_count_appended]
         self.manager = multiprocessing.Manager()
 
@@ -31,12 +30,12 @@ class Answerer():
             self.question = self.original_question[:not_idx] + self.original_question[not_idx+4:]
         else:
             self.question = self.original_question
-        self.answers = answers
+        self.answers = [str(answer).lower() for answer in answers]
         self.confidence = [0.0] * len(answers)
 
         [f() for f in self.approaches]
-
         self.confidence = [val / sum(self.confidence) for val in self.confidence]
+
         if 'not' in question.lower():
             best_confidence = min(self.confidence)
         else:
@@ -110,11 +109,15 @@ if __name__ == "__main__":
     t2 = time()
     print t2 - t1
 
+    t1 = time()
+    print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
+    t2 = time()
+    print t2 - t1
+
     # solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"])
     # solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"])
     # solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"])
     # solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"])
     # solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
     # solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
-    # solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
     # solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
