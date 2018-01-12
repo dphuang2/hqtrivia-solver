@@ -1,8 +1,11 @@
 #!/usr/bin/env python
-import websocket
+from argparser import get_args
 from answerer import Answerer
+import websocket
 import requests
+import time
 import json 
+import sys
 import pdb
 
 BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMzU4NjAsInVzZXJuYW1lIjoiYmFscGhpIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9kMnh1MWhkb21oM25yeC5jbG91ZGZyb250Lm5ldC9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAyX3B1cnBsZS5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4yLjYgYjY1IiwiZ3Vlc3RJZCI6bnVsbCwiaWF0IjoxNTE1NTQ5OTgxLCJleHAiOjE1MjMzMjU5ODEsImlzcyI6Imh5cGVxdWl6LzEifQ.7yeagYnF7UdXjMlar_rEzau7HClx0FgXLpVPxMTMB2c"
@@ -22,7 +25,6 @@ def on_message(ws, message):
             answer = on_message.solver.answer(question, answers)
             on_message.memo[question] = answer
             print answer
-            ws.close() # Close websocket because it timesout really quick
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
         exit()
@@ -35,9 +37,6 @@ def on_error(ws, error):
 
 def on_close(ws):
     print("### closed ###")
-    print("### reconnecting ###")
-    ws.run_forever()
-    print("### reconnected ###")
 
 def on_open(ws):
     print("### opened ###")
@@ -66,22 +65,25 @@ def get_show_status():
     return r.json()
 
 if __name__ == "__main__":
+    DEBUG = get_args().debug
     while True:
         # Send GET request to receive live show status and socketUrl
         print 'QUERYING SHOW STATUS'
         show_status = get_show_status()
         if not show_status['active']: # Reset if show is not acrtive
             print 'The show is not live.'
-            # if prompt_continue():
-                # print
-                # continue
-            # else:
-                # exit()
+            if not DEBUG:
+                if prompt_continue():
+                    print
+                    continue
+                else:
+                    exit()
 
         try:
-            # websocket_url = show_status['broadcast']['socketUrl'] # 'https://ws-quiz.hype.space/ws/43041' 
-            websocket_url = 'https://ws-quiz.hype.space/ws/43041' 
-            websocket_url = 'ws://localhost:8080' 
+            if DEBUG:
+                websocket_url = 'ws://localhost:8080' 
+            else:
+                websocket_url = show_status['broadcast']['socketUrl'] # 'https://ws-quiz.hype.space/ws/43041' 
         except KeyError:
             print 'HQ Trivia has changed their schema, update the code!'
             exit()
@@ -94,8 +96,9 @@ if __name__ == "__main__":
         ws = setup_websocket(websocket_url, {'Sec-WebSocket-Protocol': 'permessage-deflate', 'Authorization': BEARER_TOKEN})
 
         # Run websocket forever and reconnect on failure
-        try:
+        if DEBUG:
+            print 'Running run_forever() once'
             ws.run_forever()
-        except WebSocketException:
-
-            
+        else:
+            while True:
+                ws.run_forever()

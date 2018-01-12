@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import multiprocessing
-import requests
-import spacy
 from method_timer import timeit
 from time import time
-import sys
+import threading
+import requests
+import spacy
 import pdb
+import sys
 
 @timeit
 def return_lowered_content(question):
@@ -22,7 +22,6 @@ class Answerer():
     def __init__(self):
         self.nlp = spacy.load('en')
         self.approaches = [self.word_count_nlp, self.word_count_raw, self.word_count_appended]
-        self.manager = multiprocessing.Manager()
 
     @timeit
     def answer(self, question, answers):
@@ -34,10 +33,20 @@ class Answerer():
         else:
             self.question = self.original_question
         self.answers = [str(answer).lower() for answer in answers]
-        self.confidence = [0.0] * len(answers)
+        self.confidence = [0] * len(answers)
 
-        [f() for f in self.approaches]
-        self.confidence = [val / sum(self.confidence) for val in self.confidence]
+        threads = []
+        for function in self.approaches:  # Run each approach in a thread
+            t = threading.Thread(target=function)
+            threads.append(t)
+            t.start()
+        for t in threads: # Wait for all threads to finish before counting sum
+            t.join()
+        try:
+            self.confidence = [val / sum(self.confidence) for val in self.confidence]
+        except ZeroDivisionError:
+            print 'Getting zero results from Google. Exiting...'
+            exit()
 
         if 'not' in question.lower():
             best_confidence = min(self.confidence)
@@ -65,14 +74,14 @@ class Answerer():
     @timeit
     def word_count_appended(self):
         counts = []
-        contents = self.manager.dict()
+        contents = {}
 
         for i in range(len(self.answers)):
-            p = multiprocessing.Process(target=self.grab_content, args=(contents, self.question + ' ' + self.answers[i],))
-            p.start()
+            t = threading.Thread(target=self.grab_content, args=(contents, self.question + ' ' + self.answers[i],))
+            t.start()
 
         for i in range(len(self.answers)):
-            # Block until contents is correctly populated
+            # Block until contents is correctly populated cause thats the important part :)
             while len(contents) != len(self.answers):
                 continue
             word = self.answers[i]
@@ -101,7 +110,6 @@ class Answerer():
 
 if __name__ == "__main__":
     solver = Answerer()
-
     print solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"])
     # print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
     # print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
