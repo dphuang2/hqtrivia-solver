@@ -27,12 +27,12 @@ def on_message(ws, message):
             print answer
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
-        exit()
 on_message.solver = Answerer()
 on_message.memo = {}
 on_message.logger = open('log', 'a+')
 
 def on_error(ws, error):
+    print("### error ###")
     print(error)
 
 def on_close(ws):
@@ -99,6 +99,8 @@ if __name__ == "__main__":
         if DEBUG:
             print 'Running run_forever() once'
             ws.run_forever()
+            exit()
         else:
             while True:
                 ws.run_forever()
+            print 'How did you get here?'
