@@ -3,9 +3,11 @@ import multiprocessing
 import pdb
 import requests
 import spacy
+from method_timer import timeit
 from time import time
 import sys
 
+@timeit
 def return_lowered_content(question):
     google_query = 'https://www.google.com/search?num=100&q=' 
     if question in return_lowered_content.memo:
@@ -22,6 +24,7 @@ class Answerer():
         self.approaches = [self.word_count_nlp, self.word_count_raw, self.word_count_appended]
         self.manager = multiprocessing.Manager()
 
+    @timeit
     def answer(self, question, answers):
         self.original_question = question
         # Remove 'not' from searched question
@@ -43,19 +46,23 @@ class Answerer():
         best_confidence_idx = self.confidence.index(best_confidence)
         return (self.answers[best_confidence_idx], best_confidence)
 
+    @timeit
     def word_count_nlp(self):
         doc = self.nlp(self.question)
         question = ' '.join([str(chunk) for chunk in list(doc.noun_chunks)])
         lowered = return_lowered_content(question)
         self.word_count(lowered, self.answers)
 
+    @timeit
     def word_count_raw(self):
         lowered = return_lowered_content(self.question)
         self.word_count(lowered, self.answers) 
 
+    @timeit
     def grab_content(self, contents, question):
         contents[question] = return_lowered_content(question)
 
+    @timeit
     def word_count_appended(self):
         counts = []
         contents = self.manager.dict()
@@ -79,6 +86,7 @@ class Answerer():
             except ZeroDivisionError:
                 break
 
+    @timeit
     def word_count(self, content, words):
         counts = []
         for i in range(len(words)):
@@ -94,26 +102,10 @@ class Answerer():
 if __name__ == "__main__":
     solver = Answerer()
 
-    t1 = time()
     print solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"])
-    t2 = time()
-    print t2 - t1
-
-    # t1 = time()
     # print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
-    # t2 = time()
-    # print t2 - t1
-
-    t1 = time()
-    print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
-    t2 = time()
-    print t2 - t1
-
-    t1 = time()
-    print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
-    t2 = time()
-    print t2 - t1
-
+    # print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
+    # print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
     # solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"])
     # solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"])
     # solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"])
