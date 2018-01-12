@@ -3,6 +3,7 @@ import websocket
 from answerer import Answerer
 import requests
 import json 
+import pdb
 
 BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMzU4NjAsInVzZXJuYW1lIjoiYmFscGhpIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9kMnh1MWhkb21oM25yeC5jbG91ZGZyb250Lm5ldC9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAyX3B1cnBsZS5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4yLjYgYjY1IiwiZ3Vlc3RJZCI6bnVsbCwiaWF0IjoxNTE1NTQ5OTgxLCJleHAiOjE1MjMzMjU5ODEsImlzcyI6Imh5cGVxdWl6LzEifQ.7yeagYnF7UdXjMlar_rEzau7HClx0FgXLpVPxMTMB2c"
 
@@ -21,8 +22,10 @@ def on_message(ws, message):
             answer = on_message.solver.answer(question, answers)
             on_message.memo[question] = answer
             print answer
+            ws.close() # Close websocket because it timesout really quick
     elif data['type'] == 'broadcastEnded':
-        ws.close()
+        print 'The broadcast ended'
+        exit()
 on_message.solver = Answerer()
 on_message.memo = {}
 on_message.logger = open('log', 'a+')
@@ -32,6 +35,9 @@ def on_error(ws, error):
 
 def on_close(ws):
     print("### closed ###")
+    print("### reconnecting ###")
+    ws.run_forever()
+    print("### reconnected ###")
 
 def on_open(ws):
     print("### opened ###")
@@ -86,12 +92,10 @@ if __name__ == "__main__":
         print 'SETTING UP WEBSOCKET TO URL: ' + websocket_url
         # Set up websocket to socketUrl and connect
         ws = setup_websocket(websocket_url, {'Sec-WebSocket-Protocol': 'permessage-deflate', 'Authorization': BEARER_TOKEN})
-        ws.run_forever()
 
-        # Conclude broadcast
-        print 'The broadcast ended'
-        if prompt_continue():
-            print
-            continue
-        else:
-            break
+        # Run websocket forever and reconnect on failure
+        try:
+            ws.run_forever()
+        except WebSocketException:
+
+            

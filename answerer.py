@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 import multiprocessing
-import pdb
 import requests
 import spacy
 from method_timer import timeit
 from time import time
 import sys
+import pdb
 
 @timeit
 def return_lowered_content(question):
