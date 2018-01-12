@@ -9,10 +9,12 @@ import sys
 import pdb
 
 BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUxMzU4NjAsInVzZXJuYW1lIjoiYmFscGhpIiwiYXZhdGFyVXJsIjoiaHR0cHM6Ly9kMnh1MWhkb21oM25yeC5jbG91ZGZyb250Lm5ldC9kZWZhdWx0X2F2YXRhcnMvVW50aXRsZWQtMV8wMDAyX3B1cnBsZS5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiJpT1MvMS4yLjYgYjY1IiwiZ3Vlc3RJZCI6bnVsbCwiaWF0IjoxNTE1NTQ5OTgxLCJleHAiOjE1MjMzMjU5ODEsImlzcyI6Imh5cGVxdWl6LzEifQ.7yeagYnF7UdXjMlar_rEzau7HClx0FgXLpVPxMTMB2c"
+DEBUG = False
 
 def on_message(ws, message):
-    on_message.logger.write(message)
-    on_message.logger.write('\n')
+    if not DEBUG:
+        on_message.logger.write(message)
+        on_message.logger.write('\n')
     data = json.loads(message)
     if data['type'] == 'question':
         question = data['question']

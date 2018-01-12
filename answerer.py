@@ -29,7 +29,6 @@ class Answerer():
         self.approaches = [self.word_count_entities, self.word_count_raw, self.word_count_appended, self.word_relation_to_question]
         self.negation = ['not', 'never', 'none']
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ']
-        self.POS_list = ['VERB']
 
     @timeit
     def answer(self, question, answers):
@@ -82,7 +81,8 @@ class Answerer():
     def nlp_question(self):
         # Evaluate entities from evaluated question
         doc = self.nlp(self.question)
-        self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list]
+        # Word is part of the POS list and it is not a stop word (common word)
+        self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
         self.entities = ' '.join([str(chunk) for chunk in list(doc.ents) + list(doc.noun_chunks)])
         print 'Evaluated important words: ' + str(self.important_words)
         print 'Evaluated entities: ' + self.entities
