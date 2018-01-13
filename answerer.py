@@ -6,6 +6,7 @@ import requests
 import spacy
 import pdb
 import sys
+import re
 
 @timeit
 def get_lowered_google_search(question):
@@ -14,8 +15,6 @@ def get_lowered_google_search(question):
         return get_lowered_google_search.memo[question]
     r = requests.get(google_query + question)
     lowered = r.content.lower()
-    with open('google_searches/' + question, 'w') as f:
-        f.write(lowered)
     if 'our systems have detected unusual traffic from your computer network' in lowered:
         print 'Google rate limited your IP. Exiting...'
         exit()
@@ -25,18 +24,19 @@ get_lowered_google_search.memo = {}
 
 class Answerer():
     def __init__(self):
-        self.nlp = spacy.load('en')
         self.approaches = [self.word_count_entities, self.word_count_raw, self.word_count_appended, self.word_relation_to_question]
-        self.negation = ['not', 'never', 'none']
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ']
+        self.regex = re.compile('about (.*) result')
+        self.negation = ['not', 'never', 'none']
+        self.nlp = spacy.load('en')
 
     @timeit
     def answer(self, question, answers):
         # Initialize values
-        self.negative = False
-        self.original_question = question
         self.answers = [str(answer).lower() for answer in answers]
         self.confidence = [0] * len(answers)
+        self.original_question = question
+        self.negative = False
 
         # Remove 'not' from searched question
         for negative in self.negation:
@@ -44,7 +44,7 @@ class Answerer():
                 self.negative = True
                 print 'Detected a negative question'
                 not_idx = self.original_question.lower().find(negative)
-                self.question = self.original_question[:not_idx] + self.original_question[not_idx+4:]
+                self.question = self.original_question[:not_idx] + self.original_question[not_idx+len(negative)+1:]
                 break
         else:
             self.question = self.original_question
@@ -76,16 +76,6 @@ class Answerer():
             best_confidence = max(self.confidence)
         best_confidence_idx = self.confidence.index(best_confidence)
         return (self.answers[best_confidence_idx], best_confidence)
-
-    @timeit
-    def nlp_question(self):
-        # Evaluate entities from evaluated question
-        doc = self.nlp(self.question)
-        # Word is part of the POS list and it is not a stop word (common word)
-        self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.entities = ' '.join([str(chunk) for chunk in list(doc.ents) + list(doc.noun_chunks)])
-        print 'Evaluated important words: ' + str(self.important_words)
-        print 'Evaluated entities: ' + self.entities
 
     @timeit
     def word_count_entities(self):
@@ -143,6 +133,30 @@ class Answerer():
         print 'Confidence values after word_relation_to_question: ' + str(self.confidence)
 
     @timeit
+    def result_count(self):
+        counts = []
+        contents = {}
+
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content, args=(contents, self.question + ' ' + answer,))
+            t.start()
+
+        for answer in self.answers:
+            # Block until contents is correctly populated cause thats the important part :)
+            while len(contents) != len(self.answers):
+                continue
+            content = contents[self.question + ' ' + answer]
+            result = self.regex.search(content)
+            try:
+                counts.append(float(result.group(1).replace(',', '')))
+            except AttributeError:
+                print 'What?! that regex should have worked...'
+
+        print 'Counts after result_count: ' + str(counts)
+        self.counts_to_confidence(counts)
+        print 'Confidence values after result_count: ' + str(self.confidence)
+
+    @timeit
     def grab_content(self, contents, question):
         contents[question] = get_lowered_google_search(question)
 
@@ -163,6 +177,15 @@ class Answerer():
         print 'Counts after word_count: ' + str(counts)
         self.counts_to_confidence(counts)
 
+    @timeit
+    def nlp_question(self):
+        # Evaluate entities from evaluated question
+        doc = self.nlp(self.question)
+        # Word is part of the POS list and it is not a stop word (common word)
+        self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
+        self.entities = ' '.join([str(chunk) for chunk in list(doc.ents) + list(doc.noun_chunks)])
+        print 'Evaluated important words: ' + str(self.important_words)
+        print 'Evaluated entities: ' + self.entities
 
 if __name__ == "__main__":
     solver = Answerer()
