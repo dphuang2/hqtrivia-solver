@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 from method_timer import timeit
 from time import time
+import wikipedia
 import threading
 import requests
 import spacy
@@ -24,7 +25,7 @@ get_lowered_google_search.memo = {}
 
 class Answerer():
     def __init__(self):
-        self.approaches = [self.word_count_entities, self.word_count_raw, self.word_count_appended, self.word_relation_to_question]
+        self.approaches = [self.word_count_raw, self.word_count_appended, self.word_relation_to_question, self.wikipedia_search]
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ']
         self.regex = re.compile('about (.*) result')
         self.negation = ['not', 'never', 'none']
@@ -35,6 +36,7 @@ class Answerer():
         # Initialize values
         self.answers = [str(answer).lower() for answer in answers]
         self.confidence = [0] * len(answers)
+        self.integer_answers = [0] * len(answers)
         self.original_question = question
         self.negative = False
 
@@ -72,10 +74,13 @@ class Answerer():
         # Provide either the negation answer of regular answer
         if self.negative:
             best_confidence = min(self.confidence)
+            best_integer = min(self.integer_answers)
         else:
             best_confidence = max(self.confidence)
+            best_integer = max(self.integer_answers)
         best_confidence_idx = self.confidence.index(best_confidence)
-        return (self.answers[best_confidence_idx], best_confidence)
+        best_integer_answers = self.integer_answers.index(best_integer)
+        return (self.answers[best_confidence_idx], best_confidence, self.answers[best_integer_answers], best_integer, len(self.approaches))
 
     @timeit
     def word_count_entities(self):
@@ -98,12 +103,15 @@ class Answerer():
             t = threading.Thread(target=self.grab_content, args=(contents, self.question + ' ' + answer,))
             t.start()
 
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
         for answer in self.answers:
-            # Block until contents is correctly populated cause thats the important part :)
-            while len(contents) != len(self.answers):
-                continue
+            curr_count = 0
             content = contents[self.question + ' ' + answer]
-            counts.append(float(content.count(answer)))
+            curr_count += float(content.count(answer))
+            counts.append(curr_count)
 
         print 'Counts after word_count_appended: ' + str(counts)
         self.counts_to_confidence(counts)
@@ -157,11 +165,43 @@ class Answerer():
         print 'Confidence values after result_count: ' + str(self.confidence)
 
     @timeit
+    def wikipedia_search(self):
+        # Grab wikipedia search for each answer and save contents
+        contents = {}
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_wikipedia_content, args=(contents, answer,))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        # Count occurences for each entity in each answer search
+        counts = []
+        for answer in self.answers:
+            curr_count = 0
+            for word in self.important_words:
+                curr_count += contents[answer].count(word)
+            counts.append(curr_count)
+        print 'Counts after wikipedia_search: ' + str(counts)
+        self.counts_to_confidence(counts)
+        print 'Confidence values after wikipedia_search: ' + str(self.confidence)
+
+    @timeit
+    def grab_wikipedia_content(self, contents, page):
+        search_results = wikipedia.search(page)
+        try:
+            contents[page] = wikipedia.WikipediaPage(title=search_results[0]).html()
+        except wikipedia.exceptions.DisambiguationError as e:
+            contents[page] = wikipedia.WikipediaPage(title=e.options[0]).html()
+
+    @timeit
     def grab_content(self, contents, question):
         contents[question] = get_lowered_google_search(question)
 
     @timeit
     def counts_to_confidence(self, counts):
+        self.integer_answers[counts.index(max(counts))] += 1
         for i in range(len(counts)):
             sum_of_counts = float(sum(counts))
             try:
