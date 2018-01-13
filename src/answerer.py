@@ -52,6 +52,7 @@ class Answerer():
             self.question = self.original_question
         print 'Evaluated question: ' + self.question
 
+        # Initialize nlp constants
         self.nlp_question()
 
         # Run all approaches on separate threads
@@ -219,7 +220,7 @@ class Answerer():
 
     @timeit
     def nlp_question(self):
-        # Evaluate entities from evaluated question
+        # Initialize nlp constants
         doc = self.nlp(self.question)
         # Word is part of the POS list and it is not a stop word (common word)
         self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]

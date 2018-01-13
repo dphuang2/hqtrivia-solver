@@ -2,4 +2,4 @@ DONE - Avoid rate limiting from the bot-checker (looks not possible jk) - VNPN
 DONE - Increase speed of answerer? # multithreading
 DONE - Add approach where you search answers, and see how related the question is to the answer
 DONE - Add approach where you count number of search results
-Add approach where you use wikipedia to see relavence of answers to the question
+DONE - Add approach where you use wikipedia to see relavence of answers to the question

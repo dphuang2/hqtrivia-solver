@@ -31,7 +31,7 @@ def on_message(ws, message):
         print 'The broadcast ended'
 on_message.solver = Answerer()
 on_message.memo = {}
-on_message.logger = open('log', 'a+')
+on_message.logger = open('./data/log', 'a+')
 
 def on_error(ws, error):
     print("### error ###")
