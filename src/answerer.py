@@ -38,7 +38,7 @@ class Answerer():
                 self.word_count_entities,
                 self.word_count_appended,
                 self.word_count_raw,
-                # self.result_count,
+                self.result_count,
                 self.wikipedia_search,
                 self.word_relation_to_question
                 ]
@@ -270,8 +270,9 @@ class Answerer():
 
 if __name__ == "__main__":
     solver = Answerer()
-    pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
-    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
+    # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
     # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
     # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
