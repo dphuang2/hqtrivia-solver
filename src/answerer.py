@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from method_timer import timeit
+from pprint import pprint
 from time import time
 import wikipedia
 import threading
@@ -8,6 +9,12 @@ import spacy
 import pdb
 import sys
 import re
+import os
+
+parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+
+def filename_safe(string):
+    return "".join([c for c in string if c.isalpha() or c.isdigit() or c==' ']).rstrip()
 
 @timeit
 def get_lowered_google_search(question):
@@ -16,6 +23,8 @@ def get_lowered_google_search(question):
         return get_lowered_google_search.memo[question]
     r = requests.get(google_query + question)
     lowered = r.content.lower()
+    with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
+        f.write(lowered)
     if 'our systems have detected unusual traffic from your computer network' in lowered:
         print 'Google rate limited your IP. Exiting...'
         exit()
@@ -25,35 +34,34 @@ get_lowered_google_search.memo = {}
 
 class Answerer():
     def __init__(self):
-        self.approaches = [self.word_count_raw, self.word_count_appended, self.word_relation_to_question, self.wikipedia_search]
-        self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ']
-        self.regex = re.compile('about (.*) result')
-        self.negation = ['not', 'never', 'none']
+        self.approaches = [
+                self.word_count_entities,
+                self.word_count_appended,
+                self.word_count_raw,
+                # self.result_count,
+                self.wikipedia_search,
+                self.word_relation_to_question
+                ]
+        self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
+        self.stop_words = ['which', 'Which']
+        self.regex = re.compile('"resultstats">(.*) results')
         self.nlp = spacy.load('en')
+        for word in self.stop_words:
+            lexeme = self.nlp.vocab[unicode(word)]
+            lexeme.is_stop = True
 
     @timeit
     def answer(self, question, answers):
         # Initialize values
         self.answers = [str(answer).lower() for answer in answers]
-        self.confidence = [0] * len(answers)
+        self.confidences = [0] * len(answers)
         self.integer_answers = [0] * len(answers)
-        self.original_question = question
-        self.negative = False
-
-        # Remove 'not' from searched question
-        for negative in self.negation:
-            if negative in question.lower():
-                self.negative = True
-                print 'Detected a negative question'
-                not_idx = self.original_question.lower().find(negative)
-                self.question = self.original_question[:not_idx] + self.original_question[not_idx+len(negative)+1:]
-                break
-        else:
-            self.question = self.original_question
-        print 'Evaluated question: ' + self.question
-
+        self.data = {}
+        self.question = question
+        print 'question: ' + self.question
+        print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
-        self.nlp_question()
+        self.process_question()
 
         # Run all approaches on separate threads
         threads = []
@@ -66,42 +74,49 @@ class Answerer():
 
         # Consolidate confidence values
         try:
-            print 'Confidence values: ' + str(self.confidence)
-            self.confidence = [val / sum(self.confidence) for val in self.confidence]
+            print 'Confidence values: ' + str(self.confidences)
+            self.confidences = [val / sum(self.confidences) for val in self.confidences]
         except ZeroDivisionError:
             print 'Getting zero results from Google. Exiting...'
             exit()
 
         # Provide either the negation answer of regular answer
-        if self.negative:
-            best_confidence = min(self.confidence)
-            best_integer = min(self.integer_answers)
-        else:
-            best_confidence = max(self.confidence)
-            best_integer = max(self.integer_answers)
-        best_confidence_idx = self.confidence.index(best_confidence)
-        best_integer_answers = self.integer_answers.index(best_integer)
-        return (self.answers[best_confidence_idx], best_confidence, self.answers[best_integer_answers], best_integer, len(self.approaches))
+        pprint(self.data)
+        best_answer = self.answers[self.confidences.index(min(self.confidences))] if self.negative else self.answers[self.confidences.index(max(self.confidences))]
+        return { 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
+                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
+                 'best_answer': best_answer}
 
     @timeit
     def word_count_entities(self):
         lowered = get_lowered_google_search(self.entities)
-        self.word_count(lowered, self.answers)
-        print 'Confidence values after word_count_entities: ' + str(self.confidence)
+        counts = []
+        for answer in self.answers:
+             counts.append(float(lowered.count(answer)))
+        print 'Counts after word_count: ' + str(counts)
+        self.data['word_count_entities'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after word_count_entities: ' + str(self.confidences)
 
     @timeit
     def word_count_raw(self):
         lowered = get_lowered_google_search(self.question)
-        self.word_count(lowered, self.answers) 
-        print 'Confidence values after word_count_raw: ' + str(self.confidence)
+        counts = []
+        for answer in self.answers:
+             counts.append(float(lowered.count(answer)))
+        print 'Counts after word_count: ' + str(counts)
+        self.data['word_count_raw'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after word_count_raw: ' + str(self.confidences)
 
     @timeit
     def word_count_appended(self):
         counts = []
         contents = {}
 
+        # Grab each appended search
         for answer in self.answers:
-            t = threading.Thread(target=self.grab_content, args=(contents, self.question + ' ' + answer,))
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer(answer)))
             t.start()
 
         # Block until contents is correctly populated cause thats the important part :)
@@ -109,14 +124,12 @@ class Answerer():
             continue
 
         for answer in self.answers:
-            curr_count = 0
-            content = contents[self.question + ' ' + answer]
-            curr_count += float(content.count(answer))
-            counts.append(curr_count)
+            counts.append(float(contents[self.concatenate_answer(answer)].count(answer)))
 
         print 'Counts after word_count_appended: ' + str(counts)
+        self.data['word_count_appended'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_appended: ' + str(self.confidence)
+        print 'Confidence values after word_count_appended: ' + str(self.confidences)
 
     @timeit
     def word_relation_to_question(self):
@@ -131,15 +144,22 @@ class Answerer():
             continue
 
         # Count occurences for each entity in each answer search
-        counts = []
-        for answer in self.answers:
-            curr_count = 0
-            for word in self.important_words:
-                curr_count += contents[answer].count(word)
-            counts.append(curr_count)
+        counts = [0.0] * len(self.answers)
+        for word in self.important_words:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[answer].count(word)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                print 'The word. "{}" was not found in any search'.format(word)
+                pass
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
         print 'Counts after word_relation_to_question: ' + str(counts)
+        self.data['word_relation_to_question'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_relation_to_question: ' + str(self.confidence)
+        print 'Confidence values after word_relation_to_question: ' + str(self.confidences)
 
     @timeit
     def result_count(self):
@@ -147,23 +167,26 @@ class Answerer():
         contents = {}
 
         for answer in self.answers:
-            t = threading.Thread(target=self.grab_content, args=(contents, self.question + ' ' + answer,))
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer(answer),))
             t.start()
 
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
         for answer in self.answers:
-            # Block until contents is correctly populated cause thats the important part :)
-            while len(contents) != len(self.answers):
-                continue
-            content = contents[self.question + ' ' + answer]
+            content = contents[self.concatenate_answer(answer)]
             result = self.regex.search(content)
             try:
-                counts.append(float(result.group(1).replace(',', '')))
+                count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
+                counts.append(count)
             except AttributeError:
                 print 'What?! that regex should have worked...'
 
         print 'Counts after result_count: ' + str(counts)
+        self.data['result_count'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after result_count: ' + str(self.confidence)
+        print 'Confidence values after result_count: ' + str(self.confidences)
 
     @timeit
     def wikipedia_search(self):
@@ -178,15 +201,22 @@ class Answerer():
             continue
 
         # Count occurences for each entity in each answer search
-        counts = []
-        for answer in self.answers:
-            curr_count = 0
-            for word in self.important_words:
-                curr_count += contents[answer].count(word)
-            counts.append(curr_count)
+        counts = [0.0] * len(self.answers)
+        for word in self.important_words:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[answer].count(word)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                print 'The word. "{}" was not found in any search'.format(word)
+                pass
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
         print 'Counts after wikipedia_search: ' + str(counts)
+        self.data['wikipedia_search'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after wikipedia_search: ' + str(self.confidence)
+        print 'Confidence values after wikipedia_search: ' + str(self.confidences)
 
     @timeit
     def grab_wikipedia_content(self, contents, page):
@@ -202,11 +232,14 @@ class Answerer():
 
     @timeit
     def counts_to_confidence(self, counts):
-        self.integer_answers[counts.index(max(counts))] += 1
+        print 'counts_to_confidence counts: {}'.format(counts)
+        print 'winning answer: ' + self.answers[counts.index(max(counts))]
+        if max(counts):
+            self.integer_answers[counts.index(max(counts))] += 1
         for i in range(len(counts)):
             sum_of_counts = float(sum(counts))
             try:
-                self.confidence[i] += counts[i] / sum_of_counts
+                self.confidences[i] += counts[i] / sum_of_counts
             except ZeroDivisionError:
                 break
 
@@ -219,25 +252,36 @@ class Answerer():
         self.counts_to_confidence(counts)
 
     @timeit
-    def nlp_question(self):
+    def process_question(self):
         # Initialize nlp constants
-        doc = self.nlp(self.question)
+        doc = self.nlp(unicode(self.question))
         # Word is part of the POS list and it is not a stop word (common word)
         self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.entities = ' '.join([str(chunk) for chunk in list(doc.ents) + list(doc.noun_chunks)])
+        self.entities = ' '.join([str(chunk) for chunk in list(doc.noun_chunks)])
+        # For giving "best" answer - HQTrivia gives negative questions in form of all caps word
+        self.negative = False
+        if any(t.is_upper for t in doc):
+            self.negative = True
         print 'Evaluated important words: ' + str(self.important_words)
         print 'Evaluated entities: ' + self.entities
 
+    def concatenate_answer(self, answer):
+        return '{} "{}"'.format(self.question, answer)
+
 if __name__ == "__main__":
     solver = Answerer()
-    print solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"])
-    print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
-    print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
-    print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
-    print solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"])
-    print solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"])
-    print solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"])
-    print solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"])
-    print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
-    print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
-    print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
+    pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
+    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
+    # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
+    # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
+    # print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
+    # print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
+    # print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
+    # print solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"])
+    # print solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"])
+    # print solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"])
+    # print solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"])
+    # print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
+    # print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
+    # print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])

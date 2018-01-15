@@ -7,6 +7,7 @@ sys.path.append(parent_dir_name + "/src")
 
 from argparser import get_args
 from answerer import Answerer
+from pprint import pprint
 import websocket
 import requests
 import time
@@ -26,17 +27,14 @@ def on_message(ws, message):
         answers = [answer['text'] for answer in data['answers']]
         print "Question: " + question
         print "Answers: " + str(answers)
-        if question in on_message.memo:
-            return
-        else:
-            answer = on_message.solver.answer(question, answers)
-            on_message.memo[question] = answer
-            print answer
+        if question not in on_message.memo:
+            on_message.memo[question] = on_message.solver.answer(question, answers)
+        pprint(on_message.memo[question])
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
 on_message.solver = Answerer()
 on_message.memo = {}
-on_message.logger = open('./data/log', 'a+')
+on_message.logger = open(parent_dir_name + '/data/log', 'a+')
 
 def on_error(ws, error):
     print("### error ###")
