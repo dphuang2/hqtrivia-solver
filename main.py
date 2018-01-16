@@ -4,6 +4,7 @@ import os
 
 parent_dir_name = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(parent_dir_name + "/src")
+sys.path.append(parent_dir_name + "/ml")
 
 from argparser import get_args
 from answerer import Answerer
@@ -70,7 +71,11 @@ def get_show_status():
     return r.json()
 
 if __name__ == "__main__":
-    DEBUG = get_args().debug
+    DEBUG = get_args().d
+    if get_args().a:
+        from answerer import main
+        main()
+        exit()
     while True:
         # Send GET request to receive live show status and socketUrl
         print 'QUERYING SHOW STATUS'

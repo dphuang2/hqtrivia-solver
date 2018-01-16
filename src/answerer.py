@@ -268,7 +268,7 @@ class Answerer():
     def concatenate_answer(self, answer):
         return '{} "{}"'.format(self.question, answer)
 
-if __name__ == "__main__":
+def main():
     solver = Answerer()
     pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
     # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
@@ -286,3 +286,6 @@ if __name__ == "__main__":
     # print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
     # print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
     # print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
+
+if __name__ == "__main__":
+    main()
