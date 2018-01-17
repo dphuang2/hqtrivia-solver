@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from method_timer import timeit
 from pprint import pprint
 from time import time
@@ -15,6 +16,9 @@ parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 def filename_safe(string):
     return "".join([c for c in string if c.isalpha() or c.isdigit() or c==' ']).rstrip()
+
+def encode_unicode(string):
+    return str(string.encode('utf-8', 'ignore'))
 
 @timeit
 def get_lowered_google_search(question):
@@ -81,11 +85,12 @@ class Answerer():
             exit()
 
         # Provide either the negation answer of regular answer
-        pprint(self.data)
         best_answer = self.answers[self.confidences.index(min(self.confidences))] if self.negative else self.answers[self.confidences.index(max(self.confidences))]
         return { 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
                  'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
-                 'best_answer': best_answer}
+                 'best_answer': best_answer,
+                 'negative_question': self.negative,
+                 'data:': self.data}
 
     @timeit
     def word_count_entities(self):
@@ -205,7 +210,7 @@ class Answerer():
         for word in self.important_words:
             curr_counts = []
             for answer in self.answers:
-                curr_counts.append(float(contents[answer].count(word)))
+                curr_counts.append(float(contents[answer].count(word.decode('utf-8').encode('ascii', 'ignore'))))
             try:
                 curr_counts = [count / sum(curr_counts) for count in curr_counts]
             except ZeroDivisionError:
@@ -233,8 +238,8 @@ class Answerer():
     @timeit
     def counts_to_confidence(self, counts):
         print 'counts_to_confidence counts: {}'.format(counts)
-        print 'winning answer: ' + self.answers[counts.index(max(counts))]
         if max(counts):
+            print 'winning answer: ' + self.answers[counts.index(max(counts))]
             self.integer_answers[counts.index(max(counts))] += 1
         for i in range(len(counts)):
             sum_of_counts = float(sum(counts))
@@ -256,25 +261,26 @@ class Answerer():
         # Initialize nlp constants
         doc = self.nlp(unicode(self.question))
         # Word is part of the POS list and it is not a stop word (common word)
-        self.important_words = [str(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.entities = ' '.join([str(chunk) for chunk in list(doc.noun_chunks)])
+        self.important_words = [encode_unicode(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
+        self.entities = ' '.join([chunk.text for chunk in list(doc.noun_chunks)])
         # For giving "best" answer - HQTrivia gives negative questions in form of all caps word
         self.negative = False
-        if any(t.is_upper for t in doc):
+        if any(t.is_upper and t.pos_ == 'ADV' and not t.is_title for t in doc):
             self.negative = True
         print 'Evaluated important words: ' + str(self.important_words)
         print 'Evaluated entities: ' + self.entities
 
     def concatenate_answer(self, answer):
-        return '{} "{}"'.format(self.question, answer)
+        return u'{} "{}"'.format(self.question, answer).encode('utf-8').strip()
 
 def main():
     solver = Answerer()
-    pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
-    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
+    pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
-    # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
+    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
+    # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
     # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
     # print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
     # print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
@@ -286,6 +292,12 @@ def main():
     # print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
     # print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
     # print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
+
+def convert_to_training_data():
+    solver = Answerer()
+    questions = []
+    with open(parent_dir_name + 'data/questions_clean') as f:
+        question = f.read_line().split(',')
 
 if __name__ == "__main__":
     main()

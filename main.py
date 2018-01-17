@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import sys
 import os
 
@@ -34,13 +35,14 @@ def on_message(ws, message):
         pprint(on_message.memo[question])
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
+        ws.close()
 on_message.solver = Answerer()
 on_message.memo = {}
 on_message.logger = open(parent_dir_name + '/data/log', 'a+')
 
 def on_error(ws, error):
-    print("### error ###")
     print(error)
+    print("### error ###")
 
 def on_close(ws):
     print("### closed ###")
