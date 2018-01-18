@@ -20,22 +20,6 @@ def filename_safe(string):
 def encode_unicode(string):
     return str(string.encode('utf-8', 'ignore'))
 
-@timeit
-def get_lowered_google_search(question):
-    google_query = 'https://www.google.com/search?num=100&q=' 
-    if question in get_lowered_google_search.memo:
-        return get_lowered_google_search.memo[question]
-    r = requests.get(google_query + question)
-    lowered = r.content.lower()
-    with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
-        f.write(lowered)
-    if 'our systems have detected unusual traffic from your computer network' in lowered:
-        print 'Google rate limited your IP. Exiting...'
-        exit()
-    get_lowered_google_search.memo[question] = lowered
-    return lowered
-get_lowered_google_search.memo = {}
-
 class Answerer():
     def __init__(self):
         self.approaches = [
@@ -61,7 +45,8 @@ class Answerer():
         self.confidences = [0] * len(answers)
         self.integer_answers = [0] * len(answers)
         self.data = {}
-        self.question = question
+        self.rate_limited = False
+        self.question = question.decode('utf-8')
         print 'question: ' + self.question
         print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
@@ -90,11 +75,12 @@ class Answerer():
                  'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                  'best_answer': best_answer,
                  'negative_question': self.negative,
-                 'data:': self.data}
+                 'data': self.data,
+                 'rate_limited': self.rate_limited}
 
     @timeit
     def word_count_entities(self):
-        lowered = get_lowered_google_search(self.entities)
+        lowered = self.get_lowered_google_search(self.entities)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
@@ -105,7 +91,7 @@ class Answerer():
 
     @timeit
     def word_count_raw(self):
-        lowered = get_lowered_google_search(self.question)
+        lowered = self.get_lowered_google_search(self.question)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
@@ -226,6 +212,9 @@ class Answerer():
     @timeit
     def grab_wikipedia_content(self, contents, page):
         search_results = wikipedia.search(page)
+        if not len(search_results):
+            contents[page] = ''
+            return
         try:
             contents[page] = wikipedia.WikipediaPage(title=search_results[0]).html()
         except wikipedia.exceptions.DisambiguationError as e:
@@ -233,7 +222,7 @@ class Answerer():
 
     @timeit
     def grab_content(self, contents, question):
-        contents[question] = get_lowered_google_search(question)
+        contents[question] = self.get_lowered_google_search(question)
 
     @timeit
     def counts_to_confidence(self, counts):
@@ -273,9 +262,26 @@ class Answerer():
     def concatenate_answer(self, answer):
         return u'{} "{}"'.format(self.question, answer).encode('utf-8').strip()
 
+    @timeit
+    def get_lowered_google_search(self, question):
+        google_query = 'https://www.google.com/search?num=100&q=' 
+        if question in self.get_lowered_google_search.memo:
+            return self.get_lowered_google_search.memo[question]
+        r = requests.get(google_query + question)
+        lowered = r.content.lower()
+        with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
+            f.write(lowered)
+        if 'our systems have detected unusual traffic from your computer network' in lowered:
+            print 'Google rate limited your IP.'
+            self.rate_limited = True
+        self.get_lowered_google_search.memo[question] = lowered
+        return lowered
+    get_lowered_google_search.memo = {}
+
 def main():
     solver = Answerer()
-    pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
+    pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
+    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
@@ -292,12 +298,6 @@ def main():
     # print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
     # print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
     # print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
-
-def convert_to_training_data():
-    solver = Answerer()
-    questions = []
-    with open(parent_dir_name + 'data/questions_clean') as f:
-        question = f.read_line().split(',')
 
 if __name__ == "__main__":
     main()
