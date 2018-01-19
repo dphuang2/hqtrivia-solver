@@ -82,7 +82,7 @@ class Answerer():
         # Provide either the negation answer of regular answer
         best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.min())] if self.negative else np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
         return {
-                'best_answer_by_ml': best_answer,
+                'best_answer_by_ml': list(best_answer),
                 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
@@ -317,11 +317,12 @@ class Answerer():
 def main():
     solver = Answerer()
     pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
+    # pprint(solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"]))
+    # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
     # pprint(solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"]))
     # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
     # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
-    # pprint(solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"]))
     # pprint(solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"]))
     # pprint(solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"]))
     # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
