@@ -27,7 +27,10 @@ ANSWERS = {
         "Lonnie Lynn's only Academy Award win was in what category?": 2,
         "Talking is discouraged on what Amtrak car?": 2,
         "Queen Victoria is credited with starting what fashion trend?": 2,
-        "What iconic painting once hung in Napoleon's bedroom?": 1
+        "What iconic painting once hung in Napoleon's bedroom?": 1,
+        "Which of these things is NOT found inside an atom?": 1,
+        "Which of these is NOT the title of a current TV show?": 2,
+        "Which of these creatures is most likely to bark?": 2
         }
 
 with open('../data/log', 'r') as f:
