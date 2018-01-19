@@ -228,7 +228,7 @@ class Answerer():
         search_results = wikipedia.search(page)
         # In the case that no page exists, return False
         if not len(search_results):
-            contents[page] = False
+            contents[page] = ''
             return
         try:
             contents[page] = wikipedia.WikipediaPage(title=search_results[0]).html()
@@ -316,7 +316,8 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer(u"The Windows 95 startup sound was composed by a former member of what band?",["They Might Be Giants","Roxy Music","Devo"]))
+    pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer(u"The Windows 95 startup sound was composed by a former member of what band?",["They Might Be Giants","Roxy Music","Devo"]))
     # pprint(solver.answer(u"Guatemala and Mozambique are the only UN countries with what on their flags?",["Firearm","Garden tool","Bird"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
     # pprint(solver.answer(u"Which of these fitness fads came first?",["Tae Bo","Jazzercise","Zumba"]))
