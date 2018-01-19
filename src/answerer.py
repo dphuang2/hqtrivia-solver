@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 from method_timer import timeit
 from pprint import pprint
-from time import time
 import lightgbm as lgb
-import wikipedia
+from time import time
+import pandas as pd
+import numpy as np
 import threading
+import wikipedia
 import requests
 import spacy
 import pdb
@@ -35,6 +37,7 @@ class Answerer():
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
         self.nlp = spacy.load('en')
+        self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
         for word in self.stop_words:
             lexeme = self.nlp.vocab[unicode(word)]
             lexeme.is_stop = True
@@ -47,7 +50,10 @@ class Answerer():
         self.integer_answers = [0] * len(answers)
         self.data = {}
         self.rate_limited = False
-        self.question = question.decode('utf-8')
+        try:
+            self.question = question.decode('utf-8')
+        except UnicodeEncodeError:
+            self.question = question
         print 'question: ' + self.question
         print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
@@ -70,14 +76,20 @@ class Answerer():
             print 'Getting zero results from Google. Exiting...'
             exit()
 
+        X_input = self.raw_counts_to_input()
+        Y_pred = self.bst.predict(X_input)
+
         # Provide either the negation answer of regular answer
-        best_answer = self.answers[self.confidences.index(min(self.confidences))] if self.negative else self.answers[self.confidences.index(max(self.confidences))]
-        return { 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
-                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
-                 'best_answer': best_answer,
-                 'negative_question': self.negative,
-                 'data': self.data,
-                 'rate_limited': self.rate_limited}
+        best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.min())] if self.negative else np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
+        return {
+                'best_answer_by_ml': best_answer,
+                'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
+                'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
+                'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
+                'negative_question': self.negative,
+                'data': self.data,
+                'rate_limited': self.rate_limited
+                }
 
     @timeit
     def word_count_entities(self):
@@ -192,7 +204,7 @@ class Answerer():
         # Block until contents is correctly populated cause thats the important part :)
         while len(contents) != len(self.answers):
             continue
-
+        
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
         for word in self.important_words:
@@ -214,13 +226,17 @@ class Answerer():
     @timeit
     def grab_wikipedia_content(self, contents, page):
         search_results = wikipedia.search(page)
+        # In the case that no page exists, return False
         if not len(search_results):
-            contents[page] = ''
+            contents[page] = False
             return
         try:
             contents[page] = wikipedia.WikipediaPage(title=search_results[0]).html()
         except wikipedia.exceptions.DisambiguationError as e:
-            contents[page] = wikipedia.WikipediaPage(title=e.options[0]).html()
+            try:
+                contents[page] = wikipedia.WikipediaPage(title=e.options[0]).html()
+            except wikipedia.exceptions.PageError:
+                contents[page] = wikipedia.WikipediaPage(title=e.options[1]).html()
 
     @timeit
     def grab_content(self, contents, question):
@@ -280,26 +296,44 @@ class Answerer():
         return lowered
     get_lowered_google_search.memo = {}
 
+    def raw_counts_to_input(self):
+        # Convert data to input data
+        lines = [[], [], []]
+        for k,v in self.data.iteritems():
+            try:
+                confidence_values = [val/sum(v) for val in v]
+            except ZeroDivisionError:
+                confidence_values = [0, 0, 0]
+            for i in range(len(confidence_values)):
+                lines[i].append(confidence_values[i])
+
+        # Add whether or not question was negative in the data
+        for i in range(len(lines)):
+            lines[i].append(1 if self.negative else 0)
+
+        return np.array(lines)
+
+
 def main():
     solver = Answerer()
-    pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
-    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
-    # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
-    # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
-    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
-    # pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
-    # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
+    pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
+    # pprint(solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"]))
+    # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
     # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
-    # print solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"])
-    # print solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"])
-    # print solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"])
-    # print solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"])
-    # print solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"])
-    # print solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"])
-    # print solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"])
-    # print solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"])
-    # print solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"])
-    # print solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"])
+    # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
+    # pprint(solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"]))
+    # pprint(solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"]))
+    # pprint(solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"]))
+    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
+    # pprint(solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"]))
+    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
+    # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
+    # pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
+    # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
+    # pprint(solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"]))
+    # pprint(solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"]))
+    # pprint(solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"]))
 
 if __name__ == "__main__":
     main()

@@ -24,7 +24,7 @@ def main():
     answerer = Answerer()
     for entry in data:
         # Make sure we don't process an empty line
-        if not bool(entry):
+        if not bool(entry[0]):
             continue
 
         # Check if question was already processed
@@ -55,10 +55,6 @@ def main():
                 confidence_values = [0, 0, 0]
             for i in range(len(confidence_values)):
                 lines[i].append(confidence_values[i])
-
-        # Add whether or not question was negative in the data
-        for i in range(len(lines)):
-            lines[i].append(1 if raw_counts['negative_question'] else 0)
 
         decoded_question = question.decode('utf-8')
         questions_processed[decoded_question] = {}
