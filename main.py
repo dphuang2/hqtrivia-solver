@@ -30,9 +30,10 @@ def on_message(ws, message):
         answers = [answer['text'] for answer in data['answers']]
         print "Question: " + question
         print "Answers: " + str(answers)
-        if question not in on_message.memo:
-            on_message.memo[question] = on_message.solver.answer(question, answers)
-        pprint(on_message.memo[question])
+        if not args.collect:
+            if question not in on_message.memo:
+                    on_message.memo[question] = on_message.solver.answer(question, answers)
+            pprint(on_message.memo[question])
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
         ws.close()
@@ -78,6 +79,8 @@ if __name__ == "__main__":
         from answerer import main
         main()
         exit()
+    if args.collect:
+        print "Running in collect mode"
     while True:
         # Send GET request to receive live show status and socketUrl
         print 'QUERYING SHOW STATUS'

@@ -3,6 +3,7 @@
 from method_timer import timeit
 from pprint import pprint
 from time import time
+import lightgbm as lgb
 import wikipedia
 import threading
 import requests
@@ -172,7 +173,8 @@ class Answerer():
                 count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
                 counts.append(count)
             except AttributeError:
-                print 'What?! that regex should have worked...'
+                print 'There were no results for {}.'.format(answer)
+                counts.append(0)
 
         print 'Counts after result_count: ' + str(counts)
         self.data['result_count'] = counts
