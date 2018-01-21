@@ -30,7 +30,8 @@ ANSWERS = {
         "What iconic painting once hung in Napoleon's bedroom?": 1,
         "Which of these things is NOT found inside an atom?": 1,
         "Which of these is NOT the title of a current TV show?": 2,
-        "Which of these creatures is most likely to bark?": 2
+        "Which of these creatures is most likely to bark?": 2,
+        "Which of these companies went public first?": 0
         }
 
 with open('../data/log', 'r') as f:

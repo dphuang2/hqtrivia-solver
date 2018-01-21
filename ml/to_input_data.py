@@ -1,4 +1,5 @@
 import json
+import pdb
 
 questions_processed = json.load(open('questions_processed.json'))
 
@@ -10,6 +11,6 @@ with open('regression.data', 'w') as f:
             if len(line) != 7:
                 print line
                 exit()
-            f.write(DELIMITER.join([str(v) for v in line]) + '\n')
+            f.write(DELIMITER.join([str(val) for val in line]) + '\n')
 
 print 'Successfully converted processed questions to input data!'
