@@ -52,7 +52,8 @@ def on_open(ws):
     print("### opened ###")
 
 def setup_websocket(url, header):
-    websocket.enableTrace(True)
+    if args.d:
+        websocket.enableTrace(True)
     ws = websocket.WebSocketApp(url, header)
     ws.on_open = on_open
     ws.on_close = on_close
