@@ -8,3 +8,5 @@ DONE - Show everything in list and choose based on human-perceived best answer
 DONE - Add quotes to end of search for appending
 DONE - Evaluate important words so each important word has equal weight
 
+DONE - Invert NOT questions such that raw approach values are inverted and training data is inverted as well if it is negative
+Add features depending on POS of words

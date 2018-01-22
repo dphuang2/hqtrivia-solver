@@ -31,7 +31,11 @@ ANSWERS = {
         "Which of these things is NOT found inside an atom?": 1,
         "Which of these is NOT the title of a current TV show?": 2,
         "Which of these creatures is most likely to bark?": 2,
-        "Which of these companies went public first?": 0
+        "Which of these companies went public first?": 0,
+        "Which of these celebrities has NOT been a ProActiv spokesperson?":  2,
+        "Which of these products was featured on “Shark Tank”?": 1,
+        "In which of these movies is the title NOT spoken by any character?": 1,
+        "What does a rattlesnake typically do when it feels threatened?": 1
         }
 
 with open('../data/log', 'r') as f:
@@ -73,6 +77,7 @@ with open('../data/questions_clean', 'w') as f:
         data = question.split(delimiter)
         text = data[0]
         if text in questions_without_answers:
+            print question
             question += "|" + str(ANSWERS[text])
             f.write(question + '\n')
         elif len(data) == 5:

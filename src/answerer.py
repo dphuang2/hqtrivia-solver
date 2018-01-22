@@ -34,6 +34,7 @@ class Answerer():
                 self.word_relation_to_question
                 ]
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
+        self.negative_words = ['NOT', 'NEVER']
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
         self.nlp = spacy.load('en')
@@ -54,6 +55,15 @@ class Answerer():
             self.question = question.decode('utf-8')
         except UnicodeEncodeError:
             self.question = question
+        self.question_without_negative = self.question
+        # Remove negative word from question and for giving correct input to model - HQTrivia gives negative questions in form of all caps word
+        self.negative = False
+        for word in self.negative_words:
+            if word in self.question:
+                self.negative = True
+                negative_idx = self.question.index(word)
+                self.question_without_negative = self.question[:negative_idx] + self.question[negative_idx + len(word) + 1:]
+                break
         print 'question: ' + self.question
         print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
@@ -77,10 +87,12 @@ class Answerer():
             exit()
 
         X_input = self.raw_counts_to_input()
+        print 'X_input: {}'.format(str(X_input))
         Y_pred = self.bst.predict(X_input)
+        print 'Y_pred: {}'.format(str(Y_pred))
 
-        # Provide either the negation answer of regular answer
-        best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.min())] if self.negative else np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
+        # Provide best answer of the predicted values
+        best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
         return {
                 'best_answer_by_ml': list(best_answer),
                 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
@@ -104,7 +116,7 @@ class Answerer():
 
     @timeit
     def word_count_raw(self):
-        lowered = self.get_lowered_google_search(self.question)
+        lowered = self.get_lowered_google_search(self.question_without_negative)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
@@ -270,15 +282,11 @@ class Answerer():
         # Word is part of the POS list and it is not a stop word (common word)
         self.important_words = [encode_unicode(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
         self.entities = ' '.join([chunk.text for chunk in list(doc.noun_chunks)])
-        # For giving "best" answer - HQTrivia gives negative questions in form of all caps word
-        self.negative = False
-        if any(t.is_upper and t.pos_ == 'ADV' and not t.is_title for t in doc):
-            self.negative = True
         print 'Evaluated important words: ' + str(self.important_words)
         print 'Evaluated entities: ' + self.entities
 
     def concatenate_answer(self, answer):
-        return u'{} "{}"'.format(self.question, answer).encode('utf-8').strip()
+        return u'{} "{}"'.format(self.question_without_negative, answer).encode('utf-8').strip()
 
     @timeit
     def get_lowered_google_search(self, question):
@@ -301,15 +309,19 @@ class Answerer():
         lines = [[], [], []]
         for k,v in self.data.iteritems():
             try:
-                confidence_values = [val/sum(v) for val in v]
+                # Make model input inverted if question is negative (makes more sense for model)
+                if self.negative:
+                    confidence_values = [1 - (val / sum(v)) for val in v]
+                else:
+                    confidence_values = [val/sum(v) for val in v]
             except ZeroDivisionError:
                 confidence_values = [0, 0, 0]
             for i in range(len(confidence_values)):
                 lines[i].append(confidence_values[i])
 
-        # Add whether or not question was negative in the data
-        for i in range(len(lines)):
-            lines[i].append(1 if self.negative else 0)
+        # Cross validate input data
+        if any(len(line) != len(self.approaches) for line in lines):
+            print 'Something is wrong with input data to model!'
 
         return np.array(lines)
 
@@ -317,7 +329,8 @@ class Answerer():
 def main():
     solver = Answerer()
     pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
-    pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
+    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
     # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
