@@ -84,6 +84,91 @@
             ]
         ]
     },
+    "The material that forms images in an Etch A Sketch is also the main component in which item?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "soda cans"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "zinc supplement tablets": 0.29597568305919036,
+                "soda cans": 0.4054018031824267,
+                "u.s. nickels": 0.29862251375838295
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "zinc supplement tablets": 4,
+                "soda cans": 2,
+                "u.s. nickels": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    4.21227217581877,
+                    1.8302941867096039,
+                    1.9574336374716268
+                ],
+                "word_count_entities": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    2.7957831703034866,
+                    2.793506381535445,
+                    1.410710448161069
+                ],
+                "word_count_raw": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "result_count": [
+                    2.0,
+                    29.0,
+                    55.0
+                ],
+                "word_count_appended": [
+                    4.0,
+                    4.0,
+                    17.0
+                ]
+            },
+            "ml_answers": {
+                "zinc supplement tablets": 0.2105041425280237,
+                "soda cans": 0.23882178584298583,
+                "u.s. nickels": 0.23787250400049384
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.5265340219773462,
+                0.3333333333333333,
+                0.39939759575764094,
+                0.3333333333333333,
+                0.023255813953488372,
+                0.16
+            ],
+            [
+                0,
+                0.22878677333870048,
+                0.3333333333333333,
+                0.3990723402193493,
+                0.3333333333333333,
+                0.3372093023255814,
+                0.16
+            ],
+            [
+                1,
+                0.24467920468395335,
+                0.3333333333333333,
+                0.20153006402300985,
+                0.3333333333333333,
+                0.6395348837209303,
+                0.68
+            ]
+        ]
+    },
     "Which of these actresses is NOT mentioned in Madonna\u2019s song \u201cVogue\u201d?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -166,91 +251,6 @@
                 0.0,
                 0.6592592592592592,
                 0.6060606060606061
-            ]
-        ]
-    },
-    "Which of these actors was a high school cheerleader?": {
-        "raw_data": {
-            "best_answer_by_ml": [
-                "michael douglas"
-            ],
-            "negative_question": false,
-            "fraction_answers": {
-                "john travolta": 0.3025406255894061,
-                "george clooney": 0.2351993659669413,
-                "michael douglas": 0.46226000844365267
-            },
-            "rate_limited": false,
-            "integer_answers": {
-                "john travolta": 3,
-                "george clooney": 0,
-                "michael douglas": 2
-            },
-            "data": {
-                "wikipedia_search": [
-                    1.0944444444444446,
-                    0.31666666666666665,
-                    1.588888888888889
-                ],
-                "word_count_entities": [
-                    0.0,
-                    1.0,
-                    0.0
-                ],
-                "word_relation_to_question": [
-                    0.6615384615384616,
-                    1.1205128205128205,
-                    1.2179487179487178
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "word_count_appended": [
-                    41.0,
-                    44.0,
-                    51.0
-                ],
-                "result_count": [
-                    166000.0,
-                    292000.0,
-                    116000.0
-                ]
-            },
-            "ml_answers": {
-                "john travolta": 0.24062111712601966,
-                "george clooney": 0.28680827176911067,
-                "michael douglas": 0.39952910067975217
-            }
-        },
-        "lines": [
-            [
-                0,
-                0.36481481481481487,
-                0.0,
-                0.22051282051282053,
-                0,
-                0.3014705882352941,
-                0.289198606271777
-            ],
-            [
-                1,
-                0.10555555555555556,
-                1.0,
-                0.3735042735042735,
-                0,
-                0.3235294117647059,
-                0.5087108013937283
-            ],
-            [
-                0,
-                0.5296296296296297,
-                0.0,
-                0.40598290598290593,
-                0,
-                0.375,
-                0.20209059233449478
             ]
         ]
     },
@@ -849,6 +849,91 @@
             ]
         ]
     },
+    "The actor who played Don Draper provides the voice for what car company\u2019s ads?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "mercedes-benz"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "jaguar": 0.22753327758320632,
+                "bmw": 0.34622476027994026,
+                "mercedes-benz": 0.4262419621368534
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "jaguar": 2,
+                "bmw": 2,
+                "mercedes-benz": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.2125736247370145,
+                    3.2385205969827875,
+                    0.5489057782801978
+                ],
+                "word_count_entities": [
+                    21.0,
+                    4.0,
+                    3.0
+                ],
+                "word_relation_to_question": [
+                    1.9974548973458983,
+                    3.1554339480743385,
+                    1.8471111545797627
+                ],
+                "word_count_raw": [
+                    10.0,
+                    4.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    198.0,
+                    186.0,
+                    208.0
+                ],
+                "result_count": [
+                    939000.0,
+                    2240000.0,
+                    2990000.0
+                ]
+            },
+            "ml_answers": {
+                "jaguar": 0.20366612504201986,
+                "bmw": 0.2451079179338633,
+                "mercedes-benz": 0.32694176022258337
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.3687622707895024,
+                0.75,
+                0.28535069962084264,
+                0.6666666666666666,
+                0.3344594594594595,
+                0.15221267628464905
+            ],
+            [
+                0,
+                0.5397534328304646,
+                0.14285714285714285,
+                0.4507762782963341,
+                0.26666666666666666,
+                0.3141891891891892,
+                0.3631058518398444
+            ],
+            [
+                0,
+                0.09148429638003297,
+                0.10714285714285714,
+                0.26387302208282326,
+                0.06666666666666667,
+                0.35135135135135137,
+                0.4846814718755066
+            ]
+        ]
+    },
     "Which of these substances expands when it freezes?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -1444,6 +1529,91 @@
             ]
         ]
     },
+    "Which of these is NOT a name of one of the Florida Keys?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "pigeon key"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "pigeon key": 0.5138843968377882,
+                "turtle key": 0.09254163061665585,
+                "fat deer key": 0.39357397254555604
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "pigeon key": 3,
+                "turtle key": 0,
+                "fat deer key": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.5119047619047619,
+                    0.25,
+                    1.2380952380952381
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    1.4073975832596521,
+                    0.49127615679339814,
+                    1.1013262599469495
+                ],
+                "word_count_raw": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    42.0,
+                    30.0,
+                    101.0
+                ],
+                "result_count": [
+                    37.0,
+                    1920.0,
+                    3560000.0
+                ]
+            },
+            "ml_answers": {
+                "pigeon key": 0.5487025238171155,
+                "turtle key": 0.5438329084399569,
+                "fat deer key": 0.35279585706508665
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.25595238095238093,
+                0,
+                0.4691325277532174,
+                1.0,
+                0.24277456647398843,
+                1.0387548193310587e-05
+            ],
+            [
+                1,
+                0.125,
+                0,
+                0.16375871893113272,
+                0.0,
+                0.17341040462427745,
+                0.0005390295278690899
+            ],
+            [
+                0,
+                0.6190476190476191,
+                0,
+                0.36710875331564985,
+                0.0,
+                0.5838150289017341,
+                0.9994505829239376
+            ]
+        ]
+    },
     "Lonnie Lynn's only Academy Award win was in what category?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -1526,6 +1696,91 @@
                 1.0,
                 0.4941860465116279,
                 0.22430510665804784
+            ]
+        ]
+    },
+    "Which of these products was featured on \u201cShark Tank\u201d?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "scrub daddy"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "scrub daddy": 0.8182343779384093,
+                "sticky buddy": 0.07182524710374011,
+                "instant pot": 0.1099403749578506
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "scrub daddy": 6,
+                "sticky buddy": 0,
+                "instant pot": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.125,
+                    3.375,
+                    0.5
+                ],
+                "word_count_entities": [
+                    0.0,
+                    3.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    0.038461538461538464,
+                    3.2807692307692307,
+                    0.6807692307692308
+                ],
+                "word_count_raw": [
+                    0.0,
+                    3.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    54.0,
+                    180.0,
+                    36.0
+                ],
+                "result_count": [
+                    9840.0,
+                    13600.0,
+                    57.0
+                ]
+            },
+            "ml_answers": {
+                "scrub daddy": 0.5160657455363917,
+                "sticky buddy": 0.1876268150024852,
+                "instant pot": 0.1917175769113722
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.03125,
+                0.0,
+                0.009615384615384616,
+                0.0,
+                0.2,
+                0.41877686513171897
+            ],
+            [
+                1,
+                0.84375,
+                1.0,
+                0.8201923076923077,
+                1.0,
+                0.6666666666666666,
+                0.5787972932714814
+            ],
+            [
+                0,
+                0.125,
+                0.0,
+                0.1701923076923077,
+                0.0,
+                0.13333333333333333,
+                0.0024258415967995913
             ]
         ]
     },
@@ -1869,6 +2124,91 @@
             ]
         ]
     },
+    "Which of these is a French territory?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "french guiana"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "french guiana": 0.7724248311074955,
+                "french stewart": 0.1290531231481067,
+                "french cyprus": 0.0985220457443977
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "french guiana": 5,
+                "french stewart": 0,
+                "french cyprus": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.9696969696969697,
+                    0.36363636363636365,
+                    0.6666666666666666
+                ],
+                "word_count_entities": [
+                    8.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    1.3960720130932898,
+                    0.38461538461538464,
+                    0.2193126022913257
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    178.0,
+                    71.0,
+                    13.0
+                ],
+                "result_count": [
+                    36500000.0,
+                    5380.0,
+                    83.0
+                ]
+            },
+            "ml_answers": {
+                "french guiana": 0.37594665826105916,
+                "french stewart": 0.2505050759111696,
+                "french cyprus": 0.15242752323422432
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.48484848484848486,
+                1.0,
+                0.6980360065466449,
+                0,
+                0.6793893129770993,
+                0.9998503511652489
+            ],
+            [
+                0,
+                0.18181818181818182,
+                0.0,
+                0.19230769230769232,
+                0,
+                0.27099236641221375,
+                0.00014737520244572708
+            ],
+            [
+                0,
+                0.3333333333333333,
+                0.0,
+                0.10965630114566285,
+                0,
+                0.04961832061068702,
+                2.27363230538947e-06
+            ]
+        ]
+    },
     "What makeup item often contains dried cochineal bugs as an ingredient?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -1876,14 +2216,14 @@
             ],
             "negative_question": false,
             "fraction_answers": {
-                "mascara": 0.1753105632204022,
                 "lipstick": 0.6335347000063087,
+                "mascara": 0.1753105632204022,
                 "eyeliner": 0.191154736773289
             },
             "rate_limited": false,
             "integer_answers": {
-                "mascara": 1,
                 "lipstick": 4,
+                "mascara": 1,
                 "eyeliner": 1
             },
             "data": {
@@ -1919,8 +2259,8 @@
                 ]
             },
             "ml_answers": {
-                "mascara": 0.31931825962347504,
                 "lipstick": 0.5123212089064794,
+                "mascara": 0.31931825962347504,
                 "eyeliner": 0.3130844177175331
             }
         },
@@ -2121,6 +2461,91 @@
                 0,
                 0.46875,
                 0.4405594405594406
+            ]
+        ]
+    },
+    "The first person to lead an expedition to the South Pole came from what country?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "norway"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "canada": 0.3115811019448557,
+                "iceland": 0.2409303569753625,
+                "norway": 0.4474885410797818
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "canada": 1,
+                "iceland": 3,
+                "norway": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.6875218625410473,
+                    2.6883730581871204,
+                    1.6241050792718326
+                ],
+                "word_count_entities": [
+                    6.0,
+                    0.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    1.7467032967032967,
+                    2.520879120879121,
+                    1.7324175824175825
+                ],
+                "word_count_raw": [
+                    5.0,
+                    1.0,
+                    3.0
+                ],
+                "word_count_appended": [
+                    246.0,
+                    291.0,
+                    249.0
+                ],
+                "result_count": [
+                    80800.0,
+                    45500.0,
+                    158000.0
+                ]
+            },
+            "ml_answers": {
+                "canada": 0.19572865507945447,
+                "iceland": 0.25732725960553227,
+                "norway": 0.32694176022258337
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.383931694648721,
+                0.8571428571428571,
+                0.29111721611721614,
+                0.5555555555555556,
+                0.31297709923664124,
+                0.2842068237776996
+            ],
+            [
+                0,
+                0.38405329402673144,
+                0.0,
+                0.42014652014652015,
+                0.1111111111111111,
+                0.3702290076335878,
+                0.1600422089342244
+            ],
+            [
+                0,
+                0.2320150113245475,
+                0.14285714285714285,
+                0.28873626373626377,
+                0.3333333333333333,
+                0.31679389312977096,
+                0.5557509672880759
             ]
         ]
     },
@@ -2379,6 +2804,91 @@
             ]
         ]
     },
+    "Which of these is NOT a machine used for printing?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "hydraulophone"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "spirit duplicator": 0.4383154407459505,
+                "hydraulophone": 0.22145115838467147,
+                "hectograph": 0.340233400869378
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "spirit duplicator": 3,
+                "hydraulophone": 0,
+                "hectograph": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.6138613861386139,
+                    0.998493327593629,
+                    1.387645286267757
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    0.42105263157894735,
+                    0.6721804511278195,
+                    1.906766917293233
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    199.0,
+                    269.0,
+                    109.0
+                ],
+                "result_count": [
+                    11600.0,
+                    20000.0,
+                    27600.0
+                ]
+            },
+            "ml_answers": {
+                "spirit duplicator": 0.3439405022458909,
+                "hydraulophone": 0.29863348412404556,
+                "hectograph": 0.31465012114147306
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.7953795379537953,
+                1,
+                0.8596491228070176,
+                1,
+                0.6551126516464472,
+                0.8040540540540541
+            ],
+            [
+                0,
+                0.6671688908021236,
+                1,
+                0.7759398496240602,
+                1,
+                0.533795493934142,
+                0.6621621621621622
+            ],
+            [
+                0,
+                0.537451571244081,
+                1,
+                0.3644110275689223,
+                1,
+                0.8110918544194108,
+                0.5337837837837838
+            ]
+        ]
+    },
     "How does the second verse of \u201cThe Star-Spangled Banner\u201d begin?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -2464,6 +2974,91 @@
             ]
         ]
     },
+    "Which of these substances is both artificially made and found in nature?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "nylon"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "latex": 0.29611274357433465,
+                "teflon": 0.2610058506192538,
+                "nylon": 0.44288140580641155
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "latex": 2,
+                "teflon": 1,
+                "nylon": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.85,
+                    0.3,
+                    1.85
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    0.5,
+                    0.3181818181818182,
+                    0.18181818181818182
+                ],
+                "word_count_raw": [
+                    0.0,
+                    4.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    301.0,
+                    318.0,
+                    406.0
+                ],
+                "result_count": [
+                    1220000.0,
+                    2600000.0,
+                    1530000.0
+                ]
+            },
+            "ml_answers": {
+                "latex": 0.2804208109887855,
+                "teflon": 0.279735235946224,
+                "nylon": 0.6908618116907013
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.2833333333333333,
+                0,
+                0.5,
+                0.0,
+                0.22803738317757008,
+                0.29365853658536584
+            ],
+            [
+                0,
+                0.09999999999999999,
+                0,
+                0.3181818181818182,
+                1.0,
+                0.48598130841121495,
+                0.3102439024390244
+            ],
+            [
+                1,
+                0.6166666666666667,
+                0,
+                0.18181818181818182,
+                0.0,
+                0.28598130841121494,
+                0.3960975609756098
+            ]
+        ]
+    },
     "Every U.S. state that starts with which of these letters has a Democratic governor?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -2546,6 +3141,91 @@
                 0.3029560672872775,
                 0.2879103282626101,
                 0.29454545454545455
+            ]
+        ]
+    },
+    "What does a rattlesnake typically do when it feels threatened?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "rattles its tail"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "sends an angry email": 0.1644161718753115,
+                "rattles its tail": 0.43072914562875086,
+                "eats its feelings": 0.4048546824959377
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "sends an angry email": 0,
+                "rattles its tail": 3,
+                "eats its feelings": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    1.75,
+                    1.0,
+                    1.25
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    2.4744949494949497,
+                    0.812121212121212,
+                    0.7133838383838383
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    24.0,
+                    6.0,
+                    6.0
+                ],
+                "result_count": [
+                    39.0,
+                    309000.0,
+                    47.0
+                ]
+            },
+            "ml_answers": {
+                "sends an angry email": 0.21222581068393429,
+                "rattles its tail": 0.3355859092914677,
+                "eats its feelings": 0.243635445014039
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.4375,
+                0,
+                0.6186237373737374,
+                0,
+                0.6666666666666666,
+                0.00012617847459930247
+            ],
+            [
+                1,
+                0.25,
+                0,
+                0.203030303030303,
+                0,
+                0.16666666666666666,
+                0.9997217602867811
+            ],
+            [
+                0,
+                0.3125,
+                0,
+                0.17834595959595959,
+                0,
+                0.16666666666666666,
+                0.0001520612386196722
             ]
         ]
     },
@@ -3569,6 +4249,91 @@
             ]
         ]
     },
+    "What actor famously yelled \"Not the bees! Not the bees!\" in a 2006 film?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "nicolas cage"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "macauley culkin": 0.10339952730446622,
+                "nicolas cage": 0.6809216693191043,
+                "oprah winfrey": 0.2156788033764295
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "macauley culkin": 0,
+                "nicolas cage": 4,
+                "oprah winfrey": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    1.9213859853157478,
+                    0.9259916533642583,
+                    3.152622361319994
+                ],
+                "word_count_entities": [
+                    21.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    3.924589949093812,
+                    2.8713789156525102,
+                    1.2040311352536774
+                ],
+                "word_count_raw": [
+                    3.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    11.0,
+                    0,
+                    2.0
+                ],
+                "word_count_appended": [
+                    12.0,
+                    3.0,
+                    13.0
+                ]
+            },
+            "ml_answers": {
+                "macauley culkin": 0.14092146243763182,
+                "nicolas cage": 0.6962232567083821,
+                "oprah winfrey": 0.21281501730090907
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.32023099755262463,
+                1.0,
+                0.4905737436367265,
+                1.0,
+                0.8461538461538461,
+                0.42857142857142855
+            ],
+            [
+                0,
+                0.15433194222737637,
+                0.0,
+                0.3589223644565638,
+                0.0,
+                0.0,
+                0.10714285714285714
+            ],
+            [
+                0,
+                0.525437060219999,
+                0.0,
+                0.15050389190670968,
+                0.0,
+                0.15384615384615385,
+                0.4642857142857143
+            ]
+        ]
+    },
     "Mardi Gras is celebrated right before what other observance?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -3651,6 +4416,91 @@
                 0.0,
                 0.2532981530343008,
                 0.10584823586273562
+            ]
+        ]
+    },
+    "In baking, yeast helps bread rise, but scientifically yeast is what?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "fungus"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "fungus": 0.6136409275538054,
+                "plant": 0.22119977572733482,
+                "bacteria": 0.16515929671885984
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "fungus": 6,
+                "plant": 0,
+                "bacteria": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    3.5228964583803295,
+                    0.25874125874125875,
+                    0.21836228287841192
+                ],
+                "word_count_entities": [
+                    7.0,
+                    5.0,
+                    2.0
+                ],
+                "word_relation_to_question": [
+                    3.5,
+                    1.0,
+                    0.5
+                ],
+                "word_count_raw": [
+                    20.0,
+                    7.0,
+                    6.0
+                ],
+                "word_count_appended": [
+                    247.0,
+                    226.0,
+                    242.0
+                ],
+                "result_count": [
+                    1320000.0,
+                    360000.0,
+                    352000.0
+                ]
+            },
+            "ml_answers": {
+                "fungus": 0.2979778045508963,
+                "plant": 0.2778082102506707,
+                "bacteria": 0.23910100782039104
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.8807241145950824,
+                0.5,
+                0.7,
+                0.6060606060606061,
+                0.34545454545454546,
+                0.6496062992125984
+            ],
+            [
+                0,
+                0.06468531468531469,
+                0.35714285714285715,
+                0.2,
+                0.21212121212121213,
+                0.31608391608391606,
+                0.17716535433070865
+            ],
+            [
+                0,
+                0.05459057071960298,
+                0.14285714285714285,
+                0.1,
+                0.18181818181818182,
+                0.3384615384615385,
+                0.1732283464566929
             ]
         ]
     },
@@ -3821,6 +4671,91 @@
                 1.0,
                 0.737151248164464,
                 1
+            ]
+        ]
+    },
+    "Which of these knots is typically used to add another line to a rope?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "bowline"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "grantchester": 0.07365836183609746,
+                "rolling hitch": 0.18804613919266788,
+                "bowline": 0.7382954989712345
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "grantchester": 0,
+                "rolling hitch": 0,
+                "bowline": 6
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.2124542951258626,
+                    1.5615976190092358,
+                    0.22594808586490164
+                ],
+                "word_count_entities": [
+                    16.0,
+                    3.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    2.0684122075606313,
+                    1.4555046330118522,
+                    0.47608315942751656
+                ],
+                "word_count_raw": [
+                    12.0,
+                    1.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    294.0,
+                    68.0,
+                    131.0
+                ],
+                "result_count": [
+                    5610000.0,
+                    7040.0,
+                    4060.0
+                ]
+            },
+            "ml_answers": {
+                "grantchester": 0.17394553415533262,
+                "rolling hitch": 0.21981558406341328,
+                "bowline": 0.6525759859190359
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.5531135737814656,
+                0.8421052631578947,
+                0.5171030518901578,
+                0.9230769230769231,
+                0.5963488843813387,
+                0.9980252975396274
+            ],
+            [
+                1,
+                0.39039940475230894,
+                0.15789473684210525,
+                0.36387615825296304,
+                0.07692307692307693,
+                0.13793103448275862,
+                0.0012524239027948266
+            ],
+            [
+                0,
+                0.05648702146622541,
+                0.0,
+                0.11902078985687914,
+                0.0,
+                0.2657200811359026,
+                0.0007222785575776983
             ]
         ]
     },
@@ -4164,88 +5099,88 @@
             ]
         ]
     },
-    "Which of these is NOT a machine used for printing?": {
+    "Which of these is NOT a suit in a traditional Tarot deck?": {
         "raw_data": {
             "best_answer_by_ml": [
-                "hydraulophone"
+                "gloves"
             ],
             "negative_question": true,
             "fraction_answers": {
-                "spirit duplicator": 0.4383154407459505,
-                "hydraulophone": 0.22145115838467147,
-                "hectograph": 0.340233400869378
+                "gloves": 0.15161221017090581,
+                "cups": 0.33961811746140497,
+                "swords": 0.5087696723676892
             },
             "rate_limited": false,
             "integer_answers": {
-                "spirit duplicator": 3,
-                "hydraulophone": 0,
-                "hectograph": 1
+                "gloves": 1,
+                "cups": 0,
+                "swords": 5
             },
             "data": {
                 "wikipedia_search": [
-                    0.6138613861386139,
-                    0.998493327593629,
-                    1.387645286267757
+                    1.309193846623077,
+                    1.2710974284679464,
+                    0.41970872490897654
                 ],
                 "word_count_entities": [
                     0.0,
-                    0.0,
-                    0.0
+                    57.0,
+                    31.0
                 ],
                 "word_relation_to_question": [
-                    0.42105263157894735,
-                    0.6721804511278195,
-                    1.906766917293233
+                    0.45054945054945056,
+                    2.85989010989011,
+                    1.6895604395604396
                 ],
                 "word_count_raw": [
                     0.0,
-                    0.0,
-                    0.0
+                    47.0,
+                    39.0
                 ],
                 "word_count_appended": [
-                    199.0,
-                    269.0,
-                    109.0
+                    203.0,
+                    402.0,
+                    377.0
                 ],
                 "result_count": [
-                    11600.0,
-                    20000.0,
-                    27600.0
+                    397000.0,
+                    1020000.0,
+                    833000.0
                 ]
             },
             "ml_answers": {
-                "spirit duplicator": 0.3439405022458909,
-                "hydraulophone": 0.29863348412404556,
-                "hectograph": 0.31465012114147306
+                "gloves": 0.5434736017588835,
+                "cups": 0.2346312457064109,
+                "swords": 0.247934458811973
             }
         },
         "lines": [
             [
                 1,
-                0.7953795379537953,
-                1,
-                0.8596491228070176,
-                1,
-                0.6551126516464472,
-                0.8040540540540541
+                0.436397948874359,
+                0.0,
+                0.09010989010989011,
+                0.0,
+                0.20672097759674135,
+                0.17644444444444443
             ],
             [
                 0,
-                0.6671688908021236,
-                1,
-                0.7759398496240602,
-                1,
-                0.533795493934142,
-                0.6621621621621622
+                0.4236991428226488,
+                0.6477272727272727,
+                0.5719780219780219,
+                0.5465116279069767,
+                0.4093686354378819,
+                0.4533333333333333
             ],
             [
                 0,
-                0.537451571244081,
-                1,
-                0.3644110275689223,
-                1,
-                0.8110918544194108,
-                0.5337837837837838
+                0.13990290830299218,
+                0.3522727272727273,
+                0.33791208791208793,
+                0.45348837209302323,
+                0.38391038696537677,
+                0.37022222222222223
             ]
         ]
     },
@@ -4334,88 +5269,173 @@
             ]
         ]
     },
-    "Which of these countries is closest to the International Date Line?": {
+    "Which of these sharks is NOT a Lamniforme?": {
         "raw_data": {
             "best_answer_by_ml": [
-                "japan"
+                "hammerhead shark"
             ],
-            "negative_question": false,
+            "negative_question": true,
             "fraction_answers": {
-                "brazil": 0.22260772677964835,
-                "japan": 0.3909082798598416,
-                "spain": 0.38648399336051
+                "goblin shark": 0.23154463964786431,
+                "great white shark": 0.5701847230629978,
+                "hammerhead shark": 0.19827063728913785
             },
             "rate_limited": false,
             "integer_answers": {
-                "brazil": 2,
-                "japan": 3,
-                "spain": 1
+                "goblin shark": 1,
+                "great white shark": 3,
+                "hammerhead shark": 0
             },
             "data": {
                 "wikipedia_search": [
-                    1.2894692345310046,
-                    1.5109666693815988,
-                    1.1995640960873966
+                    0.27882055231598635,
+                    1.3521619540103422,
+                    0.3690174936736715
                 ],
                 "word_count_entities": [
-                    1.0,
                     0.0,
-                    1.0
+                    0.0,
+                    0.0
                 ],
                 "word_relation_to_question": [
-                    1.1888797186562934,
-                    1.3864080343414513,
-                    1.4247122470022555
+                    0.9940217391304347,
+                    1.313586956521739,
+                    0.6923913043478261
                 ],
                 "word_count_raw": [
-                    1.0,
                     0.0,
-                    1.0
+                    0.0,
+                    0.0
                 ],
                 "word_count_appended": [
-                    302.0,
-                    351.0,
-                    332.0
+                    156.0,
+                    146.0,
+                    85.0
                 ],
                 "result_count": [
-                    14800000.0,
-                    9000000.0,
-                    11500000.0
+                    22600.0,
+                    341000.0,
+                    68300.0
                 ]
             },
             "ml_answers": {
-                "brazil": 0.25129117353639385,
-                "japan": 0.32346509370848175,
-                "spain": 0.2844473804612991
+                "goblin shark": 0.3290158334114941,
+                "great white shark": 0.34354206266413584,
+                "hammerhead shark": 0.2851403301773476
             }
         },
         "lines": [
             [
+                0,
+                0.8605897238420068,
                 1,
-                0.32236730863275115,
-                0.5,
-                0.29721992966407335,
-                0.5,
-                0.3065989847715736,
-                0.4192634560906516
+                0.668659420289855,
+                1,
+                0.9476730724704793,
+                0.5968992248062015
             ],
             [
                 0,
-                0.3777416673453997,
-                0.0,
-                0.34660200858536283,
-                0.0,
-                0.35634517766497464,
-                0.254957507082153
+                0.3239190229948289,
+                1,
+                0.5621376811594203,
+                1,
+                0.2104653855059041,
+                0.6227390180878554
+            ],
+            [
+                1,
+                0.8154912531631643,
+                1,
+                0.7692028985507247,
+                1,
+                0.8418615420236166,
+                0.7803617571059431
+            ]
+        ]
+    },
+    "By definition, an Anglophile would be most interested in which of these things?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "downton abbey"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "geometry": 0.4395465719309128,
+                "downton abbey": 0.5156155601803074,
+                "trout fishing": 0.04483786788877988
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "geometry": 1,
+                "downton abbey": 3,
+                "trout fishing": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.8,
+                    2.2,
+                    0.0
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    1.0625,
+                    1.5,
+                    0.4375
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    42800.0,
+                    61300.0,
+                    52.0
+                ],
+                "word_count_appended": [
+                    154.0,
+                    51.0,
+                    7.0
+                ]
+            },
+            "ml_answers": {
+                "geometry": 0.20038290408448464,
+                "downton abbey": 0.29617193703899874,
+                "trout fishing": 0.15610905131042072
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.26666666666666666,
+                0,
+                0.3541666666666667,
+                0,
+                0.41093786005069516,
+                0.7264150943396226
+            ],
+            [
+                1,
+                0.7333333333333334,
+                0,
+                0.5,
+                0,
+                0.588562869652047,
+                0.24056603773584906
             ],
             [
                 0,
-                0.29989102402184914,
-                0.5,
-                0.3561780617505639,
-                0.5,
-                0.33705583756345175,
-                0.32577903682719545
+                0.0,
+                0,
+                0.14583333333333334,
+                0,
+                0.0004992702972578539,
+                0.0330188679245283
             ]
         ]
     },
@@ -4674,38 +5694,38 @@
             ]
         ]
     },
-    "Which of these sharks is NOT a Lamniforme?": {
+    "Which of these actors was a high school cheerleader?": {
         "raw_data": {
             "best_answer_by_ml": [
-                "hammerhead shark"
+                "michael douglas"
             ],
-            "negative_question": true,
+            "negative_question": false,
             "fraction_answers": {
-                "goblin shark": 0.23154463964786431,
-                "great white shark": 0.5701847230629978,
-                "hammerhead shark": 0.19827063728913785
+                "john travolta": 0.3025406255894061,
+                "george clooney": 0.2351993659669413,
+                "michael douglas": 0.46226000844365267
             },
             "rate_limited": false,
             "integer_answers": {
-                "goblin shark": 1,
-                "great white shark": 3,
-                "hammerhead shark": 0
+                "john travolta": 3,
+                "george clooney": 0,
+                "michael douglas": 2
             },
             "data": {
                 "wikipedia_search": [
-                    0.27882055231598635,
-                    1.3521619540103422,
-                    0.3690174936736715
+                    1.0944444444444446,
+                    0.31666666666666665,
+                    1.588888888888889
                 ],
                 "word_count_entities": [
                     0.0,
-                    0.0,
+                    1.0,
                     0.0
                 ],
                 "word_relation_to_question": [
-                    0.9940217391304347,
-                    1.313586956521739,
-                    0.6923913043478261
+                    0.6615384615384616,
+                    1.1205128205128205,
+                    1.2179487179487178
                 ],
                 "word_count_raw": [
                     0.0,
@@ -4713,49 +5733,219 @@
                     0.0
                 ],
                 "word_count_appended": [
-                    156.0,
-                    146.0,
-                    85.0
+                    41.0,
+                    44.0,
+                    51.0
                 ],
                 "result_count": [
-                    22600.0,
-                    341000.0,
-                    68300.0
+                    166000.0,
+                    292000.0,
+                    116000.0
                 ]
             },
             "ml_answers": {
-                "goblin shark": 0.3290158334114941,
-                "great white shark": 0.34354206266413584,
-                "hammerhead shark": 0.2851403301773476
+                "john travolta": 0.24062111712601966,
+                "george clooney": 0.28680827176911067,
+                "michael douglas": 0.39952910067975217
             }
         },
         "lines": [
             [
                 0,
-                0.8605897238420068,
+                0.36481481481481487,
+                0.0,
+                0.22051282051282053,
+                0,
+                0.3014705882352941,
+                0.289198606271777
+            ],
+            [
                 1,
-                0.668659420289855,
-                1,
-                0.9476730724704793,
-                0.5968992248062015
+                0.10555555555555556,
+                1.0,
+                0.3735042735042735,
+                0,
+                0.3235294117647059,
+                0.5087108013937283
             ],
             [
                 0,
-                0.3239190229948289,
-                1,
-                0.5621376811594203,
-                1,
-                0.2104653855059041,
-                0.6227390180878554
+                0.5296296296296297,
+                0.0,
+                0.40598290598290593,
+                0,
+                0.375,
+                0.20209059233449478
+            ]
+        ]
+    },
+    "Which of these restaurant brands has its original location in Europe?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "p.f. chang's"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "mr. chow": 0.24253033878423266,
+                "benihana": 0.4988295687660614,
+                "p.f. chang's": 0.25864009244970604
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "mr. chow": 0,
+                "benihana": 4,
+                "p.f. chang's": 2
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.66140350877193,
+                    1.062280701754386,
+                    0.2763157894736842
+                ],
+                "word_count_entities": [
+                    1.0,
+                    0.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    1.812351199468246,
+                    1.8916883195359238,
+                    1.2959604809958305
+                ],
+                "word_count_raw": [
+                    1.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    393.0,
+                    3.0,
+                    38.0
+                ],
+                "result_count": [
+                    135000.0,
+                    2040000.0,
+                    89100.0
+                ]
+            },
+            "ml_answers": {
+                "mr. chow": 0.28006563488418207,
+                "benihana": 0.3225525637937779,
+                "p.f. chang's": 0.32541353750184265
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.6653508771929825,
+                0.5,
+                0.3624702398936492,
+                0.5,
+                0.9055299539170507,
+                0.05962634159268584
+            ],
+            [
+                0,
+                0.2655701754385965,
+                0.0,
+                0.37833766390718476,
+                0.0,
+                0.0069124423963133645,
+                0.9010202729561415
             ],
             [
                 1,
-                0.8154912531631643,
+                0.06907894736842105,
+                0.5,
+                0.2591920961991661,
+                0.5,
+                0.08755760368663594,
+                0.03935338545117265
+            ]
+        ]
+    },
+    "In which of these movies is the title NOT spoken by any character?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "inception"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "inception": 0.3372193152955346,
+                "speed": 0.496601795361307,
+                "gravity": 0.16617888934315833
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "inception": 2,
+                "speed": 2,
+                "gravity": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.924093046972497,
+                    0.8038499320844649,
+                    0.27205702094303785
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    2.359283625730994,
+                    0.8216374269005848,
+                    0.819078947368421
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    373.0,
+                    403.0,
+                    284.0
+                ],
+                "result_count": [
+                    817000.0,
+                    2710000.0,
+                    57600000.0
+                ]
+            },
+            "ml_answers": {
+                "inception": 0.6788682016126167,
+                "speed": 0.3658458398355916,
+                "gravity": 0.5078774806910092
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.7310232617431244,
+                0,
+                0.5898209064327485,
+                0.0,
+                0.013365615848970176,
+                0.35188679245283017
+            ],
+            [
                 1,
-                0.7692028985507247,
-                1,
-                0.8418615420236166,
-                0.7803617571059431
+                0.20096248302111624,
+                0,
+                0.2054093567251462,
+                0.0,
+                0.04433392772424624,
+                0.38018867924528305
+            ],
+            [
+                0,
+                0.06801425523575948,
+                0,
+                0.20476973684210525,
+                1.0,
+                0.9423004564267836,
+                0.2679245283018868
             ]
         ]
     },
@@ -6034,6 +7224,91 @@
             ]
         ]
     },
+    "Which of these countries is closest to the International Date Line?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "japan"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "brazil": 0.22260772677964835,
+                "japan": 0.3909082798598416,
+                "spain": 0.38648399336051
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "brazil": 2,
+                "japan": 3,
+                "spain": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    1.2894692345310046,
+                    1.5109666693815988,
+                    1.1995640960873966
+                ],
+                "word_count_entities": [
+                    1.0,
+                    0.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    1.1888797186562934,
+                    1.3864080343414513,
+                    1.4247122470022555
+                ],
+                "word_count_raw": [
+                    1.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    302.0,
+                    351.0,
+                    332.0
+                ],
+                "result_count": [
+                    14800000.0,
+                    9000000.0,
+                    11500000.0
+                ]
+            },
+            "ml_answers": {
+                "brazil": 0.25129117353639385,
+                "japan": 0.32346509370848175,
+                "spain": 0.2844473804612991
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.32236730863275115,
+                0.5,
+                0.29721992966407335,
+                0.5,
+                0.3065989847715736,
+                0.4192634560906516
+            ],
+            [
+                0,
+                0.3777416673453997,
+                0.0,
+                0.34660200858536283,
+                0.0,
+                0.35634517766497464,
+                0.254957507082153
+            ],
+            [
+                0,
+                0.29989102402184914,
+                0.5,
+                0.3561780617505639,
+                0.5,
+                0.33705583756345175,
+                0.32577903682719545
+            ]
+        ]
+    },
     "Which of these is NOT a marsupial?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -6116,6 +7391,91 @@
                 0.1428571428571429,
                 0.17386298215313756,
                 0.49347014925373134
+            ]
+        ]
+    },
+    "Mount Rushmore was named after a person with what profession?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "lawyer"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "architect": 0.23227110601977433,
+                "prospector": 0.19078838222007244,
+                "lawyer": 0.5769405117601533
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "architect": 3,
+                "prospector": 0,
+                "lawyer": 3
+            },
+            "data": {
+                "wikipedia_search": [
+                    1.0625,
+                    2.574876237623762,
+                    0.3626237623762376
+                ],
+                "word_count_entities": [
+                    0.0,
+                    1.0,
+                    0.0
+                ],
+                "word_relation_to_question": [
+                    0.9994395927707467,
+                    1.0963900434315603,
+                    1.904170363797693
+                ],
+                "word_count_raw": [
+                    1.0,
+                    5.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    212.0,
+                    257.0,
+                    296.0
+                ],
+                "result_count": [
+                    51000.0,
+                    103000.0,
+                    121000.0
+                ]
+            },
+            "ml_answers": {
+                "architect": 0.36375276287867125,
+                "prospector": 0.1631313305157538,
+                "lawyer": 0.6953778923823728
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.265625,
+                0.0,
+                0.24985989819268667,
+                0.16666666666666666,
+                0.27712418300653596,
+                0.18545454545454546
+            ],
+            [
+                1,
+                0.6437190594059405,
+                1.0,
+                0.2740975108578901,
+                0.8333333333333334,
+                0.3359477124183007,
+                0.37454545454545457
+            ],
+            [
+                0,
+                0.0906559405940594,
+                0.0,
+                0.47604259094942325,
+                0.0,
+                0.3869281045751634,
+                0.44
             ]
         ]
     },
@@ -6884,6 +8244,91 @@
             ]
         ]
     },
+    "In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "the game ends"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "the game ends": 0.4648668335149982,
+                "that team loses": 0.47976061308757223,
+                "that team wins": 0.055372553397429546
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "the game ends": 3,
+                "that team loses": 3,
+                "that team wins": 0
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.0625,
+                    0.9375,
+                    0.0
+                ],
+                "word_count_entities": [
+                    0.0,
+                    0.0,
+                    5.0
+                ],
+                "word_relation_to_question": [
+                    0.5088709677419355,
+                    2.475,
+                    0.016129032258064516
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    8.0
+                ],
+                "word_count_appended": [
+                    6.0,
+                    7.0,
+                    47.0
+                ],
+                "result_count": [
+                    20.0,
+                    179000.0,
+                    88.0
+                ]
+            },
+            "ml_answers": {
+                "the game ends": 0.6885790107485639,
+                "that team loses": 0.3658458398355916,
+                "that team wins": 0.20427216008073834
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.0625,
+                0.0,
+                0.16962365591397852,
+                0.0,
+                0.1,
+                0.00011166447059874489
+            ],
+            [
+                0,
+                0.9375,
+                0.0,
+                0.8250000000000001,
+                0.0,
+                0.11666666666666667,
+                0.9993970118587667
+            ],
+            [
+                1,
+                0.0,
+                1.0,
+                0.005376344086021505,
+                1.0,
+                0.7833333333333333,
+                0.0004913236706344775
+            ]
+        ]
+    },
     "If you tunneled through the center of the earth from Honolulu, what country would you end up in?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -6966,6 +8411,91 @@
                 0,
                 0.313588850174216,
                 0.3629191321499014
+            ]
+        ]
+    },
+    "Laurie Metcalf, Amy Morton and Tracy Letts are members of a theatre company from what city?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "chicago"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "new york": 0.2387734712386448,
+                "los angeles": 0.14201754826126686,
+                "chicago": 0.6192089805000883
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "new york": 2,
+                "los angeles": 0,
+                "chicago": 4
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.9539197086609152,
+                    1.1361410097568532,
+                    1.9099392815822318
+                ],
+                "word_count_entities": [
+                    9.0,
+                    0.0,
+                    116.0
+                ],
+                "word_relation_to_question": [
+                    2.627450980392157,
+                    1.2065359477124185,
+                    1.1660130718954247
+                ],
+                "word_count_raw": [
+                    8.0,
+                    0.0,
+                    105.0
+                ],
+                "word_count_appended": [
+                    46.0,
+                    24.0,
+                    270.0
+                ],
+                "result_count": [
+                    1360.0,
+                    892.0,
+                    1230.0
+                ]
+            },
+            "ml_answers": {
+                "new york": 0.3202763183592111,
+                "los angeles": 0.17154055465974616,
+                "chicago": 0.6546771182695013
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.2384799271652288,
+                0.072,
+                0.5254901960784314,
+                0.07079646017699115,
+                0.13529411764705881,
+                0.3905801263641585
+            ],
+            [
+                0,
+                0.2840352524392133,
+                0.0,
+                0.2413071895424837,
+                0.0,
+                0.07058823529411765,
+                0.25617461229178634
+            ],
+            [
+                1,
+                0.47748482039555795,
+                0.928,
+                0.23320261437908493,
+                0.9292035398230089,
+                0.7941176470588235,
+                0.35324526134405515
             ]
         ]
     },
@@ -7309,6 +8839,91 @@
             ]
         ]
     },
+    "Which of these Hebrew texts does NOT form a significant part of the Christian Old Testament?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "talmud"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "talmud": 0.2507911971778946,
+                "ketuvim": 0.1433485293675313,
+                "torah": 0.605860273454574
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "talmud": 1,
+                "ketuvim": 1,
+                "torah": 4
+            },
+            "data": {
+                "wikipedia_search": [
+                    2.4179078568152246,
+                    0.8426602858360566,
+                    4.739431857348719
+                ],
+                "word_count_entities": [
+                    14.0,
+                    0.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    2.071511999761935,
+                    3.3434420864133076,
+                    2.5850459138247572
+                ],
+                "word_count_raw": [
+                    36.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    364.0,
+                    236.0,
+                    275.0
+                ],
+                "result_count": [
+                    1680000.0,
+                    150000.0,
+                    405000.0
+                ]
+            },
+            "ml_answers": {
+                "talmud": 0.5163338965233117,
+                "ketuvim": 0.49891784846261733,
+                "torah": 0.32212118040397253
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.30223848210190307,
+                0.9333333333333333,
+                0.2589389999702419,
+                0.972972972972973,
+                0.416,
+                0.7516778523489933
+            ],
+            [
+                0,
+                0.10533253572950707,
+                0.0,
+                0.41793026080166346,
+                0.0,
+                0.26971428571428574,
+                0.06711409395973154
+            ],
+            [
+                1,
+                0.5924289821685899,
+                0.06666666666666667,
+                0.32313073922809465,
+                0.02702702702702703,
+                0.3142857142857143,
+                0.18120805369127516
+            ]
+        ]
+    },
     "What dish is made with ham, poached eggs and Hollandaise sauce?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -7561,6 +9176,91 @@
                 0,
                 0.2222222222222222,
                 2.176747547349701e-06
+            ]
+        ]
+    },
+    "Which former NFL star does NOT have a football video game named after him?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "emmitt smith"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "kurt warner": 0.3775151703269128,
+                "brett favre": 0.4492329643624484,
+                "emmitt smith": 0.17325186531063883
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "kurt warner": 1,
+                "brett favre": 4,
+                "emmitt smith": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    1.2050188991834456,
+                    3.05231396033108,
+                    2.7426671404854748
+                ],
+                "word_count_entities": [
+                    0.0,
+                    1.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    2.7246781849220403,
+                    2.282012030731526,
+                    1.9933097843464334
+                ],
+                "word_count_raw": [
+                    0.0,
+                    1.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    116.0,
+                    135.0,
+                    149.0
+                ],
+                "result_count": [
+                    26300.0,
+                    83300.0,
+                    30200.0
+                ]
+            },
+            "ml_answers": {
+                "kurt warner": 0.25982273342286016,
+                "brett favre": 0.2346312457064109,
+                "emmitt smith": 0.49891784846261733
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.1721455570262065,
+                0.0,
+                0.3892397407031486,
+                0.0,
+                0.29,
+                0.18812589413447783
+            ],
+            [
+                1,
+                0.4360448514758685,
+                0.5,
+                0.3260017186759323,
+                0.5,
+                0.3375,
+                0.5958512160228898
+            ],
+            [
+                0,
+                0.391809591497925,
+                0.5,
+                0.28475854062091904,
+                0.5,
+                0.3725,
+                0.21602288984263232
             ]
         ]
     },
@@ -8241,6 +9941,91 @@
                 0.0,
                 0.16363636363636364,
                 0.0007379219539015814
+            ]
+        ]
+    },
+    "Which three-letter-titled movie grossed the most worldwide?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "ray"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "big": 0.4239134149741253,
+                "saw": 0.294690847980626,
+                "ray": 0.28139573704524873
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "big": 3,
+                "saw": 2,
+                "ray": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_entities": [
+                    2.0,
+                    4.0,
+                    5.0
+                ],
+                "word_relation_to_question": [
+                    3.1021739130434782,
+                    0.8717391304347826,
+                    0.02608695652173913
+                ],
+                "word_count_raw": [
+                    1.0,
+                    5.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    271.0,
+                    270.0,
+                    236.0
+                ],
+                "result_count": [
+                    12900000.0,
+                    1820000.0,
+                    25700000.0
+                ]
+            },
+            "ml_answers": {
+                "big": 0.2858610192281932,
+                "saw": 0.2654837024679909,
+                "ray": 0.29411646320792967
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.0,
+                0.18181818181818182,
+                0.7755434782608697,
+                0.14285714285714285,
+                0.3191489361702128,
+                0.3487773487773488
+            ],
+            [
+                0,
+                0.0,
+                0.36363636363636365,
+                0.21793478260869567,
+                0.7142857142857143,
+                0.0450272142503711,
+                0.3474903474903475
+            ],
+            [
+                1,
+                1.0,
+                0.45454545454545453,
+                0.006521739130434783,
+                0.14285714285714285,
+                0.6358238495794162,
+                0.30373230373230375
             ]
         ]
     },
@@ -9349,6 +11134,91 @@
             ]
         ]
     },
+    "Which of these celebrities has NOT been a ProActiv spokesperson?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "selena gomez"
+            ],
+            "negative_question": true,
+            "fraction_answers": {
+                "selena gomez": 0.23002705135680812,
+                "katy perry": 0.5309809330884031,
+                "lindsay lohan": 0.23899201555478874
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "selena gomez": 1,
+                "katy perry": 4,
+                "lindsay lohan": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.7074950473255558,
+                    1.8947033898305086,
+                    1.3978015628439358
+                ],
+                "word_count_entities": [
+                    25.0,
+                    2.0,
+                    1.0
+                ],
+                "word_relation_to_question": [
+                    0.43944099378881984,
+                    0.3447204968944099,
+                    1.2158385093167703
+                ],
+                "word_count_raw": [
+                    15.0,
+                    1.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    109.0,
+                    77.0,
+                    42.0
+                ],
+                "result_count": [
+                    387000.0,
+                    231000.0,
+                    104000.0
+                ]
+            },
+            "ml_answers": {
+                "selena gomez": 0.6481219600181871,
+                "katy perry": 0.25526507983261465,
+                "lindsay lohan": 0.5272856497869982
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.17687376183138895,
+                0.8928571428571429,
+                0.21972049689440992,
+                0.8823529411764706,
+                0.4780701754385965,
+                0.53601108033241
+            ],
+            [
+                0,
+                0.47367584745762714,
+                0.07142857142857142,
+                0.17236024844720496,
+                0.058823529411764705,
+                0.33771929824561403,
+                0.31994459833795014
+            ],
+            [
+                1,
+                0.34945039071098394,
+                0.03571428571428571,
+                0.6079192546583851,
+                0.058823529411764705,
+                0.18421052631578946,
+                0.1440443213296399
+            ]
+        ]
+    },
     "Which of these do NOT have flippers?": {
         "raw_data": {
             "best_answer_by_ml": [
@@ -9431,6 +11301,91 @@
                 1.0,
                 0.9013888888888889,
                 0.9388928828181164
+            ]
+        ]
+    },
+    "In \u201cPeanuts,\u201d what breed of dog is Snoopy?": {
+        "raw_data": {
+            "best_answer_by_ml": [
+                "beagle"
+            ],
+            "negative_question": false,
+            "fraction_answers": {
+                "beagle": 0.7757720073134673,
+                "pitbull": 0.0955008378782071,
+                "border collie": 0.1287271548083256
+            },
+            "rate_limited": false,
+            "integer_answers": {
+                "beagle": 5,
+                "pitbull": 0,
+                "border collie": 1
+            },
+            "data": {
+                "wikipedia_search": [
+                    0.7397048730267674,
+                    0.6352522306108441,
+                    0.6250428963623884
+                ],
+                "word_count_entities": [
+                    0.0,
+                    1.0,
+                    121.0
+                ],
+                "word_relation_to_question": [
+                    0.941361668634396,
+                    0.2626426603699331,
+                    1.795995670995671
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    121.0
+                ],
+                "word_count_appended": [
+                    75.0,
+                    135.0,
+                    636.0
+                ],
+                "result_count": [
+                    80.0,
+                    68.0,
+                    1130000.0
+                ]
+            },
+            "ml_answers": {
+                "beagle": 0.5268835722896905,
+                "pitbull": 0.1473925681297775,
+                "border collie": 0.16730428773032668
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.3698524365133837,
+                0.0,
+                0.313787222878132,
+                0.0,
+                0.08865248226950355,
+                7.078718893454662e-05
+            ],
+            [
+                0,
+                0.31762611530542206,
+                0.00819672131147541,
+                0.08754755345664438,
+                0.0,
+                0.1595744680851064,
+                6.016911059436463e-05
+            ],
+            [
+                1,
+                0.3125214481811942,
+                0.9918032786885246,
+                0.5986652236652237,
+                1.0,
+                0.75177304964539,
+                0.9998690437004711
             ]
         ]
     },
