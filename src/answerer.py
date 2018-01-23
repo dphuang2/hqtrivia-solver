@@ -94,11 +94,14 @@ class Answerer():
         # Provide best answer of the predicted values
         best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
         return {
-                'best_answer_by_ml': list(best_answer),
+                'z-best_answer_by_ml': list(best_answer), # the 'z-' is so pprint prints the answer last
                 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
                 'negative_question': self.negative,
+                'question': self.question,
+                'answers': self.answers,
+                'lines': self.lines,
                 'data': self.data,
                 'rate_limited': self.rate_limited
                 }
@@ -295,8 +298,12 @@ class Answerer():
             return self.get_lowered_google_search.memo[question]
         r = requests.get(google_query + question)
         lowered = r.content.lower()
-        with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
-            f.write(lowered)
+        try:
+            with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
+                f.write(lowered)
+        except UnicodeEncodeError:
+            with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
+                f.write(lowered)
         if 'our systems have detected unusual traffic from your computer network' in lowered:
             print 'Google rate limited your IP.'
             self.rate_limited = True
@@ -312,6 +319,7 @@ class Answerer():
                 # Make model input inverted if question is negative (makes more sense for model)
                 if self.negative:
                     confidence_values = [1 - (val / sum(v)) for val in v]
+                    confidence_values = [val/sum(confidence_values) for val in confidence_values]
                 else:
                     confidence_values = [val/sum(v) for val in v]
             except ZeroDivisionError:
@@ -323,17 +331,17 @@ class Answerer():
         if any(len(line) != len(self.approaches) for line in lines):
             print 'Something is wrong with input data to model!'
 
+        self.lines = lines
         return np.array(lines)
-
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
-    # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
-    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
-    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
     # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
+    # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
+    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
     # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
     # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))

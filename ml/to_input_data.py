@@ -1,3 +1,4 @@
+from pprint import pprint
 import json
 import pdb
 
@@ -9,7 +10,7 @@ with open('regression.data', 'w') as f:
     for k,v in questions_processed.iteritems():
         for line in v['lines']:
             if len(line) != 7:
-                print line
+                pprint(v)
                 exit()
             f.write(DELIMITER.join([str(val) for val in line]) + '\n')
 

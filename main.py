@@ -119,4 +119,5 @@ if __name__ == "__main__":
         else:
             while True:
                 ws.run_forever()
+                print 'Connection to websocket closed...starting again'
             print 'How did you get here?'

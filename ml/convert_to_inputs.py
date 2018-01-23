@@ -37,10 +37,10 @@ def main():
         right_answer = int(entry[-1])
 
         # Get raw counts from approaches
-        raw_counts = answerer.answer(question, answers)
+        raw_data = answerer.answer(question, answers)
 
         # Check if we got rate limited
-        if raw_counts['rate_limited']:
+        if raw_data['rate_limited']:
             print 'We got rate limited. Use a different IP or wait a while'
             exit()
 
@@ -48,18 +48,12 @@ def main():
         lines = [[], [], []]
         for i in range(len(lines)):
             lines[i].append(1 if i == right_answer else 0)
-        for k,v in raw_counts['data'].iteritems():
-            try:
-                confidence_values = [val/sum(v) for val in v]
-            except ZeroDivisionError:
-                confidence_values = [0, 0, 0]
-            for i in range(len(confidence_values)):
-                lines[i].append(confidence_values[i])
+            lines[i] += raw_data['lines'][i]
 
         decoded_question = question.decode('utf-8')
         questions_processed[decoded_question] = {}
         questions_processed[decoded_question]['lines'] = lines
-        questions_processed[decoded_question]['raw_data'] = raw_counts
+        questions_processed[decoded_question]['raw_data'] = raw_data
         # Save question as a processed question
         with open('questions_processed.json', 'w') as f:
             json.dump(questions_processed, f, indent=4, separators=(',', ': '))

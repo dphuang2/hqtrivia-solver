@@ -35,7 +35,10 @@ ANSWERS = {
         "Which of these celebrities has NOT been a ProActiv spokesperson?":  2,
         "Which of these products was featured on “Shark Tank”?": 1,
         "In which of these movies is the title NOT spoken by any character?": 1,
-        "What does a rattlesnake typically do when it feels threatened?": 1
+        "What does a rattlesnake typically do when it feels threatened?": 1,
+        "Which of these film composers most recently won an Oscar?": 0,
+        "Who is the director of “Tyler Perry’s Madea’s Family Reunion”?": 0,
+        "Which of these has NEVER been named Pantone’s Color of the Year?": 0
         }
 
 with open('../data/log', 'r') as f:
