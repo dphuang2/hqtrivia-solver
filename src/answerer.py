@@ -359,16 +359,22 @@ class Answerer():
         print 'Evaluated noun_chunks: ' + self.noun_chunks
 
     def concatenate_answer_to_question(self, answer):
-        return u'{} "{}"'.format(self.question_without_negative, answer).encode('utf-8').strip()
+        try:
+            return u'{} "{}"'.format(self.question_without_negative, answer).encode('utf-8').strip()
+        except UnicodeDecodeError:
+            return u'{} "{}"'.format(self.question_without_negative.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
 
     def concatenate_answer_to_noun_chunks(self, answer):
-        return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
+        try:
+            return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
+        except UnicodeDecodeError:
+            return u'{} "{}"'.format(self.noun_chunks.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
 
     def concatenate_answer_to_important_words(self, answer):
         try:
             return u'{} "{}"'.format(' '.join(self.important_words), answer).encode('utf-8').strip()
         except UnicodeDecodeError:
-            return u'{} "{}"'.format(' '.join([string.decode('utf-8') for string in self.important_words]), answer).strip()
+            return u'{} "{}"'.format(' '.join([string.decode('utf-8') for string in self.important_words]), answer.decode('utf-8')).strip()
 
     @timeit
     def get_lowered_google_search(self, question):
