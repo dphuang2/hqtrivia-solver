@@ -21,6 +21,7 @@ word_count_raw: Google the question and count occurences of each answer
 word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
 result_count: Google question with each answer appended and count number of search results
+result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 word_relation_to_question: Google search each answer and count number of occurenecs for each evaluated important word
 """
