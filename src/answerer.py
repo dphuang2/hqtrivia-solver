@@ -18,7 +18,7 @@ import os
 """
 Approaches:
 word_count_raw: Google the question and count occurences of each answer
-word_count_entities: Google evaluted noun chunks of question and count occurences of each answer
+word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
 result_count: Google question with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
@@ -36,12 +36,13 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
-                self.word_count_entities,
+                self.word_relation_to_question,
+                self.word_count_noun_chunks,
                 self.word_count_appended,
                 self.word_count_raw,
-                self.result_count,
                 self.wikipedia_search,
-                self.word_relation_to_question
+                self.result_count_noun_chunks,
+                self.result_count
                 ]
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
         self.negative_words = ['NOT', 'NEVER']
@@ -117,15 +118,15 @@ class Answerer():
                 }
 
     @timeit
-    def word_count_entities(self):
-        lowered = self.get_lowered_google_search(self.entities)
+    def word_count_noun_chunks(self):
+        lowered = self.get_lowered_google_search(self.noun_chunks)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
         print 'Counts after word_count: ' + str(counts)
-        self.data['word_count_entities'] = counts
+        self.data['word_count_noun_chunks'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_entities: ' + str(self.confidences)
+        print 'Confidence values after word_count_noun_chunks: ' + str(self.confidences)
 
     @timeit
     def word_count_raw(self):
@@ -145,7 +146,7 @@ class Answerer():
 
         # Grab each appended search
         for answer in self.answers:
-            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer(answer)))
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer)))
             t.start()
 
         # Block until contents is correctly populated cause thats the important part :)
@@ -153,7 +154,7 @@ class Answerer():
             continue
 
         for answer in self.answers:
-            counts.append(float(contents[self.concatenate_answer(answer)].count(answer)))
+            counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
 
         print 'Counts after word_count_appended: ' + str(counts)
         self.data['word_count_appended'] = counts
@@ -191,12 +192,12 @@ class Answerer():
         print 'Confidence values after word_relation_to_question: ' + str(self.confidences)
 
     @timeit
-    def result_count(self):
+    def result_count_noun_chunks(self):
         counts = []
         contents = {}
 
         for answer in self.answers:
-            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer(answer),))
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_noun_chunks(answer),))
             t.start()
 
         # Block until contents is correctly populated cause thats the important part :)
@@ -204,7 +205,35 @@ class Answerer():
             continue
 
         for answer in self.answers:
-            content = contents[self.concatenate_answer(answer)]
+            content = contents[self.concatenate_answer_to_noun_chunks(answer)]
+            result = self.regex.search(content)
+            try:
+                count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
+                counts.append(count)
+            except AttributeError:
+                print 'There were no results for {}.'.format(answer)
+                counts.append(0)
+
+        print 'Counts after result_count_noun_chunks: ' + str(counts)
+        self.data['result_count_noun_chunks'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after result_count_noun_chunks: ' + str(self.confidences)
+
+    @timeit
+    def result_count(self):
+        counts = []
+        contents = {}
+
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer),))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        for answer in self.answers:
+            content = contents[self.concatenate_answer_to_question(answer)]
             result = self.regex.search(content)
             try:
                 count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
@@ -271,7 +300,6 @@ class Answerer():
     def counts_to_confidence(self, counts):
         print 'counts_to_confidence counts: {}'.format(counts)
         if max(counts):
-            print 'winning answer: ' + self.answers[counts.index(max(counts))]
             self.integer_answers[counts.index(max(counts))] += 1
         for i in range(len(counts)):
             sum_of_counts = float(sum(counts))
@@ -294,12 +322,15 @@ class Answerer():
         doc = self.nlp(unicode(self.question))
         # Word is part of the POS list and it is not a stop word (common word)
         self.important_words = [encode_unicode(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.entities = ' '.join([chunk.text for chunk in list(doc.noun_chunks)])
+        self.noun_chunks = ' '.join([chunk.text for chunk in list(doc.noun_chunks)])
         print 'Evaluated important words: ' + str(self.important_words)
-        print 'Evaluated entities: ' + self.entities
+        print 'Evaluated noun_chunks: ' + self.noun_chunks
 
-    def concatenate_answer(self, answer):
+    def concatenate_answer_to_question(self, answer):
         return u'{} "{}"'.format(self.question_without_negative, answer).encode('utf-8').strip()
+
+    def concatenate_answer_to_noun_chunks(self, answer):
+        return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
 
     @timeit
     def get_lowered_google_search(self, question):
