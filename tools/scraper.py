@@ -38,7 +38,9 @@ ANSWERS = {
         "What does a rattlesnake typically do when it feels threatened?": 1,
         "Which of these film composers most recently won an Oscar?": 0,
         "Who is the director of “Tyler Perry’s Madea’s Family Reunion”?": 0,
-        "Which of these has NEVER been named Pantone’s Color of the Year?": 0
+        "Which of these has NEVER been named Pantone’s Color of the Year?": 0,
+        "Anne of Green Gables literally means Anne of what?": 2,
+        "Which of these do adverbs NOT typically modify?": 0,
         }
 
 with open('../data/log', 'r') as f:

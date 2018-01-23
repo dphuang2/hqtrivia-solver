@@ -195,11 +195,6 @@
                 "u.s. nickels",
                 "soda cans"
             ],
-            "ml_answers": {
-                "zinc supplement tablets": 0.15295199783083352,
-                "soda cans": 0.2750482514970484,
-                "u.s. nickels": 0.31547219440875873
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -210,6 +205,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "zinc supplement tablets": 0.15295199783083352,
+                "soda cans": 0.2750482514970484,
+                "u.s. nickels": 0.31547219440875873
+            },
             "integer_answers": {
                 "zinc supplement tablets": 3,
                 "soda cans": 3,
@@ -1188,6 +1188,155 @@
                 0.25,
                 0.2916666666666667,
                 0.3384226884226884
+            ]
+        ]
+    },
+    "What car brand is sung about by Will Smith, Charli XCX and Janis Joplin?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.37422037422037424,
+                    0.11381074168797954,
+                    0.3722988804998698,
+                    0.003003003003003003,
+                    0.2809917355371901,
+                    0.0,
+                    0,
+                    0.23968680154976404
+                ],
+                [
+                    0.39501039501039503,
+                    0.13043478260869565,
+                    0.3983337672481125,
+                    0.5386219552886219,
+                    0.2975206611570248,
+                    0.07692307692307693,
+                    0,
+                    0.40995051344842864
+                ],
+                [
+                    0.23076923076923078,
+                    0.7557544757033248,
+                    0.2293673522520177,
+                    0.458375041708375,
+                    0.4214876033057851,
+                    0.9230769230769231,
+                    0,
+                    0.35036268500180734
+                ]
+            ],
+            "fraction_answers": {
+                "porsche": 0.4813133302596377,
+                "rolls-royce": 0.19771593378545438,
+                "mercedes-benz": 0.32097073595490794
+            },
+            "question": "What car brand is sung about by Will Smith, Charli XCX and Janis Joplin?",
+            "rate_limited": false,
+            "answers": [
+                "rolls-royce",
+                "mercedes-benz",
+                "porsche"
+            ],
+            "ml_answers": {
+                "porsche": 0.42150867547442505,
+                "rolls-royce": 0.2931234388803404,
+                "mercedes-benz": 0.26311093905126204
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "porsche": 3,
+                "rolls-royce": 0,
+                "mercedes-benz": 4
+            },
+            "data": {
+                "result_count_important_words": [
+                    8900.0,
+                    10200.0,
+                    59100.0
+                ],
+                "wikipedia_search": [
+                    0.018018018018018018,
+                    3.2317317317317316,
+                    2.75025025025025
+                ],
+                "result_count_noun_chunks": [
+                    14300.0,
+                    15300.0,
+                    8810.0
+                ],
+                "word_relation_to_question": [
+                    1.4381208092985842,
+                    2.4597030806905718,
+                    2.102176110010844
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    1.0,
+                    12.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    68.0,
+                    72.0,
+                    102.0
+                ],
+                "result_count": [
+                    14400.0,
+                    15200.0,
+                    8880.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "porsche"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.37422037422037424,
+                0.11381074168797954,
+                0.3722988804998698,
+                0.003003003003003003,
+                0.2809917355371901,
+                0.0,
+                0,
+                0.23968680154976404
+            ],
+            [
+                0,
+                0.39501039501039503,
+                0.13043478260869565,
+                0.3983337672481125,
+                0.5386219552886219,
+                0.2975206611570248,
+                0.07692307692307693,
+                0,
+                0.40995051344842864
+            ],
+            [
+                1,
+                0.23076923076923078,
+                0.7557544757033248,
+                0.2293673522520177,
+                0.458375041708375,
+                0.4214876033057851,
+                0.9230769230769231,
+                0,
+                0.35036268500180734
             ]
         ]
     },
@@ -2383,6 +2532,155 @@
             ]
         ]
     },
+    "Which of these celebrities has NOT been a ProActiv spokesperson?": {
+        "raw_data": {
+            "negative_question": true,
+            "lines": [
+                [
+                    0.21863775442330718,
+                    0.11437046802900463,
+                    0.21843116470120577,
+                    0.41156311908430554,
+                    0.28222222222222226,
+                    0.05555555555555558,
+                    0.08333333333333331,
+                    0.39651639344262296
+                ],
+                [
+                    0.34568311826526543,
+                    0.4208965062623599,
+                    0.34563402676560223,
+                    0.26316207627118643,
+                    0.30666666666666664,
+                    0.46296296296296297,
+                    0.4722222222222222,
+                    0.41956967213114754
+                ],
+                [
+                    0.43567912731142744,
+                    0.46473302570863545,
+                    0.435934808533192,
+                    0.32527480464450803,
+                    0.4111111111111111,
+                    0.4814814814814815,
+                    0.4444444444444444,
+                    0.1839139344262295
+                ]
+            ],
+            "fraction_answers": {
+                "selena gomez": 0.20435681558474267,
+                "katy perry": 0.5548424973021107,
+                "lindsay lohan": 0.24080068711314667
+            },
+            "question": "Which of these celebrities has NOT been a ProActiv spokesperson?",
+            "rate_limited": false,
+            "answers": [
+                "katy perry",
+                "lindsay lohan",
+                "selena gomez"
+            ],
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "selena gomez": 0.44386284145438887,
+                "katy perry": 0.13142124602629307,
+                "lindsay lohan": 0.2640667766396724
+            },
+            "integer_answers": {
+                "selena gomez": 1,
+                "katy perry": 6,
+                "lindsay lohan": 1
+            },
+            "data": {
+                "result_count_important_words": [
+                    1170000.0,
+                    240000.0,
+                    107000.0
+                ],
+                "wikipedia_search": [
+                    0.7074950473255558,
+                    1.8947033898305086,
+                    1.3978015628439358
+                ],
+                "result_count_noun_chunks": [
+                    425000.0,
+                    233000.0,
+                    96700.0
+                ],
+                "word_relation_to_question": [
+                    0.41393442622950816,
+                    0.32172131147540983,
+                    1.264344262295082
+                ],
+                "word_count_noun_chunks": [
+                    24.0,
+                    2.0,
+                    1.0
+                ],
+                "word_count_raw": [
+                    15.0,
+                    1.0,
+                    2.0
+                ],
+                "result_count": [
+                    423000.0,
+                    232000.0,
+                    96700.0
+                ],
+                "word_count_appended": [
+                    98.0,
+                    87.0,
+                    40.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "selena gomez"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.21863775442330718,
+                0.11437046802900463,
+                0.21843116470120577,
+                0.41156311908430554,
+                0.28222222222222226,
+                0.05555555555555558,
+                0.08333333333333331,
+                0.39651639344262296
+            ],
+            [
+                0,
+                0.34568311826526543,
+                0.4208965062623599,
+                0.34563402676560223,
+                0.26316207627118643,
+                0.30666666666666664,
+                0.46296296296296297,
+                0.4722222222222222,
+                0.41956967213114754
+            ],
+            [
+                1,
+                0.43567912731142744,
+                0.46473302570863545,
+                0.435934808533192,
+                0.32527480464450803,
+                0.4111111111111111,
+                0.4814814814814815,
+                0.4444444444444444,
+                0.1839139344262295
+            ]
+        ]
+    },
     "What is the grammatically correct way to announce people have arrived?": {
         "raw_data": {
             "negative_question": false,
@@ -2981,20 +3279,69 @@
     },
     "Which of these is NOT a name of one of the Florida Keys?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "pigeon key"
+            "negative_question": true,
+            "lines": [
+                [
+                    0.49973815896660073,
+                    0.4997268655085764,
+                    0.49999797769532767,
+                    0.37202380952380953,
+                    0.42338709677419356,
+                    0,
+                    0.0,
+                    0.26692510383179546
+                ],
+                [
+                    0.0010473641335971284,
+                    0.0015295531519720074,
+                    0.4963092939729928,
+                    0.4375,
+                    0.3588709677419355,
+                    0,
+                    0.5,
+                    0.43589352771647144
+                ],
+                [
+                    0.49921447689980214,
+                    0.49874358133945157,
+                    0.003692728331679551,
+                    0.19047619047619047,
+                    0.21774193548387094,
+                    0,
+                    0.5,
+                    0.29718136845173315
+                ]
             ],
+            "fraction_answers": {
+                "pigeon key": 0.3694142054335063,
+                "turtle key": 0.36252836950943745,
+                "fat deer key": 0.2680574250570562
+            },
             "question": "Which of these is NOT a name of one of the Florida Keys?",
+            "rate_limited": false,
             "answers": [
                 "fat deer key",
                 "turtle key",
                 "pigeon key"
             ],
-            "integer_answers": {
-                "pigeon key": 3,
-                "turtle key": 2,
-                "fat deer key": 2
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "pigeon key": 0.4138428763538842,
+                "turtle key": 0.2806351618771721,
+                "fat deer key": 0.3788852969376022
             },
+            "z-best_answer_by_ml": [
+                "pigeon key"
+            ],
             "data": {
                 "result_count_important_words": [
                     20.0,
@@ -3037,59 +3384,10 @@
                     70.0
                 ]
             },
-            "negative_question": true,
-            "fraction_answers": {
-                "pigeon key": 0.3694142054335063,
-                "turtle key": 0.36252836950943745,
-                "fat deer key": 0.2680574250570562
-            },
-            "lines": [
-                [
-                    0.49973815896660073,
-                    0.4997268655085764,
-                    0.49999797769532767,
-                    0.37202380952380953,
-                    0.42338709677419356,
-                    0,
-                    0.0,
-                    0.26692510383179546
-                ],
-                [
-                    0.0010473641335971284,
-                    0.0015295531519720074,
-                    0.4963092939729928,
-                    0.4375,
-                    0.3588709677419355,
-                    0,
-                    0.5,
-                    0.43589352771647144
-                ],
-                [
-                    0.49921447689980214,
-                    0.49874358133945157,
-                    0.003692728331679551,
-                    0.19047619047619047,
-                    0.21774193548387094,
-                    0,
-                    0.5,
-                    0.29718136845173315
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "pigeon key": 0.4138428763538842,
-                "turtle key": 0.2806351618771721,
-                "fat deer key": 0.3788852969376022
+            "integer_answers": {
+                "pigeon key": 3,
+                "turtle key": 2,
+                "fat deer key": 2
             }
         },
         "lines": [
@@ -3622,11 +3920,6 @@
                 "live ants",
                 "asbestos powder"
             ],
-            "ml_answers": {
-                "uranium ore": 0.182784743197819,
-                "asbestos powder": 0.33811359121267043,
-                "live ants": 0.448004765392564
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -3637,6 +3930,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "uranium ore": 0.182784743197819,
+                "asbestos powder": 0.33811359121267043,
+                "live ants": 0.448004765392564
+            },
             "integer_answers": {
                 "uranium ore": 5,
                 "asbestos powder": 2,
@@ -3771,11 +4069,6 @@
                 "blue whale",
                 "dog"
             ],
-            "ml_answers": {
-                "blue whale": 0.3282429070115309,
-                "mime": 0.15887898414880341,
-                "dog": 0.7224139102363077
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -3786,6 +4079,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "blue whale": 0.3282429070115309,
+                "mime": 0.15887898414880341,
+                "dog": 0.7224139102363077
+            },
             "integer_answers": {
                 "blue whale": 1,
                 "mime": 0,
@@ -3875,20 +4173,69 @@
     },
     "Which of these phrases, written backwards, is a hip hop group?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "drummers ear"
+            "negative_question": false,
+            "lines": [
+                [
+                    0.0007265828405352494,
+                    0.0006910713580539431,
+                    0.001288659793814433,
+                    0.03571428571428571,
+                    0.37037037037037035,
+                    0,
+                    0,
+                    0.6417818740399386
+                ],
+                [
+                    0.00022201142349688175,
+                    0.0002171938553883821,
+                    0.001288659793814433,
+                    0.0,
+                    0.37037037037037035,
+                    0,
+                    0,
+                    0.2625192012288786
+                ],
+                [
+                    0.9990514057359678,
+                    0.9990917347865577,
+                    0.9974226804123711,
+                    0.9642857142857143,
+                    0.25925925925925924,
+                    0,
+                    0,
+                    0.09569892473118279
+                ]
             ],
+            "fraction_answers": {
+                "beat chefs": 0.1057695727786581,
+                "drummers ear": 0.17509547401949974,
+                "blues rhythm": 0.7191349532018422
+            },
             "question": "Which of these phrases, written backwards, is a hip hop group?",
+            "rate_limited": false,
             "answers": [
                 "drummers ear",
                 "beat chefs",
                 "blues rhythm"
             ],
-            "integer_answers": {
-                "beat chefs": 0,
-                "drummers ear": 2,
-                "blues rhythm": 4
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "beat chefs": 0.2869022426115935,
+                "drummers ear": 0.3700884917405783,
+                "blues rhythm": 0.2878486344402781
             },
+            "z-best_answer_by_ml": [
+                "drummers ear"
+            ],
             "data": {
                 "result_count_important_words": [
                     35.0,
@@ -3931,59 +4278,10 @@
                     49500.0
                 ]
             },
-            "negative_question": false,
-            "fraction_answers": {
-                "beat chefs": 0.1057695727786581,
-                "drummers ear": 0.17509547401949974,
-                "blues rhythm": 0.7191349532018422
-            },
-            "lines": [
-                [
-                    0.0007265828405352494,
-                    0.0006910713580539431,
-                    0.001288659793814433,
-                    0.03571428571428571,
-                    0.37037037037037035,
-                    0,
-                    0,
-                    0.6417818740399386
-                ],
-                [
-                    0.00022201142349688175,
-                    0.0002171938553883821,
-                    0.001288659793814433,
-                    0.0,
-                    0.37037037037037035,
-                    0,
-                    0,
-                    0.2625192012288786
-                ],
-                [
-                    0.9990514057359678,
-                    0.9990917347865577,
-                    0.9974226804123711,
-                    0.9642857142857143,
-                    0.25925925925925924,
-                    0,
-                    0,
-                    0.09569892473118279
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "beat chefs": 0.2869022426115935,
-                "drummers ear": 0.3700884917405783,
-                "blues rhythm": 0.2878486344402781
+            "integer_answers": {
+                "beat chefs": 0,
+                "drummers ear": 2,
+                "blues rhythm": 4
             }
         },
         "lines": [
@@ -4171,52 +4469,52 @@
             ]
         ]
     },
-    "Aside from blood cells, what would you also find inside your blood vessels?": {
+    "What makeup item often contains dried cochineal bugs as an ingredient?": {
         "raw_data": {
             "negative_question": false,
             "lines": [
                 [
-                    0.2727272727272727,
-                    0.46085116388431696,
-                    0.8099032066899322,
-                    0.08711650922177237,
-                    0.3728813559322034,
-                    0.5769230769230769,
-                    0.8,
-                    0.3467081500554304
-                ],
-                [
-                    0.22077922077922077,
-                    0.4537973195391488,
-                    0.1823928359781392,
-                    0.8813045434098065,
-                    0.3432203389830508,
-                    0.4230769230769231,
-                    0.2,
-                    0.3501579468106665
-                ],
-                [
-                    0.5064935064935064,
-                    0.08535151657653421,
-                    0.0077039573319286235,
-                    0.031578947368421054,
-                    0.2838983050847458,
+                    0.11781232440531934,
+                    0.12025484470400849,
+                    0.13548387096774195,
+                    0.17410714285714285,
+                    0.5281899109792285,
                     0.0,
                     0.0,
-                    0.30313390313390315
+                    0.41316875297836975
+                ],
+                [
+                    0.8821876755946807,
+                    0.7512609503583754,
+                    0.7212903225806452,
+                    0.06398809523809523,
+                    0.42433234421364985,
+                    0.0,
+                    0.0,
+                    0.2216848565152202
+                ],
+                [
+                    0.0,
+                    0.12848420493761614,
+                    0.1432258064516129,
+                    0.761904761904762,
+                    0.04747774480712166,
+                    1.0,
+                    1.0,
+                    0.36514639050641
                 ]
             ],
             "fraction_answers": {
-                "marrow": 0.38184114107211947,
-                "plasma": 0.4658888419292506,
-                "plastids": 0.1522700169986299
+                "mascara": 0.18612710586147635,
+                "lipstick": 0.4307798635759403,
+                "eyeliner": 0.3830930305625833
             },
-            "question": "Aside from blood cells, what would you also find inside your blood vessels?",
+            "question": "What makeup item often contains dried cochineal bugs as an ingredient?",
             "rate_limited": false,
             "answers": [
-                "plasma",
-                "marrow",
-                "plastids"
+                "mascara",
+                "eyeliner",
+                "lipstick"
             ],
             "columns_in_order": [
                 "result_count",
@@ -4229,94 +4527,94 @@
                 "word_relation_to_question"
             ],
             "ml_answers": {
-                "marrow": 0.30114516136899444,
-                "plasma": 0.4420214376981768,
-                "plastids": 0.3049087145126065
-            },
-            "integer_answers": {
-                "marrow": 2,
-                "plasma": 5,
-                "plastids": 1
-            },
-            "data": {
-                "result_count_important_words": [
-                    196000.0,
-                    193000.0,
-                    36300.0
-                ],
-                "wikipedia_search": [
-                    0.4355825461088619,
-                    4.406522717049032,
-                    0.15789473684210525
-                ],
-                "result_count_noun_chunks": [
-                    1230000.0,
-                    277000.0,
-                    11700.0
-                ],
-                "word_relation_to_question": [
-                    1.7335407502771518,
-                    1.7507897340533323,
-                    1.5156695156695157
-                ],
-                "word_count_noun_chunks": [
-                    15.0,
-                    11.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    12.0,
-                    3.0,
-                    0.0
-                ],
-                "word_count_appended": [
-                    88.0,
-                    81.0,
-                    67.0
-                ],
-                "result_count": [
-                    21.0,
-                    17.0,
-                    39.0
-                ]
+                "mascara": 0.20574789035014399,
+                "lipstick": 0.7115347094820504,
+                "eyeliner": 0.2588143908083011
             },
             "z-best_answer_by_ml": [
-                "plasma"
-            ]
+                "lipstick"
+            ],
+            "data": {
+                "result_count_important_words": [
+                    9060.0,
+                    56600.0,
+                    9680.0
+                ],
+                "wikipedia_search": [
+                    1.3928571428571428,
+                    0.5119047619047619,
+                    6.095238095238096
+                ],
+                "result_count_noun_chunks": [
+                    10500.0,
+                    55900.0,
+                    11100.0
+                ],
+                "word_relation_to_question": [
+                    2.0658437648918486,
+                    1.108424282576101,
+                    1.8257319525320501
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    57.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    39.0
+                ],
+                "word_count_appended": [
+                    178.0,
+                    143.0,
+                    16.0
+                ],
+                "result_count": [
+                    6290.0,
+                    47100.0,
+                    0
+                ]
+            },
+            "integer_answers": {
+                "mascara": 2,
+                "lipstick": 3,
+                "eyeliner": 3
+            }
         },
         "lines": [
             [
+                0,
+                0.11781232440531934,
+                0.12025484470400849,
+                0.13548387096774195,
+                0.17410714285714285,
+                0.5281899109792285,
+                0.0,
+                0.0,
+                0.41316875297836975
+            ],
+            [
+                0,
+                0.8821876755946807,
+                0.7512609503583754,
+                0.7212903225806452,
+                0.06398809523809523,
+                0.42433234421364985,
+                0.0,
+                0.0,
+                0.2216848565152202
+            ],
+            [
                 1,
-                0.2727272727272727,
-                0.46085116388431696,
-                0.8099032066899322,
-                0.08711650922177237,
-                0.3728813559322034,
-                0.5769230769230769,
-                0.8,
-                0.3467081500554304
-            ],
-            [
-                0,
-                0.22077922077922077,
-                0.4537973195391488,
-                0.1823928359781392,
-                0.8813045434098065,
-                0.3432203389830508,
-                0.4230769230769231,
-                0.2,
-                0.3501579468106665
-            ],
-            [
-                0,
-                0.5064935064935064,
-                0.08535151657653421,
-                0.0077039573319286235,
-                0.031578947368421054,
-                0.2838983050847458,
                 0.0,
-                0.0,
-                0.30313390313390315
+                0.12848420493761614,
+                0.1432258064516129,
+                0.761904761904762,
+                0.04747774480712166,
+                1.0,
+                1.0,
+                0.36514639050641
             ]
         ]
     },
@@ -4814,11 +5112,6 @@
                 "iceland",
                 "canada"
             ],
-            "ml_answers": {
-                "canada": 0.3881850913886827,
-                "iceland": 0.20749499302639285,
-                "norway": 0.30480895820581455
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -4829,6 +5122,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "canada": 0.3881850913886827,
+                "iceland": 0.20749499302639285,
+                "norway": 0.30480895820581455
+            },
             "integer_answers": {
                 "canada": 6,
                 "iceland": 1,
@@ -4913,155 +5211,6 @@
                 0.125,
                 0.5454545454545454,
                 0.4720913304984101
-            ]
-        ]
-    },
-    "The \u201cAmerican Craftsman\u201d style of house was an architectural reaction to what?": {
-        "raw_data": {
-            "z-best_answer_by_ml": [
-                "industrial revolution"
-            ],
-            "question": "The \u201cAmerican Craftsman\u201d style of house was an architectural reaction to what?",
-            "answers": [
-                "world war i",
-                "industrial revolution",
-                "the great depression"
-            ],
-            "integer_answers": {
-                "world war i": 2,
-                "industrial revolution": 5,
-                "the great depression": 1
-            },
-            "data": {
-                "result_count_important_words": [
-                    85200.0,
-                    44700.0,
-                    37400.0
-                ],
-                "wikipedia_search": [
-                    2.286645006839945,
-                    1.8446648426812584,
-                    0.868690150478796
-                ],
-                "result_count_noun_chunks": [
-                    8060.0,
-                    17700.0,
-                    4720.0
-                ],
-                "word_relation_to_question": [
-                    0.8093820347106238,
-                    1.9765812214073053,
-                    2.2140367438820707
-                ],
-                "word_count_noun_chunks": [
-                    0.0,
-                    12.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    9.0,
-                    1.0
-                ],
-                "result_count": [
-                    67.0,
-                    65700.0,
-                    59.0
-                ],
-                "word_count_appended": [
-                    34.0,
-                    72.0,
-                    30.0
-                ]
-            },
-            "negative_question": false,
-            "fraction_answers": {
-                "world war i": 0.20549046656623232,
-                "industrial revolution": 0.6299550249771215,
-                "the great depression": 0.16455450845664618
-            },
-            "lines": [
-                [
-                    0.0010178348980645945,
-                    0.5092647937836222,
-                    0.26443569553805774,
-                    0.45732900136798904,
-                    0.25,
-                    0.0,
-                    0.0,
-                    0.16187640694212474
-                ],
-                [
-                    0.9980858627290129,
-                    0.26718469814704127,
-                    0.5807086614173228,
-                    0.3689329685362517,
-                    0.5294117647058824,
-                    1.0,
-                    0.9,
-                    0.39531624428146106
-                ],
-                [
-                    0.0008963023729225534,
-                    0.22355050806933652,
-                    0.15485564304461943,
-                    0.17373803009575922,
-                    0.22058823529411764,
-                    0.0,
-                    0.1,
-                    0.44280734877641414
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "world war i": 0.20720128377883534,
-                "industrial revolution": 0.6737695082091776,
-                "the great depression": 0.20201830501168508
-            }
-        },
-        "lines": [
-            [
-                0,
-                0.0010178348980645945,
-                0.5092647937836222,
-                0.26443569553805774,
-                0.45732900136798904,
-                0.25,
-                0.0,
-                0.0,
-                0.16187640694212474
-            ],
-            [
-                1,
-                0.9980858627290129,
-                0.26718469814704127,
-                0.5807086614173228,
-                0.3689329685362517,
-                0.5294117647058824,
-                1.0,
-                0.9,
-                0.39531624428146106
-            ],
-            [
-                0,
-                0.0008963023729225534,
-                0.22355050806933652,
-                0.15485564304461943,
-                0.17373803009575922,
-                0.22058823529411764,
-                0.0,
-                0.1,
-                0.44280734877641414
             ]
         ]
     },
@@ -5512,52 +5661,52 @@
             ]
         ]
     },
-    "Which of these is NOT a suit in a traditional Tarot deck?": {
+    "Which of these is NOT a machine used for printing?": {
         "raw_data": {
             "negative_question": true,
             "lines": [
                 [
-                    0.4194895591647332,
-                    0.47838983050847456,
-                    0.4246031746031746,
-                    0.2818010255628205,
-                    0.39775051124744376,
-                    0.5,
-                    0.5,
-                    0.4809090909090909
+                    0.49166431195252897,
+                    0.49267498643516006,
+                    0.46876419809177644,
+                    0.3976897689768977,
+                    0.3376835236541599,
+                    0,
+                    0,
+                    0.44558861746361744
                 ],
                 [
-                    0.27262180974477956,
-                    0.1172316384180791,
-                    0.28350970017636684,
-                    0.28815042858867557,
-                    0.2939672801635992,
-                    0.1643835616438356,
-                    0.2578947368421053,
-                    0.12956709956709955
+                    0.10794009607233684,
+                    0.10933260987520349,
+                    0.101317582916856,
+                    0.3335844454010618,
+                    0.26835236541598695,
+                    0,
+                    0,
+                    0.3377079002079002
                 ],
                 [
-                    0.30788863109048725,
-                    0.40437853107344635,
-                    0.29188712522045857,
-                    0.43004854584850394,
-                    0.30828220858895705,
-                    0.3356164383561644,
-                    0.2421052631578947,
-                    0.38952380952380955
+                    0.4003955919751342,
+                    0.39799240368963645,
+                    0.42991821899136756,
+                    0.2687257856220405,
+                    0.3939641109298532,
+                    0,
+                    0,
+                    0.21670348232848236
                 ]
             ],
             "fraction_answers": {
-                "gloves": 0.12926420200106561,
-                "cups": 0.32256736178506956,
-                "swords": 0.5481684362138648
+                "spirit duplicator": 0.29743346882116195,
+                "hydraulophone": 0.12197819780861985,
+                "hectograph": 0.5805883333702183
             },
-            "question": "Which of these is NOT a suit in a traditional Tarot deck?",
+            "question": "Which of these is NOT a machine used for printing?",
             "rate_limited": false,
             "answers": [
-                "gloves",
-                "swords",
-                "cups"
+                "hydraulophone",
+                "hectograph",
+                "spirit duplicator"
             ],
             "columns_in_order": [
                 "result_count",
@@ -5570,94 +5719,95 @@
                 "word_relation_to_question"
             ],
             "ml_answers": {
-                "gloves": 0.5396700767640724,
-                "cups": 0.2698103492460082,
-                "swords": 0.14313877367219574
+                "spirit duplicator": 0.34393939425547915,
+                "hydraulophone": 0.34393939425547915,
+                "hectograph": 0.32559523786462485
             },
             "integer_answers": {
-                "gloves": 1,
-                "cups": 1,
-                "swords": 6
+                "spirit duplicator": 2,
+                "hydraulophone": 0,
+                "hectograph": 4
             },
             "data": {
                 "result_count_important_words": [
-                    153000.0,
-                    2710000.0,
-                    677000.0
+                    2700.0,
+                    144000.0,
+                    37600.0
                 ],
                 "wikipedia_search": [
-                    1.309193846623077,
-                    1.2710974284679464,
-                    0.41970872490897654
+                    0.6138613861386139,
+                    0.998493327593629,
+                    1.387645286267757
                 ],
                 "result_count_noun_chunks": [
-                    171000.0,
-                    491000.0,
-                    472000.0
+                    27500.0,
+                    351000.0,
+                    61700.0
                 ],
                 "word_relation_to_question": [
-                    0.19090909090909092,
-                    3.7043290043290042,
-                    1.1047619047619046
+                    0.32646829521829523,
+                    0.9737525987525988,
+                    1.6997791060291059
                 ],
                 "word_count_noun_chunks": [
                     0.0,
-                    49.0,
-                    24.0
+                    0.0,
+                    0.0
                 ],
                 "word_count_raw": [
                     0.0,
-                    46.0,
-                    49.0
-                ],
-                "word_count_appended": [
-                    200.0,
-                    403.0,
-                    375.0
+                    0.0,
+                    0.0
                 ],
                 "result_count": [
-                    347000.0,
-                    980000.0,
-                    828000.0
+                    2360.0,
+                    111000.0,
+                    28200.0
+                ],
+                "word_count_appended": [
+                    199.0,
+                    284.0,
+                    130.0
                 ]
             },
             "z-best_answer_by_ml": [
-                "gloves"
+                "hydraulophone",
+                "spirit duplicator"
             ]
         },
         "lines": [
             [
                 1,
-                0.4194895591647332,
-                0.47838983050847456,
-                0.4246031746031746,
-                0.2818010255628205,
-                0.39775051124744376,
-                0.5,
-                0.5,
-                0.4809090909090909
+                0.49166431195252897,
+                0.49267498643516006,
+                0.46876419809177644,
+                0.3976897689768977,
+                0.3376835236541599,
+                0,
+                0,
+                0.44558861746361744
             ],
             [
                 0,
-                0.27262180974477956,
-                0.1172316384180791,
-                0.28350970017636684,
-                0.28815042858867557,
-                0.2939672801635992,
-                0.1643835616438356,
-                0.2578947368421053,
-                0.12956709956709955
+                0.10794009607233684,
+                0.10933260987520349,
+                0.101317582916856,
+                0.3335844454010618,
+                0.26835236541598695,
+                0,
+                0,
+                0.3377079002079002
             ],
             [
                 0,
-                0.30788863109048725,
-                0.40437853107344635,
-                0.29188712522045857,
-                0.43004854584850394,
-                0.30828220858895705,
-                0.3356164383561644,
-                0.2421052631578947,
-                0.38952380952380955
+                0.4003955919751342,
+                0.39799240368963645,
+                0.42991821899136756,
+                0.2687257856220405,
+                0.3939641109298532,
+                0,
+                0,
+                0.21670348232848236
             ]
         ]
     },
@@ -6006,11 +6156,6 @@
                 "c",
                 "v"
             ],
-            "ml_answers": {
-                "c": 0.347947869716185,
-                "w": 0.2205462035354216,
-                "v": 0.3416987332347784
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -6021,6 +6166,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "c": 0.347947869716185,
+                "w": 0.2205462035354216,
+                "v": 0.3416987332347784
+            },
             "integer_answers": {
                 "c": 5,
                 "w": 1,
@@ -7748,155 +7898,6 @@
             ]
         ]
     },
-    "What makeup item often contains dried cochineal bugs as an ingredient?": {
-        "raw_data": {
-            "z-best_answer_by_ml": [
-                "lipstick"
-            ],
-            "question": "What makeup item often contains dried cochineal bugs as an ingredient?",
-            "answers": [
-                "mascara",
-                "eyeliner",
-                "lipstick"
-            ],
-            "integer_answers": {
-                "lipstick": 3,
-                "mascara": 2,
-                "eyeliner": 3
-            },
-            "data": {
-                "result_count_important_words": [
-                    9060.0,
-                    56600.0,
-                    9680.0
-                ],
-                "wikipedia_search": [
-                    1.3928571428571428,
-                    0.5119047619047619,
-                    6.095238095238096
-                ],
-                "result_count_noun_chunks": [
-                    10500.0,
-                    55900.0,
-                    11100.0
-                ],
-                "word_relation_to_question": [
-                    2.0658437648918486,
-                    1.108424282576101,
-                    1.8257319525320501
-                ],
-                "word_count_noun_chunks": [
-                    0.0,
-                    0.0,
-                    57.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
-                    39.0
-                ],
-                "word_count_appended": [
-                    178.0,
-                    143.0,
-                    16.0
-                ],
-                "result_count": [
-                    6290.0,
-                    47100.0,
-                    0
-                ]
-            },
-            "negative_question": false,
-            "fraction_answers": {
-                "lipstick": 0.4307798635759403,
-                "mascara": 0.18612710586147635,
-                "eyeliner": 0.3830930305625833
-            },
-            "lines": [
-                [
-                    0.11781232440531934,
-                    0.12025484470400849,
-                    0.13548387096774195,
-                    0.17410714285714285,
-                    0.5281899109792285,
-                    0.0,
-                    0.0,
-                    0.41316875297836975
-                ],
-                [
-                    0.8821876755946807,
-                    0.7512609503583754,
-                    0.7212903225806452,
-                    0.06398809523809523,
-                    0.42433234421364985,
-                    0.0,
-                    0.0,
-                    0.2216848565152202
-                ],
-                [
-                    0.0,
-                    0.12848420493761614,
-                    0.1432258064516129,
-                    0.761904761904762,
-                    0.04747774480712166,
-                    1.0,
-                    1.0,
-                    0.36514639050641
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "lipstick": 0.7115347094820504,
-                "mascara": 0.20574789035014399,
-                "eyeliner": 0.2588143908083011
-            }
-        },
-        "lines": [
-            [
-                0,
-                0.11781232440531934,
-                0.12025484470400849,
-                0.13548387096774195,
-                0.17410714285714285,
-                0.5281899109792285,
-                0.0,
-                0.0,
-                0.41316875297836975
-            ],
-            [
-                0,
-                0.8821876755946807,
-                0.7512609503583754,
-                0.7212903225806452,
-                0.06398809523809523,
-                0.42433234421364985,
-                0.0,
-                0.0,
-                0.2216848565152202
-            ],
-            [
-                1,
-                0.0,
-                0.12848420493761614,
-                0.1432258064516129,
-                0.761904761904762,
-                0.04747774480712166,
-                1.0,
-                1.0,
-                0.36514639050641
-            ]
-        ]
-    },
     "Which of these video games was NOT produced by FromSoftware?": {
         "raw_data": {
             "negative_question": true,
@@ -8044,6 +8045,155 @@
                 0.5,
                 0.5,
                 0.3909683241494421
+            ]
+        ]
+    },
+    "Which of these is NOT a marsupial?": {
+        "raw_data": {
+            "negative_question": true,
+            "lines": [
+                [
+                    0.49281920125909895,
+                    0.4914927555496478,
+                    0.455030734390165,
+                    0.3670212765957447,
+                    0.4706368899917287,
+                    0.5,
+                    0.5,
+                    0.4772727272727273
+                ],
+                [
+                    0.4675388550068857,
+                    0.4704240329655722,
+                    0.4558395341313491,
+                    0.4925531914893617,
+                    0.2969396195202647,
+                    0.5,
+                    0.45,
+                    0.21748251748251746
+                ],
+                [
+                    0.03964194373401536,
+                    0.03808321148478,
+                    0.08912973147848591,
+                    0.1404255319148936,
+                    0.2324234904880066,
+                    0.0,
+                    0.04999999999999999,
+                    0.30524475524475525
+                ]
+            ],
+            "fraction_answers": {
+                "cuscus": 0.16230556235101232,
+                "quintana roo": 0.06143160373522191,
+                "wombat": 0.7762628339137658
+            },
+            "question": "Which of these is NOT a marsupial?",
+            "rate_limited": false,
+            "answers": [
+                "quintana roo",
+                "cuscus",
+                "wombat"
+            ],
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "cuscus": 0.32285225250080163,
+                "quintana roo": 0.5193098958422995,
+                "wombat": 0.1688004428152544
+            },
+            "integer_answers": {
+                "cuscus": 1,
+                "quintana roo": 0,
+                "wombat": 7
+            },
+            "data": {
+                "result_count_important_words": [
+                    51200.0,
+                    178000.0,
+                    2780000.0
+                ],
+                "wikipedia_search": [
+                    0.5319148936170213,
+                    0.029787234042553193,
+                    1.4382978723404256
+                ],
+                "result_count_noun_chunks": [
+                    55600.0,
+                    54600.0,
+                    508000.0
+                ],
+                "word_relation_to_question": [
+                    0.09090909090909091,
+                    1.1300699300699302,
+                    0.779020979020979
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    15.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    2.0,
+                    18.0
+                ],
+                "word_count_appended": [
+                    71.0,
+                    491.0,
+                    647.0
+                ],
+                "result_count": [
+                    36500.0,
+                    165000.0,
+                    2340000.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "quintana roo"
+            ]
+        },
+        "lines": [
+            [
+                1,
+                0.49281920125909895,
+                0.4914927555496478,
+                0.455030734390165,
+                0.3670212765957447,
+                0.4706368899917287,
+                0.5,
+                0.5,
+                0.4772727272727273
+            ],
+            [
+                0,
+                0.4675388550068857,
+                0.4704240329655722,
+                0.4558395341313491,
+                0.4925531914893617,
+                0.2969396195202647,
+                0.5,
+                0.45,
+                0.21748251748251746
+            ],
+            [
+                0,
+                0.03964194373401536,
+                0.03808321148478,
+                0.08912973147848591,
+                0.1404255319148936,
+                0.2324234904880066,
+                0.0,
+                0.04999999999999999,
+                0.30524475524475525
             ]
         ]
     },
@@ -8347,20 +8497,69 @@
     },
     "What actor famously yelled \"Not the bees! Not the bees!\" in a 2006 film?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "nicolas cage"
+            "negative_question": false,
+            "lines": [
+                [
+                    0.85,
+                    0.3480375712848038,
+                    0.3636842105263158,
+                    0.32023099755262463,
+                    0.6666666666666666,
+                    1.0,
+                    1.0,
+                    0.585005383632386
+                ],
+                [
+                    0.05,
+                    0.0020127474002012745,
+                    0.15842105263157893,
+                    0.15433194222737637,
+                    0.09523809523809523,
+                    0.0,
+                    0.0,
+                    0.2506543799449978
+                ],
+                [
+                    0.1,
+                    0.649949681314995,
+                    0.47789473684210526,
+                    0.525437060219999,
+                    0.23809523809523808,
+                    0.0,
+                    0.0,
+                    0.16434023642261628
+                ]
             ],
+            "fraction_answers": {
+                "macauley culkin": 0.0888322771802812,
+                "nicolas cage": 0.6417031037078497,
+                "oprah winfrey": 0.2694646191118692
+            },
             "question": "What actor famously yelled \"Not the bees! Not the bees!\" in a 2006 film?",
+            "rate_limited": false,
             "answers": [
                 "nicolas cage",
                 "macauley culkin",
                 "oprah winfrey"
             ],
-            "integer_answers": {
-                "macauley culkin": 0,
-                "nicolas cage": 5,
-                "oprah winfrey": 3
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "macauley culkin": 0.21287143035575118,
+                "nicolas cage": 0.7224139102363077,
+                "oprah winfrey": 0.20845431372038975
             },
+            "z-best_answer_by_ml": [
+                "nicolas cage"
+            ],
             "data": {
                 "result_count_important_words": [
                     8300.0,
@@ -8403,59 +8602,10 @@
                     5.0
                 ]
             },
-            "negative_question": false,
-            "fraction_answers": {
-                "macauley culkin": 0.0888322771802812,
-                "nicolas cage": 0.6417031037078497,
-                "oprah winfrey": 0.2694646191118692
-            },
-            "lines": [
-                [
-                    0.85,
-                    0.3480375712848038,
-                    0.3636842105263158,
-                    0.32023099755262463,
-                    0.6666666666666666,
-                    1.0,
-                    1.0,
-                    0.585005383632386
-                ],
-                [
-                    0.05,
-                    0.0020127474002012745,
-                    0.15842105263157893,
-                    0.15433194222737637,
-                    0.09523809523809523,
-                    0.0,
-                    0.0,
-                    0.2506543799449978
-                ],
-                [
-                    0.1,
-                    0.649949681314995,
-                    0.47789473684210526,
-                    0.525437060219999,
-                    0.23809523809523808,
-                    0.0,
-                    0.0,
-                    0.16434023642261628
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "macauley culkin": 0.21287143035575118,
-                "nicolas cage": 0.7224139102363077,
-                "oprah winfrey": 0.20845431372038975
+            "integer_answers": {
+                "macauley culkin": 0,
+                "nicolas cage": 5,
+                "oprah winfrey": 3
             }
         },
         "lines": [
@@ -9388,6 +9538,155 @@
             ]
         ]
     },
+    "How did Mason jars get their name?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    3.5175737986982965e-06,
+                    3.5984698548604534e-06,
+                    3.7406325210092627e-06,
+                    0.14583333333333334,
+                    0.45,
+                    0,
+                    0,
+                    0.15151515151515152
+                ],
+                [
+                    0.9999959799156586,
+                    0.9999958333506944,
+                    0.9999957606164762,
+                    0.16666666666666666,
+                    0.3,
+                    0,
+                    0,
+                    0.2924539216869894
+                ],
+                [
+                    5.025105426711853e-07,
+                    5.6817945076744e-07,
+                    4.98751002801235e-07,
+                    0.6875,
+                    0.25,
+                    0,
+                    0,
+                    0.556030926797859
+                ]
+            ],
+            "fraction_answers": {
+                "named after inventor": 0.1245598902541099,
+                "invented in mason, al": 0.6265180270394142,
+                "masons used them": 0.2489220827064759
+            },
+            "question": "How did Mason jars get their name?",
+            "rate_limited": false,
+            "answers": [
+                "named after inventor",
+                "invented in mason, al",
+                "masons used them"
+            ],
+            "ml_answers": {
+                "named after inventor": 0.16897170887534532,
+                "invented in mason, al": 0.22000360275561812,
+                "masons used them": 0.3604291588367947
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "named after inventor": 1,
+                "invented in mason, al": 3,
+                "masons used them": 2
+            },
+            "data": {
+                "result_count_important_words": [
+                    19.0,
+                    5280000.0,
+                    3.0
+                ],
+                "wikipedia_search": [
+                    0.2916666666666667,
+                    0.3333333333333333,
+                    1.375
+                ],
+                "result_count_noun_chunks": [
+                    15.0,
+                    4010000.0,
+                    2.0
+                ],
+                "word_relation_to_question": [
+                    0.45454545454545453,
+                    0.8773617650609682,
+                    1.6680927803935772
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    14.0,
+                    3980000.0,
+                    2.0
+                ],
+                "word_count_appended": [
+                    9.0,
+                    6.0,
+                    5.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "masons used them"
+            ]
+        },
+        "lines": [
+            [
+                1,
+                3.5175737986982965e-06,
+                3.5984698548604534e-06,
+                3.7406325210092627e-06,
+                0.14583333333333334,
+                0.45,
+                0,
+                0,
+                0.15151515151515152
+            ],
+            [
+                0,
+                0.9999959799156586,
+                0.9999958333506944,
+                0.9999957606164762,
+                0.16666666666666666,
+                0.3,
+                0,
+                0,
+                0.2924539216869894
+            ],
+            [
+                0,
+                5.025105426711853e-07,
+                5.6817945076744e-07,
+                4.98751002801235e-07,
+                0.6875,
+                0.25,
+                0,
+                0,
+                0.556030926797859
+            ]
+        ]
+    },
     "Who wrote a #1 hit song for the Monkees?": {
         "raw_data": {
             "negative_question": false,
@@ -9536,6 +9835,155 @@
                 0,
                 0,
                 0.5062797000097395
+            ]
+        ]
+    },
+    "Anne of Green Gables literally means Anne of what?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.5287356321839081,
+                    0.5666666666666667,
+                    0.759063053897451,
+                    0.08333333333333333,
+                    0.42857142857142855,
+                    0,
+                    0,
+                    0.4164734075448362
+                ],
+                [
+                    0.05747126436781609,
+                    0.041666666666666664,
+                    0.00010332795498080485,
+                    0.430952380952381,
+                    0.07142857142857142,
+                    0,
+                    0,
+                    0.4060374149659864
+                ],
+                [
+                    0.41379310344827586,
+                    0.39166666666666666,
+                    0.2408336181475682,
+                    0.4857142857142857,
+                    0.5,
+                    0,
+                    0,
+                    0.1774891774891775
+                ]
+            ],
+            "fraction_answers": {
+                "green pastures": 0.463807253699604,
+                "green walls": 0.368249475244329,
+                "green jars": 0.16794327105606707
+            },
+            "question": "Anne of Green Gables literally means Anne of what?",
+            "rate_limited": false,
+            "answers": [
+                "green pastures",
+                "green jars",
+                "green walls"
+            ],
+            "ml_answers": {
+                "green pastures": 0.2449866767438336,
+                "green walls": 0.34959795163439683,
+                "green jars": 0.218581180918587
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "green pastures": 4,
+                "green walls": 2,
+                "green jars": 0
+            },
+            "data": {
+                "result_count_important_words": [
+                    68.0,
+                    5.0,
+                    47.0
+                ],
+                "wikipedia_search": [
+                    0.3333333333333333,
+                    1.723809523809524,
+                    1.9428571428571428
+                ],
+                "result_count_noun_chunks": [
+                    191000.0,
+                    26.0,
+                    60600.0
+                ],
+                "word_relation_to_question": [
+                    1.6658936301793446,
+                    1.6241496598639453,
+                    0.7099567099567099
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    46.0,
+                    5.0,
+                    36.0
+                ],
+                "word_count_appended": [
+                    18.0,
+                    3.0,
+                    21.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "green walls"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.5287356321839081,
+                0.5666666666666667,
+                0.759063053897451,
+                0.08333333333333333,
+                0.42857142857142855,
+                0,
+                0,
+                0.4164734075448362
+            ],
+            [
+                0,
+                0.05747126436781609,
+                0.041666666666666664,
+                0.00010332795498080485,
+                0.430952380952381,
+                0.07142857142857142,
+                0,
+                0,
+                0.4060374149659864
+            ],
+            [
+                1,
+                0.41379310344827586,
+                0.39166666666666666,
+                0.2408336181475682,
+                0.4857142857142857,
+                0.5,
+                0,
+                0,
+                0.1774891774891775
             ]
         ]
     },
@@ -9735,11 +10183,6 @@
                 "a governor",
                 "a european city"
             ],
-            "ml_answers": {
-                "a european city": 0.22380845234698638,
-                "an element": 0.40282805637365576,
-                "a governor": 0.3000753679432724
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -9750,6 +10193,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "a european city": 0.22380845234698638,
+                "an element": 0.40282805637365576,
+                "a governor": 0.3000753679432724
+            },
             "integer_answers": {
                 "a european city": 0,
                 "an element": 4,
@@ -9837,52 +10285,52 @@
             ]
         ]
     },
-    "Which of these is NOT a machine used for printing?": {
+    "Which of these is NOT a suit in a traditional Tarot deck?": {
         "raw_data": {
             "negative_question": true,
             "lines": [
                 [
-                    0.49166431195252897,
-                    0.49267498643516006,
-                    0.46876419809177644,
-                    0.3976897689768977,
-                    0.3376835236541599,
-                    0,
-                    0,
-                    0.44558861746361744
+                    0.4194895591647332,
+                    0.47838983050847456,
+                    0.4246031746031746,
+                    0.2818010255628205,
+                    0.39775051124744376,
+                    0.5,
+                    0.5,
+                    0.4809090909090909
                 ],
                 [
-                    0.10794009607233684,
-                    0.10933260987520349,
-                    0.101317582916856,
-                    0.3335844454010618,
-                    0.26835236541598695,
-                    0,
-                    0,
-                    0.3377079002079002
+                    0.27262180974477956,
+                    0.1172316384180791,
+                    0.28350970017636684,
+                    0.28815042858867557,
+                    0.2939672801635992,
+                    0.1643835616438356,
+                    0.2578947368421053,
+                    0.12956709956709955
                 ],
                 [
-                    0.4003955919751342,
-                    0.39799240368963645,
-                    0.42991821899136756,
-                    0.2687257856220405,
-                    0.3939641109298532,
-                    0,
-                    0,
-                    0.21670348232848236
+                    0.30788863109048725,
+                    0.40437853107344635,
+                    0.29188712522045857,
+                    0.43004854584850394,
+                    0.30828220858895705,
+                    0.3356164383561644,
+                    0.2421052631578947,
+                    0.38952380952380955
                 ]
             ],
             "fraction_answers": {
-                "spirit duplicator": 0.29743346882116195,
-                "hydraulophone": 0.12197819780861985,
-                "hectograph": 0.5805883333702183
+                "gloves": 0.12926420200106561,
+                "cups": 0.32256736178506956,
+                "swords": 0.5481684362138648
             },
-            "question": "Which of these is NOT a machine used for printing?",
+            "question": "Which of these is NOT a suit in a traditional Tarot deck?",
             "rate_limited": false,
             "answers": [
-                "hydraulophone",
-                "hectograph",
-                "spirit duplicator"
+                "gloves",
+                "swords",
+                "cups"
             ],
             "columns_in_order": [
                 "result_count",
@@ -9895,145 +10343,149 @@
                 "word_relation_to_question"
             ],
             "ml_answers": {
-                "spirit duplicator": 0.34393939425547915,
-                "hydraulophone": 0.34393939425547915,
-                "hectograph": 0.32559523786462485
+                "gloves": 0.5396700767640724,
+                "cups": 0.2698103492460082,
+                "swords": 0.14313877367219574
             },
             "integer_answers": {
-                "spirit duplicator": 2,
-                "hydraulophone": 0,
-                "hectograph": 4
+                "gloves": 1,
+                "cups": 1,
+                "swords": 6
             },
             "data": {
                 "result_count_important_words": [
-                    2700.0,
-                    144000.0,
-                    37600.0
+                    153000.0,
+                    2710000.0,
+                    677000.0
                 ],
                 "wikipedia_search": [
-                    0.6138613861386139,
-                    0.998493327593629,
-                    1.387645286267757
+                    1.309193846623077,
+                    1.2710974284679464,
+                    0.41970872490897654
                 ],
                 "result_count_noun_chunks": [
-                    27500.0,
-                    351000.0,
-                    61700.0
+                    171000.0,
+                    491000.0,
+                    472000.0
                 ],
                 "word_relation_to_question": [
-                    0.32646829521829523,
-                    0.9737525987525988,
-                    1.6997791060291059
+                    0.19090909090909092,
+                    3.7043290043290042,
+                    1.1047619047619046
                 ],
                 "word_count_noun_chunks": [
                     0.0,
-                    0.0,
-                    0.0
+                    49.0,
+                    24.0
                 ],
                 "word_count_raw": [
                     0.0,
-                    0.0,
-                    0.0
-                ],
-                "result_count": [
-                    2360.0,
-                    111000.0,
-                    28200.0
+                    46.0,
+                    49.0
                 ],
                 "word_count_appended": [
-                    199.0,
-                    284.0,
-                    130.0
+                    200.0,
+                    403.0,
+                    375.0
+                ],
+                "result_count": [
+                    347000.0,
+                    980000.0,
+                    828000.0
                 ]
             },
             "z-best_answer_by_ml": [
-                "hydraulophone",
-                "spirit duplicator"
+                "gloves"
             ]
         },
         "lines": [
             [
                 1,
-                0.49166431195252897,
-                0.49267498643516006,
-                0.46876419809177644,
-                0.3976897689768977,
-                0.3376835236541599,
-                0,
-                0,
-                0.44558861746361744
+                0.4194895591647332,
+                0.47838983050847456,
+                0.4246031746031746,
+                0.2818010255628205,
+                0.39775051124744376,
+                0.5,
+                0.5,
+                0.4809090909090909
             ],
             [
                 0,
-                0.10794009607233684,
-                0.10933260987520349,
-                0.101317582916856,
-                0.3335844454010618,
-                0.26835236541598695,
-                0,
-                0,
-                0.3377079002079002
+                0.27262180974477956,
+                0.1172316384180791,
+                0.28350970017636684,
+                0.28815042858867557,
+                0.2939672801635992,
+                0.1643835616438356,
+                0.2578947368421053,
+                0.12956709956709955
             ],
             [
                 0,
-                0.4003955919751342,
-                0.39799240368963645,
-                0.42991821899136756,
-                0.2687257856220405,
-                0.3939641109298532,
-                0,
-                0,
-                0.21670348232848236
+                0.30788863109048725,
+                0.40437853107344635,
+                0.29188712522045857,
+                0.43004854584850394,
+                0.30828220858895705,
+                0.3356164383561644,
+                0.2421052631578947,
+                0.38952380952380955
             ]
         ]
     },
-    "One of Tupac Shakur\u2019s biggest posthumous hits samples what singer?": {
+    "Table tennis is also known as what?": {
         "raw_data": {
             "negative_question": false,
             "lines": [
                 [
-                    0.02157848063848655,
-                    0.0585325638911789,
-                    0.020891799189273464,
-                    0.35713597406130965,
-                    0.16455696202531644,
-                    0.0,
-                    0.0,
-                    0.40596064814814814
-                ],
-                [
-                    0.8010641442506651,
-                    0.5185490519373455,
-                    0.8169628936700967,
-                    0.462362635286293,
-                    0.1518987341772152,
-                    0.0,
-                    0.0,
-                    0.08697089947089948
-                ],
-                [
-                    0.17735737511084837,
-                    0.4229183841714757,
-                    0.16214530714062989,
-                    0.18050139065239737,
-                    0.6835443037974683,
+                    0.9980735398406897,
+                    0.9875522395958974,
+                    0.9868181601750039,
+                    0.20535714285714285,
+                    0.49161073825503354,
                     1.0,
                     1.0,
-                    0.5070684523809524
+                    0.7126984126984127
+                ],
+                [
+                    0.0018535651454184236,
+                    0.012368372709502017,
+                    0.01309666076775468,
+                    0.6785714285714286,
+                    0.28523489932885904,
+                    0.0,
+                    0.0,
+                    0.15238095238095237
+                ],
+                [
+                    7.289501389193608e-05,
+                    7.938769460052458e-05,
+                    8.517905724144324e-05,
+                    0.11607142857142858,
+                    0.2231543624161074,
+                    0.0,
+                    0.0,
+                    0.1349206349206349
                 ]
             ],
             "fraction_answers": {
-                "john mellencamp": 0.35472604484906434,
-                "bruce hornsby": 0.5166919016567215,
-                "christopher cross": 0.12858205349421414
+                "hunky-dory": 0.14293823486298937,
+                "argle-bargle": 0.05929798595923809,
+                "ping-pong": 0.7977637791777724
             },
-            "question": "One of Tupac Shakur\u2019s biggest posthumous hits samples what singer?",
+            "question": "Table tennis is also known as what?",
             "rate_limited": false,
             "answers": [
-                "christopher cross",
-                "john mellencamp",
-                "bruce hornsby"
+                "ping-pong",
+                "hunky-dory",
+                "argle-bargle"
             ],
+            "ml_answers": {
+                "hunky-dory": 0.13155886878377762,
+                "argle-bargle": 0.12694670817069373,
+                "ping-pong": 0.7379313060323929
+            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -10044,95 +10496,90 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
-            "ml_answers": {
-                "john mellencamp": 0.26516270432121314,
-                "bruce hornsby": 0.4420214376981768,
-                "christopher cross": 0.31157143216045696
-            },
             "integer_answers": {
-                "john mellencamp": 4,
-                "bruce hornsby": 4,
-                "christopher cross": 0
+                "hunky-dory": 1,
+                "argle-bargle": 0,
+                "ping-pong": 7
             },
             "data": {
                 "result_count_important_words": [
-                    71.0,
-                    629.0,
-                    513.0
+                    10300000.0,
+                    129000.0,
+                    828.0
                 ],
                 "wikipedia_search": [
-                    1.4285438962452386,
-                    1.849450541145172,
-                    0.7220055626095895
+                    0.4107142857142857,
+                    1.3571428571428572,
+                    0.23214285714285715
                 ],
                 "result_count_noun_chunks": [
-                    67.0,
-                    2620.0,
-                    520.0
+                    9720000.0,
+                    129000.0,
+                    839.0
                 ],
                 "word_relation_to_question": [
-                    3.247685185185185,
-                    0.6957671957671958,
-                    4.0565476190476195
+                    2.138095238095238,
+                    0.45714285714285713,
+                    0.40476190476190477
                 ],
                 "word_count_noun_chunks": [
+                    19.0,
                     0.0,
-                    0.0,
-                    7.0
+                    0.0
                 ],
                 "word_count_raw": [
+                    77.0,
                     0.0,
-                    0.0,
-                    4.0
-                ],
-                "word_count_appended": [
-                    13.0,
-                    12.0,
-                    54.0
+                    0.0
                 ],
                 "result_count": [
-                    73.0,
-                    2710.0,
-                    600.0
+                    11200000.0,
+                    20800.0,
+                    818.0
+                ],
+                "word_count_appended": [
+                    293.0,
+                    170.0,
+                    133.0
                 ]
             },
             "z-best_answer_by_ml": [
-                "bruce hornsby"
+                "ping-pong"
             ]
         },
         "lines": [
             [
-                0,
-                0.02157848063848655,
-                0.0585325638911789,
-                0.020891799189273464,
-                0.35713597406130965,
-                0.16455696202531644,
-                0.0,
-                0.0,
-                0.40596064814814814
-            ],
-            [
-                0,
-                0.8010641442506651,
-                0.5185490519373455,
-                0.8169628936700967,
-                0.462362635286293,
-                0.1518987341772152,
-                0.0,
-                0.0,
-                0.08697089947089948
-            ],
-            [
                 1,
-                0.17735737511084837,
-                0.4229183841714757,
-                0.16214530714062989,
-                0.18050139065239737,
-                0.6835443037974683,
+                0.9980735398406897,
+                0.9875522395958974,
+                0.9868181601750039,
+                0.20535714285714285,
+                0.49161073825503354,
                 1.0,
                 1.0,
-                0.5070684523809524
+                0.7126984126984127
+            ],
+            [
+                0,
+                0.0018535651454184236,
+                0.012368372709502017,
+                0.01309666076775468,
+                0.6785714285714286,
+                0.28523489932885904,
+                0.0,
+                0.0,
+                0.15238095238095237
+            ],
+            [
+                0,
+                7.289501389193608e-05,
+                7.938769460052458e-05,
+                8.517905724144324e-05,
+                0.11607142857142858,
+                0.2231543624161074,
+                0.0,
+                0.0,
+                0.1349206349206349
             ]
         ]
     },
@@ -10282,6 +10729,155 @@
                 0.6666666666666666,
                 0.5,
                 0.36984126984126986
+            ]
+        ]
+    },
+    "The '70s sitcom \u201cThree's Company\u201d was about three people who were what?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.9998750156230471,
+                    0.8394904458598726,
+                    0.9990700146140561,
+                    0.33653846153846156,
+                    0.9537037037037037,
+                    1.0,
+                    1.0,
+                    0.2132936507936508
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.2916666666666667,
+                    0.018518518518518517,
+                    0.0,
+                    0.0,
+                    0.6453373015873016
+                ],
+                [
+                    0.00012498437695288088,
+                    0.16050955414012738,
+                    0.0009299853859439352,
+                    0.3717948717948718,
+                    0.027777777777777776,
+                    0.0,
+                    0.0,
+                    0.14136904761904764
+                ]
+            ],
+            "fraction_answers": {
+                "trivia show hosts": 0.11944031084656084,
+                "roommates": 0.792746411516599,
+                "panda bears": 0.08781327763684019
+            },
+            "question": "The '70s sitcom \u201cThree's Company\u201d was about three people who were what?",
+            "rate_limited": false,
+            "answers": [
+                "roommates",
+                "trivia show hosts",
+                "panda bears"
+            ],
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "trivia show hosts": 0.31157143216045696,
+                "roommates": 0.4420214376981768,
+                "panda bears": 0.29035060350393144
+            },
+            "z-best_answer_by_ml": [
+                "roommates"
+            ],
+            "data": {
+                "result_count_important_words": [
+                    65900.0,
+                    0,
+                    12600.0
+                ],
+                "wikipedia_search": [
+                    1.3461538461538463,
+                    1.1666666666666667,
+                    1.4871794871794872
+                ],
+                "result_count_noun_chunks": [
+                    75200.0,
+                    0,
+                    70.0
+                ],
+                "word_relation_to_question": [
+                    0.6398809523809523,
+                    1.9360119047619047,
+                    0.42410714285714285
+                ],
+                "word_count_noun_chunks": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    5.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    184000.0,
+                    0,
+                    23.0
+                ],
+                "word_count_appended": [
+                    206.0,
+                    4.0,
+                    6.0
+                ]
+            },
+            "integer_answers": {
+                "trivia show hosts": 1,
+                "roommates": 6,
+                "panda bears": 1
+            }
+        },
+        "lines": [
+            [
+                1,
+                0.9998750156230471,
+                0.8394904458598726,
+                0.9990700146140561,
+                0.33653846153846156,
+                0.9537037037037037,
+                1.0,
+                1.0,
+                0.2132936507936508
+            ],
+            [
+                0,
+                0.0,
+                0.0,
+                0.0,
+                0.2916666666666667,
+                0.018518518518518517,
+                0.0,
+                0.0,
+                0.6453373015873016
+            ],
+            [
+                0,
+                0.00012498437695288088,
+                0.16050955414012738,
+                0.0009299853859439352,
+                0.3717948717948718,
+                0.027777777777777776,
+                0.0,
+                0.0,
+                0.14136904761904764
             ]
         ]
     },
@@ -11524,11 +12120,6 @@
                 "von miller",
                 "blake griffin"
             ],
-            "ml_answers": {
-                "mike trout": 0.6863446736251442,
-                "von miller": 0.2713581334649178,
-                "blake griffin": 0.40264468233565515
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -11539,6 +12130,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "mike trout": 0.6863446736251442,
+                "von miller": 0.2713581334649178,
+                "blake griffin": 0.40264468233565515
+            },
             "integer_answers": {
                 "mike trout": 3,
                 "von miller": 1,
@@ -12970,20 +13566,69 @@
     },
     "Queen Victoria is credited with starting what fashion trend?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "white wedding dress"
+            "negative_question": false,
+            "lines": [
+                [
+                    0.31645569620253167,
+                    0.272108843537415,
+                    0.6415620641562064,
+                    0.5936507936507937,
+                    0.2111111111111111,
+                    0,
+                    0.0,
+                    0.16185657171414294
+                ],
+                [
+                    0.27848101265822783,
+                    0.41496598639455784,
+                    0.2409344490934449,
+                    0.11904761904761905,
+                    0.36666666666666664,
+                    0,
+                    0.0,
+                    0.2726553389971681
+                ],
+                [
+                    0.4050632911392405,
+                    0.3129251700680272,
+                    0.11750348675034868,
+                    0.2873015873015873,
+                    0.4222222222222222,
+                    0,
+                    1.0,
+                    0.565488089288689
+                ]
             ],
+            "fraction_answers": {
+                "white wedding dress": 0.4443576923957307,
+                "mini dress": 0.3138207257674573,
+                "little black dress": 0.24182158183681204
+            },
             "question": "Queen Victoria is credited with starting what fashion trend?",
+            "rate_limited": false,
             "answers": [
                 "mini dress",
                 "little black dress",
                 "white wedding dress"
             ],
-            "integer_answers": {
-                "white wedding dress": 4,
-                "mini dress": 2,
-                "little black dress": 1
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "white wedding dress": 0.6118744182503886,
+                "mini dress": 0.18769143408010108,
+                "little black dress": 0.41485694086294755
             },
+            "z-best_answer_by_ml": [
+                "white wedding dress"
+            ],
             "data": {
                 "result_count_important_words": [
                     40.0,
@@ -13026,59 +13671,10 @@
                     38.0
                 ]
             },
-            "negative_question": false,
-            "fraction_answers": {
-                "white wedding dress": 0.4443576923957307,
-                "mini dress": 0.3138207257674573,
-                "little black dress": 0.24182158183681204
-            },
-            "lines": [
-                [
-                    0.31645569620253167,
-                    0.272108843537415,
-                    0.6415620641562064,
-                    0.5936507936507937,
-                    0.2111111111111111,
-                    0,
-                    0.0,
-                    0.16185657171414294
-                ],
-                [
-                    0.27848101265822783,
-                    0.41496598639455784,
-                    0.2409344490934449,
-                    0.11904761904761905,
-                    0.36666666666666664,
-                    0,
-                    0.0,
-                    0.2726553389971681
-                ],
-                [
-                    0.4050632911392405,
-                    0.3129251700680272,
-                    0.11750348675034868,
-                    0.2873015873015873,
-                    0.4222222222222222,
-                    0,
-                    1.0,
-                    0.565488089288689
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "white wedding dress": 0.6118744182503886,
-                "mini dress": 0.18769143408010108,
-                "little black dress": 0.41485694086294755
+            "integer_answers": {
+                "white wedding dress": 4,
+                "mini dress": 2,
+                "little black dress": 1
             }
         },
         "lines": [
@@ -13863,53 +14459,58 @@
             ]
         ]
     },
-    "Which of these is NOT a marsupial?": {
+    "Which actor currently stars in a show that is both one word long and pluralized?": {
         "raw_data": {
-            "negative_question": true,
+            "negative_question": false,
             "lines": [
                 [
-                    0.49281920125909895,
-                    0.4914927555496478,
-                    0.455030734390165,
-                    0.3670212765957447,
-                    0.4706368899917287,
-                    0.5,
-                    0.5,
-                    0.4772727272727273
+                    0.11609498680738786,
+                    0.013006367700853543,
+                    0.8243534482758621,
+                    0.30431887366818877,
+                    0.3898305084745763,
+                    0,
+                    0,
+                    0.5607142857142857
                 ],
                 [
-                    0.4675388550068857,
-                    0.4704240329655722,
-                    0.4558395341313491,
-                    0.4925531914893617,
-                    0.2969396195202647,
-                    0.5,
-                    0.45,
-                    0.21748251748251746
+                    0.09498680738786279,
+                    0.01016122476629183,
+                    0.12122844827586207,
+                    0.33656773211567736,
+                    0.3220338983050847,
+                    0,
+                    0,
+                    0.2
                 ],
                 [
-                    0.03964194373401536,
-                    0.03808321148478,
-                    0.08912973147848591,
-                    0.1404255319148936,
-                    0.2324234904880066,
-                    0.0,
-                    0.04999999999999999,
-                    0.30524475524475525
+                    0.7889182058047494,
+                    0.9768324075328546,
+                    0.05441810344827586,
+                    0.359113394216134,
+                    0.288135593220339,
+                    0,
+                    0,
+                    0.23928571428571427
                 ]
             ],
             "fraction_answers": {
-                "cuscus": 0.16230556235101232,
-                "quintana roo": 0.06143160373522191,
-                "wombat": 0.7762628339137658
+                "william h. macy": 0.36805307844019236,
+                "taraji p. henson": 0.18082968514179645,
+                "paul giamatti": 0.4511172364180111
             },
-            "question": "Which of these is NOT a marsupial?",
+            "question": "Which actor currently stars in a show that is both one word long and pluralized?",
             "rate_limited": false,
             "answers": [
-                "quintana roo",
-                "cuscus",
-                "wombat"
+                "william h. macy",
+                "taraji p. henson",
+                "paul giamatti"
             ],
+            "ml_answers": {
+                "william h. macy": 0.3498516025981515,
+                "taraji p. henson": 0.15934519029057545,
+                "paul giamatti": 0.3338985025503381
+            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -13920,95 +14521,239 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
-            "ml_answers": {
-                "cuscus": 0.32285225250080163,
-                "quintana roo": 0.5193098958422995,
-                "wombat": 0.1688004428152544
-            },
             "integer_answers": {
-                "cuscus": 1,
-                "quintana roo": 0,
-                "wombat": 7
+                "william h. macy": 3,
+                "taraji p. henson": 0,
+                "paul giamatti": 3
             },
             "data": {
                 "result_count_important_words": [
-                    51200.0,
-                    178000.0,
-                    2780000.0
+                    96.0,
+                    75.0,
+                    7210.0
                 ],
                 "wikipedia_search": [
-                    0.5319148936170213,
-                    0.029787234042553193,
-                    1.4382978723404256
+                    1.217275494672755,
+                    1.3462709284627095,
+                    1.436453576864536
                 ],
                 "result_count_noun_chunks": [
-                    55600.0,
-                    54600.0,
-                    508000.0
+                    1530000.0,
+                    225000.0,
+                    101000.0
                 ],
                 "word_relation_to_question": [
-                    0.09090909090909091,
-                    1.1300699300699302,
-                    0.779020979020979
+                    2.8035714285714284,
+                    1.0,
+                    1.1964285714285714
                 ],
                 "word_count_noun_chunks": [
                     0.0,
                     0.0,
-                    15.0
+                    0.0
                 ],
                 "word_count_raw": [
                     0.0,
-                    2.0,
-                    18.0
+                    0.0,
+                    0.0
                 ],
                 "word_count_appended": [
-                    71.0,
-                    491.0,
-                    647.0
+                    23.0,
+                    19.0,
+                    17.0
                 ],
                 "result_count": [
-                    36500.0,
-                    165000.0,
-                    2340000.0
+                    88.0,
+                    72.0,
+                    598.0
                 ]
             },
             "z-best_answer_by_ml": [
-                "quintana roo"
+                "william h. macy"
             ]
         },
         "lines": [
             [
+                0,
+                0.11609498680738786,
+                0.013006367700853543,
+                0.8243534482758621,
+                0.30431887366818877,
+                0.3898305084745763,
+                0,
+                0,
+                0.5607142857142857
+            ],
+            [
+                0,
+                0.09498680738786279,
+                0.01016122476629183,
+                0.12122844827586207,
+                0.33656773211567736,
+                0.3220338983050847,
+                0,
+                0,
+                0.2
+            ],
+            [
                 1,
-                0.49281920125909895,
-                0.4914927555496478,
-                0.455030734390165,
-                0.3670212765957447,
-                0.4706368899917287,
+                0.7889182058047494,
+                0.9768324075328546,
+                0.05441810344827586,
+                0.359113394216134,
+                0.288135593220339,
+                0,
+                0,
+                0.23928571428571427
+            ]
+        ]
+    },
+    "Which human sense is most closely associated with the bony labyrinth?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.33922886452069334,
+                    0.34782608695652173,
+                    0.3567774936061381,
+                    0.3904761904761905,
+                    0.3008595988538682,
+                    0.3625,
+                    0.0425531914893617,
+                    0.4611973392461197
+                ],
+                [
+                    0.3402900601344181,
+                    0.3289855072463768,
+                    0.3375959079283887,
+                    0.5,
+                    0.4068767908309456,
+                    0.2875,
+                    0.9361702127659575,
+                    0.27014042867701404
+                ],
+                [
+                    0.32048107534488857,
+                    0.32318840579710145,
+                    0.30562659846547313,
+                    0.10952380952380951,
+                    0.2922636103151863,
+                    0.35,
+                    0.02127659574468085,
+                    0.2686622320768662
+                ]
+            ],
+            "fraction_answers": {
+                "touch": 0.32517734564361167,
+                "sight": 0.24887779090850076,
+                "hearing": 0.42594486344788757
+            },
+            "question": "Which human sense is most closely associated with the bony labyrinth?",
+            "rate_limited": false,
+            "answers": [
+                "touch",
+                "hearing",
+                "sight"
+            ],
+            "ml_answers": {
+                "touch": 0.36546787918589924,
+                "sight": 0.2574542886653845,
+                "hearing": 0.6201127083770734
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "touch": 4,
+                "sight": 0,
+                "hearing": 4
+            },
+            "data": {
+                "result_count_important_words": [
+                    240000.0,
+                    227000.0,
+                    223000.0
+                ],
+                "wikipedia_search": [
+                    1.9523809523809523,
+                    2.5,
+                    0.5476190476190476
+                ],
+                "result_count_noun_chunks": [
+                    279000000.0,
+                    264000000.0,
+                    239000000.0
+                ],
+                "word_relation_to_question": [
+                    1.3835920177383592,
+                    0.8104212860310421,
+                    0.8059866962305986
+                ],
+                "word_count_noun_chunks": [
+                    29.0,
+                    23.0,
+                    28.0
+                ],
+                "word_count_raw": [
+                    2.0,
+                    44.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    210.0,
+                    284.0,
+                    204.0
+                ],
+                "result_count": [
+                    95900.0,
+                    96200.0,
+                    90600.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "hearing"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.33922886452069334,
+                0.34782608695652173,
+                0.3567774936061381,
+                0.3904761904761905,
+                0.3008595988538682,
+                0.3625,
+                0.0425531914893617,
+                0.4611973392461197
+            ],
+            [
+                1,
+                0.3402900601344181,
+                0.3289855072463768,
+                0.3375959079283887,
                 0.5,
-                0.5,
-                0.4772727272727273
+                0.4068767908309456,
+                0.2875,
+                0.9361702127659575,
+                0.27014042867701404
             ],
             [
                 0,
-                0.4675388550068857,
-                0.4704240329655722,
-                0.4558395341313491,
-                0.4925531914893617,
-                0.2969396195202647,
-                0.5,
-                0.45,
-                0.21748251748251746
-            ],
-            [
-                0,
-                0.03964194373401536,
-                0.03808321148478,
-                0.08912973147848591,
-                0.1404255319148936,
-                0.2324234904880066,
-                0.0,
-                0.04999999999999999,
-                0.30524475524475525
+                0.32048107534488857,
+                0.32318840579710145,
+                0.30562659846547313,
+                0.10952380952380951,
+                0.2922636103151863,
+                0.35,
+                0.02127659574468085,
+                0.2686622320768662
             ]
         ]
     },
@@ -14462,20 +15207,69 @@
     },
     "What iconic painting once hung in Napoleon's bedroom?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "mona lisa"
+            "negative_question": false,
+            "lines": [
+                [
+                    0.17374517374517376,
+                    0.000434593654932638,
+                    0.1213265031005662,
+                    0.6904114906832298,
+                    0.13529411764705881,
+                    0.0,
+                    0.0,
+                    0.36796066252587994
+                ],
+                [
+                    0.6177606177606177,
+                    0.7491022210023102,
+                    0.7387435966567808,
+                    0.19015269151138717,
+                    0.6529411764705882,
+                    0.96,
+                    0.9803921568627451,
+                    0.15005175983436853
+                ],
+                [
+                    0.2084942084942085,
+                    0.25046318534275713,
+                    0.139929900242653,
+                    0.11943581780538301,
+                    0.21176470588235294,
+                    0.04,
+                    0.0196078431372549,
+                    0.48198757763975153
+                ]
             ],
+            "fraction_answers": {
+                "the birth of venus": 0.18396040481804515,
+                "mona lisa": 0.6298930275123498,
+                "the starry night": 0.18614656766960516
+            },
             "question": "What iconic painting once hung in Napoleon's bedroom?",
+            "rate_limited": false,
             "answers": [
                 "the starry night",
                 "mona lisa",
                 "the birth of venus"
             ],
-            "integer_answers": {
-                "the birth of venus": 1,
-                "mona lisa": 6,
-                "the starry night": 1
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "the birth of venus": 0.35830457346269085,
+                "mona lisa": 0.7224139102363077,
+                "the starry night": 0.1614799710562439
             },
+            "z-best_answer_by_ml": [
+                "mona lisa"
+            ],
             "data": {
                 "result_count_important_words": [
                     76.0,
@@ -14518,59 +15312,10 @@
                     72.0
                 ]
             },
-            "negative_question": false,
-            "fraction_answers": {
-                "the birth of venus": 0.18396040481804515,
-                "mona lisa": 0.6298930275123498,
-                "the starry night": 0.18614656766960516
-            },
-            "lines": [
-                [
-                    0.17374517374517376,
-                    0.000434593654932638,
-                    0.1213265031005662,
-                    0.6904114906832298,
-                    0.13529411764705881,
-                    0.0,
-                    0.0,
-                    0.36796066252587994
-                ],
-                [
-                    0.6177606177606177,
-                    0.7491022210023102,
-                    0.7387435966567808,
-                    0.19015269151138717,
-                    0.6529411764705882,
-                    0.96,
-                    0.9803921568627451,
-                    0.15005175983436853
-                ],
-                [
-                    0.2084942084942085,
-                    0.25046318534275713,
-                    0.139929900242653,
-                    0.11943581780538301,
-                    0.21176470588235294,
-                    0.04,
-                    0.0196078431372549,
-                    0.48198757763975153
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "the birth of venus": 0.35830457346269085,
-                "mona lisa": 0.7224139102363077,
-                "the starry night": 0.1614799710562439
+            "integer_answers": {
+                "the birth of venus": 1,
+                "mona lisa": 6,
+                "the starry night": 1
             }
         },
         "lines": [
@@ -16248,52 +16993,52 @@
             ]
         ]
     },
-    "Which of these phrases appears in a Shakespeare play?": {
+    "Aside from blood cells, what would you also find inside your blood vessels?": {
         "raw_data": {
             "negative_question": false,
             "lines": [
                 [
-                    3.697342283142472e-05,
-                    0.00010404322793439061,
-                    5.785379560182589e-05,
-                    0.813953488372093,
-                    0.28125,
-                    0.3333333333333333,
-                    0.3333333333333333,
-                    0.8318112633181126
+                    0.2727272727272727,
+                    0.46085116388431696,
+                    0.8099032066899322,
+                    0.08711650922177237,
+                    0.3728813559322034,
+                    0.5769230769230769,
+                    0.8,
+                    0.3467081500554304
                 ],
                 [
-                    0.9999630265771686,
-                    0.9998959567720657,
-                    0.9999421462043981,
-                    0.13953488372093023,
-                    0.6770833333333334,
-                    0.3333333333333333,
-                    0.3333333333333333,
-                    0.08637747336377473
+                    0.22077922077922077,
+                    0.4537973195391488,
+                    0.1823928359781392,
+                    0.8813045434098065,
+                    0.3432203389830508,
+                    0.4230769230769231,
+                    0.2,
+                    0.3501579468106665
                 ],
                 [
+                    0.5064935064935064,
+                    0.08535151657653421,
+                    0.0077039573319286235,
+                    0.031578947368421054,
+                    0.2838983050847458,
                     0.0,
                     0.0,
-                    0.0,
-                    0.046511627906976744,
-                    0.041666666666666664,
-                    0.3333333333333333,
-                    0.3333333333333333,
-                    0.08181126331811263
+                    0.30313390313390315
                 ]
             ],
             "fraction_answers": {
-                "at a loss": 0.5711829358297922,
-                "in such a pickle": 0.32423503610040494,
-                "up a dark creek": 0.10458202806980284
+                "marrow": 0.38184114107211947,
+                "plasma": 0.4658888419292506,
+                "plastids": 0.1522700169986299
             },
-            "question": "Which of these phrases appears in a Shakespeare play?",
+            "question": "Aside from blood cells, what would you also find inside your blood vessels?",
             "rate_limited": false,
             "answers": [
-                "in such a pickle",
-                "at a loss",
-                "up a dark creek"
+                "plasma",
+                "marrow",
+                "plastids"
             ],
             "columns_in_order": [
                 "result_count",
@@ -16306,94 +17051,94 @@
                 "word_relation_to_question"
             ],
             "ml_answers": {
-                "at a loss": 0.34232761393661615,
-                "in such a pickle": 0.30114516136899444,
-                "up a dark creek": 0.2799243327124689
-            },
-            "z-best_answer_by_ml": [
-                "at a loss"
-            ],
-            "data": {
-                "result_count_important_words": [
-                    77.0,
-                    740000.0,
-                    0
-                ],
-                "wikipedia_search": [
-                    0.813953488372093,
-                    0.13953488372093023,
-                    0.046511627906976744
-                ],
-                "result_count_noun_chunks": [
-                    81.0,
-                    1400000.0,
-                    0
-                ],
-                "word_relation_to_question": [
-                    3.3272450532724505,
-                    0.3455098934550989,
-                    0.3272450532724505
-                ],
-                "word_count_noun_chunks": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "word_count_raw": [
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                "word_count_appended": [
-                    27.0,
-                    65.0,
-                    4.0
-                ],
-                "result_count": [
-                    44.0,
-                    1190000.0,
-                    0
-                ]
+                "marrow": 0.30114516136899444,
+                "plasma": 0.4420214376981768,
+                "plastids": 0.3049087145126065
             },
             "integer_answers": {
-                "at a loss": 4,
-                "in such a pickle": 4,
-                "up a dark creek": 0
-            }
+                "marrow": 2,
+                "plasma": 5,
+                "plastids": 1
+            },
+            "data": {
+                "result_count_important_words": [
+                    196000.0,
+                    193000.0,
+                    36300.0
+                ],
+                "wikipedia_search": [
+                    0.4355825461088619,
+                    4.406522717049032,
+                    0.15789473684210525
+                ],
+                "result_count_noun_chunks": [
+                    1230000.0,
+                    277000.0,
+                    11700.0
+                ],
+                "word_relation_to_question": [
+                    1.7335407502771518,
+                    1.7507897340533323,
+                    1.5156695156695157
+                ],
+                "word_count_noun_chunks": [
+                    15.0,
+                    11.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    12.0,
+                    3.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    88.0,
+                    81.0,
+                    67.0
+                ],
+                "result_count": [
+                    21.0,
+                    17.0,
+                    39.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "plasma"
+            ]
         },
         "lines": [
             [
                 1,
-                3.697342283142472e-05,
-                0.00010404322793439061,
-                5.785379560182589e-05,
-                0.813953488372093,
-                0.28125,
-                0.3333333333333333,
-                0.3333333333333333,
-                0.8318112633181126
+                0.2727272727272727,
+                0.46085116388431696,
+                0.8099032066899322,
+                0.08711650922177237,
+                0.3728813559322034,
+                0.5769230769230769,
+                0.8,
+                0.3467081500554304
             ],
             [
                 0,
-                0.9999630265771686,
-                0.9998959567720657,
-                0.9999421462043981,
-                0.13953488372093023,
-                0.6770833333333334,
-                0.3333333333333333,
-                0.3333333333333333,
-                0.08637747336377473
+                0.22077922077922077,
+                0.4537973195391488,
+                0.1823928359781392,
+                0.8813045434098065,
+                0.3432203389830508,
+                0.4230769230769231,
+                0.2,
+                0.3501579468106665
             ],
             [
                 0,
+                0.5064935064935064,
+                0.08535151657653421,
+                0.0077039573319286235,
+                0.031578947368421054,
+                0.2838983050847458,
                 0.0,
                 0.0,
-                0.0,
-                0.046511627906976744,
-                0.041666666666666664,
-                0.3333333333333333,
-                0.3333333333333333,
-                0.08181126331811263
+                0.30313390313390315
             ]
         ]
     },
@@ -16444,11 +17189,6 @@
                 "paul jones",
                 "lieut. gibson"
             ],
-            "ml_answers": {
-                "lieut. gibson": 0.12380268039835694,
-                "paul jones": 0.2077785325965988,
-                "clyde van dusen": 0.5669251621355246
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -16459,6 +17199,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "lieut. gibson": 0.12380268039835694,
+                "paul jones": 0.2077785325965988,
+                "clyde van dusen": 0.5669251621355246
+            },
             "integer_answers": {
                 "lieut. gibson": 0,
                 "paul jones": 1,
@@ -16991,6 +17736,304 @@
                 0.0,
                 0,
                 0.28571428571428575
+            ]
+        ]
+    },
+    "Which of these foods is cultivated in a paddy?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.31453632597832665,
+                    0.7705141092936467,
+                    0.4016553741489061,
+                    1.0,
+                    0.6548672566371682,
+                    0.9272727272727272,
+                    1.0,
+                    0.39285714285714285
+                ],
+                [
+                    0.6854518047263534,
+                    0.22943019089122357,
+                    0.5983280056287154,
+                    0.0,
+                    0.29793510324483774,
+                    0.07272727272727272,
+                    0.0,
+                    0.2976190476190476
+                ],
+                [
+                    1.1869295319936855e-05,
+                    5.5699815129661214e-05,
+                    1.6620222378575427e-05,
+                    0.0,
+                    0.0471976401179941,
+                    0.0,
+                    0.0,
+                    0.30952380952380953
+                ]
+            ],
+            "fraction_answers": {
+                "cake": 0.2726864281046813,
+                "rice": 0.6827128670234898,
+                "dunkaroos": 0.044600704871828975
+            },
+            "question": "Which of these foods is cultivated in a paddy?",
+            "rate_limited": false,
+            "answers": [
+                "rice",
+                "cake",
+                "dunkaroos"
+            ],
+            "ml_answers": {
+                "cake": 0.20781722447544604,
+                "rice": 0.696627495554337,
+                "dunkaroos": 0.2004199764560734
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "cake": 2,
+                "rice": 6,
+                "dunkaroos": 0
+            },
+            "data": {
+                "result_count_important_words": [
+                    581000.0,
+                    173000.0,
+                    42.0
+                ],
+                "wikipedia_search": [
+                    3.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_noun_chunks": [
+                    1450000.0,
+                    2160000.0,
+                    60.0
+                ],
+                "word_relation_to_question": [
+                    0.7857142857142857,
+                    0.5952380952380952,
+                    0.6190476190476191
+                ],
+                "word_count_noun_chunks": [
+                    153.0,
+                    12.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    287.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    1060000.0,
+                    2310000.0,
+                    40.0
+                ],
+                "word_count_appended": [
+                    666.0,
+                    303.0,
+                    48.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "rice"
+            ]
+        },
+        "lines": [
+            [
+                1,
+                0.31453632597832665,
+                0.7705141092936467,
+                0.4016553741489061,
+                1.0,
+                0.6548672566371682,
+                0.9272727272727272,
+                1.0,
+                0.39285714285714285
+            ],
+            [
+                0,
+                0.6854518047263534,
+                0.22943019089122357,
+                0.5983280056287154,
+                0.0,
+                0.29793510324483774,
+                0.07272727272727272,
+                0.0,
+                0.2976190476190476
+            ],
+            [
+                0,
+                1.1869295319936855e-05,
+                5.5699815129661214e-05,
+                1.6620222378575427e-05,
+                0.0,
+                0.0471976401179941,
+                0.0,
+                0.0,
+                0.30952380952380953
+            ]
+        ]
+    },
+    "Which of these phrases appears in a Shakespeare play?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    3.697342283142472e-05,
+                    0.00010404322793439061,
+                    5.785379560182589e-05,
+                    0.813953488372093,
+                    0.28125,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.8318112633181126
+                ],
+                [
+                    0.9999630265771686,
+                    0.9998959567720657,
+                    0.9999421462043981,
+                    0.13953488372093023,
+                    0.6770833333333334,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.08637747336377473
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.046511627906976744,
+                    0.041666666666666664,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.08181126331811263
+                ]
+            ],
+            "fraction_answers": {
+                "at a loss": 0.5711829358297922,
+                "in such a pickle": 0.32423503610040494,
+                "up a dark creek": 0.10458202806980284
+            },
+            "question": "Which of these phrases appears in a Shakespeare play?",
+            "rate_limited": false,
+            "answers": [
+                "in such a pickle",
+                "at a loss",
+                "up a dark creek"
+            ],
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "at a loss": 0.34232761393661615,
+                "in such a pickle": 0.30114516136899444,
+                "up a dark creek": 0.2799243327124689
+            },
+            "z-best_answer_by_ml": [
+                "at a loss"
+            ],
+            "data": {
+                "result_count_important_words": [
+                    77.0,
+                    740000.0,
+                    0
+                ],
+                "wikipedia_search": [
+                    0.813953488372093,
+                    0.13953488372093023,
+                    0.046511627906976744
+                ],
+                "result_count_noun_chunks": [
+                    81.0,
+                    1400000.0,
+                    0
+                ],
+                "word_relation_to_question": [
+                    3.3272450532724505,
+                    0.3455098934550989,
+                    0.3272450532724505
+                ],
+                "word_count_noun_chunks": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    27.0,
+                    65.0,
+                    4.0
+                ],
+                "result_count": [
+                    44.0,
+                    1190000.0,
+                    0
+                ]
+            },
+            "integer_answers": {
+                "at a loss": 4,
+                "in such a pickle": 4,
+                "up a dark creek": 0
+            }
+        },
+        "lines": [
+            [
+                1,
+                3.697342283142472e-05,
+                0.00010404322793439061,
+                5.785379560182589e-05,
+                0.813953488372093,
+                0.28125,
+                0.3333333333333333,
+                0.3333333333333333,
+                0.8318112633181126
+            ],
+            [
+                0,
+                0.9999630265771686,
+                0.9998959567720657,
+                0.9999421462043981,
+                0.13953488372093023,
+                0.6770833333333334,
+                0.3333333333333333,
+                0.3333333333333333,
+                0.08637747336377473
+            ],
+            [
+                0,
+                0.0,
+                0.0,
+                0.0,
+                0.046511627906976744,
+                0.041666666666666664,
+                0.3333333333333333,
+                0.3333333333333333,
+                0.08181126331811263
             ]
         ]
     },
@@ -18038,6 +19081,155 @@
             ]
         ]
     },
+    "Though perhaps more famous as butter, which of these is a location in Florida?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "kerrygold"
+            ],
+            "question": "Though perhaps more famous as butter, which of these is a location in Florida?",
+            "answers": [
+                "tillamook",
+                "kerrygold",
+                "land o\u2019 lakes"
+            ],
+            "integer_answers": {
+                "tillamook": 2,
+                "kerrygold": 4,
+                "land o\u2019 lakes": 1
+            },
+            "data": {
+                "result_count_important_words": [
+                    88.0,
+                    93.0,
+                    54.0
+                ],
+                "wikipedia_search": [
+                    0.38461538461538464,
+                    1.0,
+                    0.6153846153846154
+                ],
+                "result_count_noun_chunks": [
+                    86.0,
+                    90.0,
+                    87.0
+                ],
+                "word_relation_to_question": [
+                    0.8030687586525149,
+                    1.4867344986324804,
+                    1.7101967427150044
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    8.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    206.0,
+                    139.0,
+                    0.0
+                ],
+                "result_count": [
+                    19900.0,
+                    69.0,
+                    61.0
+                ]
+            },
+            "negative_question": false,
+            "fraction_answers": {
+                "tillamook": 0.3835929070668718,
+                "kerrygold": 0.4308538588826588,
+                "land o\u2019 lakes": 0.18555323405046945
+            },
+            "lines": [
+                [
+                    0.9935097353969047,
+                    0.37446808510638296,
+                    0.3269961977186312,
+                    0.19230769230769232,
+                    0.5971014492753624,
+                    0.0,
+                    0,
+                    0.20076718966312876
+                ],
+                [
+                    0.0034448327508736893,
+                    0.39574468085106385,
+                    0.34220532319391633,
+                    0.5,
+                    0.4028985507246377,
+                    1.0,
+                    0,
+                    0.37168362465812016
+                ],
+                [
+                    0.0030454318522216673,
+                    0.2297872340425532,
+                    0.33079847908745247,
+                    0.3076923076923077,
+                    0.0,
+                    0.0,
+                    0,
+                    0.42754918567875116
+                ]
+            ],
+            "rate_limited": false,
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "tillamook": 0.28720178539496805,
+                "kerrygold": 0.4425791541644536,
+                "land o\u2019 lakes": 0.2727458393682566
+            }
+        },
+        "lines": [
+            [
+                0,
+                0.9935097353969047,
+                0.37446808510638296,
+                0.3269961977186312,
+                0.19230769230769232,
+                0.5971014492753624,
+                0.0,
+                0,
+                0.20076718966312876
+            ],
+            [
+                0,
+                0.0034448327508736893,
+                0.39574468085106385,
+                0.34220532319391633,
+                0.5,
+                0.4028985507246377,
+                1.0,
+                0,
+                0.37168362465812016
+            ],
+            [
+                1,
+                0.0030454318522216673,
+                0.2297872340425532,
+                0.33079847908745247,
+                0.3076923076923077,
+                0.0,
+                0.0,
+                0,
+                0.42754918567875116
+            ]
+        ]
+    },
     "Which Oscar-winning actress has NOT won the award for playing a real person?": {
         "raw_data": {
             "negative_question": true,
@@ -18184,6 +19376,155 @@
                 0.0,
                 0,
                 0.2850592391132083
+            ]
+        ]
+    },
+    "According to Alexa, which of these is NOT one the top five most popular sports sites?": {
+        "raw_data": {
+            "negative_question": true,
+            "lines": [
+                [
+                    0.49991832043189793,
+                    0.4870674435028249,
+                    0.3677474402730375,
+                    0.3063396007501828,
+                    0.45609065155807366,
+                    0.5,
+                    0,
+                    0.2905258302583026
+                ],
+                [
+                    0.17426581877370428,
+                    0.08509887005649719,
+                    0.2662116040955631,
+                    0.36335713415344845,
+                    0.3980169971671388,
+                    0.0,
+                    0,
+                    0.37023933989339897
+                ],
+                [
+                    0.3258158607943977,
+                    0.427833686440678,
+                    0.3660409556313993,
+                    0.3303032650963688,
+                    0.14589235127478756,
+                    0.5,
+                    0,
+                    0.3392348298482985
+                ]
+            ],
+            "fraction_answers": {
+                "deadspin": 0.30425115740402,
+                "sports illustrated": 0.5265172102457855,
+                "yahoo sports": 0.16923163235019448
+            },
+            "question": "According to Alexa, which of these is NOT one the top five most popular sports sites?",
+            "rate_limited": false,
+            "answers": [
+                "yahoo sports",
+                "sports illustrated",
+                "deadspin"
+            ],
+            "ml_answers": {
+                "deadspin": 0.32173651952802934,
+                "sports illustrated": 0.23556565028937718,
+                "yahoo sports": 0.4150306013220248
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "deadspin": 1,
+                "sports illustrated": 4,
+                "yahoo sports": 2
+            },
+            "data": {
+                "result_count_important_words": [
+                    58600.0,
+                    1880000.0,
+                    327000.0
+                ],
+                "wikipedia_search": [
+                    2.3239247909978067,
+                    1.6397143901586189,
+                    2.0363608188435744
+                ],
+                "result_count_noun_chunks": [
+                    155000.0,
+                    274000.0,
+                    157000.0
+                ],
+                "word_relation_to_question": [
+                    2.513690036900369,
+                    1.5571279212792128,
+                    1.929182041820418
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    2.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    83.0,
+                    331000.0,
+                    177000.0
+                ],
+                "word_count_appended": [
+                    31.0,
+                    72.0,
+                    250.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "yahoo sports"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.49991832043189793,
+                0.4870674435028249,
+                0.3677474402730375,
+                0.3063396007501828,
+                0.45609065155807366,
+                0.5,
+                0,
+                0.2905258302583026
+            ],
+            [
+                0,
+                0.17426581877370428,
+                0.08509887005649719,
+                0.2662116040955631,
+                0.36335713415344845,
+                0.3980169971671388,
+                0.0,
+                0,
+                0.37023933989339897
+            ],
+            [
+                1,
+                0.3258158607943977,
+                0.427833686440678,
+                0.3660409556313993,
+                0.3303032650963688,
+                0.14589235127478756,
+                0.5,
+                0,
+                0.3392348298482985
             ]
         ]
     },
@@ -18681,11 +20022,6 @@
                 "meet & greet car",
                 "quiet car"
             ],
-            "ml_answers": {
-                "sports argument car": 0.1141907960774729,
-                "quiet car": 0.5803613943320475,
-                "meet & greet car": 0.1644224272741195
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -18696,6 +20032,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "sports argument car": 0.1141907960774729,
+                "quiet car": 0.5803613943320475,
+                "meet & greet car": 0.1644224272741195
+            },
             "integer_answers": {
                 "sports argument car": 0,
                 "quiet car": 6,
@@ -19230,6 +20571,155 @@
             ]
         ]
     },
+    "Which Hawaiian island has active volcanoes?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.36794582392776526,
+                    0.37969094922737306,
+                    0.3684210526315789,
+                    0.0,
+                    0.17496962332928312,
+                    0.0392156862745098,
+                    0.029411764705882353,
+                    0.7001490818928163
+                ],
+                [
+                    0.34838224228743414,
+                    0.34142752023546724,
+                    0.3481203007518797,
+                    0.3795045045045045,
+                    0.4532199270959903,
+                    0.45098039215686275,
+                    0.6764705882352942,
+                    0.1322118554282159
+                ],
+                [
+                    0.2836719337848006,
+                    0.2788815305371597,
+                    0.28345864661654135,
+                    0.6204954954954954,
+                    0.3718104495747266,
+                    0.5098039215686274,
+                    0.29411764705882354,
+                    0.16763906267896778
+                ]
+            ],
+            "fraction_answers": {
+                "maui": 0.3912896663369561,
+                "oahu": 0.3512348359143928,
+                "big island": 0.2574754977486512
+            },
+            "question": "Which Hawaiian island has active volcanoes?",
+            "rate_limited": false,
+            "answers": [
+                "big island",
+                "maui",
+                "oahu"
+            ],
+            "ml_answers": {
+                "maui": 0.43627828876794555,
+                "oahu": 0.32194313910484845,
+                "big island": 0.2623248840908661
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "maui": 2,
+                "oahu": 2,
+                "big island": 4
+            },
+            "data": {
+                "result_count_important_words": [
+                    516000.0,
+                    464000.0,
+                    379000.0
+                ],
+                "wikipedia_search": [
+                    0.0,
+                    1.1385135135135136,
+                    1.8614864864864864
+                ],
+                "result_count_noun_chunks": [
+                    490000.0,
+                    463000.0,
+                    377000.0
+                ],
+                "word_relation_to_question": [
+                    2.8005963275712653,
+                    0.5288474217128636,
+                    0.6705562507158711
+                ],
+                "word_count_noun_chunks": [
+                    2.0,
+                    23.0,
+                    26.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    23.0,
+                    10.0
+                ],
+                "word_count_appended": [
+                    144.0,
+                    373.0,
+                    306.0
+                ],
+                "result_count": [
+                    489000.0,
+                    463000.0,
+                    377000.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "maui"
+            ]
+        },
+        "lines": [
+            [
+                1,
+                0.36794582392776526,
+                0.37969094922737306,
+                0.3684210526315789,
+                0.0,
+                0.17496962332928312,
+                0.0392156862745098,
+                0.029411764705882353,
+                0.7001490818928163
+            ],
+            [
+                0,
+                0.34838224228743414,
+                0.34142752023546724,
+                0.3481203007518797,
+                0.3795045045045045,
+                0.4532199270959903,
+                0.45098039215686275,
+                0.6764705882352942,
+                0.1322118554282159
+            ],
+            [
+                0,
+                0.2836719337848006,
+                0.2788815305371597,
+                0.28345864661654135,
+                0.6204954954954954,
+                0.3718104495747266,
+                0.5098039215686274,
+                0.29411764705882354,
+                0.16763906267896778
+            ]
+        ]
+    },
     "Pixies, Bon Iver, Iron & Wine and Bauhaus were all once signed to which record label?": {
         "raw_data": {
             "negative_question": false,
@@ -19381,20 +20871,69 @@
     },
     "Which of these would an oologist study?": {
         "raw_data": {
-            "z-best_answer_by_ml": [
-                "human liver"
+            "negative_question": false,
+            "lines": [
+                [
+                    0.3702185792349727,
+                    0.6210002370229912,
+                    0.06296296296296296,
+                    0.0,
+                    0.22077922077922077,
+                    0,
+                    0,
+                    0.0
+                ],
+                [
+                    0.06967213114754098,
+                    0.0026072529035316427,
+                    0.1037037037037037,
+                    0.08333333333333333,
+                    0.2597402597402597,
+                    0,
+                    0,
+                    0.8571428571428571
+                ],
+                [
+                    0.5601092896174863,
+                    0.3763925100734771,
+                    0.8333333333333334,
+                    0.9166666666666666,
+                    0.5194805194805194,
+                    0,
+                    0,
+                    0.14285714285714285
+                ]
             ],
+            "fraction_answers": {
+                "ice cave": 0.21249350000002462,
+                "human liver": 0.22936658966187104,
+                "ostrich egg": 0.5581399103381043
+            },
             "question": "Which of these would an oologist study?",
+            "rate_limited": false,
             "answers": [
                 "ice cave",
                 "human liver",
                 "ostrich egg"
             ],
-            "integer_answers": {
-                "ice cave": 1,
-                "human liver": 1,
-                "ostrich egg": 4
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "ice cave": 0.29540948404493517,
+                "human liver": 0.36400701949839315,
+                "ostrich egg": 0.25157563790719745
             },
+            "z-best_answer_by_ml": [
+                "human liver"
+            ],
             "data": {
                 "result_count_important_words": [
                     13100.0,
@@ -19437,59 +20976,10 @@
                     410.0
                 ]
             },
-            "negative_question": false,
-            "fraction_answers": {
-                "ice cave": 0.21249350000002462,
-                "human liver": 0.22936658966187104,
-                "ostrich egg": 0.5581399103381043
-            },
-            "lines": [
-                [
-                    0.3702185792349727,
-                    0.6210002370229912,
-                    0.06296296296296296,
-                    0.0,
-                    0.22077922077922077,
-                    0,
-                    0,
-                    0.0
-                ],
-                [
-                    0.06967213114754098,
-                    0.0026072529035316427,
-                    0.1037037037037037,
-                    0.08333333333333333,
-                    0.2597402597402597,
-                    0,
-                    0,
-                    0.8571428571428571
-                ],
-                [
-                    0.5601092896174863,
-                    0.3763925100734771,
-                    0.8333333333333334,
-                    0.9166666666666666,
-                    0.5194805194805194,
-                    0,
-                    0,
-                    0.14285714285714285
-                ]
-            ],
-            "rate_limited": false,
-            "columns_in_order": [
-                "result_count",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "word_relation_to_question"
-            ],
-            "ml_answers": {
-                "ice cave": 0.29540948404493517,
-                "human liver": 0.36400701949839315,
-                "ostrich egg": 0.25157563790719745
+            "integer_answers": {
+                "ice cave": 1,
+                "human liver": 1,
+                "ostrich egg": 4
             }
         },
         "lines": [
@@ -19823,6 +21313,155 @@
                 0.46551724137931033,
                 0.4285714285714286,
                 0.319989694989695
+            ]
+        ]
+    },
+    "One of Tupac Shakur\u2019s biggest posthumous hits samples what singer?": {
+        "raw_data": {
+            "negative_question": false,
+            "lines": [
+                [
+                    0.02157848063848655,
+                    0.0585325638911789,
+                    0.020891799189273464,
+                    0.35713597406130965,
+                    0.16455696202531644,
+                    0.0,
+                    0.0,
+                    0.40596064814814814
+                ],
+                [
+                    0.8010641442506651,
+                    0.5185490519373455,
+                    0.8169628936700967,
+                    0.462362635286293,
+                    0.1518987341772152,
+                    0.0,
+                    0.0,
+                    0.08697089947089948
+                ],
+                [
+                    0.17735737511084837,
+                    0.4229183841714757,
+                    0.16214530714062989,
+                    0.18050139065239737,
+                    0.6835443037974683,
+                    1.0,
+                    1.0,
+                    0.5070684523809524
+                ]
+            ],
+            "fraction_answers": {
+                "john mellencamp": 0.35472604484906434,
+                "bruce hornsby": 0.5166919016567215,
+                "christopher cross": 0.12858205349421414
+            },
+            "question": "One of Tupac Shakur\u2019s biggest posthumous hits samples what singer?",
+            "rate_limited": false,
+            "answers": [
+                "christopher cross",
+                "john mellencamp",
+                "bruce hornsby"
+            ],
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "ml_answers": {
+                "john mellencamp": 0.26516270432121314,
+                "bruce hornsby": 0.4420214376981768,
+                "christopher cross": 0.31157143216045696
+            },
+            "integer_answers": {
+                "john mellencamp": 4,
+                "bruce hornsby": 4,
+                "christopher cross": 0
+            },
+            "data": {
+                "result_count_important_words": [
+                    71.0,
+                    629.0,
+                    513.0
+                ],
+                "wikipedia_search": [
+                    1.4285438962452386,
+                    1.849450541145172,
+                    0.7220055626095895
+                ],
+                "result_count_noun_chunks": [
+                    67.0,
+                    2620.0,
+                    520.0
+                ],
+                "word_relation_to_question": [
+                    3.247685185185185,
+                    0.6957671957671958,
+                    4.0565476190476195
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    7.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    4.0
+                ],
+                "word_count_appended": [
+                    13.0,
+                    12.0,
+                    54.0
+                ],
+                "result_count": [
+                    73.0,
+                    2710.0,
+                    600.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "bruce hornsby"
+            ]
+        },
+        "lines": [
+            [
+                0,
+                0.02157848063848655,
+                0.0585325638911789,
+                0.020891799189273464,
+                0.35713597406130965,
+                0.16455696202531644,
+                0.0,
+                0.0,
+                0.40596064814814814
+            ],
+            [
+                0,
+                0.8010641442506651,
+                0.5185490519373455,
+                0.8169628936700967,
+                0.462362635286293,
+                0.1518987341772152,
+                0.0,
+                0.0,
+                0.08697089947089948
+            ],
+            [
+                1,
+                0.17735737511084837,
+                0.4229183841714757,
+                0.16214530714062989,
+                0.18050139065239737,
+                0.6835443037974683,
+                1.0,
+                1.0,
+                0.5070684523809524
             ]
         ]
     },
@@ -20320,11 +21959,6 @@
                 "lawyer",
                 "architect"
             ],
-            "ml_answers": {
-                "architect": 0.35174029356299585,
-                "prospector": 0.18394746795613665,
-                "lawyer": 0.6628903074549203
-            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -20335,6 +21969,11 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
+            "ml_answers": {
+                "architect": 0.35174029356299585,
+                "prospector": 0.18394746795613665,
+                "lawyer": 0.6628903074549203
+            },
             "integer_answers": {
                 "architect": 3,
                 "prospector": 0,
@@ -20571,52 +22210,52 @@
             ]
         ]
     },
-    "Which of these celebrities has NOT been a ProActiv spokesperson?": {
+    "The \u201cAmerican Craftsman\u201d style of house was an architectural reaction to what?": {
         "raw_data": {
-            "negative_question": true,
+            "negative_question": false,
             "lines": [
                 [
-                    0.21863775442330718,
-                    0.11437046802900463,
-                    0.21843116470120577,
-                    0.41156311908430554,
-                    0.28222222222222226,
-                    0.05555555555555558,
-                    0.08333333333333331,
-                    0.39651639344262296
+                    0.0010178348980645945,
+                    0.5092647937836222,
+                    0.26443569553805774,
+                    0.45732900136798904,
+                    0.25,
+                    0.0,
+                    0.0,
+                    0.16187640694212474
                 ],
                 [
-                    0.34568311826526543,
-                    0.4208965062623599,
-                    0.34563402676560223,
-                    0.26316207627118643,
-                    0.30666666666666664,
-                    0.46296296296296297,
-                    0.4722222222222222,
-                    0.41956967213114754
+                    0.9980858627290129,
+                    0.26718469814704127,
+                    0.5807086614173228,
+                    0.3689329685362517,
+                    0.5294117647058824,
+                    1.0,
+                    0.9,
+                    0.39531624428146106
                 ],
                 [
-                    0.43567912731142744,
-                    0.46473302570863545,
-                    0.435934808533192,
-                    0.32527480464450803,
-                    0.4111111111111111,
-                    0.4814814814814815,
-                    0.4444444444444444,
-                    0.1839139344262295
+                    0.0008963023729225534,
+                    0.22355050806933652,
+                    0.15485564304461943,
+                    0.17373803009575922,
+                    0.22058823529411764,
+                    0.0,
+                    0.1,
+                    0.44280734877641414
                 ]
             ],
             "fraction_answers": {
-                "selena gomez": 0.20435681558474267,
-                "katy perry": 0.5548424973021107,
-                "lindsay lohan": 0.24080068711314667
+                "world war i": 0.20549046656623232,
+                "industrial revolution": 0.6299550249771215,
+                "the great depression": 0.16455450845664618
             },
-            "question": "Which of these celebrities has NOT been a ProActiv spokesperson?",
+            "question": "The \u201cAmerican Craftsman\u201d style of house was an architectural reaction to what?",
             "rate_limited": false,
             "answers": [
-                "katy perry",
-                "lindsay lohan",
-                "selena gomez"
+                "world war i",
+                "industrial revolution",
+                "the great depression"
             ],
             "columns_in_order": [
                 "result_count",
@@ -20629,94 +22268,94 @@
                 "word_relation_to_question"
             ],
             "ml_answers": {
-                "selena gomez": 0.44386284145438887,
-                "katy perry": 0.13142124602629307,
-                "lindsay lohan": 0.2640667766396724
-            },
-            "integer_answers": {
-                "selena gomez": 1,
-                "katy perry": 6,
-                "lindsay lohan": 1
-            },
-            "data": {
-                "result_count_important_words": [
-                    1170000.0,
-                    240000.0,
-                    107000.0
-                ],
-                "wikipedia_search": [
-                    0.7074950473255558,
-                    1.8947033898305086,
-                    1.3978015628439358
-                ],
-                "result_count_noun_chunks": [
-                    425000.0,
-                    233000.0,
-                    96700.0
-                ],
-                "word_relation_to_question": [
-                    0.41393442622950816,
-                    0.32172131147540983,
-                    1.264344262295082
-                ],
-                "word_count_noun_chunks": [
-                    24.0,
-                    2.0,
-                    1.0
-                ],
-                "word_count_raw": [
-                    15.0,
-                    1.0,
-                    2.0
-                ],
-                "result_count": [
-                    423000.0,
-                    232000.0,
-                    96700.0
-                ],
-                "word_count_appended": [
-                    98.0,
-                    87.0,
-                    40.0
-                ]
+                "world war i": 0.20720128377883534,
+                "industrial revolution": 0.6737695082091776,
+                "the great depression": 0.20201830501168508
             },
             "z-best_answer_by_ml": [
-                "selena gomez"
-            ]
+                "industrial revolution"
+            ],
+            "data": {
+                "result_count_important_words": [
+                    85200.0,
+                    44700.0,
+                    37400.0
+                ],
+                "wikipedia_search": [
+                    2.286645006839945,
+                    1.8446648426812584,
+                    0.868690150478796
+                ],
+                "result_count_noun_chunks": [
+                    8060.0,
+                    17700.0,
+                    4720.0
+                ],
+                "word_relation_to_question": [
+                    0.8093820347106238,
+                    1.9765812214073053,
+                    2.2140367438820707
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    12.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    9.0,
+                    1.0
+                ],
+                "result_count": [
+                    67.0,
+                    65700.0,
+                    59.0
+                ],
+                "word_count_appended": [
+                    34.0,
+                    72.0,
+                    30.0
+                ]
+            },
+            "integer_answers": {
+                "world war i": 2,
+                "industrial revolution": 5,
+                "the great depression": 1
+            }
         },
         "lines": [
             [
                 0,
-                0.21863775442330718,
-                0.11437046802900463,
-                0.21843116470120577,
-                0.41156311908430554,
-                0.28222222222222226,
-                0.05555555555555558,
-                0.08333333333333331,
-                0.39651639344262296
-            ],
-            [
-                0,
-                0.34568311826526543,
-                0.4208965062623599,
-                0.34563402676560223,
-                0.26316207627118643,
-                0.30666666666666664,
-                0.46296296296296297,
-                0.4722222222222222,
-                0.41956967213114754
+                0.0010178348980645945,
+                0.5092647937836222,
+                0.26443569553805774,
+                0.45732900136798904,
+                0.25,
+                0.0,
+                0.0,
+                0.16187640694212474
             ],
             [
                 1,
-                0.43567912731142744,
-                0.46473302570863545,
-                0.435934808533192,
-                0.32527480464450803,
-                0.4111111111111111,
-                0.4814814814814815,
-                0.4444444444444444,
-                0.1839139344262295
+                0.9980858627290129,
+                0.26718469814704127,
+                0.5807086614173228,
+                0.3689329685362517,
+                0.5294117647058824,
+                1.0,
+                0.9,
+                0.39531624428146106
+            ],
+            [
+                0,
+                0.0008963023729225534,
+                0.22355050806933652,
+                0.15485564304461943,
+                0.17373803009575922,
+                0.22058823529411764,
+                0.0,
+                0.1,
+                0.44280734877641414
             ]
         ]
     },
@@ -21018,53 +22657,58 @@
             ]
         ]
     },
-    "The '70s sitcom \u201cThree's Company\u201d was about three people who were what?": {
+    "Which of the following is a dice-based game?": {
         "raw_data": {
             "negative_question": false,
             "lines": [
                 [
-                    0.9998750156230471,
-                    0.8394904458598726,
-                    0.9990700146140561,
-                    0.33653846153846156,
-                    0.9537037037037037,
-                    1.0,
-                    1.0,
-                    0.2132936507936508
+                    0.005298739265485109,
+                    0.04638619201725998,
+                    0.006326532383340999,
+                    0.0,
+                    0.1516213847502191,
+                    0.0,
+                    0.0,
+                    0.41341865425635055
                 ],
                 [
+                    0.7030878859857482,
+                    0.6695433297375045,
+                    0.6474064688576661,
+                    0.0,
+                    0.2839614373356705,
                     0.0,
                     0.0,
-                    0.0,
-                    0.2916666666666667,
-                    0.018518518518518517,
-                    0.0,
-                    0.0,
-                    0.6453373015873016
+                    0.009598603839441536
                 ],
                 [
-                    0.00012498437695288088,
-                    0.16050955414012738,
-                    0.0009299853859439352,
-                    0.3717948717948718,
-                    0.027777777777777776,
-                    0.0,
-                    0.0,
-                    0.14136904761904764
+                    0.2916133747487667,
+                    0.2840704782452355,
+                    0.34626699875899297,
+                    1.0,
+                    0.5644171779141104,
+                    1.0,
+                    1.0,
+                    0.5769827419042078
                 ]
             ],
             "fraction_answers": {
-                "trivia show hosts": 0.11944031084656084,
-                "roommates": 0.792746411516599,
-                "panda bears": 0.08781327763684019
+                "sparkle": 0.28919971571950387,
+                "quirkle": 0.07788143783408198,
+                "farkle": 0.6329188464464142
             },
-            "question": "The '70s sitcom \u201cThree's Company\u201d was about three people who were what?",
+            "question": "Which of the following is a dice-based game?",
             "rate_limited": false,
             "answers": [
-                "roommates",
-                "trivia show hosts",
-                "panda bears"
+                "quirkle",
+                "sparkle",
+                "farkle"
             ],
+            "ml_answers": {
+                "sparkle": 0.19832704857062133,
+                "quirkle": 0.22909518074089225,
+                "farkle": 0.7025199580879169
+            },
             "columns_in_order": [
                 "result_count",
                 "result_count_important_words",
@@ -21075,95 +22719,90 @@
                 "word_count_raw",
                 "word_relation_to_question"
             ],
-            "ml_answers": {
-                "trivia show hosts": 0.31157143216045696,
-                "roommates": 0.4420214376981768,
-                "panda bears": 0.29035060350393144
+            "integer_answers": {
+                "sparkle": 3,
+                "quirkle": 0,
+                "farkle": 5
             },
-            "z-best_answer_by_ml": [
-                "roommates"
-            ],
             "data": {
                 "result_count_important_words": [
-                    65900.0,
-                    0,
-                    12600.0
+                    64500.0,
+                    931000.0,
+                    395000.0
                 ],
                 "wikipedia_search": [
-                    1.3461538461538463,
-                    1.1666666666666667,
-                    1.4871794871794872
+                    0.0,
+                    0.0,
+                    4.0
                 ],
                 "result_count_noun_chunks": [
-                    75200.0,
-                    0,
-                    70.0
+                    7290.0,
+                    746000.0,
+                    399000.0
                 ],
                 "word_relation_to_question": [
-                    0.6398809523809523,
-                    1.9360119047619047,
-                    0.42410714285714285
+                    1.2402559627690517,
+                    0.028795811518324606,
+                    1.7309482257126236
                 ],
                 "word_count_noun_chunks": [
-                    1.0,
                     0.0,
-                    0.0
+                    0.0,
+                    7.0
                 ],
                 "word_count_raw": [
-                    5.0,
                     0.0,
-                    0.0
-                ],
-                "result_count": [
-                    184000.0,
-                    0,
-                    23.0
+                    0.0,
+                    5.0
                 ],
                 "word_count_appended": [
-                    206.0,
-                    4.0,
-                    6.0
+                    173.0,
+                    324.0,
+                    644.0
+                ],
+                "result_count": [
+                    7250.0,
+                    962000.0,
+                    399000.0
                 ]
             },
-            "integer_answers": {
-                "trivia show hosts": 1,
-                "roommates": 6,
-                "panda bears": 1
-            }
+            "z-best_answer_by_ml": [
+                "farkle"
+            ]
         },
         "lines": [
             [
+                0,
+                0.005298739265485109,
+                0.04638619201725998,
+                0.006326532383340999,
+                0.0,
+                0.1516213847502191,
+                0.0,
+                0.0,
+                0.41341865425635055
+            ],
+            [
+                0,
+                0.7030878859857482,
+                0.6695433297375045,
+                0.6474064688576661,
+                0.0,
+                0.2839614373356705,
+                0.0,
+                0.0,
+                0.009598603839441536
+            ],
+            [
                 1,
-                0.9998750156230471,
-                0.8394904458598726,
-                0.9990700146140561,
-                0.33653846153846156,
-                0.9537037037037037,
+                0.2916133747487667,
+                0.2840704782452355,
+                0.34626699875899297,
+                1.0,
+                0.5644171779141104,
                 1.0,
                 1.0,
-                0.2132936507936508
-            ],
-            [
-                0,
-                0.0,
-                0.0,
-                0.0,
-                0.2916666666666667,
-                0.018518518518518517,
-                0.0,
-                0.0,
-                0.6453373015873016
-            ],
-            [
-                0,
-                0.00012498437695288088,
-                0.16050955414012738,
-                0.0009299853859439352,
-                0.3717948717948718,
-                0.027777777777777776,
-                0.0,
-                0.0,
-                0.14136904761904764
+                0.5769827419042078
             ]
         ]
     },
@@ -21611,6 +23250,155 @@
                 0.0,
                 0.3448275862068966,
                 0.34681346937307667
+            ]
+        ]
+    },
+    "Which of these do adverbs NOT typically modify?": {
+        "raw_data": {
+            "negative_question": true,
+            "lines": [
+                [
+                    0.3464170692431562,
+                    0.3488700564971752,
+                    0.32564102564102565,
+                    0.4504189944134078,
+                    0.42262810755961444,
+                    0.4985754985754986,
+                    0.4949771689497717,
+                    0.4574175824175824
+                ],
+                [
+                    0.3498389694041868,
+                    0.3516949152542373,
+                    0.3336182336182336,
+                    0.2282466465509515,
+                    0.21359715880263824,
+                    0.0422602089268756,
+                    0.10319634703196345,
+                    0.1567811138308769
+                ],
+                [
+                    0.303743961352657,
+                    0.2994350282485876,
+                    0.34074074074074073,
+                    0.32133435903564067,
+                    0.36377473363774737,
+                    0.4591642924976258,
+                    0.4018264840182648,
+                    0.38580130375154076
+                ]
+            ],
+            "fraction_answers": {
+                "adjective": 0.2810447741792988,
+                "pronoun": 0.163763624175692,
+                "adverb": 0.5551916016450091
+            },
+            "question": "Which of these do adverbs NOT typically modify?",
+            "rate_limited": false,
+            "answers": [
+                "pronoun",
+                "adverb",
+                "adjective"
+            ],
+            "ml_answers": {
+                "adjective": 0.3764746055798815,
+                "pronoun": 0.5376868641330509,
+                "adverb": 0.1954353364840121
+            },
+            "columns_in_order": [
+                "result_count",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "word_relation_to_question"
+            ],
+            "integer_answers": {
+                "adjective": 2,
+                "pronoun": 1,
+                "adverb": 5
+            },
+            "data": {
+                "result_count_important_words": [
+                    1070000.0,
+                    1050000.0,
+                    1420000.0
+                ],
+                "wikipedia_search": [
+                    0.39664804469273746,
+                    2.174026827592388,
+                    1.4293251277148746
+                ],
+                "result_count_noun_chunks": [
+                    612000.0,
+                    584000.0,
+                    559000.0
+                ],
+                "word_relation_to_question": [
+                    0.34065934065934067,
+                    2.745751089352985,
+                    0.9135895699876742
+                ],
+                "word_count_noun_chunks": [
+                    3.0,
+                    964.0,
+                    86.0
+                ],
+                "word_count_raw": [
+                    11.0,
+                    869.0,
+                    215.0
+                ],
+                "word_count_appended": [
+                    305.0,
+                    1129.0,
+                    537.0
+                ],
+                "result_count": [
+                    763000.0,
+                    746000.0,
+                    975000.0
+                ]
+            },
+            "z-best_answer_by_ml": [
+                "pronoun"
+            ]
+        },
+        "lines": [
+            [
+                1,
+                0.3464170692431562,
+                0.3488700564971752,
+                0.32564102564102565,
+                0.4504189944134078,
+                0.42262810755961444,
+                0.4985754985754986,
+                0.4949771689497717,
+                0.4574175824175824
+            ],
+            [
+                0,
+                0.3498389694041868,
+                0.3516949152542373,
+                0.3336182336182336,
+                0.2282466465509515,
+                0.21359715880263824,
+                0.0422602089268756,
+                0.10319634703196345,
+                0.1567811138308769
+            ],
+            [
+                0,
+                0.303743961352657,
+                0.2994350282485876,
+                0.34074074074074073,
+                0.32133435903564067,
+                0.36377473363774737,
+                0.4591642924976258,
+                0.4018264840182648,
+                0.38580130375154076
             ]
         ]
     }
