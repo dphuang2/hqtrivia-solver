@@ -335,10 +335,15 @@ class Answerer():
     @timeit
     def get_lowered_google_search(self, question):
         google_query = 'https://www.google.com/search?num=100&q=' 
-        if question in self.get_lowered_google_search.memo:
+        if question in self.get_lowered_google_search.currently_searching:
+            # Block until the question is successfuly saved in memo
+            while question not in self.get_lowered_google_search.memo:
+                continue
             return self.get_lowered_google_search.memo[question]
+        self.get_lowered_google_search.currently_searching.add(question)
         r = requests.get(google_query + question)
         lowered = r.content.lower()
+        self.get_lowered_google_search.memo[question] = lowered
         try:
             with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
                 f.write(lowered)
@@ -348,9 +353,9 @@ class Answerer():
         if 'our systems have detected unusual traffic from your computer network' in lowered:
             print 'Google rate limited your IP.'
             self.rate_limited = True
-        self.get_lowered_google_search.memo[question] = lowered
-        return lowered
+        return self.get_lowered_google_search.memo[question]
     get_lowered_google_search.memo = {}
+    get_lowered_google_search.currently_searching = set()
 
     def raw_counts_to_input(self):
         # Convert data to input data
