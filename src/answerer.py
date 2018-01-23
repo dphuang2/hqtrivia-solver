@@ -48,7 +48,7 @@ class Answerer():
                 self.result_count_important_words
                 ]
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
-        self.negative_words = ['NOT', 'NEVER']
+        self.negative_words = ['NOT', 'NEVER', 'never', 'not']
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
         self.nlp = spacy.load('en')
@@ -365,7 +365,10 @@ class Answerer():
         return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
 
     def concatenate_answer_to_important_words(self, answer):
-        return u'{} "{}"'.format(' '.join(self.important_words), answer).encode('utf-8').strip()
+        try:
+            return u'{} "{}"'.format(' '.join(self.important_words), answer).encode('utf-8').strip()
+        except UnicodeDecodeError:
+            return u'{} "{}"'.format(' '.join([string.decode('utf-8') for string in self.important_words]), answer).strip()
 
     @timeit
     def get_lowered_google_search(self, question):
