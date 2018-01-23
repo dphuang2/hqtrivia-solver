@@ -22,8 +22,9 @@ word_count_noun_chunks: Google evaluated noun chunks of question and count occur
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
 result_count: Google question with each answer appended and count number of search results
 result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
+result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
-word_relation_to_question: Google search each answer and count number of occurenecs for each evaluated important word
+word_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
 """
 
 parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -42,8 +43,9 @@ class Answerer():
                 self.word_count_appended,
                 self.word_count_raw,
                 self.wikipedia_search,
+                self.result_count,
                 self.result_count_noun_chunks,
-                self.result_count
+                self.result_count_important_words
                 ]
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
         self.negative_words = ['NOT', 'NEVER']
@@ -115,6 +117,7 @@ class Answerer():
                 'answers': self.answers,
                 'lines': self.lines,
                 'data': self.data,
+                'columns_in_order': sorted(list(self.data.keys())),
                 'rate_limited': self.rate_limited
                 }
 
@@ -219,6 +222,34 @@ class Answerer():
         self.data['result_count_noun_chunks'] = counts
         self.counts_to_confidence(counts)
         print 'Confidence values after result_count_noun_chunks: ' + str(self.confidences)
+
+    @timeit
+    def result_count_important_words(self):
+        counts = []
+        contents = {}
+
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_important_words(answer),))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        for answer in self.answers:
+            content = contents[self.concatenate_answer_to_important_words(answer)]
+            result = self.regex.search(content)
+            try:
+                count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
+                counts.append(count)
+            except AttributeError:
+                print 'There were no results for {}.'.format(answer)
+                counts.append(0)
+
+        print 'Counts after result_count_important_words: ' + str(counts)
+        self.data['result_count_important_words'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after result_count_important_words: ' + str(self.confidences)
 
     @timeit
     def result_count(self):
@@ -333,6 +364,9 @@ class Answerer():
     def concatenate_answer_to_noun_chunks(self, answer):
         return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
 
+    def concatenate_answer_to_important_words(self, answer):
+        return u'{} "{}"'.format(' '.join(self.important_words), answer).encode('utf-8').strip()
+
     @timeit
     def get_lowered_google_search(self, question):
         google_query = 'https://www.google.com/search?num=100&q=' 
@@ -361,7 +395,7 @@ class Answerer():
     def raw_counts_to_input(self):
         # Convert data to input data
         lines = [[], [], []]
-        for k,v in self.data.iteritems():
+        for k,v in sorted(list(self.data.iteritems())):  # The reason for sorted list is to guarantee the order in which all the approaches are appended
             try:
                 # Make model input inverted if question is negative (makes more sense for model)
                 if self.negative:
@@ -383,8 +417,8 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
-    # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
+    pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
+    # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
     # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
