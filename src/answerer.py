@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from HTMLParser import HTMLParser
 from method_timer import timeit
+from unidecode import unidecode
 from pprint import pprint
 import lightgbm as lgb
 from time import time
@@ -16,7 +18,7 @@ import re
 import os
 
 """
-Approaches:
+Features / Approaches:
 word_count_raw: Google the question and count occurences of each answer
 word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
@@ -25,7 +27,11 @@ result_count_noun_chunks: Google noun_chunks with each answer appended and count
 result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
+question_relation_to_word: Google search each important word and count number of occurences for each answer
+
+Categorical data:
 type_of_question: Classify the question from 0 to 5 using the 6 Ws of questions
+negative_question: Classify the question as a negative or positive question
 """
 
 parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -40,6 +46,7 @@ class Answerer():
     def __init__(self):
         self.approaches = [
                 self.answer_relation_to_question,
+                self.question_related_to_answer,
                 self.word_count_noun_chunks,
                 self.word_count_appended,
                 self.word_count_raw,
@@ -62,6 +69,7 @@ class Answerer():
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
         self.nlp = spacy.load('en')
+        self.h = HTMLParser()
         self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
         for word in self.stop_words:
             lexeme = self.nlp.vocab[unicode(word)]
@@ -145,7 +153,7 @@ class Answerer():
 
     @timeit
     def word_count_noun_chunks(self):
-        lowered = self.get_lowered_google_search(self.noun_chunks)
+        lowered = self.get_lowered_google_search(self.noun_chunks_string)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
@@ -202,22 +210,50 @@ class Answerer():
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
         for word in self.important_words:
-            print 'word: {}'.format(word)
             curr_counts = []
             for answer in self.answers:
                 curr_counts.append(float(contents[answer].count(word)))
             try:
                 curr_counts = [count / sum(curr_counts) for count in curr_counts]
             except ZeroDivisionError:
-                print 'The word. "{}" was not found in any search'.format(word)
-                pass
-            print 'counts: {}'.format(counts)
+                print 'The word "{}" was not found in any answer search'.format(word)
+                continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         print 'Counts after answer_relation_to_question: ' + str(counts)
         self.data['answer_relation_to_question'] = counts
         self.counts_to_confidence(counts)
         print 'Confidence values after answer_relation_to_question: ' + str(self.confidences)
+
+    @timeit
+    def question_related_to_answer(self):
+        # Grab google search for each answer and save contents
+        contents = {}
+        for word in self.noun_chunks:
+            t = threading.Thread(target=self.grab_content, args=(contents, word,))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.noun_chunks):
+            continue
+
+        # Count occurences for each entity in each answer search
+        counts = [0.0] * len(self.answers)
+        for word in self.noun_chunks:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[word].count(answer)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                print 'The answer "{}" was not found in the search for "{}"'.format(answer, word)
+                continue
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
+        print 'Counts after question_related_to_answer: ' + str(counts)
+        self.data['question_related_to_answer'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after question_related_to_answer: ' + str(self.confidences)
 
     @timeit
     def result_count_noun_chunks(self):
@@ -378,9 +414,10 @@ class Answerer():
         self.doc = self.nlp(unicode(self.question))
         # Word is part of the POS list and it is not a stop word (common word)
         self.important_words = [encode_unicode(t.text).lower() for t in self.doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.noun_chunks = ' '.join([chunk.text for chunk in list(self.doc.noun_chunks)])
+        self.noun_chunks = [chunk.text for chunk in list(self.doc.noun_chunks)]
+        self.noun_chunks_string = ' '.join(self.noun_chunks)
         print 'Evaluated important words: ' + str(self.important_words)
-        print 'Evaluated noun_chunks: ' + self.noun_chunks
+        print 'Evaluated noun_chunks: ' + str(self.noun_chunks)
 
     def concatenate_answer_to_question(self, answer):
         try:
@@ -390,9 +427,9 @@ class Answerer():
 
     def concatenate_answer_to_noun_chunks(self, answer):
         try:
-            return u'{} "{}"'.format(self.noun_chunks, answer).encode('utf-8').strip()
+            return u'{} "{}"'.format(self.noun_chunks_string, answer).encode('utf-8').strip()
         except UnicodeDecodeError:
-            return u'{} "{}"'.format(self.noun_chunks.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
+            return u'{} "{}"'.format(self.noun_chunks_string.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
 
     def concatenate_answer_to_important_words(self, answer):
         try:
@@ -410,7 +447,7 @@ class Answerer():
             return self.get_lowered_google_search.memo[question]
         self.get_lowered_google_search.currently_searching.add(question)
         r = requests.get(google_query + question)
-        lowered = r.content.lower()
+        lowered = unidecode(self.h.unescape(unicode(r.content.lower(), errors='ignore')))
         self.get_lowered_google_search.memo[question] = lowered
         try:
             with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
@@ -446,8 +483,8 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
-    # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
+    pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
+    # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
     # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
