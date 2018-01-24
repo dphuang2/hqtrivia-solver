@@ -9,7 +9,7 @@ DELIMITER = '|'
 with open('regression.data', 'w') as f:
     for k,v in questions_processed.iteritems():
         for line in v['lines']:
-            if len(line) != 9:
+            if len(line) != 10:
                 pprint(v)
                 exit()
             f.write(DELIMITER.join([str(val) for val in line]) + '\n')

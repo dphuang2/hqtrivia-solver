@@ -16,6 +16,8 @@ y_test = df_test[0].values
 X_train = df_train.drop(0, axis=1).values
 X_test = df_test.drop(0, axis=1).values
 
+num_train, num_feature = X_train.shape
+
 # create dataset for lightgbm
 lgb_train = lgb.Dataset(X_train, y_train)
 lgb_eval = lgb.Dataset(X_test, y_test, reference=lgb_train)
@@ -34,13 +36,15 @@ params = {
     'verbose': 0
 }
 
+
 print('Start training...')
 # train
 gbm = lgb.train(params,
                 lgb_train,
                 num_boost_round=20,
                 valid_sets=lgb_eval,
-                early_stopping_rounds=5)
+                early_stopping_rounds=5,
+                categorical_feature=[num_feature - 1])
 
 print('Save model...')
 # save model to file

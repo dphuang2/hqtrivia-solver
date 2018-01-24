@@ -25,6 +25,7 @@ result_count_noun_chunks: Google noun_chunks with each answer appended and count
 result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 word_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
+categorize_question: Classify the question from 0 to 5 using the 6 Ws of questions
 """
 
 parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -45,8 +46,17 @@ class Answerer():
                 self.wikipedia_search,
                 self.result_count,
                 self.result_count_noun_chunks,
-                self.result_count_important_words
+                self.result_count_important_words,
+                self.categorize_question
                 ]
+        self.question_types = {
+                'who': 0,
+                'what': 1,
+                'when': 2,
+                'where': 3,
+                'why': 4,
+                'how': 5,
+                }
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
         self.negative_words = ['never', 'not']
         self.stop_words = ['which', 'Which']
@@ -115,12 +125,22 @@ class Answerer():
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
                 'negative_question': self.negative,
                 'question': self.question,
+                'question_type': self.question_type,
                 'answers': self.answers,
                 'lines': self.lines,
                 'data': self.data,
                 'columns_in_order': sorted(list(self.data.keys())),
                 'rate_limited': self.rate_limited
                 }
+
+    @timeit
+    def categorize_question(self):
+        for category, value in self.question_types.iteritems():
+            if category in self.question:
+                self.question_type = value
+                break
+        else:
+            self.question_type = -1 # No type found
 
     @timeit
     def word_count_noun_chunks(self):
@@ -418,20 +438,24 @@ class Answerer():
             for i in range(len(confidence_values)):
                 lines[i].append(confidence_values[i])
 
+        # Append question type to the data
+        for line in lines:
+            line.append(self.question_type)
+
         # Cross validate input data
         if any(len(line) != len(self.approaches) for line in lines):
             print 'Something is wrong with input data to model!'
+            exit()
 
         self.lines = lines
         return np.array(lines)
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
+    pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
+    # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
-
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
-    # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
     # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
     # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
