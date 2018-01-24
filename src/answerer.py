@@ -24,7 +24,7 @@ result_count: Google question with each answer appended and count number of sear
 result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
 result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
-word_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
+answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
 categorize_question: Classify the question from 0 to 5 using the 6 Ws of questions
 """
 
@@ -39,7 +39,7 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
-                self.word_relation_to_question,
+                self.answer_relation_to_question,
                 self.word_count_noun_chunks,
                 self.word_count_appended,
                 self.word_count_raw,
@@ -136,7 +136,7 @@ class Answerer():
     @timeit
     def categorize_question(self):
         for category, value in self.question_types.iteritems():
-            if category in self.question:
+            if category in [t.text for t in self.doc]:
                 self.question_type = value
                 break
         else:
@@ -187,7 +187,7 @@ class Answerer():
         print 'Confidence values after word_count_appended: ' + str(self.confidences)
 
     @timeit
-    def word_relation_to_question(self):
+    def answer_relation_to_question(self):
         # Grab google search for each answer and save contents
         contents = {}
         for answer in self.answers:
@@ -201,6 +201,7 @@ class Answerer():
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
         for word in self.important_words:
+            print 'word: {}'.format(word)
             curr_counts = []
             for answer in self.answers:
                 curr_counts.append(float(contents[answer].count(word)))
@@ -209,12 +210,13 @@ class Answerer():
             except ZeroDivisionError:
                 print 'The word. "{}" was not found in any search'.format(word)
                 pass
+            print 'counts: {}'.format(counts)
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after word_relation_to_question: ' + str(counts)
-        self.data['word_relation_to_question'] = counts
+        print 'Counts after answer_relation_to_question: ' + str(counts)
+        self.data['answer_relation_to_question'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_relation_to_question: ' + str(self.confidences)
+        print 'Confidence values after answer_relation_to_question: ' + str(self.confidences)
 
     @timeit
     def result_count_noun_chunks(self):
@@ -372,10 +374,10 @@ class Answerer():
     @timeit
     def process_question(self):
         # Initialize nlp constants
-        doc = self.nlp(unicode(self.question))
+        self.doc = self.nlp(unicode(self.question))
         # Word is part of the POS list and it is not a stop word (common word)
-        self.important_words = [encode_unicode(t.text).lower() for t in doc if t.pos_ in self.POS_list and not t.is_stop]
-        self.noun_chunks = ' '.join([chunk.text for chunk in list(doc.noun_chunks)])
+        self.important_words = [encode_unicode(t.text).lower() for t in self.doc if t.pos_ in self.POS_list and not t.is_stop]
+        self.noun_chunks = ' '.join([chunk.text for chunk in list(self.doc.noun_chunks)])
         print 'Evaluated important words: ' + str(self.important_words)
         print 'Evaluated noun_chunks: ' + self.noun_chunks
 
@@ -452,24 +454,24 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
-    # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
+    pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
+    # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
+    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
+    # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
+    # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
+    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
-    # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
     # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
-    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
-    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
-    # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
     # pprint(solver.answer(u"The Windows 95 startup sound was composed by a former member of what band?",["They Might Be Giants","Roxy Music","Devo"]))
     # pprint(solver.answer(u"Guatemala and Mozambique are the only UN countries with what on their flags?",["Firearm","Garden tool","Bird"]))
     # pprint(solver.answer(u"Which of these fitness fads came first?",["Tae Bo","Jazzercise","Zumba"]))
     # pprint(solver.answer(u"Which movie director's daughter made her directorial debut in 2017",["Nancy Meyers","David Lynch","Ridley Scott"]))
     # pprint(solver.answer(u'In which ocean would you find Micronesia?', ["atlantic","pacific","indian"]))
     # pprint(solver.answer(u'Microsoft Passport was previously known as what?',["ms id","ms single sign-on","net passport"]))
-    # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
     # pprint(solver.answer(u'Which of these Uranus moons is NOT named after a Shakespearean character?', ['Oberon', 'Umbriel', 'Trinculo']))
     # pprint(solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"]))
     # pprint(solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"]))
