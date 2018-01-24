@@ -44,7 +44,7 @@ gbm = lgb.train(params,
                 num_boost_round=20,
                 valid_sets=lgb_eval,
                 early_stopping_rounds=5,
-                categorical_feature=[num_feature - 1])
+                categorical_feature=[num_feature - 2])
 
 print('Save model...')
 # save model to file

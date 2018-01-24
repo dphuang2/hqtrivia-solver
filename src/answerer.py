@@ -25,7 +25,7 @@ result_count_noun_chunks: Google noun_chunks with each answer appended and count
 result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
-categorize_question: Classify the question from 0 to 5 using the 6 Ws of questions
+type_of_question: Classify the question from 0 to 5 using the 6 Ws of questions
 """
 
 parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -47,7 +47,7 @@ class Answerer():
                 self.result_count,
                 self.result_count_noun_chunks,
                 self.result_count_important_words,
-                self.categorize_question
+                self.type_of_question
                 ]
         self.question_types = {
                 'who': 0,
@@ -74,25 +74,27 @@ class Answerer():
         self.confidences = [0] * len(answers)
         self.integer_answers = [0] * len(answers)
         self.data = {}
+        self.categorical_data = {}
         self.rate_limited = False
         try:
             self.question = question.decode('utf-8')
         except UnicodeEncodeError:
             self.question = question
         self.question = self.question.lower()
-        self.question_without_negative = self.question
-        # Remove negative word from question and for giving correct input to model - HQTrivia gives negative questions in form of all caps word
-        self.negative = False
-        for word in self.negative_words:
-            if word in self.question:
-                self.negative = True
-                negative_idx = self.question.index(word)
-                self.question_without_negative = self.question[:negative_idx] + self.question[negative_idx + len(word) + 1:]
-                break
         print 'question: ' + self.question
         print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
         self.process_question()
+
+        # Remove negative word from question and for giving correct input to model
+        self.question_without_negative = self.question
+        self.categorical_data['negative_question'] = False
+        for word in self.negative_words:
+            if word in [t.text for t in self.doc]:
+                self.categorical_data['negative_question'] = True
+                negative_idx = self.question.index(word)
+                self.question_without_negative = self.question[:negative_idx] + self.question[negative_idx + len(word) + 1:]
+                break
 
         # Run all approaches on separate threads
         threads = []
@@ -123,24 +125,23 @@ class Answerer():
                 'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
-                'negative_question': self.negative,
                 'question': self.question,
-                'question_type': self.question_type,
+                'categorical_data': self.categorical_data,
                 'answers': self.answers,
                 'lines': self.lines,
                 'data': self.data,
-                'columns_in_order': sorted(list(self.data.keys())),
+                'columns_in_order': sorted(list(self.data.keys())) + sorted(list(self.categorical_data.keys())), 
                 'rate_limited': self.rate_limited
                 }
 
     @timeit
-    def categorize_question(self):
+    def type_of_question(self):
         for category, value in self.question_types.iteritems():
             if category in [t.text for t in self.doc]:
-                self.question_type = value
+                self.categorical_data['question_type'] = value
                 break
         else:
-            self.question_type = -1 # No type found
+            self.categorical_data['question_type'] = -1 # No type found
 
     @timeit
     def word_count_noun_chunks(self):
@@ -429,12 +430,7 @@ class Answerer():
         lines = [[], [], []]
         for k,v in sorted(list(self.data.iteritems())):  # The reason for sorted list is to guarantee the order in which all the approaches are appended
             try:
-                # Make model input inverted if question is negative (makes more sense for model)
-                if self.negative:
-                    confidence_values = [1 - (val / sum(v)) for val in v]
-                    confidence_values = [val/sum(confidence_values) for val in confidence_values]
-                else:
-                    confidence_values = [val/sum(v) for val in v]
+                confidence_values = [val/sum(v) for val in v]
             except ZeroDivisionError:
                 confidence_values = [0, 0, 0]
             for i in range(len(confidence_values)):
@@ -442,12 +438,8 @@ class Answerer():
 
         # Append question type to the data
         for line in lines:
-            line.append(self.question_type)
-
-        # Cross validate input data
-        if any(len(line) != len(self.approaches) for line in lines):
-            print 'Something is wrong with input data to model!'
-            exit()
+            for k,v in sorted(list(self.categorical_data.iteritems())):
+                line.append(float(v))
 
         self.lines = lines
         return np.array(lines)

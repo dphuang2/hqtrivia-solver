@@ -45,14 +45,13 @@ def main():
             exit()
 
         # Convert to three rows in the input data
-        lines = [[], [], []]
-        for i in range(len(lines)):
-            lines[i].append(1 if i == right_answer else 0)
-            lines[i] += raw_data['lines'][i]
+        one_hot_right_answer = []
+        for i in range(len(answers)):
+            one_hot_right_answer.append(1 if i == right_answer else 0)
 
         decoded_question = question.decode('utf-8')
         questions_processed[decoded_question] = {}
-        questions_processed[decoded_question]['lines'] = lines
+        questions_processed[decoded_question]['right_answer'] = one_hot_right_answer
         questions_processed[decoded_question]['raw_data'] = raw_data
         # Save question as a processed question
         with open('questions_processed.json', 'w') as f:

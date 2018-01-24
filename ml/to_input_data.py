@@ -8,10 +8,11 @@ DELIMITER = '|'
 
 with open('regression.data', 'w') as f:
     for k,v in questions_processed.iteritems():
-        for line in v['lines']:
-            if len(line) != 10:
+        lines = v['raw_data']['lines']
+        for i in range(len(lines)):
+            if len(lines[i]) != 10:
                 pprint(v)
                 exit()
-            f.write(DELIMITER.join([str(val) for val in line]) + '\n')
+            f.write(DELIMITER.join([str(v['right_answer'][i])] + [str(val) for val in lines]) + '\n')
 
 print 'Successfully converted processed questions to input data!'
