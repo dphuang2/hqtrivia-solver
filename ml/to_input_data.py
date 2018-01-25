@@ -13,6 +13,6 @@ with open('regression.data', 'w') as f:
             if len(lines[i]) != 10:
                 pprint(v)
                 exit()
-            f.write(DELIMITER.join([str(v['right_answer'][i])] + [str(val) for val in lines]) + '\n')
+            f.write(DELIMITER.join([str(v['right_answer'][i])] + [str(val) for val in lines[i]]) + '\n')
 
 print 'Successfully converted processed questions to input data!'

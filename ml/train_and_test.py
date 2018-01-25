@@ -17,6 +17,7 @@ X_train = df_train.drop(0, axis=1).values
 X_test = df_test.drop(0, axis=1).values
 
 num_train, num_feature = X_train.shape
+pdb.set_trace()
 
 # create dataset for lightgbm
 lgb_train = lgb.Dataset(X_train, y_train)
@@ -44,7 +45,7 @@ gbm = lgb.train(params,
                 num_boost_round=20,
                 valid_sets=lgb_eval,
                 early_stopping_rounds=5,
-                categorical_feature=[num_feature - 2])
+                categorical_feature=[num_feature - 1])
 
 print('Save model...')
 # save model to file

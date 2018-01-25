@@ -23,8 +23,8 @@ for question, data in questions_processed.iteritems():
     Y_pred = bst.predict(X_input)
     ml_answer = np.array(data['raw_data']['answers'])[np.where(Y_pred==Y_pred.max())][0]
 
-    for i in range(len(data['lines'])):
-        if data['lines'][i][0]:
+    for i in range(len(data['right_answer'])):
+        if data['right_answer'][i]:
             correct_answer = data['raw_data']['answers'][i]
 
     ml_correct_count += 1 if correct_answer == ml_answer else 0
