@@ -234,7 +234,7 @@ class Answerer():
             t.start()
 
         # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.noun_chunks):
+        while len(contents) != len(set(self.noun_chunks)):
             continue
 
         # Count occurences for each entity in each answer search
@@ -246,7 +246,10 @@ class Answerer():
             try:
                 curr_counts = [count / sum(curr_counts) for count in curr_counts]
             except ZeroDivisionError:
-                print 'The answer "{}" was not found in the search for "{}"'.format(answer, word)
+                try:
+                    print 'No occurences of any answer exist for the query of "{}"'.format(word)
+                except UnicodeEncodeError:
+                    print 'No occurences of any answer exist for the query of "{}"'.format(word.encode('utf-8'))
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
@@ -483,6 +486,7 @@ class Answerer():
 
 def main():
     solver = Answerer()
+    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
     pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
