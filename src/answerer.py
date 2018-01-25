@@ -89,17 +89,17 @@ class Answerer():
         except UnicodeEncodeError:
             self.question = question
         self.question = self.question.lower()
-        print 'question: ' + self.question
+        print 'question: ' + self.question.encode('utf-8')
         print 'answers: ' + str(self.answers) 
         # Initialize nlp constants
         self.process_question()
 
         # Remove negative word from question and for giving correct input to model
         self.question_without_negative = self.question
-        self.categorical_data['negative_question'] = False
+        self.negative_question = False
         for word in self.negative_words:
             if word in [t.text for t in self.doc]:
-                self.categorical_data['negative_question'] = True
+                self.negative_question = True
                 negative_idx = self.question.index(word)
                 self.question_without_negative = self.question[:negative_idx] + self.question[negative_idx + len(word) + 1:]
                 break
@@ -134,6 +134,7 @@ class Answerer():
                 'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
                 'question': self.question,
+                'negative_question': self.negative_question,
                 'categorical_data': self.categorical_data,
                 'answers': self.answers,
                 'lines': self.lines,
@@ -470,7 +471,12 @@ class Answerer():
         lines = [[], [], []]
         for k,v in sorted(list(self.data.iteritems())):  # The reason for sorted list is to guarantee the order in which all the approaches are appended
             try:
-                confidence_values = [val/sum(v) for val in v]
+                # Make model input inverted if question is negative (makes more sense for model)
+                if self.negative_question:
+                    confidence_values = [1 - (val / sum(v)) for val in v]
+                    confidence_values = [val/sum(confidence_values) for val in confidence_values]
+                else:
+                    confidence_values = [val/sum(v) for val in v]
             except ZeroDivisionError:
                 confidence_values = [0, 0, 0]
             for i in range(len(confidence_values)):
