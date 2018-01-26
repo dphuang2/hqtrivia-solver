@@ -42,6 +42,7 @@ ANSWERS = {
         "Anne of Green Gables literally means Anne of what?": 2,
         "Which of these do adverbs NOT typically modify?": 0,
         "Catherine O'Hara and Eugene Levy do NOT kiss in which Christopher Guest film?": 1,
+        "Which organization began as the North West Police Agency?": 2,
         }
 
 with open('../data/log', 'r') as f:

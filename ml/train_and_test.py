@@ -17,7 +17,6 @@ X_train = df_train.drop(0, axis=1).values
 X_test = df_test.drop(0, axis=1).values
 
 num_train, num_feature = X_train.shape
-pdb.set_trace()
 
 # create dataset for lightgbm
 lgb_train = lgb.Dataset(X_train, y_train)
