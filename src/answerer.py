@@ -51,18 +51,18 @@ class Answerer():
         self.approaches = [
                 self.wikipedia_search,
                 self.answer_relation_to_question,
-                self.answer_relation_to_question_bing,
-                self.question_related_to_answer,
+                # self.answer_relation_to_question_bing,
+                # self.question_related_to_answer,
                 self.question_related_to_answer_bing,
                 self.word_count_noun_chunks,
                 self.word_count_appended,
                 self.word_count_appended_bing,
                 self.word_count_appended_relation_to_question,
-                self.word_count_raw,
+                # self.word_count_raw,
                 self.result_count,
                 self.result_count_bing,
-                self.result_count_noun_chunks,
-                self.result_count_important_words,
+                # self.result_count_noun_chunks,
+                # self.result_count_important_words,
                 self.type_of_question
                 ]
         self.question_types = {
@@ -673,8 +673,8 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
-    # pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
