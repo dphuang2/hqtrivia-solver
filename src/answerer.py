@@ -22,16 +22,20 @@ Features / Approaches:
 word_count_raw: Google the question and count occurences of each answer
 word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
+word_count_appended_bing: Bing search question with each answer appended in quotes and count occurences of each answer
+word_count_appended_relation_to_question: Google question with each answer appended in quotes and count occurences of each important word
 result_count: Google question with each answer appended and count number of search results
+result_count_bing: Google question with each answer appended and count number of search results
 result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
 result_count_noun_chunks: Google important words with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
+answer_relation_to_question_bing: Bing search each answer and count number of occurences for each evaluated important word
 question_relation_to_word: Google search each important word and count number of occurences for each answer
+question_relation_to_word_bing: Bing search each important word and count number of occurences for each answer
 
 Categorical data:
 type_of_question: Classify the question from 0 to 5 using the 6 Ws of questions
-negative_question: Classify the question as a negative or positive question
 """
 
 parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
@@ -45,13 +49,18 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
+                self.wikipedia_search,
                 self.answer_relation_to_question,
+                self.answer_relation_to_question_bing,
                 self.question_related_to_answer,
+                self.question_related_to_answer_bing,
                 self.word_count_noun_chunks,
                 self.word_count_appended,
+                self.word_count_appended_bing,
+                self.word_count_appended_relation_to_question,
                 self.word_count_raw,
-                self.wikipedia_search,
                 self.result_count,
+                self.result_count_bing,
                 self.result_count_noun_chunks,
                 self.result_count_important_words,
                 self.type_of_question
@@ -68,6 +77,7 @@ class Answerer():
         self.negative_words = ['never', 'not']
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
+        self.regex_bing = re.compile('count">(.*) results<\/')
         self.nlp = spacy.load('en')
         self.h = HTMLParser()
         self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
@@ -197,6 +207,60 @@ class Answerer():
         print 'Confidence values after word_count_appended: ' + str(self.confidences)
 
     @timeit
+    def word_count_appended_bing(self):
+        counts = []
+        contents = {}
+
+        # Grab each appended search
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content_bing, args=(contents, self.concatenate_answer_to_question(answer)))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        for answer in self.answers:
+            counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
+
+        print 'Counts after word_count_appended_bing: ' + str(counts)
+        self.data['word_count_appended_bing'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after word_count_appended_bing: ' + str(self.confidences)
+
+    @timeit
+    def word_count_appended_relation_to_question(self):
+        counts = []
+        contents = {}
+
+        # Grab each appended search
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer)))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        # Count occurences for each entity in each answer search
+        counts = [0.0] * len(self.answers)
+        for word in self.important_words:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(word)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                print 'The word "{}" was not found in any answer search'.format(word)
+                continue
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
+        print 'Counts after word_count_appended_relation_to_question: ' + str(counts)
+        self.data['word_count_appended_relation_to_question'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after word_count_appended_relation_to_question: ' + str(self.confidences)
+
+    @timeit
     def answer_relation_to_question(self):
         # Grab google search for each answer and save contents
         contents = {}
@@ -225,6 +289,36 @@ class Answerer():
         self.data['answer_relation_to_question'] = counts
         self.counts_to_confidence(counts)
         print 'Confidence values after answer_relation_to_question: ' + str(self.confidences)
+
+    @timeit
+    def answer_relation_to_question_bing(self):
+        # Grab google search for each answer and save contents
+        contents = {}
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content_bing, args=(contents, answer,))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        # Count occurences for each entity in each answer search
+        counts = [0.0] * len(self.answers)
+        for word in self.important_words:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[answer].count(word)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                print 'The word "{}" was not found in any answer search'.format(word)
+                continue
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
+        print 'Counts after answer_relation_to_question_bing: ' + str(counts)
+        self.data['answer_relation_to_question_bing'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after answer_relation_to_question_bing: ' + str(self.confidences)
 
     @timeit
     def question_related_to_answer(self):
@@ -258,6 +352,39 @@ class Answerer():
         self.data['question_related_to_answer'] = counts
         self.counts_to_confidence(counts)
         print 'Confidence values after question_related_to_answer: ' + str(self.confidences)
+
+    @timeit
+    def question_related_to_answer_bing(self):
+        # Grab google search for each answer and save contents
+        contents = {}
+        for word in self.noun_chunks:
+            t = threading.Thread(target=self.grab_content_bing, args=(contents, word,))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(set(self.noun_chunks)):
+            continue
+
+        # Count occurences for each entity in each answer search
+        counts = [0.0] * len(self.answers)
+        for word in self.noun_chunks:
+            curr_counts = []
+            for answer in self.answers:
+                curr_counts.append(float(contents[word].count(answer)))
+            try:
+                curr_counts = [count / sum(curr_counts) for count in curr_counts]
+            except ZeroDivisionError:
+                try:
+                    print 'No occurences of any answer exist for the query of "{}"'.format(word)
+                except UnicodeEncodeError:
+                    print 'No occurences of any answer exist for the query of "{}"'.format(word.encode('utf-8'))
+                continue
+            counts = [x + y for x, y in zip(counts, curr_counts)]
+
+        print 'Counts after question_related_to_answer_bing: ' + str(counts)
+        self.data['question_related_to_answer_bing'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after question_related_to_answer_bing: ' + str(self.confidences)
 
     @timeit
     def result_count_noun_chunks(self):
@@ -344,6 +471,34 @@ class Answerer():
         print 'Confidence values after result_count: ' + str(self.confidences)
 
     @timeit
+    def result_count_bing(self):
+        counts = []
+        contents = {}
+
+        for answer in self.answers:
+            t = threading.Thread(target=self.grab_content_bing, args=(contents, self.concatenate_answer_to_question(answer),))
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers):
+            continue
+
+        for answer in self.answers:
+            content = contents[self.concatenate_answer_to_question(answer)]
+            result = self.regex_bing.search(content)
+            try:
+                count = float([int(s) for s in result.group(1).replace(',', '').split() if s.isdigit()][0])
+                counts.append(count)
+            except AttributeError:
+                print 'There were no results for {}.'.format(answer)
+                counts.append(0)
+
+        print 'Counts after result_count_bing: ' + str(counts)
+        self.data['result_count_bing'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after result_count_bing: ' + str(self.confidences)
+
+    @timeit
     def wikipedia_search(self):
         # Grab wikipedia search for each answer and save contents
         contents = {}
@@ -391,6 +546,10 @@ class Answerer():
     @timeit
     def grab_content(self, contents, question):
         contents[question] = self.get_lowered_google_search(question)
+
+    @timeit
+    def grab_content_bing(self, contents, question):
+        contents[question] = self.get_lowered_bing_search(question)
 
     @timeit
     def counts_to_confidence(self, counts):
@@ -466,6 +625,28 @@ class Answerer():
     get_lowered_google_search.memo = {}
     get_lowered_google_search.currently_searching = set()
 
+    @timeit
+    def get_lowered_bing_search(self, question):
+        bing_query = 'https://www.bing.com/search?q=' 
+        if question in self.get_lowered_bing_search.currently_searching:
+            # Block until the question is successfuly saved in memo
+            while question not in self.get_lowered_bing_search.memo:
+                continue
+            return self.get_lowered_bing_search.memo[question]
+        self.get_lowered_bing_search.currently_searching.add(question)
+        r = requests.get(bing_query + question)
+        lowered = unidecode(self.h.unescape(unicode(r.content.lower(), errors='ignore')))
+        self.get_lowered_bing_search.memo[question] = lowered
+        try:
+            with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question)), 'w') as f:
+                f.write(lowered)
+        except UnicodeEncodeError:
+            with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
+                f.write(lowered)
+        return self.get_lowered_bing_search.memo[question]
+    get_lowered_bing_search.memo = {}
+    get_lowered_bing_search.currently_searching = set()
+
     def raw_counts_to_input(self):
         # Convert data to input data
         lines = [[], [], []]
@@ -492,19 +673,20 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
-    pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
-    # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
+    pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
+    # pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
+    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
+    # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
     # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
     # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
-    # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
     # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
     # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
-    # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
     # pprint(solver.answer(u"The Windows 95 startup sound was composed by a former member of what band?",["They Might Be Giants","Roxy Music","Devo"]))
     # pprint(solver.answer(u"Guatemala and Mozambique are the only UN countries with what on their flags?",["Firearm","Garden tool","Bird"]))
     # pprint(solver.answer(u"Which of these fitness fads came first?",["Tae Bo","Jazzercise","Zumba"]))
