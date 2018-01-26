@@ -49,21 +49,21 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
-                self.wikipedia_search,
                 self.answer_relation_to_question,
-                # self.answer_relation_to_question_bing,
+                self.answer_relation_to_question_bing,
                 # self.question_related_to_answer,
-                self.question_related_to_answer_bing,
-                self.word_count_noun_chunks,
-                self.word_count_appended,
-                self.word_count_appended_bing,
-                self.word_count_appended_relation_to_question,
-                # self.word_count_raw,
+                # self.question_related_to_answer_bing,
                 self.result_count,
                 self.result_count_bing,
-                # self.result_count_noun_chunks,
-                # self.result_count_important_words,
-                self.type_of_question
+                self.result_count_important_words,
+                self.result_count_noun_chunks,
+                self.type_of_question,
+                # self.wikipedia_search,
+                self.word_count_appended,
+                # self.word_count_appended_bing,
+                self.word_count_appended_relation_to_question,
+                # self.word_count_noun_chunks,
+                # self.word_count_raw
                 ]
         self.question_types = {
                 'who': 0,
