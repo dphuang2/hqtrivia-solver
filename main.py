@@ -37,7 +37,9 @@ def on_message(ws, message):
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
         ws.close()
+print 'Instantiating Answerer class...make take a while'
 on_message.solver = Answerer()
+print 'Done Instantiating Answerer class!'
 on_message.memo = {}
 on_message.logger = open(parent_dir_name + '/data/log', 'a+')
 

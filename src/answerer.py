@@ -49,6 +49,7 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
+                self.wikipedia_search,
                 self.answer_relation_to_question,
                 self.answer_relation_to_question_bing,
                 # self.question_related_to_answer,
@@ -58,7 +59,6 @@ class Answerer():
                 self.result_count_important_words,
                 self.result_count_noun_chunks,
                 self.type_of_question,
-                self.wikipedia_search,
                 self.word_count_appended,
                 # self.word_count_appended_bing,
                 self.word_count_appended_relation_to_question,
@@ -103,6 +103,7 @@ class Answerer():
         self.question = self.question.lower()
         print 'question: ' + self.question.encode('utf-8')
         print 'answers: ' + str(self.answers) 
+
         # Initialize nlp constants
         self.process_question()
 
@@ -133,6 +134,7 @@ class Answerer():
             print 'Getting zero results from Google. Exiting...'
             exit()
 
+        # Convert normalize raw feature values and convert them to numpy arrays for model input
         X_input = self.raw_counts_to_input()
         print 'X_input: {}'.format(str(X_input))
         Y_pred = self.bst.predict(X_input)
@@ -699,9 +701,10 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
-    # pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
     # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
+    # pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
@@ -724,7 +727,6 @@ def main():
     # pprint(solver.answer(u'Who was the first U.S President to be born in a hospital?',["immy carter","richard nixon","franklin d. roosevelt"]))
     # pprint(solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"]))
     # pprint(solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"]))
-    # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
     # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
     # pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
     # pprint(solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"]))
