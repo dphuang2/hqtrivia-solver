@@ -28,8 +28,8 @@ params = {
     'boosting_type': 'gbdt',
     'objective': 'regression',
     'metric': {'l2', 'auc'},
-    'num_leaves': 50,
-    'learning_rate': 0.05,
+    'num_leaves': 31,
+    'learning_rate': 0.10,
     'feature_fraction': 0.9,
     'bagging_fraction': 0.8,
     'bagging_freq': 5,
@@ -41,9 +41,9 @@ print('Start training...')
 # train
 gbm = lgb.train(params,
                 lgb_train,
-                num_boost_round=20,
+                num_boost_round=100,
                 valid_sets=lgb_eval,
-                early_stopping_rounds=20,
+                early_stopping_rounds=100,
                 categorical_feature=[num_feature - 1])
 
 print('Save model...')
