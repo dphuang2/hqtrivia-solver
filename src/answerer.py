@@ -58,7 +58,7 @@ class Answerer():
                 self.result_count_important_words,
                 self.result_count_noun_chunks,
                 self.type_of_question,
-                # self.wikipedia_search,
+                self.wikipedia_search,
                 self.word_count_appended,
                 # self.word_count_appended_bing,
                 self.word_count_appended_relation_to_question,
@@ -612,12 +612,12 @@ class Answerer():
         r = requests.get(google_query + question)
         lowered = unidecode(self.h.unescape(unicode(r.content.lower(), errors='ignore')))
         self.get_lowered_google_search.memo[question] = lowered
-        try:
-            with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
-                f.write(lowered)
-        except UnicodeEncodeError:
-            with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
-                f.write(lowered)
+        # try:
+            # with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question)), 'w') as f:
+                # f.write(lowered)
+        # except UnicodeEncodeError:
+            # with open(parent_dir_name + '/data/google_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
+                # f.write(lowered)
         if 'our systems have detected unusual traffic from your computer network' in lowered:
             print 'Google rate limited your IP.'
             self.rate_limited = True
@@ -637,12 +637,12 @@ class Answerer():
         r = requests.get(bing_query + question)
         lowered = unidecode(self.h.unescape(unicode(r.content.lower(), errors='ignore')))
         self.get_lowered_bing_search.memo[question] = lowered
-        try:
-            with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question)), 'w') as f:
-                f.write(lowered)
-        except UnicodeEncodeError:
-            with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
-                f.write(lowered)
+        # try:
+            # with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question)), 'w') as f:
+                # f.write(lowered)
+        # except UnicodeEncodeError:
+            # with open(parent_dir_name + '/data/bing_searches/{}'.format(filename_safe(question.encode('utf-8'))), 'w') as f:
+                # f.write(lowered)
         return self.get_lowered_bing_search.memo[question]
     get_lowered_bing_search.memo = {}
     get_lowered_bing_search.currently_searching = set()
