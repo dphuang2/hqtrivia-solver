@@ -10,7 +10,7 @@ with open('regression.data', 'w') as f:
     for k,v in questions_processed.iteritems():
         lines = v['raw_data']['lines']
         for i in range(len(lines)):
-            if len(lines[i]) != 15:
+            if len(lines[i]) != 9:
                 pprint(v)
                 exit()
             f.write(DELIMITER.join([str(v['right_answer'][i])] + [str(val) for val in lines[i]]) + '\n')
