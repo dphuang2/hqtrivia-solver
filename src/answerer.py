@@ -49,21 +49,22 @@ def encode_unicode(string):
 class Answerer():
     def __init__(self):
         self.approaches = [
-                self.answer_relation_to_question,
-                self.answer_relation_to_question_bing,
-                # self.question_related_to_answer,
-                # self.question_related_to_answer_bing,
-                self.result_count,
-                self.result_count_bing,
-                self.result_count_important_words,
-                self.result_count_noun_chunks,
-                self.type_of_question,
-                self.wikipedia_search,
-                self.word_count_appended,
-                # self.word_count_appended_bing,
-                self.word_count_appended_relation_to_question,
-                # self.word_count_noun_chunks,
-                # self.word_count_raw
+                # self.answer_relation_to_question,
+                # self.answer_relation_to_question_bing,
+                # # self.question_related_to_answer,
+                # # self.question_related_to_answer_bing,
+                # self.result_count,
+                # self.result_count_bing,
+                # self.result_count_important_words,
+                # self.result_count_noun_chunks,
+                # self.type_of_question,
+                # self.wikipedia_search,
+                # self.word_count_appended,
+                # # self.word_count_appended_bing,
+                # self.word_count_appended_relation_to_question,
+                # # self.word_count_noun_chunks,
+                # # self.word_count_raw,
+                self.question_answer_similarity
                 ]
         self.question_types = {
                 'who': 0,
@@ -78,7 +79,7 @@ class Answerer():
         self.stop_words = ['which', 'Which']
         self.regex = re.compile('"resultstats">(.*) results')
         self.regex_bing = re.compile('count">(.*) results<\/')
-        self.nlp = spacy.load('en')
+        self.nlp = spacy.load('en_vectors_web_lg')
         self.h = HTMLParser()
         self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
         for word in self.stop_words:
@@ -152,6 +153,22 @@ class Answerer():
                 'columns_in_order': sorted(list(self.data.keys())) + sorted(list(self.categorical_data.keys())), 
                 'rate_limited': self.rate_limited
                 }
+    
+    @timeit
+    def question_answer_similarity(self):
+        counts = []
+        for answer in self.answers:
+            answer_token = self.nlp(unicode(answer))
+            print 'Evaluating answer: {}'.format(answer_token.text)
+            curr_similarity = 0.0
+            for token in self.doc:
+                print 'With word: {}'.format(token.text)
+                curr_similarity += token.similarity(answer_token)
+            counts.append(curr_similarity)
+        print 'Counts after question_answer_similarity: ' + str(counts)
+        self.data['question_answer_similarity'] = counts
+        self.counts_to_confidence(counts)
+        print 'Confidence values after question_answer_similarity: ' + str(self.confidences)
 
     @timeit
     def type_of_question(self):

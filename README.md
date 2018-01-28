@@ -12,5 +12,5 @@ pip install -r requirements.txt
 
 Then install the spaCy language model for english
 ```
-python -m spacy download en
+python -m spacy download en_vectors_web_lg
 ```
