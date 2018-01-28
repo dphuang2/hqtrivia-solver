@@ -159,7 +159,10 @@ class Answerer():
     def question_answer_similarity(self):
         counts = []
         for answer in self.answers:
-            answer_doc = self.nlp_vector(unicode(answer))
+            try:
+                answer_doc = self.nlp_vector(unicode(answer))
+            except UnicodeDecodeError:
+                answer_doc = self.nlp_vector(unicode(answer.decode('utf-8')))
             curr_similarity = 0.0
             for answer_token in answer_doc:
                 for question_token in self.doc_vectors:
