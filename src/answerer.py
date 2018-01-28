@@ -529,10 +529,15 @@ class Answerer():
         
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
-        for word in self.important_words + self.noun_chunks:
+        for word in self.important_words:
+            # Encode word to ascii if possible
+            try:
+                word = word.decode('utf-8').encode('ascii', 'ignore')
+            except UnicodeEncodeError:
+                pass
             curr_counts = []
             for answer in self.answers:
-                curr_counts.append(float(contents[answer].count(word.decode('utf-8').encode('ascii', 'ignore'))))
+                curr_counts.append(float(contents[answer].count(word)))
             try:
                 curr_counts = [count / sum(curr_counts) for count in curr_counts]
             except ZeroDivisionError:
@@ -691,7 +696,8 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
+    # pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
     # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
     # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
