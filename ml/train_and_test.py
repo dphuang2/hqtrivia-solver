@@ -27,12 +27,12 @@ params = {
     'task': 'train',
     'boosting_type': 'gbdt',
     'objective': 'regression',
-    'metric': {'l2', 'auc'},
+    # 'metric': {'l2', 'auc'},
     'num_leaves': 31,
-    'learning_rate': 0.10,
-    'feature_fraction': 0.9,
-    'bagging_fraction': 0.8,
-    'bagging_freq': 5,
+    # 'learning_rate': 0.10,
+    # 'feature_fraction': 0.9,
+    # 'bagging_fraction': 0.8,
+    # 'bagging_freq': 5,
     'verbose': 0
 }
 
