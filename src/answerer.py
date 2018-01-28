@@ -512,7 +512,7 @@ class Answerer():
         
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
-        for word in self.important_words:
+        for word in self.important_words + self.noun_chunks:
             curr_counts = []
             for answer in self.answers:
                 curr_counts.append(float(contents[answer].count(word.decode('utf-8').encode('ascii', 'ignore'))))
