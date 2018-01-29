@@ -2,7 +2,7 @@
 
 Create a new virtualenv and source it
 ```
-virtualenv .venv && source .venv/bin/activate
+virtualenv .ENV && source .ENV/bin/activate
 ```
 
 then install the packages
