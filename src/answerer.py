@@ -701,11 +701,11 @@ class Answerer():
 
 def main():
     solver = Answerer()
+    pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
     # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
     # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
     # pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
-    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
     # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
