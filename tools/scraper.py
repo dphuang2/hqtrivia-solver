@@ -43,6 +43,8 @@ ANSWERS = {
         "Which of these do adverbs NOT typically modify?": 0,
         "Catherine O'Hara and Eugene Levy do NOT kiss in which Christopher Guest film?": 1,
         "Which organization began as the North West Police Agency?": 2,
+        "Marsha Bell was the model for what iconic character?": 2,
+        "Which of these is NOT a skin care brand?": 1,
         }
 
 with open('../data/log', 'r') as f:

@@ -19,20 +19,20 @@ import os
 
 """
 Features / Approaches:
-word_count_raw: Google the question and count occurences of each answer
-word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
-word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
-word_count_appended_bing: Bing search question with each answer appended in quotes and count occurences of each answer
-word_count_appended_relation_to_question: Google question with each answer appended in quotes and count occurences of each important word
-result_count: Google question with each answer appended and count number of search results
-result_count_bing: Google question with each answer appended and count number of search results
-result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
-result_count_noun_chunks: Google important words with each answer appended and count number of search results
-wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question_bing: Bing search each answer and count number of occurences for each evaluated important word
 question_relation_to_word: Google search each important word and count number of occurences for each answer
 question_relation_to_word_bing: Bing search each important word and count number of occurences for each answer
+result_count: Google question with each answer appended and count number of search results
+result_count_bing: Google question with each answer appended and count number of search results
+result_count_noun_chunks: Google important words with each answer appended and count number of search results
+result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
+wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
+word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
+word_count_appended_bing: Bing search question with each answer appended in quotes and count occurences of each answer
+word_count_appended_relation_to_question: Google question with each answer appended in quotes and count occurences of each important word
+word_count_noun_chunks: Google evaluated noun chunks of question and count occurences of each answer
+word_count_raw: Google the question and count occurences of each answer
 
 Categorical data:
 type_of_question: Classify the question from 0 to 5 using the 6 Ws of questions
