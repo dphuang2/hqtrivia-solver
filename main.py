@@ -111,7 +111,15 @@ if __name__ == "__main__":
         print
         print 'SETTING UP WEBSOCKET TO URL: ' + websocket_url
         # Set up websocket to socketUrl and connect
-        ws = setup_websocket(websocket_url, {'Sec-WebSocket-Protocol': 'permessage-deflate', 'Authorization': BEARER_TOKEN})
+        ws = setup_websocket(websocket_url, {
+            'Sec-WebSocket-Protocol': 'permessage-deflate',
+            'Authorization': BEARER_TOKEN,
+            'User-Agent': 'HQ/1.2.7 (iPhone; iOS 11.2.1; Scale/3.00)',
+            'Accept-Encoding': 'br, gzip, deflate',
+            'Connection': 'keep-alive',
+            'Accept': '*/*',
+            'Accept-Language': 'en-US;q=1'
+            })
 
         # Run websocket forever and reconnect on failure
         if DEBUG:
