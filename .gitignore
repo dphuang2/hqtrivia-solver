@@ -150,3 +150,5 @@ data/bing_searches/*
 old
 
 .ENV
+
+*wkdir*

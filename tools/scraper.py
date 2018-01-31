@@ -45,6 +45,9 @@ ANSWERS = {
         "Which organization began as the North West Police Agency?": 2,
         "Marsha Bell was the model for what iconic character?": 2,
         "Which of these is NOT a skin care brand?": 1,
+        "Most humans have how many kidneys?": 0,
+        "What’s another name for a garbanzo bean?": 1,
+        "Which of these is a U.S. postage stamp?": 1,
         }
 
 with open('../data/log', 'r') as f:

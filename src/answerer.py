@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from spacy.tokenizer import Tokenizer
 from HTMLParser import HTMLParser
 from method_timer import timeit
 from unidecode import unidecode
+from bs4 import BeautifulSoup
 from pprint import pprint
 import lightgbm as lgb
 from time import time
@@ -11,6 +13,7 @@ import numpy as np
 import threading
 import wikipedia
 import requests
+import gensim
 import spacy
 import pdb
 import sys
@@ -21,11 +24,12 @@ import os
 Features / Approaches:
 answer_relation_to_question: Google search each answer and count number of occurences for each evaluated important word
 answer_relation_to_question_bing: Bing search each answer and count number of occurences for each evaluated important word
+cosine_similarity_raw: Google question and each answer, create document corpus from each answer search, compare cosine similarity of question search to corpus
 question_relation_to_word: Google search each important word and count number of occurences for each answer
 question_relation_to_word_bing: Bing search each important word and count number of occurences for each answer
 result_count: Google question with each answer appended and count number of search results
 result_count_bing: Google question with each answer appended and count number of search results
-result_count_noun_chunks: Google important words with each answer appended and count number of search results
+result_count_important_words: Google important words with each answer appended and count number of search results
 result_count_noun_chunks: Google noun_chunks with each answer appended and count number of search results
 wikipedia_search: Wikipedia search each answer and count number of occurences for each evaluated important word
 word_count_appended: Google question with each answer appended in quotes and count occurences of each answer
@@ -58,12 +62,13 @@ class Answerer():
                 self.result_count_bing,
                 self.result_count_important_words,
                 self.result_count_noun_chunks,
+                self.cosine_similarity_raw,
                 self.type_of_question,
                 self.word_count_appended,
-                # self.word_count_appended_bing,
+                self.word_count_appended_bing,
                 self.word_count_appended_relation_to_question,
-                # self.word_count_noun_chunks,
-                # self.word_count_raw,
+                self.word_count_noun_chunks,
+                self.word_count_raw,
                 self.question_answer_similarity
                 ]
         self.question_types = {
@@ -81,6 +86,7 @@ class Answerer():
         self.regex_bing = re.compile('count">(.*) results<\/')
         self.nlp_vector = spacy.load('en_vectors_web_lg')
         self.nlp = spacy.load('en')
+        self.tokenizer = Tokenizer(self.nlp.vocab)
         self.h = HTMLParser()
         self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
         for word in self.stop_words:
@@ -157,7 +163,6 @@ class Answerer():
                 'rate_limited': self.rate_limited
                 }
     
-    @timeit
     def question_answer_similarity(self):
         counts = []
         for answer in self.answers:
@@ -170,12 +175,9 @@ class Answerer():
                 for question_token in self.doc_vectors:
                     curr_similarity += question_token.similarity(answer_token)
             counts.append(curr_similarity)
-        print 'Counts after question_answer_similarity: ' + str(counts)
         self.data['question_answer_similarity'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after question_answer_similarity: ' + str(self.confidences)
 
-    @timeit
     def type_of_question(self):
         for category, value in self.question_types.iteritems():
             if category in [t.text for t in self.doc]:
@@ -184,29 +186,61 @@ class Answerer():
         else:
             self.categorical_data['question_type'] = -1 # No type found
 
-    @timeit
     def word_count_noun_chunks(self):
         lowered = self.get_lowered_google_search(self.noun_chunks_string)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
-        print 'Counts after word_count: ' + str(counts)
         self.data['word_count_noun_chunks'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_noun_chunks: ' + str(self.confidences)
 
-    @timeit
     def word_count_raw(self):
         lowered = self.get_lowered_google_search(self.question_without_negative)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
-        print 'Counts after word_count: ' + str(counts)
         self.data['word_count_raw'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_raw: ' + str(self.confidences)
 
     @timeit
+    def cosine_similarity_raw(self):
+        counts = []
+        contents = {}
+
+        for query_text in self.answers + [self.question_without_negative]:
+            t = threading.Thread(target=self.grab_content, args=(contents, query_text,), kwargs={'num_results': 20})
+            t.start()
+
+        # Block until contents is correctly populated cause thats the important part :)
+        while len(contents) != len(self.answers) + 1:
+            continue
+
+        # Process HTML docs
+        for query_text in self.answers + [self.question_without_negative]:
+            soup = BeautifulSoup(contents[query_text], 'html.parser')
+            text = ' '.join([t.getText() for t in soup.findAll("span", {"class": "st"})])
+            contents[query_text] = self.tokenizer(unicode(text))
+
+        # Create corpus from answer searches
+        gen_docs = [[t.text for t in doc] for doc in [contents[answer] for answer in self.answers]]
+        dictionary = gensim.corpora.Dictionary(gen_docs)
+        corpus = [dictionary.doc2bow(gen_doc) for gen_doc in gen_docs]
+        tf_idf = gensim.models.TfidfModel(corpus)
+        directory = '{}/src/wkdir'.format(parent_dir_name)
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        sims = gensim.similarities.Similarity(directory, tf_idf[corpus],
+                                              num_features=len(dictionary))
+
+        # Create bag-of-words from question query
+        question_doc = [t.text for t in contents[self.question_without_negative]]
+        query_doc_bow = dictionary.doc2bow(question_doc)
+        query_doc_tf_idf = tf_idf[query_doc_bow]
+        similarities = sims[query_doc_tf_idf].tolist()
+
+        self.data['cosine_similarity_raw'] = similarities
+        self.counts_to_confidence(similarities)
+
     def word_count_appended(self):
         counts = []
         contents = {}
@@ -223,12 +257,9 @@ class Answerer():
         for answer in self.answers:
             counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
 
-        print 'Counts after word_count_appended: ' + str(counts)
         self.data['word_count_appended'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_appended: ' + str(self.confidences)
 
-    @timeit
     def word_count_appended_bing(self):
         counts = []
         contents = {}
@@ -245,12 +276,9 @@ class Answerer():
         for answer in self.answers:
             counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
 
-        print 'Counts after word_count_appended_bing: ' + str(counts)
         self.data['word_count_appended_bing'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_appended_bing: ' + str(self.confidences)
 
-    @timeit
     def word_count_appended_relation_to_question(self):
         counts = []
         contents = {}
@@ -277,12 +305,9 @@ class Answerer():
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after word_count_appended_relation_to_question: ' + str(counts)
         self.data['word_count_appended_relation_to_question'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after word_count_appended_relation_to_question: ' + str(self.confidences)
 
-    @timeit
     def answer_relation_to_question(self):
         # Grab google search for each answer and save contents
         contents = {}
@@ -307,12 +332,9 @@ class Answerer():
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after answer_relation_to_question: ' + str(counts)
         self.data['answer_relation_to_question'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after answer_relation_to_question: ' + str(self.confidences)
 
-    @timeit
     def answer_relation_to_question_bing(self):
         # Grab google search for each answer and save contents
         contents = {}
@@ -337,12 +359,9 @@ class Answerer():
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after answer_relation_to_question_bing: ' + str(counts)
         self.data['answer_relation_to_question_bing'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after answer_relation_to_question_bing: ' + str(self.confidences)
 
-    @timeit
     def question_related_to_answer(self):
         # Grab google search for each answer and save contents
         contents = {}
@@ -370,12 +389,9 @@ class Answerer():
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after question_related_to_answer: ' + str(counts)
         self.data['question_related_to_answer'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after question_related_to_answer: ' + str(self.confidences)
 
-    @timeit
     def question_related_to_answer_bing(self):
         # Grab google search for each answer and save contents
         contents = {}
@@ -403,12 +419,9 @@ class Answerer():
                 continue
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after question_related_to_answer_bing: ' + str(counts)
         self.data['question_related_to_answer_bing'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after question_related_to_answer_bing: ' + str(self.confidences)
 
-    @timeit
     def result_count_noun_chunks(self):
         counts = []
         contents = {}
@@ -431,12 +444,9 @@ class Answerer():
                 print 'There were no results for {}.'.format(answer)
                 counts.append(0)
 
-        print 'Counts after result_count_noun_chunks: ' + str(counts)
         self.data['result_count_noun_chunks'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after result_count_noun_chunks: ' + str(self.confidences)
 
-    @timeit
     def result_count_important_words(self):
         counts = []
         contents = {}
@@ -459,12 +469,9 @@ class Answerer():
                 print 'There were no results for {}.'.format(answer)
                 counts.append(0)
 
-        print 'Counts after result_count_important_words: ' + str(counts)
         self.data['result_count_important_words'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after result_count_important_words: ' + str(self.confidences)
 
-    @timeit
     def result_count(self):
         counts = []
         contents = {}
@@ -487,12 +494,9 @@ class Answerer():
                 print 'There were no results for {}.'.format(answer)
                 counts.append(0)
 
-        print 'Counts after result_count: ' + str(counts)
         self.data['result_count'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after result_count: ' + str(self.confidences)
 
-    @timeit
     def result_count_bing(self):
         counts = []
         contents = {}
@@ -515,12 +519,9 @@ class Answerer():
                 print 'There were no results for {}.'.format(answer)
                 counts.append(0)
 
-        print 'Counts after result_count_bing: ' + str(counts)
         self.data['result_count_bing'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after result_count_bing: ' + str(self.confidences)
 
-    @timeit
     def wikipedia_search(self):
         # Grab wikipedia search for each answer and save contents
         contents = {}
@@ -550,10 +551,8 @@ class Answerer():
                 pass
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
-        print 'Counts after wikipedia_search: ' + str(counts)
         self.data['wikipedia_search'] = counts
         self.counts_to_confidence(counts)
-        print 'Confidence values after wikipedia_search: ' + str(self.confidences)
 
     @timeit
     def grab_wikipedia_content(self, contents, page):
@@ -570,17 +569,13 @@ class Answerer():
             except wikipedia.exceptions.PageError:
                 contents[page] = wikipedia.WikipediaPage(title=e.options[1]).html()
 
-    @timeit
-    def grab_content(self, contents, question):
-        contents[question] = self.get_lowered_google_search(question)
+    def grab_content(self, contents, question, num_results=100):
+        contents[question] = self.get_lowered_google_search(question, num_results)
 
-    @timeit
     def grab_content_bing(self, contents, question):
         contents[question] = self.get_lowered_bing_search(question)
 
-    @timeit
     def counts_to_confidence(self, counts):
-        print 'counts_to_confidence counts: {}'.format(counts)
         if max(counts):
             self.integer_answers[counts.index(max(counts))] += 1
         for i in range(len(counts)):
@@ -590,15 +585,12 @@ class Answerer():
             except ZeroDivisionError:
                 break
 
-    @timeit
     def word_count(self, content, words):
         counts = []
         for i in range(len(words)):
              counts.append(float(content.count(words[i])))
-        print 'Counts after word_count: ' + str(counts)
         self.counts_to_confidence(counts)
 
-    @timeit
     def process_question(self):
         # Initialize nlp constants
         self.doc = self.nlp(unicode(self.question))
@@ -629,8 +621,8 @@ class Answerer():
             return u'{} "{}"'.format(' '.join([string.decode('utf-8') for string in self.important_words]), answer.decode('utf-8')).strip()
 
     @timeit
-    def get_lowered_google_search(self, question):
-        google_query = 'https://www.google.com/search?num=100&q=' 
+    def get_lowered_google_search(self, question, num_results=100):
+        google_query = 'https://www.google.com/search?num={}&q='.format(num_results)
         if question in self.get_lowered_google_search.currently_searching:
             # Block until the question is successfuly saved in memo
             while question not in self.get_lowered_google_search.memo:
