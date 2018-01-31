@@ -42,8 +42,6 @@ Categorical data:
 type_of_question: Classify the question from 0 to 5 using the 6 Ws of questions
 """
 
-parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-
 def filename_safe(string):
     return "".join([c for c in string if c.isalpha() or c.isdigit() or c==' ']).rstrip()
 
@@ -79,6 +77,8 @@ class Answerer():
                 'why': 4,
                 'how': 5,
                 }
+
+        self.parent_dir_name = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
         self.POS_list = ['NOUN', 'NUM', 'PROPN', 'VERB', 'ADJ', 'ADV']
         self.negative_words = ['never', 'not']
         self.stop_words = ['which', 'Which']
@@ -88,7 +88,7 @@ class Answerer():
         self.nlp = spacy.load('en')
         self.tokenizer = Tokenizer(self.nlp.vocab)
         self.h = HTMLParser()
-        self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(parent_dir_name))
+        self.bst = lgb.Booster(model_file='{}/ml/model.txt'.format(self.parent_dir_name))
         for word in self.stop_words:
             lexeme = self.nlp.vocab[unicode(word)]
             lexeme.is_stop = True
@@ -97,8 +97,6 @@ class Answerer():
     def answer(self, question, answers):
         # Initialize values
         self.answers = [str(answer).lower() for answer in answers]
-        self.confidences = [0] * len(answers)
-        self.integer_answers = [0] * len(answers)
         self.data = {}
         self.categorical_data = {}
         self.rate_limited = False
@@ -129,16 +127,9 @@ class Answerer():
             t = threading.Thread(target=function)
             threads.append(t)
             t.start()
+
         for t in threads: # Wait for all threads to finish before counting sum
             t.join()
-
-        # Consolidate confidence values
-        try:
-            print 'Confidence values: ' + str(self.confidences)
-            self.confidences = [val / sum(self.confidences) for val in self.confidences]
-        except ZeroDivisionError:
-            print 'Getting zero results from Google. Exiting...'
-            exit()
 
         # Convert normalize raw feature values and convert them to numpy arrays for model input
         X_input = self.raw_counts_to_input()
@@ -150,8 +141,6 @@ class Answerer():
         best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
         return {
                 'z-best_answer_by_ml': list(best_answer), # the 'z-' is so pprint prints the answer last
-                'integer_answers': {k:v for (k,v) in zip(self.answers, self.integer_answers)},
-                'fraction_answers': {k:v for (k,v) in zip(self.answers, self.confidences)},
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
                 'question': self.question,
                 'negative_question': self.negative_question,
@@ -176,8 +165,8 @@ class Answerer():
                     curr_similarity += question_token.similarity(answer_token)
             counts.append(curr_similarity)
         self.data['question_answer_similarity'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def type_of_question(self):
         for category, value in self.question_types.iteritems():
             if category in [t.text for t in self.doc]:
@@ -186,34 +175,35 @@ class Answerer():
         else:
             self.categorical_data['question_type'] = -1 # No type found
 
+    @timeit
     def word_count_noun_chunks(self):
         lowered = self.get_lowered_google_search(self.noun_chunks_string)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
         self.data['word_count_noun_chunks'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def word_count_raw(self):
         lowered = self.get_lowered_google_search(self.question_without_negative)
         counts = []
         for answer in self.answers:
              counts.append(float(lowered.count(answer)))
         self.data['word_count_raw'] = counts
-        self.counts_to_confidence(counts)
 
     @timeit
     def cosine_similarity_raw(self):
         counts = []
         contents = {}
+        threads = []
 
         for query_text in self.answers + [self.question_without_negative]:
             t = threading.Thread(target=self.grab_content, args=(contents, query_text,), kwargs={'num_results': 20})
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers) + 1:
-            continue
+        for t in threads:
+            t.join()
 
         # Process HTML docs
         for query_text in self.answers + [self.question_without_negative]:
@@ -226,7 +216,7 @@ class Answerer():
         dictionary = gensim.corpora.Dictionary(gen_docs)
         corpus = [dictionary.doc2bow(gen_doc) for gen_doc in gen_docs]
         tf_idf = gensim.models.TfidfModel(corpus)
-        directory = '{}/src/wkdir'.format(parent_dir_name)
+        directory = '{}/src/wkdir'.format(self.parent_dir_name)
         if not os.path.exists(directory):
             os.makedirs(directory)
         sims = gensim.similarities.Similarity(directory, tf_idf[corpus],
@@ -239,58 +229,61 @@ class Answerer():
         similarities = sims[query_doc_tf_idf].tolist()
 
         self.data['cosine_similarity_raw'] = similarities
-        self.counts_to_confidence(similarities)
 
+    @timeit
     def word_count_appended(self):
         counts = []
         contents = {}
+        threads = []
 
         # Grab each appended search
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer)))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
 
         self.data['word_count_appended'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def word_count_appended_bing(self):
         counts = []
         contents = {}
+        threads = []
 
         # Grab each appended search
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content_bing, args=(contents, self.concatenate_answer_to_question(answer)))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             counts.append(float(contents[self.concatenate_answer_to_question(answer)].count(answer)))
 
         self.data['word_count_appended_bing'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def word_count_appended_relation_to_question(self):
         counts = []
         contents = {}
+        threads = []
 
         # Grab each appended search
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer)))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -306,18 +299,20 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['word_count_appended_relation_to_question'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def answer_relation_to_question(self):
         # Grab google search for each answer and save contents
         contents = {}
+        threads = []
+
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, answer,))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -333,18 +328,20 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['answer_relation_to_question'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def answer_relation_to_question_bing(self):
         # Grab google search for each answer and save contents
         contents = {}
+        threads = []
+        
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content_bing, args=(contents, answer,))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -360,18 +357,20 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['answer_relation_to_question_bing'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def question_related_to_answer(self):
         # Grab google search for each answer and save contents
         contents = {}
+        threads = []
+
         for word in self.noun_chunks:
             t = threading.Thread(target=self.grab_content, args=(contents, word,))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(set(self.noun_chunks)):
-            continue
+        for t in threads:
+            t.join()
 
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -390,18 +389,20 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['question_related_to_answer'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def question_related_to_answer_bing(self):
         # Grab google search for each answer and save contents
         contents = {}
+        threads = []
+        
         for word in self.noun_chunks:
             t = threading.Thread(target=self.grab_content_bing, args=(contents, word,))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(set(self.noun_chunks)):
-            continue
+        for t in threads:
+            t.join()
 
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -420,19 +421,20 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['question_related_to_answer_bing'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def result_count_noun_chunks(self):
         counts = []
         contents = {}
-
+        threads = []
+        
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_noun_chunks(answer),))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             content = contents[self.concatenate_answer_to_noun_chunks(answer)]
@@ -445,19 +447,20 @@ class Answerer():
                 counts.append(0)
 
         self.data['result_count_noun_chunks'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def result_count_important_words(self):
         counts = []
         contents = {}
-
+        threads = []
+        
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_important_words(answer),))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             content = contents[self.concatenate_answer_to_important_words(answer)]
@@ -470,19 +473,20 @@ class Answerer():
                 counts.append(0)
 
         self.data['result_count_important_words'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def result_count(self):
         counts = []
         contents = {}
-
+        threads = []
+        
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content, args=(contents, self.concatenate_answer_to_question(answer),))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             content = contents[self.concatenate_answer_to_question(answer)]
@@ -495,19 +499,20 @@ class Answerer():
                 counts.append(0)
 
         self.data['result_count'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def result_count_bing(self):
         counts = []
         contents = {}
-
+        threads = []
+        
         for answer in self.answers:
             t = threading.Thread(target=self.grab_content_bing, args=(contents, self.concatenate_answer_to_question(answer),))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
 
         for answer in self.answers:
             content = contents[self.concatenate_answer_to_question(answer)]
@@ -520,18 +525,20 @@ class Answerer():
                 counts.append(0)
 
         self.data['result_count_bing'] = counts
-        self.counts_to_confidence(counts)
 
+    @timeit
     def wikipedia_search(self):
         # Grab wikipedia search for each answer and save contents
         contents = {}
+        threads = []
+
         for answer in self.answers:
             t = threading.Thread(target=self.grab_wikipedia_content, args=(contents, answer,))
+            threads.append(t)
             t.start()
 
-        # Block until contents is correctly populated cause thats the important part :)
-        while len(contents) != len(self.answers):
-            continue
+        for t in threads:
+            t.join()
         
         # Count occurences for each entity in each answer search
         counts = [0.0] * len(self.answers)
@@ -552,9 +559,7 @@ class Answerer():
             counts = [x + y for x, y in zip(counts, curr_counts)]
 
         self.data['wikipedia_search'] = counts
-        self.counts_to_confidence(counts)
 
-    @timeit
     def grab_wikipedia_content(self, contents, page):
         search_results = wikipedia.search(page)
         # In the case that no page exists, return False
@@ -575,22 +580,12 @@ class Answerer():
     def grab_content_bing(self, contents, question):
         contents[question] = self.get_lowered_bing_search(question)
 
-    def counts_to_confidence(self, counts):
-        if max(counts):
-            self.integer_answers[counts.index(max(counts))] += 1
-        for i in range(len(counts)):
-            sum_of_counts = float(sum(counts))
-            try:
-                self.confidences[i] += counts[i] / sum_of_counts
-            except ZeroDivisionError:
-                break
-
     def word_count(self, content, words):
         counts = []
         for i in range(len(words)):
              counts.append(float(content.count(words[i])))
-        self.counts_to_confidence(counts)
 
+    @timeit
     def process_question(self):
         # Initialize nlp constants
         self.doc = self.nlp(unicode(self.question))
@@ -620,7 +615,6 @@ class Answerer():
         except UnicodeDecodeError:
             return u'{} "{}"'.format(' '.join([string.decode('utf-8') for string in self.important_words]), answer.decode('utf-8')).strip()
 
-    @timeit
     def get_lowered_google_search(self, question, num_results=100):
         google_query = 'https://www.google.com/search?num={}&q='.format(num_results)
         if question in self.get_lowered_google_search.currently_searching:
@@ -645,7 +639,6 @@ class Answerer():
     get_lowered_google_search.memo = {}
     get_lowered_google_search.currently_searching = set()
 
-    @timeit
     def get_lowered_bing_search(self, question):
         bing_query = 'https://www.bing.com/search?q=' 
         if question in self.get_lowered_bing_search.currently_searching:
@@ -693,22 +686,23 @@ class Answerer():
 
 def main():
     solver = Answerer()
-    pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
-    pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
-    # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
-    # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
-    # pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
+    pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
+    pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
+    pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
+    pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
     # pprint(solver.answer("Featuring 20 scoops of ice cream, the Vermonster is found on what chain's menu?", ['Baskin-Robbins','Dairy Queen',"Ben & Jerry's"]))
     # pprint(solver.answer(u'Which of these is NOT a constellation?',["fornax","draco","lucrus"]))
+    # pprint(solver.answer('Which of these actresses is NOT mentioned in Madonna’s song “Vogue”?',['Jean Harlow','Audrey Hepburn','Rita Hayworth']))
+    # pprint(solver.answer(u"If you tunneled through the center of the earth from Honolulu, what country would you end up in?",["Botswana","Norway","Mongolia"]))
+    # pprint(solver.answer("Anne of Green Gables literally means Anne of what?",['Green pastures','Green jars','Green walls']))
+    # pprint(solver.answer(u'Which of these is NOT one of the Great Lakes', ["Lake Superior", "Ricki Lake", "Lake Michigan"]))
+    # pprint(solver.answer("In which state is happy hour currently banned?",["Illinois","Arizona","Rhode Island"]))
     # pprint(solver.answer(u'Which brand mascot was NOT a real person?', ["Little Debbie", "Sara Lee", "Betty Crocker"]))
-    # pprint(solver.answer("Which of these is NOT a real animal?", ["liger", "wholphin", "jackalope"]))
     # pprint(solver.answer(u'Jennifer Hudson kicked off her musical career on which reality show?', ["american idol","america's got talent","the voice"]))
-    # pprint(solver.answer(u'The word "robot" comes from a Czech word meaning what?',["forced labor","mindless","autonomous"]))
     # pprint(solver.answer(u'Basketball is NOT a major theme of which of these 90s movies?',["white men can't jump","point break","eddie"]))
     # pprint(solver.answer(u"Which of these countries is NOT a collaborating member on the International Space Station?",["China","Russia","Canada"]))
     # pprint(solver.answer(u'Which writer has stated that his/her trademark series of books would never be adapted for film?', ["James Patterson", "Sue Grafton", "Jeff Kinney"]))
     # pprint(solver.answer("In Harry Potter's Quidditch, what ALWAYS happens when one team catches the snitch?",["That team wins","That team loses","The game ends"]))
-    # pprint(solver.answer('Which of these two U.S. cities are in the same time zone?', ['El Paso / Pierre', 'Bismark / Cheyenne', 'Pensacola / Sioux Falls']))
     # pprint(solver.answer(u"The Windows 95 startup sound was composed by a former member of what band?",["They Might Be Giants","Roxy Music","Devo"]))
     # pprint(solver.answer(u"Guatemala and Mozambique are the only UN countries with what on their flags?",["Firearm","Garden tool","Bird"]))
     # pprint(solver.answer(u"Which of these fitness fads came first?",["Tae Bo","Jazzercise","Zumba"]))
@@ -720,7 +714,6 @@ def main():
     # pprint(solver.answer(u'The Ewing family in the TV show "Dallas" made their money in which commodity?',["oil","coal","steel"]))
     # pprint(solver.answer(u'Which video game motion-captured "Mad Men" actor Aaron Staton as its star?',["medal of honor","l.a. noire","assassin's creed 2"]))
     # pprint(solver.answer(u'The lyrics to "The Start-Spangled Banner" were written during what conflict?', ['The Civil War', 'American Revolution', 'The War of 1812']))
-    # pprint(solver.answer(u"""In which version of “Dragnet” is the line “Just the facts, ma’am” first said?""", ["50s TV show","'50s movie","'80s movie"]))
     # pprint(solver.answer(u'Which of these countries has the longest operating freight trains in the world?',["japan","brazil","canada"]))
     # pprint(solver.answer(u'Whose cat is petrified by the basilisk in "Harry Potter and the Chamber of Secrets"?',["poppy pomfrey","gilderoy lockhart","argus filch"]))
     # pprint(solver.answer(u'"The Blue Danube" isa waltz by which composer?',["richard strauss","johann strauss i","franz strauss"]))
