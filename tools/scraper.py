@@ -48,6 +48,9 @@ ANSWERS = {
         "Most humans have how many kidneys?": 0,
         "What’s another name for a garbanzo bean?": 1,
         "Which of these is a U.S. postage stamp?": 1,
+        "Which of these does a plant typically need to grow?": 1,
+        "In the original Angry Birds game, what did the pigs do that made the birds so angry?": 1,
+
         }
 
 with open('../data/log', 'r') as f:
