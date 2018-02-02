@@ -601,13 +601,20 @@ class Answerer():
         try:
             return u'{} "{}"'.format(self.question_without_negative, answer).encode('utf-8').strip()
         except UnicodeDecodeError:
-            return u'{} "{}"'.format(self.question_without_negative.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
+            try:
+                return u'{} "{}"'.format(self.question_without_negative.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
+            except UnicodeEncodeError:
+                return u'{} "{}"'.format(self.question_without_negative, answer.decode('utf-8')).encode('utf-8').strip()
+        
 
     def concatenate_answer_to_noun_chunks(self, answer):
         try:
             return u'{} "{}"'.format(self.noun_chunks_string, answer).encode('utf-8').strip()
         except UnicodeDecodeError:
-            return u'{} "{}"'.format(self.noun_chunks_string.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
+            try:
+                return u'{} "{}"'.format(self.noun_chunks_string.decode('utf-8'), answer.decode('utf-8')).encode('utf-8').strip()
+            except UnicodeEncodeError:
+                return u'{} "{}"'.format(self.noun_chunks_string, answer.decode('utf-8')).encode('utf-8').strip()
 
     def concatenate_answer_to_important_words(self, answer):
         try:
