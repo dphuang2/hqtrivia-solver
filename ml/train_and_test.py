@@ -29,7 +29,7 @@ params = {
     'objective': 'regression',
     # 'metric': {'l2', 'auc'},
     'num_leaves': 31,
-    # 'learning_rate': 0.10,
+    'learning_rate': 0.05,
     # 'feature_fraction': 0.9,
     # 'bagging_fraction': 0.8,
     # 'bagging_freq': 5,
