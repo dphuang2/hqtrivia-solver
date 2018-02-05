@@ -23,6 +23,8 @@ for question, data in questions_processed.iteritems():
             correct_answer = data['raw_data']['answers'][i]
 
     ml_correct_count += 1 if correct_answer == ml_answer else 0
+    if correct_answer != ml_answer:
+        print question
 
 print 'ML model accuracy: {}%'.format((ml_correct_count / num_questions) * 100)
 print 'Equally Weighting each approach accuracy: {}%'.format((raw_correct_count / num_questions) * 100)
