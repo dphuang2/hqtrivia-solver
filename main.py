@@ -21,11 +21,11 @@ args = get_args()
 DEBUG = args.d
 
 def on_message(ws, message):
-    if not DEBUG:
-        on_message.logger.write(message)
-        on_message.logger.write('\n')
     data = json.loads(message)
     if data['type'] == 'question':
+        if not DEBUG:
+            on_message.logger.write(message)
+            on_message.logger.write('\n')
         question = data['question']
         answers = [answer['text'] for answer in data['answers']]
         print "Question: " + question
