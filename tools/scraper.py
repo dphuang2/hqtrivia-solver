@@ -53,8 +53,17 @@ ANSWERS = {
         'Which has been the last name of a U.S. president AND a British prime minister?': 2,
         'Knucklebones is another name for what classic game?': 1,
         'Which of these words is NOT a synonym for “nonsense”?': 1,
-
-
+        'A galleon is an old-fashioned type of what?': 0,
+        'What male singing voice type is higher than a bass, but lower than a tenor?': 0,
+        'If you capitalize it, what Disney character name doubles as a healthcare program?': 0,
+        'George Washington Carver is famous for his scientific work on what subject?': 0,
+        'What does bicameral mean?': 2,
+        'Which of these things can be mathematically described as an oblate spheroid?': 0,
+        'Which of these baseball legends was a first-ballot Hall of Famer?': 2,
+        'Which monster is NOT named in the Kanye West song “Monster”?': 0,
+        'Which of these is NOT believed to be a function of the uvula?': 0,
+        'Which of these websites is an online database for movies, television and video games?': 1,
+        'Where do pearls come from?': 0,
         }
 
 with open('../data/log', 'r') as f:

@@ -34,6 +34,9 @@ def on_message(ws, message):
             if question not in on_message.memo:
                     on_message.memo[question] = on_message.solver.answer(question, answers)
             pprint(on_message.memo[question])
+    elif data['type'] == 'questionSummary':
+        on_message.logger.write(message)
+        on_message.logger.write('\n')
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
         ws.close()
