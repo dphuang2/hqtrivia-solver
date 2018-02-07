@@ -14,7 +14,7 @@ df= pd.read_csv('regression.data', header=None, sep='|')
 y= df[0].values
 X= df.drop(0, axis=1).values
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
 
 num_train, num_feature = X_train.shape
 
