@@ -64,6 +64,7 @@ ANSWERS = {
         'Which of these is NOT believed to be a function of the uvula?': 0,
         'Which of these websites is an online database for movies, television and video games?': 1,
         'Where do pearls come from?': 0,
+        "Bart's age on “The Simpsons” is NOT the same as which of these characters?": 2,
         }
 
 with open('../data/log', 'r') as f:
