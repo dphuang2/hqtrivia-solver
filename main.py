@@ -31,16 +31,13 @@ def on_message(ws, message):
         print "Question: " + question
         print "Answers: " + str(answers)
         if not args.collect:
-            if question not in on_message.memo:
-                    on_message.memo[question] = on_message.solver.answer(question, answers)
-            pprint(on_message.memo[question])
+            pprint(on_message.solver.answer(question, answers))
     elif data['type'] == 'broadcastEnded':
         print 'The broadcast ended'
         ws.close()
 print 'Instantiating Answerer class...make take a while'
 on_message.solver = Answerer()
 print 'Done Instantiating Answerer class!'
-on_message.memo = {}
 on_message.logger = open(parent_dir_name + '/data/log', 'a+')
 
 def on_error(ws, error):
