@@ -119,4 +119,9 @@ if __name__ == "__main__":
             })
 
         # Run websocket forever and reconnect on failure
-        ws.run_forever()
+        if DEBUG:
+            print 'Running run_forever() once'
+            ws.run_forever()
+            exit()
+        while True:
+            ws.run_forever()
