@@ -138,7 +138,17 @@ class Answerer():
         print 'Y_pred: {}'.format(str(Y_pred))
 
         # Provide best answer of the predicted values
-        best_answer = np.array(self.answers)[np.where(Y_pred==Y_pred.max())]
+        np_max = np.where(Y_pred==Y_pred.max())
+        answer_position = {
+                0: 'top',
+                1: 'middle',
+                2: 'bottom'
+                }
+        try:
+            answer_position = answer_position[np_max[0][0]]
+        except KeyError:
+            print 'there was no answer?'
+        best_answer = np.append(np.array(self.answers)[np_max], answer_position)
         return {
                 'z-best_answer_by_ml': list(best_answer), # the 'z-' is so pprint prints the answer last
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
