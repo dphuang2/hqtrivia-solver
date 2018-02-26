@@ -14,7 +14,7 @@ df= pd.read_csv('regression.data', header=None, sep='|')
 y= df[0].values
 X= df.drop(0, axis=1).values
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
 
 num_train, num_feature = X_train.shape
 
@@ -28,7 +28,7 @@ params = {
     'boosting_type': 'gbdt',
     'objective': 'regression',
     # 'metric': {'l2', 'auc'},
-    'num_leaves': 31,
+    'num_leaves': 100,
     'learning_rate': 0.05,
     # 'feature_fraction': 0.9,
     # 'bagging_fraction': 0.8,
