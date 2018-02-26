@@ -3,9 +3,6 @@ import json
 import pdb
 
 questions_processed = json.load(open('questions_processed.json'))
-# questions_processed = {k:v for k,v in questions_processed.iteritems() if len(v['raw_data']['lines'][0]) != 11}
-# with open('questions_processed.json', 'w') as f:
-    # json.dump(questions_processed, f, indent=4, separators=(',', ': '))
 
 DELIMITER = '|'
 

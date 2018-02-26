@@ -88,7 +88,7 @@ python convert_to_inputs.py
 					<key>source</key>
 					<string></string>
 					<key>temporary items path</key>
-					<string>/var/folders/9f/rxzhl8nj60q4gcp4wcbtd9cr0000gn/T/D7C92A27-1A59-426A-BCDD-16B8CA51F59F/1/com.apple.RunShellScript</string>
+					<string>/var/folders/9f/rxzhl8nj60q4gcp4wcbtd9cr0000gn/T/2D925EF4-407D-4606-AB82-349A83A6A3C3/1/com.apple.RunShellScript</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.RunShellScript</string>
@@ -381,9 +381,9 @@ python convert_to_inputs.py
 					AMUAxoA7gDyAPRAAXxAPc3RhbmRhcmQgd2lu
 					ZG93XxAQQVhTdGFuZGFyZFdpbmRvd9IAKgAK
 					APMAUIBOgCPTAC4ACQAKAPYBAQA9qgBTAIkA
-					WAD6AIQAjwD9AIgAkwCOgBSAK4AZgE+AJ4Av
-					gFCAKoAzgC6qAQIBAwEEAQUBBgEHAQgAXgEE
-					AQuAUYBSgFWAVoBXgFyAXYAegFWAXoAiXxAR
+					kwD6AIQAjwBYAP4AiACOgBSAK4AzgE+AJ4Av
+					gBmAUIAqgC6qAQIBAwEEAQUBBgEHAQQBCQBe
+					AQuAUYBSgFWAVoBXgFyAVYBdgB6AXoAiXxAR
 					QVhSb2xlRGVzY3JpcHRpb25cQVhJZGVudGlm
 					aWVyXEFYU2Nyb2xsQXJlYdMALgAJAAoBEQEU
 					AL2iANAA0YA/gECiARUBFoBTgFSAPSNAh3AA
@@ -395,10 +395,10 @@ python convert_to_inputs.py
 					FQEWgFOAVIA9EAhWX05TOjUz0wAuAAkACgE5
 					ATwAvaIAwgDDgDmAOqIBKQEqgFmAWoA90gAq
 					AAoBQQBQgGCAI9MALgAJAAoBRAFQAD2rAFMA
-					iQFHAFgBSQCEAI8BTACIAJMAjoAUgCuAYYAZ
-					gGKAJ4AvgGOAKoAzgC6rAVEBUgCdAGEBVQFW
-					AKEBWACdAKEBW4BkgGWAR4AhgGaAZ4BKgGqA
-					R4BKgGuAIllBWEVuYWJsZWRfEBFBWFJvbGVE
+					iQFHAJMBSQCEAI8AWAFNAIgAjoAUgCuAYYAz
+					gGKAJ4AvgBmAY4AqgC6rAVEBUgCdAKEBVQFW
+					AKEAYQFZAJ0BW4BkgGWAR4BKgGaAZ4BKgCGA
+					aoBHgGuAIllBWEVuYWJsZWRfEBFBWFJvbGVE
 					ZXNjcmlwdGlvblxBWElkZW50aWZpZXJXQVhU
 					YWJsZdMALgAJAAoBYgFlAL2iANAA0YA/gECi
 					ARUBFoBTgFSAPVV0YWJsZdMALgAJAAoBawFu
@@ -505,10 +505,10 @@ python convert_to_inputs.py
 					ANGAP4BAogDTANSAQYBCgD3TAC4ACQAKAzsD
 					PgC9ogDCAMOAOYA6ogDFAMaAO4A8gD1fEBBB
 					WFN0YW5kYXJkV2luZG930gAqAAoDRABQgMKA
-					I9MALgAJAAoDRwNSAD2qAFMAiQBYA0sAhACP
-					A04AiACTAI6AFIArgBmAw4AngC+AxIAqgDOA
-					LqoBAgNUAQQBBQNXAQcBCABeAQQDXIBRgMWA
-					VYBWgMaAXIBdgB6AVYDJgCJfEBFBWFJvbGVE
+					I9MALgAJAAoDRwNSAD2qAFMAiQCTA0sAhACP
+					AFgDTwCIAI6AFIArgDOAw4AngC+AGYDEgCqA
+					LqoBAgNUAQQBBQNXAQcBBAEJAF4DXIBRgMWA
+					VYBWgMaAXIBVgF2AHoDJgCJfEBFBWFJvbGVE
 					ZXNjcmlwdGlvblxBWElkZW50aWZpZXLTAC4A
 					CQAKA2EDZAC9ogDQANGAP4BAogEVARaAU4BU
 					gD3TAC4ACQAKA2kDbAC9ogC4ALmANoA3ogNt
@@ -517,10 +517,10 @@ python convert_to_inputs.py
 					ogDQANGAP4BAogEVARaAU4BUgD3TAC4ACQAK
 					A4EDhAC9ogDCAMOAOYA6ogEpASqAWYBagD3S
 					ACoACgOJAFCAy4Aj0wAuAAkACgOMA5gAPasA
-					UwCJAUcAWAORAIQAjwOUAIgAkwCOgBSAK4Bh
-					gBmAzIAngC+AzYAqgDOALqsBUQOaAJ0AYQFV
-					A54AoQFYAJ0AoQOjgGSAzoBHgCGAZoDPgEqA
-					aoBHgEqA0oAiXxARQVhSb2xlRGVzY3JpcHRp
+					UwCJAUcAkwORAIQAjwBYA5UAiACOgBSAK4Bh
+					gDOAzIAngC+AGYDNgCqALqsBUQOaAJ0AoQFV
+					A54AoQBhAVkAnQOjgGSAzoBHgEqAZoDPgEqA
+					IYBqgEeA0oAiXxARQVhSb2xlRGVzY3JpcHRp
 					b25cQVhJZGVudGlmaWVy0wAuAAkACgOoA6sA
 					vaIA0ADRgD+AQKIBFQEWgFOAVIA90wAuAAkA
 					CgOwA7MAvaIAuAC5gDaAN6IDtAO1gNCA0YA9
@@ -605,10 +605,10 @@ python convert_to_inputs.py
 					ANAA0YA/gECiANMA1IBBgEKAPdMALgAJAAoF
 					QwVGAL2iAMIAw4A5gDqiAMUAxoA7gDyAPV8Q
 					EEFYU3RhbmRhcmRXaW5kb3fSACoACgVMAFCB
-					AQuAI9MALgAJAAoFTwVaAD2qAFMAiQBYBVMA
-					hACPBVYAiACTAI6AFIArgBmBAQyAJ4AvgQEN
-					gCqAM4AuqgECBVwBBAEFBV8BBwEIAF4BBAVk
-					gFGBAQ6AVYBWgQEPgFyAXYAegFWBARKAIl8Q
+					AQuAI9MALgAJAAoFTwVaAD2qAFMAiQCTBVMA
+					hACPAFgFVwCIAI6AFIArgDOBAQyAJ4AvgBmB
+					AQ2AKoAuqgECBVwBBAEFBV8BBwEEAQkAXgVk
+					gFGBAQ6AVYBWgQEPgFyAVYBdgB6BARKAIl8Q
 					EUFYUm9sZURlc2NyaXB0aW9uXEFYSWRlbnRp
 					ZmllctMALgAJAAoFaQVsAL2iANAA0YA/gECi
 					ARUBFoBTgFSAPdMALgAJAAoFcQV0AL2iALgA
@@ -617,10 +617,10 @@ python convert_to_inputs.py
 					AAkACgWBBYQAvaIA0ADRgD+AQKIBFQEWgFOA
 					VIA90wAuAAkACgWJBYwAvaIAwgDDgDmAOqIB
 					KQEqgFmAWoA90gAqAAoFkQBQgQEUgCPTAC4A
-					CQAKBZQFoAA9qwBTAIkBRwBYBZkAhACPBZwA
-					iACTAI6AFIArgGGAGYEBFYAngC+BARaAKoAz
-					gC6rAVEFogCdAGEBVQWmAKEBWACdAKEFq4Bk
-					gQEXgEeAIYBmgQEYgEqAaoBHgEqBARuAIl8Q
+					CQAKBZQFoAA9qwBTAIkBRwCTBZkAhACPAFgF
+					nQCIAI6AFIArgGGAM4EBFYAngC+AGYEBFoAq
+					gC6rAVEFogCdAKEBVQWmAKEAYQFZAJ0Fq4Bk
+					gQEXgEeASoBmgQEYgEqAIYBqgEeBARuAIl8Q
 					EUFYUm9sZURlc2NyaXB0aW9uXEFYSWRlbnRp
 					ZmllctMALgAJAAoFsAWzAL2iANAA0YA/gECi
 					ARUBFoBTgFSAPdMALgAJAAoFuAW7AL2iALgA
@@ -718,10 +718,10 @@ python convert_to_inputs.py
 					0wDUgEGAQoA90wAuAAkACgdjB2YAvaIAwgDD
 					gDmAOqIAxQDGgDuAPIA9XxAQQVhTdGFuZGFy
 					ZFdpbmRvd9IAKgAKB2wAUIEBXIAj0wAuAAkA
-					CgdvB3oAPaoAUwCJAFgHcwCEAI8HdgCIAJMA
-					joAUgCuAGYEBXYAngC+BAV6AKoAzgC6qAQIH
-					fAEEAQUHfwEHAQgAXgEEB4SAUYEBX4BVgFaB
-					AWCAXIBdgB6AVYEBY4AiXxARQVhSb2xlRGVz
+					CgdvB3oAPaoAUwCJAJMHcwCEAI8AWAd3AIgA
+					joAUgCuAM4EBXYAngC+AGYEBXoAqgC6qAQIH
+					fAEEAQUHfwEHAQQBCQBeB4SAUYEBX4BVgFaB
+					AWCAXIBVgF2AHoEBY4AiXxARQVhSb2xlRGVz
 					Y3JpcHRpb25cQVhJZGVudGlmaWVy0wAuAAkA
 					CgeJB4wAvaIA0ADRgD+AQKIBFQEWgFOAVIA9
 					0wAuAAkACgeRB5QAvaIAuAC5gDaAN6IHlQeW
@@ -730,10 +730,10 @@ python convert_to_inputs.py
 					ogDQANGAP4BAogEVARaAU4BUgD3TAC4ACQAK
 					B6kHrAC9ogDCAMOAOYA6ogEpASqAWYBagD3S
 					ACoACgexAFCBAWWAI9MALgAJAAoHtAfAAD2r
-					AFMAiQFHAFgHuQCEAI8HvACIAJMAjoAUgCuA
-					YYAZgQFmgCeAL4EBZ4AqgDOALqsBUQfCAJ0A
-					YQFVB8YAoQFYAJ0AoQfLgGSBAWiAR4AhgGaB
-					AWmASoBqgEeASoEBbIAiXxARQVhSb2xlRGVz
+					AFMAiQFHAJMHuQCEAI8AWAe9AIgAjoAUgCuA
+					YYAzgQFmgCeAL4AZgQFngCqALqsBUQfCAJ0A
+					oQFVB8YAoQBhAVkAnQfLgGSBAWiAR4BKgGaB
+					AWmASoAhgGqAR4EBbIAiXxARQVhSb2xlRGVz
 					Y3JpcHRpb25cQVhJZGVudGlmaWVy0wAuAAkA
 					CgfQB9MAvaIA0ADRgD+AQKIBFQEWgFOAVIA9
 					0wAuAAkACgfYB9sAvaIAuAC5gDaAN6IH3Afd
@@ -825,10 +825,10 @@ python convert_to_inputs.py
 					ogDQANGAP4BAogDTANSAQYBCgD3TAC4ACQAK
 					CYAJgwC9ogDCAMOAOYA6ogDFAMaAO4A8gD1f
 					EBBBWFN0YW5kYXJkV2luZG930gAqAAoJiQBQ
-					gQGvgCPTAC4ACQAKCYwJlwA9qgBTAIkAWAmQ
-					AIQAjwmTAIgAkwCOgBSAK4AZgQGwgCeAL4EB
-					sYAqgDOALqoBAgmZAQQBBQmcAQcBCABeAQQJ
-					oYBRgQGygFWAVoEBs4BcgF2AHoBVgQG2gCJf
+					gQGvgCPTAC4ACQAKCYwJlwA9qgBTAIkAkwmQ
+					AIQAjwBYCZQAiACOgBSAK4AzgQGwgCeAL4AZ
+					gQGxgCqALqoBAgmZAQQBBQmcAQcBBAEJAF4J
+					oYBRgQGygFWAVoEBs4BcgFWAXYAegQG2gCJf
 					EBFBWFJvbGVEZXNjcmlwdGlvblxBWElkZW50
 					aWZpZXLTAC4ACQAKCaYJqQC9ogDQANGAP4BA
 					ogEVARaAU4BUgD3TAC4ACQAKCa4JsQC9ogC4
@@ -837,10 +837,10 @@ python convert_to_inputs.py
 					LgAJAAoJvgnBAL2iANAA0YA/gECiARUBFoBT
 					gFSAPdMALgAJAAoJxgnJAL2iAMIAw4A5gDqi
 					ASkBKoBZgFqAPdIAKgAKCc4AUIEBuIAj0wAu
-					AAkACgnRCd0APasAUwCJAUcAWAnWAIQAjwnZ
-					AIgAkwCOgBSAK4BhgBmBAbmAJ4AvgQG6gCqA
-					M4AuqwFRCd8AnQBhAVUJ4wChAVgAnQChCeiA
-					ZIEBu4BHgCGAZoEBvIBKgGqAR4BKgQG/gCJf
+					AAkACgnRCd0APasAUwCJAUcAkwnWAIQAjwBY
+					CdoAiACOgBSAK4BhgDOBAbmAJ4AvgBmBAbqA
+					KoAuqwFRCd8AnQChAVUJ4wChAGEBWQCdCeiA
+					ZIEBu4BHgEqAZoEBvIBKgCGAaoBHgQG/gCJf
 					EBFBWFJvbGVEZXNjcmlwdGlvblxBWElkZW50
 					aWZpZXLTAC4ACQAKCe0J8AC9ogDQANGAP4BA
 					ogEVARaAU4BUgD3TAC4ACQAKCfUJ+AC9ogC4
@@ -1005,12 +1005,12 @@ python convert_to_inputs.py
 					6SHuIfAh8iH3Ifkh+yH9IgoiDyIRIhMiGCIa
 					IhwiHiIrIjAiMiI0IjkiOyI9Ij8iTCJRIlMi
 					VSJaIlwiXiJgInMifCJ/IoEijiKjIqUipyKp
-					IqwiriKwIrMitSK3IrkiziLQItMi1SLXItoi
+					IqwiriKwIrIitSK3IrkiziLQItMi1SLXItoi
 					3CLeIuAi4iLlIuci+yMIIxUjGiMcIx4jIyMl
 					IycjKSM2IzsjPSM/I0QjRyNKI0wjWSNeI2Aj
 					YiNnI2kjayNtI3ojfyOBI4MjiCOKI4wjjiOb
 					I6AjoiOkI6kjqyOtI68juCO7I70jyiPhI+Mj
-					5SPnI+kj7CPuI/Aj8yP1I/cj+SQQJBIkFSQX
+					5SPnI+kj7CPuI/Aj8iP1I/cj+SQQJBIkFSQX
 					JBkkGyQeJCAkIiQkJCYkKSQrJD8kTCRZJF4k
 					YCRiJGckaSRrJG0keiR/JIEkgySIJIskjiSQ
 					JJ0koiSkJKYkqyStJK8ksSS+JMMkxSTHJMwk
@@ -1045,12 +1045,12 @@ python convert_to_inputs.py
 					tS24LbstvS3KLc8t0S3TLdgt2i3cLd4t6y3w
 					LfIt9C35Lfst/S3/LgwuES4TLhUuGi4cLh4u
 					IC4tLjIuNC42LjsuPS4/LkEuVC5dLmAuYi5v
-					LoQuhi6ILooujS6PLpEulC6WLpgumi6vLrEu
+					LoQuhi6ILooujS6PLpEuky6WLpgumi6vLrEu
 					tC62Lrguuy69Lr8uwS7DLsYuyC7cLuku9i77
 					Lv0u/y8ELwYvCC8KLxcvHC8eLyAvJS8oLysv
 					LS86Lz8vQS9DL0gvSi9ML04vWy9gL2IvZC9p
 					L2svbS9vL3wvgS+DL4Uvii+ML44vkC+ZL5wv
-					ni+rL8IvxC/GL8gvyi/NL88v0S/UL9Yv2C/a
+					ni+rL8IvxC/GL8gvyi/NL88v0S/TL9Yv2C/a
 					L/Ev8y/2L/gv+i/8L/8wATADMAUwBzAKMAww
 					IDAtMDowPzBBMEMwSDBKMEwwTjBbMGAwYjBk
 					MGkwbDBvMHEwfjCDMIUwhzCMMI4wkDCSMJ8w
@@ -1085,12 +1085,12 @@ python convert_to_inputs.py
 					BDkJOQw5DzkROR45IzklOSc5LDkuOTA5Mjk/
 					OUQ5RjlIOU05TzlROVM5YDllOWc5aTluOXA5
 					cjl0OYE5hjmIOYo5jzmROZM5lTmoObE5tDm2
-					OcM52DnaOdw53jnhOeM55TnoOeo57DnuOgM6
+					OcM52DnaOdw53jnhOeM55TnnOeo57DnuOgM6
 					BToIOgo6DDoPOhE6EzoVOhc6GjocOjA6PTpK
 					Ok86UTpTOlg6WjpcOl46azpwOnI6dDp5Onw6
 					fzqBOo46kzqVOpc6nDqeOqA6ojqvOrQ6tjq4
 					Or06vzrBOsM60DrVOtc62TreOuA64jrkOu06
-					8DryOv87FjsYOxo7HDseOyE7IzslOyg7Kjss
+					8DryOv87FjsYOxo7HDseOyE7IzslOyc7Kjss
 					Oy47RTtHO0o7TDtOO1A7UztVO1c7WTtbO147
 					YDt0O4E7jjuTO5U7lzucO547oDuiO687tDu2
 					O7g7vTvAO8M7xTvSO9c72TvbO+A74jvkO+Y7
@@ -1132,6 +1132,8 @@ python convert_to_inputs.py
 				</array>
 				<key>Class Name</key>
 				<string>AMWatchMeDoAction</string>
+				<key>IgnoresInput</key>
+				<true/>
 				<key>InputUUID</key>
 				<string>A76B05CF-7231-4BE3-855E-0B435EFB0F3F</string>
 				<key>Keywords</key>
@@ -1272,7 +1274,7 @@ python convert_to_inputs.py
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>227.750000:408.000000</string>
+				<string>227.750000:460.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Watch Me Do.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1350,6 +1352,8 @@ python convert_to_inputs.py
 				</array>
 				<key>Class Name</key>
 				<string>Loop</string>
+				<key>IgnoresInput</key>
+				<true/>
 				<key>InputUUID</key>
 				<string>28CE699F-92DA-4DDB-ACDD-0DCA73903EA1</string>
 				<key>Keywords</key>
@@ -1420,7 +1424,7 @@ python convert_to_inputs.py
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>227.750000:537.000000</string>
+				<string>227.750000:641.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Loop.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1430,19 +1434,19 @@ python convert_to_inputs.py
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>5D9B7F59-60C7-4050-8D1A-4B3C8CA646C4</key>
-		<dict>
-			<key>from</key>
-			<string>B978BCD5-5BD9-431C-827E-26A8B1350CB0 - B978BCD5-5BD9-431C-827E-26A8B1350CB0</string>
-			<key>to</key>
-			<string>89C9B088-AA58-4A99-BC0C-4646D19BFC5F - 89C9B088-AA58-4A99-BC0C-4646D19BFC5F</string>
-		</dict>
-		<key>D7A2A320-F7DD-43BB-8ACE-C71C4094BC64</key>
+		<key>1CC4F174-047F-453C-84F0-8D6E1F6558D6</key>
 		<dict>
 			<key>from</key>
 			<string>89C9B088-AA58-4A99-BC0C-4646D19BFC5F - 89C9B088-AA58-4A99-BC0C-4646D19BFC5F</string>
 			<key>to</key>
 			<string>E11144B3-9CC9-4EC8-8BA6-4F394BED215F - E11144B3-9CC9-4EC8-8BA6-4F394BED215F</string>
+		</dict>
+		<key>C172E42B-AB4D-40D3-A444-13374D3D9F04</key>
+		<dict>
+			<key>from</key>
+			<string>B978BCD5-5BD9-431C-827E-26A8B1350CB0 - B978BCD5-5BD9-431C-827E-26A8B1350CB0</string>
+			<key>to</key>
+			<string>89C9B088-AA58-4A99-BC0C-4646D19BFC5F - 89C9B088-AA58-4A99-BC0C-4646D19BFC5F</string>
 		</dict>
 	</dict>
 	<key>workflowMetaData</key>

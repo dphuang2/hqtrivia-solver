@@ -41,9 +41,9 @@ print('Start training...')
 # train
 gbm = lgb.train(params,
                 lgb_train,
-                num_boost_round=100,
+                num_boost_round=500,
                 valid_sets=lgb_eval,
-                early_stopping_rounds=100,
+                early_stopping_rounds=500,
                 categorical_feature=[num_feature - 1])
 
 print('Save model...')
