@@ -65,6 +65,15 @@ ANSWERS = {
         'Which of these websites is an online database for movies, television and video games?': 1,
         'Where do pearls come from?': 0,
         "Bart's age on “The Simpsons” is NOT the same as which of these characters?": 2,
+        "Which of these U.S. rivers is the longest?": 1,
+        'Not just a TV program, “Frontline” is also the name of a popular type of what?': 1,
+        "Which of these is NOT an actual Jelly Belly flavor?": 2,
+        "In the nursery rhyme, Mary had a little what?": 1,
+        "Siri made its debut on which iPhone?": 2,
+        'In the King James Bible, which of these measures “six cubits and a span”?':  2,
+        'One of the Galápagos Islands is named for which revolutionary?': 2,
+        'In Ancient Greece, Olympic athletes typically competed wearing what?': 2,
+
         }
 
 with open('../data/log', 'r') as f:
@@ -111,3 +120,14 @@ with open('../data/questions_clean', 'w') as f:
             f.write(question + '\n')
         elif len(data) == 5:
             f.write(question + '\n')
+
+with open('../data/questions_clean', 'r') as f:
+    all_questions = f.read()
+
+with open('../data/questions_clean', 'w') as f:
+    seen = set()
+    for question in all_questions.split('\n'):
+        if question in seen:
+            continue
+        f.write(question + '\n')
+        seen.add(question)
