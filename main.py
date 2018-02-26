@@ -32,7 +32,7 @@ def on_message(ws, message):
         print "Answers: " + str(answers)
         if not args.collect:
             pprint(on_message.solver.answer(question, answers))
-    elif data['type'] == 'broadcastEnded':
+    elif data['type'] == 'broadcastEnded' and 'reason' not in data:
         print 'The broadcast ended'
         ws.close()
 print 'Instantiating Answerer class...make take a while'
@@ -119,12 +119,4 @@ if __name__ == "__main__":
             })
 
         # Run websocket forever and reconnect on failure
-        if DEBUG:
-            print 'Running run_forever() once'
-            ws.run_forever()
-            exit()
-        else:
-            while True:
-                ws.run_forever()
-                print 'Connection to websocket closed...starting again'
-            print 'How did you get here?'
+        ws.run_forever()
