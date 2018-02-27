@@ -5168,8 +5168,8 @@
                 ]
             ],
             "fraction_answers": {
-                "lipstick": 0.6017582158364523,
                 "mascara": 0.23031878577761722,
+                "lipstick": 0.6017582158364523,
                 "eyeliner": 0.1679229983859305
             },
             "question": "what makeup item often contains dried cochineal bugs as an ingredient?",
@@ -5197,8 +5197,8 @@
                 "question_type"
             ],
             "ml_answers": {
-                "lipstick": 0.7745553692078216,
                 "mascara": 0.3221183380254922,
+                "lipstick": 0.7745553692078216,
                 "eyeliner": 0.13918375967050825
             },
             "negative_question": false,
@@ -5278,8 +5278,8 @@
                 ]
             },
             "integer_answers": {
-                "lipstick": 13,
                 "mascara": 1,
+                "lipstick": 13,
                 "eyeliner": 0
             }
         },
@@ -9640,6 +9640,177 @@
             1
         ]
     },
+    "What nickname was given to New York City\u2019s 28th Street between Fifth and Sixth Avenues?": {
+        "raw_data": {
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    3.715238775898524,
+                    3.0324195544447727,
+                    3.2523416696567025
+                ],
+                "result_count_important_words": [
+                    42000.0,
+                    17400.0,
+                    12000.0
+                ],
+                "wikipedia_search": [
+                    1.7213779128672746,
+                    2.9868287740628165,
+                    5.291793313069908
+                ],
+                "word_count_appended_bing": [
+                    3.0,
+                    5.0,
+                    19.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.6376332001332001,
+                    1.5312361249861248,
+                    5.831130674880675
+                ],
+                "word_count_appended": [
+                    19.0,
+                    43.0,
+                    98.0
+                ],
+                "cosine_similarity_raw": [
+                    0.0942077785730362,
+                    0.03668718785047531,
+                    0.15544551610946655
+                ],
+                "result_count_noun_chunks": [
+                    38600.0,
+                    17500.0,
+                    11500.0
+                ],
+                "question_answer_similarity": [
+                    9.562085453420877,
+                    7.468478831462562,
+                    7.922133668791503
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    5.0
+                ],
+                "result_count_bing": [
+                    25900.0,
+                    46300.0,
+                    47900.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    5.0
+                ],
+                "result_count": [
+                    36900.0,
+                    6210.0,
+                    9300.0
+                ],
+                "answer_relation_to_question": [
+                    0.9859361098997979,
+                    4.0890382394593265,
+                    4.925025650640875
+                ]
+            },
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "z-best_answer_by_ml": [
+                "tin pan alley",
+                "bottom"
+            ],
+            "lines": [
+                [
+                    0.09859361098997979,
+                    0.18195924445924447,
+                    0.329006145899004,
+                    0.38320847994766066,
+                    0.7040641099026903,
+                    0.21565362198168192,
+                    0.5882352941176471,
+                    0.5710059171597633,
+                    0.17213779128672746,
+                    0.11875,
+                    0.1111111111111111,
+                    0.3715238775898524,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.40890382394593267,
+                    0.17013734722068052,
+                    0.128124348768079,
+                    0.299305463694864,
+                    0.11848883800801374,
+                    0.3855120732722731,
+                    0.24369747899159663,
+                    0.2588757396449704,
+                    0.29868287740628163,
+                    0.26875,
+                    0.18518518518518517,
+                    0.3032419554444773,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.4925025650640875,
+                    0.647903408320075,
+                    0.542869505332917,
+                    0.31748605635747534,
+                    0.17744705208929593,
+                    0.398834304746045,
+                    0.16806722689075632,
+                    0.17011834319526628,
+                    0.5291793313069908,
+                    0.6125,
+                    0.7037037037037037,
+                    0.32523416696567026,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            ],
+            "negative_question": false,
+            "categorical_data": {
+                "question_type": 1
+            },
+            "question": "what nickname was given to new york city\u2019s 28th street between fifth and sixth avenues?",
+            "rate_limited": false,
+            "answers": [
+                "five points",
+                "diamond district",
+                "tin pan alley"
+            ],
+            "ml_answers": {
+                "diamond district": -0.0014426766050626987,
+                "tin pan alley": 0.7165333773402597,
+                "five points": 0.22704014590132562
+            }
+        },
+        "right_answer": [
+            0,
+            0,
+            1
+        ]
+    },
     "Which of these artists does NOT have a namesake museum?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -11740,6 +11911,177 @@
             0
         ]
     },
+    "Which nation\u2019s capital is right on the shore of the Caspian Sea?": {
+        "raw_data": {
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.0315571409305138,
+                    1.9746401474986808,
+                    1.9938027115708055
+                ],
+                "result_count_important_words": [
+                    71400.0,
+                    142000.0,
+                    91000.0
+                ],
+                "wikipedia_search": [
+                    0.859802965931803,
+                    2.2119073110377814,
+                    1.928289723030416
+                ],
+                "word_count_appended_bing": [
+                    86.0,
+                    52.0,
+                    68.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.7016354436089025,
+                    1.6852879925439856,
+                    1.6130765638471118
+                ],
+                "word_count_appended": [
+                    379.0,
+                    418.0,
+                    416.0
+                ],
+                "cosine_similarity_raw": [
+                    0.07876575738191605,
+                    0.10712917149066925,
+                    0.19740572571754456
+                ],
+                "result_count_noun_chunks": [
+                    66800.0,
+                    222000.0,
+                    90500.0
+                ],
+                "question_answer_similarity": [
+                    -1.541832820046693,
+                    1.662194854579866,
+                    -0.5415895916521549
+                ],
+                "word_count_noun_chunks": [
+                    22.0,
+                    58.0,
+                    129.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    16.0,
+                    14.0
+                ],
+                "result_count_bing": [
+                    231000.0,
+                    464000.0,
+                    288000.0
+                ],
+                "result_count": [
+                    49000.0,
+                    121000.0,
+                    114000.0
+                ],
+                "answer_relation_to_question": [
+                    1.9305771711074868,
+                    1.3590387549442087,
+                    1.7103840739483047
+                ]
+            },
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "z-best_answer_by_ml": [
+                "azerbaijan",
+                "bottom"
+            ],
+            "lines": [
+                [
+                    0.38611543422149736,
+                    0.3403270887217805,
+                    0.20549340690832282,
+                    3.66033226931347,
+                    0.17253521126760563,
+                    0.23499491353001017,
+                    0.2345597897503285,
+                    0.17611389401529132,
+                    0.17196059318636062,
+                    0.3124484748557296,
+                    0.4174757281553398,
+                    0.3385928568217523,
+                    0.10526315789473684,
+                    0.03225806451612903,
+                    -1.0
+                ],
+                [
+                    0.27180775098884175,
+                    0.33705759850879713,
+                    0.27949123020732736,
+                    -3.946073390707327,
+                    0.426056338028169,
+                    0.47202441505595116,
+                    0.4664914586070959,
+                    0.585288689691537,
+                    0.44238146220755625,
+                    0.3446001648804617,
+                    0.2524271844660194,
+                    0.32910669124978015,
+                    0.27751196172248804,
+                    0.5161290322580645,
+                    -1.0
+                ],
+                [
+                    0.34207681478966095,
+                    0.32261531276942235,
+                    0.5150153628843498,
+                    1.285741121393857,
+                    0.4014084507042254,
+                    0.29298067141403866,
+                    0.29894875164257556,
+                    0.23859741629317163,
+                    0.38565794460608316,
+                    0.34295136026380874,
+                    0.3300970873786408,
+                    0.3323004519284676,
+                    0.6172248803827751,
+                    0.45161290322580644,
+                    -1.0
+                ]
+            ],
+            "negative_question": false,
+            "categorical_data": {
+                "question_type": -1
+            },
+            "question": "which nation\u2019s capital is right on the shore of the caspian sea?",
+            "rate_limited": false,
+            "answers": [
+                "turkmenistan",
+                "iran",
+                "azerbaijan"
+            ],
+            "ml_answers": {
+                "iran": 0.14976268364858955,
+                "turkmenistan": 0.13500796050565256,
+                "azerbaijan": 0.24450364982733871
+            }
+        },
+        "right_answer": [
+            0,
+            0,
+            1
+        ]
+    },
     "Aside from blood cells, what would you also find inside your blood vessels?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -12278,6 +12620,177 @@
             0,
             1,
             0
+        ]
+    },
+    "The two sides of a coin are technically called what?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "obverse / reverse",
+                "bottom"
+            ],
+            "question": "the two sides of a coin are technically called what?",
+            "lines": [
+                [
+                    0.056221198156682035,
+                    0.0,
+                    0.04420288149772472,
+                    0.3604723151221832,
+                    0.0002190100744634253,
+                    0.3305709023941068,
+                    0.00021581957483543757,
+                    0.00027770063871146905,
+                    0.02666666666666667,
+                    0.43478260869565216,
+                    0.3333333333333333,
+                    0.0960716440423934,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.1798941798941799,
+                    0.0,
+                    0.07556488009148864,
+                    0.22791724892906665,
+                    0.7993867717915024,
+                    0.3333333333333333,
+                    0.803927916262005,
+                    0.6627788577247061,
+                    0.05555555555555555,
+                    0.17391304347826086,
+                    0.3333333333333333,
+                    0.3525720079568099,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.7638846219491381,
+                    1.0,
+                    0.8802322384107867,
+                    0.41161043594875013,
+                    0.20039421813403416,
+                    0.3360957642725598,
+                    0.1958562641631596,
+                    0.3369434416365824,
+                    0.9177777777777778,
+                    0.391304347826087,
+                    0.3333333333333333,
+                    0.5513563480007967,
+                    0,
+                    0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "advert / convert",
+                "prefix / suffix",
+                "obverse / reverse"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "obverse / reverse": 0.6748253979306009,
+                "advert / convert": 0.061558180804913556,
+                "prefix / suffix": 0.056654744947219116
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.3842865761695736,
+                    1.4102880318272395,
+                    2.2054253920031868
+                ],
+                "result_count_important_words": [
+                    8.0,
+                    29800.0,
+                    7260.0
+                ],
+                "wikipedia_search": [
+                    0.08,
+                    0.16666666666666666,
+                    2.7533333333333334
+                ],
+                "word_count_appended_bing": [
+                    2.0,
+                    2.0,
+                    2.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.0,
+                    0.0,
+                    2.0
+                ],
+                "cosine_similarity_raw": [
+                    0.023101603612303734,
+                    0.03949221968650818,
+                    0.4600328207015991
+                ],
+                "result_count_noun_chunks": [
+                    15.0,
+                    35800.0,
+                    18200.0
+                ],
+                "question_answer_similarity": [
+                    4.175553178414702,
+                    2.6400934364646673,
+                    4.767914738506079
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    3590000.0,
+                    3620000.0,
+                    3650000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    8.0,
+                    29200.0,
+                    7320.0
+                ],
+                "answer_relation_to_question": [
+                    0.16866359447004609,
+                    0.5396825396825397,
+                    2.291653865847414
+                ],
+                "word_count_appended": [
+                    10.0,
+                    4.0,
+                    9.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            0,
+            1
         ]
     },
     "Which animal is specifically mentioned in the Judeo-Christian Ten Commandments?": {
@@ -13330,6 +13843,177 @@
             0
         ]
     },
+    "The director of HBO\u2019s \u201cThe Jinx\u201d co-founded what company?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "moviefone",
+                "bottom"
+            ],
+            "question": "the director of hbo\u2019s \u201cthe jinx\u201d co-founded what company?",
+            "lines": [
+                [
+                    0.37581466646887207,
+                    0.24379831187363293,
+                    0.13163924988893078,
+                    1.147913842801287,
+                    0.3080357142857143,
+                    0.013634278884240663,
+                    0.06947282386595832,
+                    0.4607329842931937,
+                    0.4044583388960586,
+                    0.05976095617529881,
+                    0.06153846153846154,
+                    0.26714751887546706,
+                    0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.363348662414083,
+                    0.514624413921533,
+                    0.1465178717038541,
+                    -0.06867616486525255,
+                    0.29464285714285715,
+                    0.035718753040263514,
+                    0.04577033101757254,
+                    0.2617801047120419,
+                    0.5406709388396896,
+                    0.30677290836653387,
+                    0.4153846153846154,
+                    0.2515316095165574,
+                    0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.260836671117045,
+                    0.24157727420483405,
+                    0.7218428784072152,
+                    -0.0792376779360345,
+                    0.39732142857142855,
+                    0.9506469680754959,
+                    0.8847568451164691,
+                    0.2774869109947644,
+                    0.0548707222642517,
+                    0.6334661354581673,
+                    0.5230769230769231,
+                    0.4813208716079756,
+                    0,
+                    1.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "the smoking gun",
+                "ancestry.com",
+                "moviefone"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "moviefone": 1.047322429834977,
+                "the smoking gun": 0.1444288271380639,
+                "ancestry.com": 0.12191312422293488
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.6028851132528024,
+                    1.5091896570993444,
+                    2.8879252296478537
+                ],
+                "result_count_important_words": [
+                    680.0,
+                    448.0,
+                    8660.0
+                ],
+                "wikipedia_search": [
+                    1.6178333555842344,
+                    2.1626837553587586,
+                    0.2194828890570068
+                ],
+                "word_count_appended_bing": [
+                    4.0,
+                    27.0,
+                    34.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.9751932474945317,
+                    2.058497655686132,
+                    0.9663090968193362
+                ],
+                "cosine_similarity_raw": [
+                    0.03402142971754074,
+                    0.03786672651767731,
+                    0.18655626475811005
+                ],
+                "result_count_noun_chunks": [
+                    88.0,
+                    50.0,
+                    53.0
+                ],
+                "question_answer_similarity": [
+                    10.575235941825667,
+                    -0.6326839349349029,
+                    -0.7299826070666313
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    98100.0,
+                    257000.0,
+                    6840000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    9.0
+                ],
+                "result_count": [
+                    69.0,
+                    66.0,
+                    89.0
+                ],
+                "answer_relation_to_question": [
+                    1.8790733323443605,
+                    1.8167433120704148,
+                    1.304183355585225
+                ],
+                "word_count_appended": [
+                    15.0,
+                    77.0,
+                    159.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            0,
+            1
+        ]
+    },
     "What is the name of the cultural explosion that took place in 1920s New York?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -13862,6 +14546,95 @@
     },
     "Which of these foods is NOT mentioned in Train's hit song \u201cDrops of Jupiter\u201d?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "chicken pot pie",
+                "bottom"
+            ],
+            "question": "which of these foods is not mentioned in train's hit song \u201cdrops of jupiter\u201d?",
+            "lines": [
+                [
+                    0.43922811059907835,
+                    0.3952020202020202,
+                    0.30183726761166846,
+                    0.25777431915875193,
+                    0.208955223880597,
+                    0.3864942528735632,
+                    0.49796325546595727,
+                    0.2564102564102564,
+                    0.1781045751633987,
+                    0.3076923076923077,
+                    0.4090909090909091,
+                    0.23148520298719938,
+                    0,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.12557603686635943,
+                    0.2095959595959596,
+                    0.34135695093939633,
+                    0.4291993213289181,
+                    0.3768656716417911,
+                    0.40373563218390807,
+                    0.3948374760994264,
+                    0.4358974358974359,
+                    0.3545751633986928,
+                    0.34615384615384615,
+                    0.18181818181818185,
+                    0.34553277366807267,
+                    0,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.4351958525345622,
+                    0.3952020202020202,
+                    0.35680578144893516,
+                    0.31302635951232993,
+                    0.41417910447761197,
+                    0.20977011494252873,
+                    0.10719926843461636,
+                    0.3076923076923077,
+                    0.46732026143790856,
+                    0.34615384615384615,
+                    0.4090909090909091,
+                    0.42298202334472795,
+                    0,
+                    0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "deep-fried chicken",
+                "soy latte",
+                "chicken pot pie"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "soy latte": 0.12229125636208572,
+                "deep-fried chicken": 0.19374774858598626,
+                "chicken pot pie": 0.8682337037627902
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     3.759207158179209,
@@ -13934,96 +14707,7 @@
                     16.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "chicken pot pie",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.43922811059907835,
-                    0.3952020202020202,
-                    0.30183726761166846,
-                    0.25777431915875193,
-                    0.208955223880597,
-                    0.3864942528735632,
-                    0.49796325546595727,
-                    0.2564102564102564,
-                    0.1781045751633987,
-                    0.3076923076923077,
-                    0.4090909090909091,
-                    0.23148520298719938,
-                    0,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.12557603686635943,
-                    0.2095959595959596,
-                    0.34135695093939633,
-                    0.4291993213289181,
-                    0.3768656716417911,
-                    0.40373563218390807,
-                    0.3948374760994264,
-                    0.4358974358974359,
-                    0.3545751633986928,
-                    0.34615384615384615,
-                    0.18181818181818185,
-                    0.34553277366807267,
-                    0,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.4351958525345622,
-                    0.3952020202020202,
-                    0.35680578144893516,
-                    0.31302635951232993,
-                    0.41417910447761197,
-                    0.20977011494252873,
-                    0.10719926843461636,
-                    0.3076923076923077,
-                    0.46732026143790856,
-                    0.34615384615384615,
-                    0.4090909090909091,
-                    0.42298202334472795,
-                    0,
-                    0,
-                    -1.0
-                ]
-            ],
-            "negative_question": true,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which of these foods is not mentioned in train's hit song \u201cdrops of jupiter\u201d?",
-            "rate_limited": false,
-            "answers": [
-                "deep-fried chicken",
-                "soy latte",
-                "chicken pot pie"
-            ],
-            "ml_answers": {
-                "soy latte": 0.12229125636208572,
-                "deep-fried chicken": 0.19374774858598626,
-                "chicken pot pie": 0.8682337037627902
-            }
+            "negative_question": true
         },
         "right_answer": [
             0,
@@ -16153,99 +16837,11 @@
     },
     "By definition, which of these would an herbivore eat?": {
         "raw_data": {
-            "data": {
-                "word_count_appended_relation_to_question": [
-                    1.053739954754393,
-                    0.8341288170387477,
-                    1.1121312282068594
-                ],
-                "result_count_important_words": [
-                    43700.0,
-                    23600.0,
-                    31400.0
-                ],
-                "wikipedia_search": [
-                    0.12048192771084337,
-                    0.5301204819277109,
-                    0.3493975903614458
-                ],
-                "word_count_appended_bing": [
-                    31.0,
-                    28.0,
-                    36.0
-                ],
-                "answer_relation_to_question_bing": [
-                    0.2871287128712871,
-                    0.3564356435643564,
-                    1.3564356435643563
-                ],
-                "word_count_appended": [
-                    145.0,
-                    107.0,
-                    134.0
-                ],
-                "cosine_similarity_raw": [
-                    0.04153791442513466,
-                    0.05941172316670418,
-                    0.031029772013425827
-                ],
-                "result_count_noun_chunks": [
-                    44100.0,
-                    16400.0,
-                    31900.0
-                ],
-                "question_answer_similarity": [
-                    -0.5239059180021286,
-                    -0.8377994634211063,
-                    -0.19353636913001537
-                ],
-                "word_count_noun_chunks": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "result_count_bing": [
-                    775000.0,
-                    1480000.0,
-                    808000.0
-                ],
-                "result_count": [
-                    75600.0,
-                    23400.0,
-                    54000.0
-                ],
-                "answer_relation_to_question": [
-                    0.6281119829506927,
-                    0.8030611256417708,
-                    0.5688268914075365
-                ]
-            },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
             "z-best_answer_by_ml": [
                 "shawarma",
                 "bottom"
             ],
+            "question": "by definition, which of these would an herbivore eat?",
             "lines": [
                 [
                     0.31405599147534635,
@@ -16299,22 +16895,110 @@
                     -1.0
                 ]
             ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "by definition, which of these would an herbivore eat?",
             "rate_limited": false,
             "answers": [
                 "tabbouleh",
                 "kibbeh",
                 "shawarma"
             ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
             "ml_answers": {
                 "shawarma": 0.49624489350552536,
                 "tabbouleh": 0.2805150244407632,
                 "kibbeh": 0.27002797979487403
-            }
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.053739954754393,
+                    0.8341288170387477,
+                    1.1121312282068594
+                ],
+                "result_count_important_words": [
+                    43700.0,
+                    23600.0,
+                    31400.0
+                ],
+                "wikipedia_search": [
+                    0.12048192771084337,
+                    0.5301204819277109,
+                    0.3493975903614458
+                ],
+                "word_count_appended_bing": [
+                    31.0,
+                    28.0,
+                    36.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.2871287128712871,
+                    0.3564356435643564,
+                    1.3564356435643563
+                ],
+                "cosine_similarity_raw": [
+                    0.04153791442513466,
+                    0.05941172316670418,
+                    0.031029772013425827
+                ],
+                "result_count_noun_chunks": [
+                    44100.0,
+                    16400.0,
+                    31900.0
+                ],
+                "question_answer_similarity": [
+                    -0.5239059180021286,
+                    -0.8377994634211063,
+                    -0.19353636913001537
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    775000.0,
+                    1480000.0,
+                    808000.0
+                ],
+                "word_count_appended": [
+                    145.0,
+                    107.0,
+                    134.0
+                ],
+                "answer_relation_to_question": [
+                    0.6281119829506927,
+                    0.8030611256417708,
+                    0.5688268914075365
+                ],
+                "result_count": [
+                    75600.0,
+                    23400.0,
+                    54000.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             1,
@@ -18831,9 +19515,9 @@
                 ]
             ],
             "fraction_answers": {
-                "wool sweater / slacks": 0.27120655062760796,
                 "cotton t-shirt / shorts": 0.24914182677046628,
-                "jean jacket / jeans": 0.4796516226019257
+                "jean jacket / jeans": 0.4796516226019257,
+                "wool sweater / slacks": 0.27120655062760796
             },
             "question": "which of these outfits can be defined as a \u201ccanadian tuxedo\u201d?",
             "rate_limited": false,
@@ -18860,9 +19544,9 @@
                 "question_type"
             ],
             "ml_answers": {
-                "wool sweater / slacks": 0.1017591768970551,
                 "cotton t-shirt / shorts": 0.10103074982006632,
-                "jean jacket / jeans": 0.47217137453320795
+                "jean jacket / jeans": 0.47217137453320795,
+                "wool sweater / slacks": 0.1017591768970551
             },
             "negative_question": false,
             "categorical_data": {
@@ -18941,9 +19625,9 @@
                 ]
             },
             "integer_answers": {
-                "wool sweater / slacks": 4,
                 "cotton t-shirt / shorts": 1,
-                "jean jacket / jeans": 7
+                "jean jacket / jeans": 7,
+                "wool sweater / slacks": 4
             }
         },
         "right_answer": [
@@ -31543,70 +32227,70 @@
             1
         ]
     },
-    "Which company once put a giant, melting kiwi-strawberry popsicle in New York\u2019s Union Square?": {
+    "Which of these college mascots is NOT a bulldog?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "snapple"
+                "georgia state"
             ],
-            "question": "which company once put a giant, melting kiwi-strawberry popsicle in new york\u2019s union square?",
+            "question": "which of these college mascots is not a bulldog?",
             "lines": [
                 [
-                    0.4908728085452223,
-                    0.4190642829973374,
-                    0.7551425872440007,
-                    -0.029795745514932297,
-                    0.9967221887751689,
-                    0.12098501070663811,
-                    0.03725490196078431,
-                    0.9969561956857382,
-                    0.422192513368984,
-                    0.8389830508474576,
-                    0.5571428571428572,
-                    0.7270901396361904,
-                    1.0,
-                    1.0,
+                    0.24570590699622957,
+                    0.24783843873517786,
+                    0.4370046103096058,
+                    0.5052378299934491,
+                    0.25766283524904215,
+                    0.29301323484148967,
+                    0.21114369501466276,
+                    0.23376029277218663,
+                    0.5,
+                    0.15390879478827363,
+                    0.11486486486486486,
+                    0.32218896029562283,
+                    0.0,
+                    0,
                     -1.0
                 ],
                 [
-                    0.13367148496458842,
-                    0.40293647774819324,
-                    0.0944453759482946,
-                    0.5779617466922505,
-                    0.0012040939193257074,
-                    0.25267665952890794,
-                    0.0024635495223730517,
-                    0.0011028276500948432,
-                    0.47829768270944745,
-                    0.038135593220338986,
-                    0.07142857142857142,
-                    0.11608337804466214,
-                    0.0,
-                    0.0,
+                    0.2823977098170647,
+                    0.25413784584980237,
+                    0.40613794893482125,
+                    0.2667069878328024,
+                    0.40948275862068967,
+                    0.4393659587565405,
+                    0.4090909090909091,
+                    0.434583714547118,
+                    0.33695652173913043,
+                    0.38517915309446255,
+                    0.39864864864864863,
+                    0.33347949974336777,
+                    0.5,
+                    0,
                     -1.0
                 ],
                 [
-                    0.3754557064901893,
-                    0.1779992392544694,
-                    0.1504120368077047,
-                    0.45183399882268177,
-                    0.002073717305505385,
-                    0.6263383297644539,
-                    0.9602815485168427,
-                    0.001940976664166924,
-                    0.09950980392156865,
-                    0.1228813559322034,
-                    0.37142857142857144,
-                    0.15682648231914742,
-                    0.0,
-                    0.0,
+                    0.4718963831867058,
+                    0.4980237154150198,
+                    0.15685744075557295,
+                    0.22805518217374854,
+                    0.3328544061302682,
+                    0.26762080640196984,
+                    0.3797653958944282,
+                    0.33165599268069534,
+                    0.16304347826086957,
+                    0.4609120521172638,
+                    0.4864864864864865,
+                    0.34433153996100935,
+                    0.5,
+                    0,
                     -1.0
                 ]
             ],
             "rate_limited": false,
             "answers": [
-                "snapple",
-                "edy's",
-                "baskin-robbins"
+                "gonzaga",
+                "brooklyn college",
+                "georgia state"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -31626,91 +32310,91 @@
                 "question_type"
             ],
             "ml_answers": {
-                "snapple": 0.9663399842481154,
-                "edy's": 0.19807632193362626,
-                "baskin-robbins": 0.050634924042181645
+                "gonzaga": 0.4529333829981847,
+                "brooklyn college": 0.3929290134946206,
+                "georgia state": 0.594749743360004
             },
             "categorical_data": {
                 "question_type": -1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    7.2709013963619045,
-                    1.1608337804466213,
-                    1.5682648231914742
+                    1.0668662382262628,
+                    0.9991230015397932,
+                    0.9340107602339439
                 ],
                 "result_count_important_words": [
-                    741.0,
-                    49.0,
-                    19100.0
+                    98500.0,
+                    31000.0,
+                    41000.0
                 ],
                 "wikipedia_search": [
-                    1.6887700534759358,
-                    1.9131907308377896,
-                    0.39803921568627454
+                    0.0,
+                    0.32608695652173914,
+                    0.6739130434782609
                 ],
                 "word_count_appended_bing": [
-                    39.0,
-                    5.0,
-                    26.0
+                    57.0,
+                    15.0,
+                    2.0
                 ],
                 "answer_relation_to_question_bing": [
-                    2.095321414986687,
-                    2.014682388740966,
-                    0.8899961962723469
+                    1.0086462450592886,
+                    0.9834486166007905,
+                    0.007905138339920948
                 ],
                 "cosine_similarity_raw": [
-                    0.35061997175216675,
-                    0.04385189712047577,
-                    0.06983775645494461
+                    0.053990308195352554,
+                    0.08044463396072388,
+                    0.2940909266471863
                 ],
                 "result_count_noun_chunks": [
-                    45200.0,
-                    50.0,
-                    88.0
+                    58200.0,
+                    14300.0,
+                    36800.0
                 ],
                 "question_answer_similarity": [
-                    -0.22626015357673168,
-                    4.388872012030333,
-                    3.4310948827769607
+                    -0.09593919850885868,
+                    4.273133078590035,
+                    4.981102459132671
                 ],
                 "word_count_noun_chunks": [
-                    38.0,
+                    3.0,
                     0.0,
                     0.0
                 ],
                 "word_count_raw": [
-                    25.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
                 "result_count_bing": [
-                    22600.0,
-                    47200.0,
-                    117000.0
+                    2690000.0,
+                    788000.0,
+                    3020000.0
                 ],
                 "word_count_appended": [
-                    198.0,
-                    9.0,
-                    29.0
+                    425.0,
+                    141.0,
+                    48.0
                 ],
                 "answer_relation_to_question": [
-                    4.417855276907001,
-                    1.2030433646812957,
-                    3.3791013584117033
+                    1.0171763720150817,
+                    0.8704091607317413,
+                    0.11241446725317693
                 ],
                 "result_count": [
-                    14900.0,
-                    18.0,
-                    31.0
+                    50600.0,
+                    18900.0,
+                    34900.0
                 ]
             },
-            "negative_question": false
+            "negative_question": true
         },
         "right_answer": [
-            1,
             0,
-            0
+            0,
+            1
         ]
     },
     "Which of these is NOT a real animal?": {
@@ -32071,6 +32755,177 @@
             1,
             0,
             0
+        ]
+    },
+    "What is the direct object in the sentence: \u201cYour cousin stole my sandwich\u201d?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "sandwich",
+                "bottom"
+            ],
+            "question": "what is the direct object in the sentence: \u201cyour cousin stole my sandwich\u201d?",
+            "lines": [
+                [
+                    0.5833476928108876,
+                    0.4914529914529915,
+                    0.20989406362552437,
+                    0.28058219447031285,
+                    0.9544182985025506,
+                    0.032621073079241746,
+                    0.33043478260869563,
+                    0.3422897196261682,
+                    0.2945205479452055,
+                    0.30823529411764705,
+                    0.31443298969072164,
+                    0.3332541343594028,
+                    0.2926829268292683,
+                    0.2887700534759358,
+                    1.0
+                ],
+                [
+                    0.18333333333333332,
+                    0.1188034188034188,
+                    0.3812383123877394,
+                    0.4675819451066722,
+                    0.02616422576929406,
+                    0.9377721213745059,
+                    0.3507246376811594,
+                    0.3352803738317757,
+                    0.3116438356164384,
+                    0.43686274509803924,
+                    0.3402061855670103,
+                    0.3244591486260681,
+                    0.3861788617886179,
+                    0.41711229946524064,
+                    1.0
+                ],
+                [
+                    0.233318973855779,
+                    0.38974358974358975,
+                    0.4088676239867362,
+                    0.2518358604230149,
+                    0.019417475728155338,
+                    0.029606805546252262,
+                    0.3188405797101449,
+                    0.32242990654205606,
+                    0.3938356164383562,
+                    0.2549019607843137,
+                    0.34536082474226804,
+                    0.342286717014529,
+                    0.32113821138211385,
+                    0.29411764705882354,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "cousin",
+                "you",
+                "sandwich"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "cousin": 0.1252214300157074,
+                "you": 0.18727614431295406,
+                "sandwich": 0.5856912966727422
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.9995248061564168,
+                    1.9467548917564086,
+                    2.053720302087174
+                ],
+                "result_count_important_words": [
+                    228000.0,
+                    242000.0,
+                    220000.0
+                ],
+                "wikipedia_search": [
+                    1.178082191780822,
+                    1.2465753424657535,
+                    1.5753424657534247
+                ],
+                "word_count_appended_bing": [
+                    61.0,
+                    66.0,
+                    67.0
+                ],
+                "answer_relation_to_question_bing": [
+                    2.4572649572649574,
+                    0.594017094017094,
+                    1.9487179487179487
+                ],
+                "cosine_similarity_raw": [
+                    0.028969094157218933,
+                    0.0526176318526268,
+                    0.056430965662002563
+                ],
+                "result_count_noun_chunks": [
+                    293000.0,
+                    287000.0,
+                    276000.0
+                ],
+                "question_answer_similarity": [
+                    4.271620485931635,
+                    7.118529453873634,
+                    3.8339824895374477
+                ],
+                "word_count_noun_chunks": [
+                    72.0,
+                    95.0,
+                    79.0
+                ],
+                "result_count_bing": [
+                    487000.0,
+                    14000000.0,
+                    442000.0
+                ],
+                "word_count_raw": [
+                    54.0,
+                    78.0,
+                    55.0
+                ],
+                "result_count": [
+                    11600000.0,
+                    318000.0,
+                    236000.0
+                ],
+                "answer_relation_to_question": [
+                    2.916738464054438,
+                    0.9166666666666666,
+                    1.166594869278895
+                ],
+                "word_count_appended": [
+                    393.0,
+                    557.0,
+                    325.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            0,
+            1
         ]
     },
     "What\u2019s the anatomical name for the center of a hurricane?": {
@@ -35383,6 +36238,177 @@
             1
         ]
     },
+    "What 1930s movie monster famously climbed the Empire State Building?": {
+        "raw_data": {
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.802957706965857,
+                    2.6044787636843765,
+                    2.592563529349767
+                ],
+                "result_count_important_words": [
+                    11000.0,
+                    20900.0,
+                    10600.0
+                ],
+                "wikipedia_search": [
+                    4.683794466403162,
+                    0.0,
+                    1.316205533596838
+                ],
+                "word_count_appended_bing": [
+                    33.0,
+                    2.0,
+                    34.0
+                ],
+                "answer_relation_to_question_bing": [
+                    3.629706889174155,
+                    1.9588682071031236,
+                    0.41142490372272145
+                ],
+                "cosine_similarity_raw": [
+                    0.5144217014312744,
+                    0.013964365236461163,
+                    0.015199391171336174
+                ],
+                "result_count_noun_chunks": [
+                    79900.0,
+                    42900.0,
+                    99800.0
+                ],
+                "question_answer_similarity": [
+                    4.3282579984515905,
+                    6.019295707345009,
+                    0.8151839431375265
+                ],
+                "word_count_noun_chunks": [
+                    75.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    48.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    608000.0,
+                    635000.0,
+                    788000.0
+                ],
+                "word_count_appended": [
+                    112.0,
+                    39.0,
+                    144.0
+                ],
+                "answer_relation_to_question": [
+                    3.047289907867096,
+                    1.451486636401545,
+                    0.5012234557313591
+                ],
+                "result_count": [
+                    12500.0,
+                    20400.0,
+                    9620.0
+                ]
+            },
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "z-best_answer_by_ml": [
+                "king kong",
+                "top"
+            ],
+            "lines": [
+                [
+                    0.6094579815734191,
+                    0.6049511481956925,
+                    0.9463492704096009,
+                    0.3877416216858661,
+                    0.2939793038570085,
+                    0.29935992122107336,
+                    0.25882352941176473,
+                    0.35893980233602873,
+                    0.7806324110671937,
+                    0.37966101694915255,
+                    0.4782608695652174,
+                    0.35036971337073214,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                [
+                    0.290297327280309,
+                    0.32647803451718727,
+                    0.025689365002467206,
+                    0.5392311363619444,
+                    0.4797742238946378,
+                    0.3126538650910881,
+                    0.49176470588235294,
+                    0.192722371967655,
+                    0.0,
+                    0.13220338983050847,
+                    0.028985507246376812,
+                    0.32555984546054706,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.10024469114627181,
+                    0.06857081728712024,
+                    0.027961364587931907,
+                    0.07302724195218942,
+                    0.2262464722483537,
+                    0.3879862136878385,
+                    0.24941176470588236,
+                    0.44833782569631625,
+                    0.2193675889328063,
+                    0.488135593220339,
+                    0.4927536231884058,
+                    0.32407044116872086,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            ],
+            "negative_question": false,
+            "categorical_data": {
+                "question_type": 1
+            },
+            "question": "what 1930s movie monster famously climbed the empire state building?",
+            "rate_limited": false,
+            "answers": [
+                "king kong",
+                "the mummy",
+                "dracula"
+            ],
+            "ml_answers": {
+                "dracula": 0.0380520092235266,
+                "king kong": 0.8291624339329228,
+                "the mummy": 0.0982215751699864
+            }
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Napa cabbage is named after what?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -35442,8 +36468,8 @@
                 ]
             ],
             "fraction_answers": {
-                "japanese for \u201cvegetable\u201d": 0.26914601169097385,
                 "city in california": 0.4643450531815426,
+                "japanese for \u201cvegetable\u201d": 0.26914601169097385,
                 "scientist edward napa": 0.26650893512748347
             },
             "question": "napa cabbage is named after what?",
@@ -35471,13 +36497,13 @@
                 "question_type"
             ],
             "ml_answers": {
-                "japanese for \u201cvegetable\u201d": 0.1226139585438765,
                 "city in california": 0.5757220238212634,
+                "japanese for \u201cvegetable\u201d": 0.1226139585438765,
                 "scientist edward napa": 0.36705948320355886
             },
             "integer_answers": {
-                "japanese for \u201cvegetable\u201d": 3,
                 "city in california": 8,
+                "japanese for \u201cvegetable\u201d": 3,
                 "scientist edward napa": 2
             },
             "categorical_data": {
@@ -40853,6 +41879,177 @@
             0
         ]
     },
+    "Which of these words is NOT a synonym for a fight?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "galumph",
+                "top"
+            ],
+            "question": "which of these words is not a synonym for a fight?",
+            "lines": [
+                [
+                    0.2634803921568628,
+                    0.2777777777777778,
+                    0.28277664541933856,
+                    0.5,
+                    0.3192307692307692,
+                    0.2966738197424893,
+                    0.3163841807909604,
+                    0.3418604651162791,
+                    0.26973684210526316,
+                    0.3672839506172839,
+                    0.4065934065934066,
+                    0.3555500391573776,
+                    0.5,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.32704248366013067,
+                    0.31481481481481477,
+                    0.334811944244721,
+                    0.6638234338110539,
+                    0.32307692307692304,
+                    0.29533261802575106,
+                    0.3587570621468926,
+                    0.32093023255813957,
+                    0.5,
+                    0.312962962962963,
+                    0.30219780219780223,
+                    0.3141116966240143,
+                    0.16666666666666669,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.4094771241830065,
+                    0.4074074074074074,
+                    0.38241141033594045,
+                    -0.1638234338110539,
+                    0.3576923076923077,
+                    0.40799356223175964,
+                    0.3248587570621469,
+                    0.3372093023255814,
+                    0.23026315789473684,
+                    0.3197530864197531,
+                    0.2912087912087912,
+                    0.3303382642186081,
+                    0.33333333333333337,
+                    0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "galumph",
+                "fracas",
+                "donnybrook"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "donnybrook": 0.3368467725373118,
+                "galumph": 0.5343952626244127,
+                "fracas": 0.22662414650590765
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.8666997650557345,
+                    1.1153298202559143,
+                    1.0179704146883513
+                ],
+                "result_count_important_words": [
+                    65.0,
+                    50.0,
+                    62.0
+                ],
+                "wikipedia_search": [
+                    0.9210526315789473,
+                    0.0,
+                    1.0789473684210527
+                ],
+                "word_count_appended_bing": [
+                    34.0,
+                    72.0,
+                    76.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.3333333333333333,
+                    1.1111111111111112,
+                    0.5555555555555556
+                ],
+                "cosine_similarity_raw": [
+                    0.07085977494716644,
+                    0.05388549715280533,
+                    0.03835821896791458
+                ],
+                "result_count_noun_chunks": [
+                    68.0,
+                    77.0,
+                    70.0
+                ],
+                "question_answer_similarity": [
+                    0.0,
+                    0.17303355364128947,
+                    -0.7011434510350227
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    2.0,
+                    1.0
+                ],
+                "result_count_bing": [
+                    75800000.0,
+                    76300000.0,
+                    34300000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    215.0,
+                    303.0,
+                    292.0
+                ],
+                "answer_relation_to_question": [
+                    1.4191176470588234,
+                    1.0377450980392158,
+                    0.5431372549019609
+                ],
+                "result_count": [
+                    94.0,
+                    92.0,
+                    74.0
+                ]
+            },
+            "negative_question": true
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Which of these universities is named after a former owner of the Staten Island Ferry?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -45953,75 +47150,70 @@
             0
         ]
     },
-    "Who defeated Napoleon at the Battle of Waterloo?": {
+    "Which has been the last name of a U.S. president AND a British prime minister?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "the duke of wellington"
+                "wilson"
             ],
+            "question": "which has been the last name of a u.s. president and a british prime minister?",
             "lines": [
                 [
+                    0.24744897959183673,
+                    0.5416666666666667,
+                    0.4629721749200566,
+                    0.11028653253446033,
+                    0.30697674418604654,
+                    0.33712984054669703,
+                    0.1988472622478386,
+                    0.2657739906674782,
+                    1.0,
+                    0.2628696604600219,
+                    0.26851851851851855,
+                    0.3234512866107575,
                     0.0,
-                    0.0,
-                    0.024504883285301784,
-                    0.05217046836658575,
-                    0.007798713496897592,
-                    0.33696729435084244,
-                    0.0003361344537815126,
-                    0.00018295285914662654,
-                    0.0375,
-                    0.14096916299559473,
-                    0.16666666666666666,
-                    0.14229139358668327,
-                    0.0,
-                    0.0,
-                    0.0
+                    0,
+                    -1.0
                 ],
                 [
-                    0.967548076923077,
-                    1.0,
-                    0.9295390261704148,
-                    0.7759516233692595,
-                    0.9791085558148802,
-                    0.3419226957383548,
-                    0.983957219251337,
-                    0.9838798202996362,
-                    0.9625,
-                    0.42731277533039647,
-                    0.6666666666666666,
-                    0.5494388978647906,
-                    1.0,
-                    1.0,
-                    0.0
+                    0.4260204081632653,
+                    0.16666666666666669,
+                    0.2888913102794935,
+                    0.34598324083911763,
+                    0.31937984496124033,
+                    0.3365603644646925,
+                    0.2132564841498559,
+                    0.20267802799756543,
+                    0.0,
+                    0.33406352683461116,
+                    0.2777777777777778,
+                    0.32203552404848157,
+                    0.0,
+                    0,
+                    -1.0
                 ],
                 [
-                    0.03245192307692308,
+                    0.32653061224489793,
+                    0.2916666666666667,
+                    0.2481365148004499,
+                    0.543730226626422,
+                    0.3736434108527132,
+                    0.32630979498861046,
+                    0.5878962536023055,
+                    0.5315479813349564,
                     0.0,
-                    0.045956090544283366,
-                    0.17187790826415475,
-                    0.013092730688222235,
-                    0.3211100099108028,
-                    0.01570664629488159,
-                    0.015937226841217247,
-                    0.0,
-                    0.43171806167400884,
-                    0.16666666666666666,
-                    0.3082697085485262,
-                    0.0,
-                    0.0,
-                    0.0
+                    0.40306681270536693,
+                    0.4537037037037037,
+                    0.3545131893407609,
+                    1.0,
+                    0,
+                    -1.0
                 ]
             ],
-            "fraction_answers": {
-                "jack skellington": 0.06495626214725002,
-                "the duke of wellington": 0.8262732398163438,
-                "beef wellington": 0.10877049803640618
-            },
-            "question": "who defeated napoleon at the battle of waterloo?",
             "rate_limited": false,
             "answers": [
-                "jack skellington",
-                "the duke of wellington",
-                "beef wellington"
+                "hayes",
+                "arthur",
+                "wilson"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -46041,95 +47233,261 @@
                 "question_type"
             ],
             "ml_answers": {
-                "jack skellington": 0.10170845874711071,
-                "the duke of wellington": 0.776432132067992,
-                "beef wellington": 0.3137481915293897
-            },
-            "integer_answers": {
-                "jack skellington": 0,
-                "the duke of wellington": 13,
-                "beef wellington": 1
+                "arthur": 0.12254243125368253,
+                "wilson": 0.5508558197017942,
+                "hayes": 0.45869320323172674
             },
             "categorical_data": {
-                "question_type": 0
+                "question_type": -1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    0.5691655743467331,
-                    2.1977555914591624,
-                    1.2330788341941048
+                    1.6172564330537875,
+                    1.6101776202424078,
+                    1.7725659467038046
                 ],
                 "result_count_important_words": [
-                    55.0,
-                    161000.0,
-                    2570.0
+                    1380000.0,
+                    1480000.0,
+                    4080000.0
                 ],
                 "wikipedia_search": [
-                    0.15,
-                    3.85,
+                    1.0,
+                    0.0,
                     0.0
                 ],
-                "word_count_appended_bing": [
-                    2.0,
-                    8.0,
-                    2.0
+                "answer_relation_to_question": [
+                    0.9897959183673469,
+                    1.7040816326530612,
+                    1.3061224489795917
                 ],
                 "answer_relation_to_question_bing": [
-                    0.0,
-                    4.0,
-                    0.0
+                    1.0833333333333333,
+                    0.3333333333333333,
+                    0.5833333333333333
+                ],
+                "word_count_appended": [
+                    240.0,
+                    305.0,
+                    368.0
                 ],
                 "cosine_similarity_raw": [
-                    0.008136066608130932,
-                    0.3086238503456116,
-                    0.015258257277309895
+                    0.038304783403873444,
+                    0.023901909589767456,
+                    0.020529992878437042
                 ],
                 "result_count_noun_chunks": [
-                    45.0,
-                    242000.0,
-                    3920.0
+                    1310000.0,
+                    999000.0,
+                    2620000.0
                 ],
                 "question_answer_similarity": [
-                    0.6204546950757504,
-                    9.228263478260487,
-                    2.0441153491847217
+                    0.3579774908721447,
+                    1.123022091574967,
+                    1.7648862265050411
                 ],
                 "word_count_noun_chunks": [
                     0.0,
-                    13.0,
-                    0.0
-                ],
-                "result_count_bing": [
-                    340000.0,
-                    345000.0,
-                    324000.0
+                    0.0,
+                    3.0
                 ],
                 "word_count_raw": [
                     0.0,
-                    5.0,
+                    0.0,
                     0.0
                 ],
-                "word_count_appended": [
-                    32.0,
-                    97.0,
-                    98.0
-                ],
-                "answer_relation_to_question": [
-                    0.0,
-                    3.870192307692308,
-                    0.12980769230769232
+                "result_count_bing": [
+                    5920000.0,
+                    5910000.0,
+                    5730000.0
                 ],
                 "result_count": [
-                    1370.0,
-                    172000.0,
-                    2300.0
+                    1980000.0,
+                    2060000.0,
+                    2410000.0
+                ],
+                "word_count_appended_bing": [
+                    29.0,
+                    30.0,
+                    49.0
                 ]
             },
             "negative_question": false
         },
         "right_answer": [
             0,
+            0,
+            1
+        ]
+    },
+    "What kind of song likely gets part of its name from the French word for \u201csing\u201d?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "sea shanty",
+                "top"
+            ],
+            "question": "what kind of song likely gets part of its name from the french word for \u201csing\u201d?",
+            "lines": [
+                [
+                    0.47183638224449626,
+                    0.26199584199584197,
+                    0.4058132104062899,
+                    0.25584482710087536,
+                    0.41721854304635764,
+                    0.602068456045309,
+                    0.29347826086956524,
+                    0.3293963254593176,
+                    0.5929092409487022,
+                    0.5185185185185185,
+                    0.4,
+                    0.36912844611561585,
+                    0.0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.3385451785596678,
+                    0.183003003003003,
+                    0.4748143260245087,
+                    0.42672643388760284,
+                    0.33112582781456956,
+                    0.11228761388820488,
+                    0.45652173913043476,
+                    0.6692913385826772,
+                    0.19013658349862547,
+                    0.17592592592592593,
+                    0.2,
+                    0.3201083989122175,
+                    0.0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.18961843919583596,
+                    0.555001155001155,
+                    0.11937246356920136,
+                    0.3174287390115218,
+                    0.25165562913907286,
+                    0.2856439300664861,
+                    0.25,
+                    0.0013123359580052493,
+                    0.21695417555267227,
+                    0.3055555555555556,
+                    0.4,
+                    0.31076315497216667,
+                    1.0,
+                    0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "sea shanty",
+                "power ballad",
+                "christmas carol"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "sea shanty": 0.5290859804339196,
+                "christmas carol": 0.1805710137279658,
+                "power ballad": 0.0355600174483117
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.583899122809311,
+                    2.2407587923855226,
+                    2.1753420848051666
+                ],
+                "result_count_important_words": [
+                    27.0,
+                    42.0,
+                    23.0
+                ],
+                "wikipedia_search": [
+                    3.5574554456922134,
+                    1.1408195009917528,
+                    1.3017250533160336
+                ],
+                "word_count_appended_bing": [
+                    4.0,
+                    2.0,
+                    4.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.571975051975052,
+                    1.0980180180180181,
+                    3.3300069300069297
+                ],
+                "cosine_similarity_raw": [
+                    0.05751848965883255,
+                    0.06729845702648163,
+                    0.016919419169425964
+                ],
+                "result_count_noun_chunks": [
+                    25100.0,
+                    51000.0,
+                    100.0
+                ],
+                "question_answer_similarity": [
+                    5.2156966113252565,
+                    8.699318412691355,
+                    6.471156822517514
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "result_count_bing": [
+                    4890000.0,
+                    912000.0,
+                    2320000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    63.0,
+                    50.0,
+                    38.0
+                ],
+                "answer_relation_to_question": [
+                    3.302854675711474,
+                    2.3698162499176747,
+                    1.3273290743708517
+                ],
+                "word_count_appended": [
+                    56.0,
+                    19.0,
+                    33.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
             1,
+            0,
             0
         ]
     },
@@ -48734,6 +50092,177 @@
             0
         ]
     },
+    "What 20th-century comic strip spun off a theme park in Arkansas?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "li'l abner",
+                "top"
+            ],
+            "question": "what 20th-century comic strip spun off a theme park in arkansas?",
+            "lines": [
+                [
+                    0.2584995423174943,
+                    0.46078431372549017,
+                    0.8076643655371737,
+                    -0.628938336813255,
+                    0.10472972972972973,
+                    0.11491260691706955,
+                    0.12178170905070289,
+                    0.1480817497310864,
+                    0.3171675082455881,
+                    0.14814814814814814,
+                    0.2247191011235955,
+                    0.34923286895637684,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                [
+                    0.2126215019704274,
+                    0.19963057686842853,
+                    0.08932720670489355,
+                    0.5976645411872036,
+                    0.31672297297297297,
+                    0.44254369654146525,
+                    0.3490759753593429,
+                    0.1312298314808175,
+                    0.0008250825082508251,
+                    0.3789173789173789,
+                    0.3258426966292135,
+                    0.3030587454314051,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.5288789557120783,
+                    0.3395851094060813,
+                    0.1030084277579328,
+                    1.0312737956260514,
+                    0.5785472972972973,
+                    0.44254369654146525,
+                    0.5291423155899542,
+                    0.7206884187880961,
+                    0.682007409246161,
+                    0.47293447293447294,
+                    0.449438202247191,
+                    0.347708385612218,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "li'l abner",
+                "pogo",
+                "peanuts"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "peanuts": 0.13790929378666988,
+                "li'l abner": 0.9822883963697759,
+                "pogo": 0.042518397389605354
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.7938629516510147,
+                    2.4244699634512408,
+                    2.781667084897744
+                ],
+                "result_count_important_words": [
+                    7710.0,
+                    22100.0,
+                    33500.0
+                ],
+                "wikipedia_search": [
+                    1.9030050494735287,
+                    0.0049504950495049506,
+                    4.092044455476966
+                ],
+                "word_count_appended_bing": [
+                    20.0,
+                    29.0,
+                    40.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.3823529411764706,
+                    0.5988917306052856,
+                    1.0187553282182438
+                ],
+                "cosine_similarity_raw": [
+                    0.2890022397041321,
+                    0.03196347877383232,
+                    0.03685895726084709
+                ],
+                "result_count_noun_chunks": [
+                    41300.0,
+                    36600.0,
+                    201000.0
+                ],
+                "question_answer_similarity": [
+                    -0.9952419217443094,
+                    0.9457537753914949,
+                    1.6319038833025843
+                ],
+                "word_count_noun_chunks": [
+                    12.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    30900.0,
+                    119000.0,
+                    119000.0
+                ],
+                "word_count_raw": [
+                    2.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    24800.0,
+                    75000.0,
+                    137000.0
+                ],
+                "answer_relation_to_question": [
+                    1.5509972539049657,
+                    1.2757290118225644,
+                    3.17327373427247
+                ],
+                "word_count_appended": [
+                    52.0,
+                    133.0,
+                    166.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Which of these Kentucky Derby winners was named for its trainer?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -49337,9 +50866,9 @@
                 "question_type"
             ],
             "ml_answers": {
-                "cricket bat": 0.10264073518269452,
                 "kayak paddle": 0.5403381919653253,
-                "bowling ball": 0.6567002338661903
+                "bowling ball": 0.6567002338661903,
+                "cricket bat": 0.10264073518269452
             },
             "categorical_data": {
                 "question_type": -1
@@ -53978,99 +55507,11 @@
     },
     "What is the name of the gene that determines the color of a Palomino horse?": {
         "raw_data": {
-            "data": {
-                "word_count_appended_relation_to_question": [
-                    1.0343855518804257,
-                    2.2524308536151003,
-                    1.713183594504474
-                ],
-                "result_count_important_words": [
-                    34600.0,
-                    100000.0,
-                    74900.0
-                ],
-                "wikipedia_search": [
-                    0.31157635467980294,
-                    0.3294334975369458,
-                    3.358990147783251
-                ],
-                "word_count_appended_bing": [
-                    28.0,
-                    54.0,
-                    29.0
-                ],
-                "answer_relation_to_question_bing": [
-                    0.5009691514175892,
-                    1.0368606064588193,
-                    0.4621702421235914
-                ],
-                "word_count_appended": [
-                    113.0,
-                    308.0,
-                    172.0
-                ],
-                "cosine_similarity_raw": [
-                    0.020084287971258163,
-                    0.054449621587991714,
-                    0.03810463845729828
-                ],
-                "result_count_noun_chunks": [
-                    10300.0,
-                    278000.0,
-                    152000.0
-                ],
-                "question_answer_similarity": [
-                    1.498770635575056,
-                    3.4838087148964405,
-                    3.652275249361992
-                ],
-                "word_count_noun_chunks": [
-                    0.0,
-                    68.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    3.0,
-                    0.0
-                ],
-                "result_count_bing": [
-                    144000.0,
-                    496000.0,
-                    431000.0
-                ],
-                "result_count": [
-                    26900.0,
-                    36200.0,
-                    41000.0
-                ],
-                "answer_relation_to_question": [
-                    1.1220338983050848,
-                    0.3559322033898305,
-                    0.5220338983050847
-                ]
-            },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
             "z-best_answer_by_ml": [
                 "cream",
                 "middle"
             ],
+            "question": "what is the name of the gene that determines the color of a palomino horse?",
             "lines": [
                 [
                     0.5610169491525424,
@@ -54124,22 +55565,110 @@
                     1.0
                 ]
             ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": 1
-            },
-            "question": "what is the name of the gene that determines the color of a palomino horse?",
             "rate_limited": false,
             "answers": [
                 "lactose",
                 "cream",
                 "milk"
             ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
             "ml_answers": {
                 "lactose": 0.14799685403758703,
                 "milk": 0.1048857195747323,
                 "cream": 0.8187504735646736
-            }
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.0343855518804257,
+                    2.2524308536151003,
+                    1.713183594504474
+                ],
+                "result_count_important_words": [
+                    34600.0,
+                    100000.0,
+                    74900.0
+                ],
+                "wikipedia_search": [
+                    0.31157635467980294,
+                    0.3294334975369458,
+                    3.358990147783251
+                ],
+                "word_count_appended_bing": [
+                    28.0,
+                    54.0,
+                    29.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.5009691514175892,
+                    1.0368606064588193,
+                    0.4621702421235914
+                ],
+                "cosine_similarity_raw": [
+                    0.020084287971258163,
+                    0.054449621587991714,
+                    0.03810463845729828
+                ],
+                "result_count_noun_chunks": [
+                    10300.0,
+                    278000.0,
+                    152000.0
+                ],
+                "question_answer_similarity": [
+                    1.498770635575056,
+                    3.4838087148964405,
+                    3.652275249361992
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    68.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    3.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    144000.0,
+                    496000.0,
+                    431000.0
+                ],
+                "word_count_appended": [
+                    113.0,
+                    308.0,
+                    172.0
+                ],
+                "answer_relation_to_question": [
+                    1.1220338983050848,
+                    0.3559322033898305,
+                    0.5220338983050847
+                ],
+                "result_count": [
+                    26900.0,
+                    36200.0,
+                    41000.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -58707,70 +60236,75 @@
             0
         ]
     },
-    "Which has been the last name of a U.S. president AND a British prime minister?": {
+    "Who defeated Napoleon at the Battle of Waterloo?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "wilson"
+                "the duke of wellington"
             ],
-            "question": "which has been the last name of a u.s. president and a british prime minister?",
             "lines": [
                 [
-                    0.24744897959183673,
-                    0.5416666666666667,
-                    0.4629721749200566,
-                    0.11028653253446033,
-                    0.30697674418604654,
-                    0.33712984054669703,
-                    0.1988472622478386,
-                    0.2657739906674782,
-                    1.0,
-                    0.2628696604600219,
-                    0.26851851851851855,
-                    0.3234512866107575,
                     0.0,
-                    0,
-                    -1.0
+                    0.0,
+                    0.024504883285301784,
+                    0.05217046836658575,
+                    0.007798713496897592,
+                    0.33696729435084244,
+                    0.0003361344537815126,
+                    0.00018295285914662654,
+                    0.0375,
+                    0.14096916299559473,
+                    0.16666666666666666,
+                    0.14229139358668327,
+                    0.0,
+                    0.0,
+                    0.0
                 ],
                 [
-                    0.4260204081632653,
-                    0.16666666666666669,
-                    0.2888913102794935,
-                    0.34598324083911763,
-                    0.31937984496124033,
-                    0.3365603644646925,
-                    0.2132564841498559,
-                    0.20267802799756543,
-                    0.0,
-                    0.33406352683461116,
-                    0.2777777777777778,
-                    0.32203552404848157,
-                    0.0,
-                    0,
-                    -1.0
+                    0.967548076923077,
+                    1.0,
+                    0.9295390261704148,
+                    0.7759516233692595,
+                    0.9791085558148802,
+                    0.3419226957383548,
+                    0.983957219251337,
+                    0.9838798202996362,
+                    0.9625,
+                    0.42731277533039647,
+                    0.6666666666666666,
+                    0.5494388978647906,
+                    1.0,
+                    1.0,
+                    0.0
                 ],
                 [
-                    0.32653061224489793,
-                    0.2916666666666667,
-                    0.2481365148004499,
-                    0.543730226626422,
-                    0.3736434108527132,
-                    0.32630979498861046,
-                    0.5878962536023055,
-                    0.5315479813349564,
+                    0.03245192307692308,
                     0.0,
-                    0.40306681270536693,
-                    0.4537037037037037,
-                    0.3545131893407609,
-                    1.0,
-                    0,
-                    -1.0
+                    0.045956090544283366,
+                    0.17187790826415475,
+                    0.013092730688222235,
+                    0.3211100099108028,
+                    0.01570664629488159,
+                    0.015937226841217247,
+                    0.0,
+                    0.43171806167400884,
+                    0.16666666666666666,
+                    0.3082697085485262,
+                    0.0,
+                    0.0,
+                    0.0
                 ]
             ],
+            "fraction_answers": {
+                "jack skellington": 0.06495626214725002,
+                "the duke of wellington": 0.8262732398163438,
+                "beef wellington": 0.10877049803640618
+            },
+            "question": "who defeated napoleon at the battle of waterloo?",
             "rate_limited": false,
             "answers": [
-                "hayes",
-                "arthur",
-                "wilson"
+                "jack skellington",
+                "the duke of wellington",
+                "beef wellington"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -58790,157 +60324,162 @@
                 "question_type"
             ],
             "ml_answers": {
-                "arthur": 0.12254243125368253,
-                "wilson": 0.5508558197017942,
-                "hayes": 0.45869320323172674
+                "jack skellington": 0.10170845874711071,
+                "the duke of wellington": 0.776432132067992,
+                "beef wellington": 0.3137481915293897
+            },
+            "integer_answers": {
+                "jack skellington": 0,
+                "the duke of wellington": 13,
+                "beef wellington": 1
             },
             "categorical_data": {
-                "question_type": -1
+                "question_type": 0
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    1.6172564330537875,
-                    1.6101776202424078,
-                    1.7725659467038046
+                    0.5691655743467331,
+                    2.1977555914591624,
+                    1.2330788341941048
                 ],
                 "result_count_important_words": [
-                    1380000.0,
-                    1480000.0,
-                    4080000.0
+                    55.0,
+                    161000.0,
+                    2570.0
                 ],
                 "wikipedia_search": [
-                    1.0,
-                    0.0,
+                    0.15,
+                    3.85,
                     0.0
                 ],
-                "answer_relation_to_question": [
-                    0.9897959183673469,
-                    1.7040816326530612,
-                    1.3061224489795917
+                "word_count_appended_bing": [
+                    2.0,
+                    8.0,
+                    2.0
                 ],
                 "answer_relation_to_question_bing": [
-                    1.0833333333333333,
-                    0.3333333333333333,
-                    0.5833333333333333
-                ],
-                "word_count_appended": [
-                    240.0,
-                    305.0,
-                    368.0
+                    0.0,
+                    4.0,
+                    0.0
                 ],
                 "cosine_similarity_raw": [
-                    0.038304783403873444,
-                    0.023901909589767456,
-                    0.020529992878437042
+                    0.008136066608130932,
+                    0.3086238503456116,
+                    0.015258257277309895
                 ],
                 "result_count_noun_chunks": [
-                    1310000.0,
-                    999000.0,
-                    2620000.0
+                    45.0,
+                    242000.0,
+                    3920.0
                 ],
                 "question_answer_similarity": [
-                    0.3579774908721447,
-                    1.123022091574967,
-                    1.7648862265050411
+                    0.6204546950757504,
+                    9.228263478260487,
+                    2.0441153491847217
                 ],
                 "word_count_noun_chunks": [
                     0.0,
-                    0.0,
-                    3.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
+                    13.0,
                     0.0
                 ],
                 "result_count_bing": [
-                    5920000.0,
-                    5910000.0,
-                    5730000.0
+                    340000.0,
+                    345000.0,
+                    324000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    5.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    32.0,
+                    97.0,
+                    98.0
+                ],
+                "answer_relation_to_question": [
+                    0.0,
+                    3.870192307692308,
+                    0.12980769230769232
                 ],
                 "result_count": [
-                    1980000.0,
-                    2060000.0,
-                    2410000.0
-                ],
-                "word_count_appended_bing": [
-                    29.0,
-                    30.0,
-                    49.0
+                    1370.0,
+                    172000.0,
+                    2300.0
                 ]
             },
             "negative_question": false
         },
         "right_answer": [
             0,
-            0,
-            1
+            1,
+            0
         ]
     },
-    "Which of these college mascots is NOT a bulldog?": {
+    "Which company once put a giant, melting kiwi-strawberry popsicle in New York\u2019s Union Square?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "georgia state"
+                "snapple"
             ],
-            "question": "which of these college mascots is not a bulldog?",
+            "question": "which company once put a giant, melting kiwi-strawberry popsicle in new york\u2019s union square?",
             "lines": [
                 [
-                    0.24570590699622957,
-                    0.24783843873517786,
-                    0.4370046103096058,
-                    0.5052378299934491,
-                    0.25766283524904215,
-                    0.29301323484148967,
-                    0.21114369501466276,
-                    0.23376029277218663,
-                    0.5,
-                    0.15390879478827363,
-                    0.11486486486486486,
-                    0.32218896029562283,
+                    0.4908728085452223,
+                    0.4190642829973374,
+                    0.7551425872440007,
+                    -0.029795745514932297,
+                    0.9967221887751689,
+                    0.12098501070663811,
+                    0.03725490196078431,
+                    0.9969561956857382,
+                    0.422192513368984,
+                    0.8389830508474576,
+                    0.5571428571428572,
+                    0.7270901396361904,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.13367148496458842,
+                    0.40293647774819324,
+                    0.0944453759482946,
+                    0.5779617466922505,
+                    0.0012040939193257074,
+                    0.25267665952890794,
+                    0.0024635495223730517,
+                    0.0011028276500948432,
+                    0.47829768270944745,
+                    0.038135593220338986,
+                    0.07142857142857142,
+                    0.11608337804466214,
                     0.0,
-                    0,
+                    0.0,
                     -1.0
                 ],
                 [
-                    0.2823977098170647,
-                    0.25413784584980237,
-                    0.40613794893482125,
-                    0.2667069878328024,
-                    0.40948275862068967,
-                    0.4393659587565405,
-                    0.4090909090909091,
-                    0.434583714547118,
-                    0.33695652173913043,
-                    0.38517915309446255,
-                    0.39864864864864863,
-                    0.33347949974336777,
-                    0.5,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.4718963831867058,
-                    0.4980237154150198,
-                    0.15685744075557295,
-                    0.22805518217374854,
-                    0.3328544061302682,
-                    0.26762080640196984,
-                    0.3797653958944282,
-                    0.33165599268069534,
-                    0.16304347826086957,
-                    0.4609120521172638,
-                    0.4864864864864865,
-                    0.34433153996100935,
-                    0.5,
-                    0,
+                    0.3754557064901893,
+                    0.1779992392544694,
+                    0.1504120368077047,
+                    0.45183399882268177,
+                    0.002073717305505385,
+                    0.6263383297644539,
+                    0.9602815485168427,
+                    0.001940976664166924,
+                    0.09950980392156865,
+                    0.1228813559322034,
+                    0.37142857142857144,
+                    0.15682648231914742,
+                    0.0,
+                    0.0,
                     -1.0
                 ]
             ],
             "rate_limited": false,
             "answers": [
-                "gonzaga",
-                "brooklyn college",
-                "georgia state"
+                "snapple",
+                "edy's",
+                "baskin-robbins"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -58960,91 +60499,262 @@
                 "question_type"
             ],
             "ml_answers": {
-                "gonzaga": 0.4529333829981847,
-                "brooklyn college": 0.3929290134946206,
-                "georgia state": 0.594749743360004
+                "snapple": 0.9663399842481154,
+                "edy's": 0.19807632193362626,
+                "baskin-robbins": 0.050634924042181645
             },
             "categorical_data": {
                 "question_type": -1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    1.0668662382262628,
-                    0.9991230015397932,
-                    0.9340107602339439
+                    7.2709013963619045,
+                    1.1608337804466213,
+                    1.5682648231914742
                 ],
                 "result_count_important_words": [
-                    98500.0,
-                    31000.0,
-                    41000.0
+                    741.0,
+                    49.0,
+                    19100.0
                 ],
                 "wikipedia_search": [
-                    0.0,
-                    0.32608695652173914,
-                    0.6739130434782609
+                    1.6887700534759358,
+                    1.9131907308377896,
+                    0.39803921568627454
                 ],
                 "word_count_appended_bing": [
-                    57.0,
-                    15.0,
-                    2.0
+                    39.0,
+                    5.0,
+                    26.0
                 ],
                 "answer_relation_to_question_bing": [
-                    1.0086462450592886,
-                    0.9834486166007905,
-                    0.007905138339920948
+                    2.095321414986687,
+                    2.014682388740966,
+                    0.8899961962723469
                 ],
                 "cosine_similarity_raw": [
-                    0.053990308195352554,
-                    0.08044463396072388,
-                    0.2940909266471863
+                    0.35061997175216675,
+                    0.04385189712047577,
+                    0.06983775645494461
                 ],
                 "result_count_noun_chunks": [
-                    58200.0,
-                    14300.0,
-                    36800.0
+                    45200.0,
+                    50.0,
+                    88.0
                 ],
                 "question_answer_similarity": [
-                    -0.09593919850885868,
-                    4.273133078590035,
-                    4.981102459132671
+                    -0.22626015357673168,
+                    4.388872012030333,
+                    3.4310948827769607
                 ],
                 "word_count_noun_chunks": [
-                    3.0,
+                    38.0,
                     0.0,
                     0.0
                 ],
                 "word_count_raw": [
-                    0.0,
+                    25.0,
                     0.0,
                     0.0
                 ],
                 "result_count_bing": [
-                    2690000.0,
-                    788000.0,
-                    3020000.0
+                    22600.0,
+                    47200.0,
+                    117000.0
                 ],
                 "word_count_appended": [
-                    425.0,
-                    141.0,
-                    48.0
+                    198.0,
+                    9.0,
+                    29.0
                 ],
                 "answer_relation_to_question": [
-                    1.0171763720150817,
-                    0.8704091607317413,
-                    0.11241446725317693
+                    4.417855276907001,
+                    1.2030433646812957,
+                    3.3791013584117033
                 ],
                 "result_count": [
-                    50600.0,
-                    18900.0,
-                    34900.0
+                    14900.0,
+                    18.0,
+                    31.0
                 ]
             },
-            "negative_question": true
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
+    "Cheese is traditionally considered part of which food group?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "dairy",
+                "middle"
+            ],
+            "question": "cheese is traditionally considered part of which food group?",
+            "lines": [
+                [
+                    0.15869565217391304,
+                    0.318452380952381,
+                    0.04635144103706577,
+                    0.3495791444903876,
+                    0.03938464803801785,
+                    0.300161377084454,
+                    0.04654707977333875,
+                    0.4444438702275578,
+                    0.11481481481481481,
+                    0.06998444790046657,
+                    0.04838709677419355,
+                    0.3810255144251986,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.6823578595317726,
+                    0.5684523809523809,
+                    0.9400319646129127,
+                    0.1945686574858369,
+                    0.960601171658972,
+                    0.4513179128563744,
+                    0.9534384579579169,
+                    0.5555548377844473,
+                    0.6962962962962962,
+                    0.911353032659409,
+                    0.9193548387096774,
+                    0.4361347995171446,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.15894648829431438,
+                    0.11309523809523808,
+                    0.01361659435002149,
+                    0.45585219802377547,
+                    1.418030301020387e-05,
+                    0.2485207100591716,
+                    1.4462268744305482e-05,
+                    1.291987994847552e-06,
+                    0.18888888888888888,
+                    0.01866251944012442,
+                    0.03225806451612903,
+                    0.18283968605765677,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "tropical fruits",
+                "dairy",
+                "sushi delivery orders"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "dairy": 0.9663217663182815,
+                "sushi delivery orders": 0.030784990747970645,
+                "tropical fruits": 0.06458597950013299
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.905127572125993,
+                    2.180673997585723,
+                    0.9141984302882838
+                ],
+                "result_count_important_words": [
+                    86900.0,
+                    1780000.0,
+                    27.0
+                ],
+                "wikipedia_search": [
+                    0.5740740740740741,
+                    3.481481481481481,
+                    0.9444444444444444
+                ],
+                "word_count_appended_bing": [
+                    3.0,
+                    57.0,
+                    2.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.273809523809524,
+                    2.2738095238095237,
+                    0.45238095238095233
+                ],
+                "cosine_similarity_raw": [
+                    0.02189529873430729,
+                    0.44404834508895874,
+                    0.006432149559259415
+                ],
+                "result_count_noun_chunks": [
+                    1720000.0,
+                    2150000.0,
+                    5.0
+                ],
+                "question_answer_similarity": [
+                    4.942765273153782,
+                    2.7510428428649902,
+                    6.445379965007305
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    7.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    18.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    558000.0,
+                    839000.0,
+                    462000.0
+                ],
+                "result_count": [
+                    86100.0,
+                    2100000.0,
+                    31.0
+                ],
+                "answer_relation_to_question": [
+                    0.6347826086956522,
+                    2.7294314381270905,
+                    0.6357859531772575
+                ],
+                "word_count_appended": [
+                    45.0,
+                    586.0,
+                    12.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             0,
-            0,
-            1
+            1,
+            0
         ]
     },
     "The '90s band The Lightning Seeds took their name from which song?": {
@@ -61504,6 +63214,177 @@
         "right_answer": [
             1,
             0,
+            0
+        ]
+    },
+    "In classic literature, which of these comes right after the Telemachiad and the Odyssey?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "the iliad",
+                "top"
+            ],
+            "question": "in classic literature, which of these comes right after the telemachiad and the odyssey?",
+            "lines": [
+                [
+                    0.36259922154231095,
+                    0.511040646569524,
+                    0.672281773747637,
+                    0.3184274835498429,
+                    0.47368421052631576,
+                    0.3333333333333333,
+                    0.46226415094339623,
+                    0.484375,
+                    0.810171568627451,
+                    0.4857142857142857,
+                    0.7241379310344828,
+                    0.4288934846793951,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.2619501615436575,
+                    0.14379387646746505,
+                    0.13717343366313217,
+                    0.3407862582250785,
+                    0.4824561403508772,
+                    0.3333333333333333,
+                    0.49056603773584906,
+                    0.4921875,
+                    0.09607843137254903,
+                    0.34285714285714286,
+                    0.06896551724137931,
+                    0.4116782513882844,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.37545061691403153,
+                    0.34516547696301103,
+                    0.19054479258923085,
+                    0.3407862582250785,
+                    0.043859649122807015,
+                    0.3333333333333333,
+                    0.04716981132075472,
+                    0.0234375,
+                    0.09375,
+                    0.17142857142857143,
+                    0.20689655172413793,
+                    0.1594282639323205,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "the iliad",
+                "the nostos",
+                "the telegony"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "the nostos": 0.31103628872369626,
+                "the telegony": -0.02019159037579181,
+                "the iliad": 0.8839515012101651
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.5733609080763706,
+                    2.4700695083297064,
+                    0.9565695835939231
+                ],
+                "result_count_important_words": [
+                    49.0,
+                    52.0,
+                    5.0
+                ],
+                "wikipedia_search": [
+                    3.240686274509804,
+                    0.3843137254901961,
+                    0.375
+                ],
+                "word_count_appended_bing": [
+                    21.0,
+                    2.0,
+                    6.0
+                ],
+                "answer_relation_to_question_bing": [
+                    2.55520323284762,
+                    0.7189693823373252,
+                    1.7258273848150552
+                ],
+                "cosine_similarity_raw": [
+                    0.2327987551689148,
+                    0.047500625252723694,
+                    0.0659821406006813
+                ],
+                "result_count_noun_chunks": [
+                    62.0,
+                    63.0,
+                    3.0
+                ],
+                "question_answer_similarity": [
+                    7.283338570967317,
+                    7.794747084379196,
+                    7.794747084379196
+                ],
+                "word_count_noun_chunks": [
+                    5.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    140000.0,
+                    140000.0,
+                    140000.0
+                ],
+                "result_count": [
+                    54.0,
+                    55.0,
+                    5.0
+                ],
+                "answer_relation_to_question": [
+                    1.8129961077115548,
+                    1.3097508077182876,
+                    1.8772530845701576
+                ],
+                "word_count_appended": [
+                    34.0,
+                    24.0,
+                    12.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            1,
             0
         ]
     },
@@ -67310,6 +69191,177 @@
                     46700.0,
                     2040000.0,
                     145000.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
+    "Which Denzel Washington film was based on a Pulitzer Prize-winning play?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "fences",
+                "top"
+            ],
+            "question": "which denzel washington film was based on a pulitzer prize-winning play?",
+            "lines": [
+                [
+                    0.5769158969390773,
+                    0.5298787450053661,
+                    0.9148535072089171,
+                    0.06591891181864042,
+                    0.2702702702702703,
+                    0.19376263355472134,
+                    0.36919592298980747,
+                    0.3171684670190761,
+                    0.0243120863810519,
+                    0.7361268403171007,
+                    0.7770700636942676,
+                    0.3867390066499312,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.36559423377329486,
+                    0.42363990809540913,
+                    0.07450966450859232,
+                    0.824085982775008,
+                    0.1966966966966967,
+                    0.09009529309846953,
+                    0.15855039637599094,
+                    0.069179498965755,
+                    0.16440264716126787,
+                    0.05436013590033975,
+                    0.025477707006369428,
+                    0.2670891493781775,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.05748986928762777,
+                    0.04648134689922481,
+                    0.010636828282490525,
+                    0.10999510540635161,
+                    0.5330330330330331,
+                    0.7161420733468091,
+                    0.4722536806342016,
+                    0.6136520340151689,
+                    0.8112852664576803,
+                    0.20951302378255945,
+                    0.19745222929936307,
+                    0.3461718439718912,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "fences",
+                "devil in a blue dress",
+                "philadelphia"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "fences": 1.0269993899448815,
+                "philadelphia": 0.0394537157014926,
+                "devil in a blue dress": 0.05381290679163668
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    3.0939120531994497,
+                    2.13671319502542,
+                    2.7693747517751297
+                ],
+                "result_count_important_words": [
+                    32600.0,
+                    14000.0,
+                    41700.0
+                ],
+                "wikipedia_search": [
+                    0.12156043190525949,
+                    0.8220132358063393,
+                    4.056426332288401
+                ],
+                "word_count_appended_bing": [
+                    122.0,
+                    4.0,
+                    31.0
+                ],
+                "answer_relation_to_question_bing": [
+                    4.239029960042928,
+                    3.3891192647632726,
+                    0.37185077519379844
+                ],
+                "cosine_similarity_raw": [
+                    0.4864761531352997,
+                    0.039620742201805115,
+                    0.00565616600215435
+                ],
+                "result_count_noun_chunks": [
+                    138000.0,
+                    30100.0,
+                    267000.0
+                ],
+                "question_answer_similarity": [
+                    1.2564476961269975,
+                    15.707494342699647,
+                    2.0965621694922447
+                ],
+                "word_count_noun_chunks": [
+                    378.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    67100.0,
+                    31200.0,
+                    248000.0
+                ],
+                "word_count_raw": [
+                    87.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    18000.0,
+                    13100.0,
+                    35500.0
+                ],
+                "answer_relation_to_question": [
+                    4.615327175512618,
+                    2.924753870186359,
+                    0.45991895430102214
+                ],
+                "word_count_appended": [
+                    650.0,
+                    48.0,
+                    185.0
                 ]
             },
             "negative_question": false

@@ -73,6 +73,8 @@ ANSWERS = {
         'In the King James Bible, which of these measures “six cubits and a span”?':  2,
         'One of the Galápagos Islands is named for which revolutionary?': 2,
         'In Ancient Greece, Olympic athletes typically competed wearing what?': 2,
+        'The two sides of a coin are technically called what?': 2,
+        'Which nation’s capital is right on the shore of the Caspian Sea?': 2,
 
         }
 
