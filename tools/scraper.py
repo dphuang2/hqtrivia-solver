@@ -75,7 +75,11 @@ ANSWERS = {
         'In Ancient Greece, Olympic athletes typically competed wearing what?': 2,
         'The two sides of a coin are technically called what?': 2,
         'Which nation’s capital is right on the shore of the Caspian Sea?': 2,
-
+        'Which of these words is a term used in dentistry?': 0,
+        'Which of these animals can turn into a moth?': 1,
+        'The boys who inspired “Peter Pan” were cousins of the author of what novel?': 0,
+        'Which actor has NOT played Inspector Clouseau?': 0,
+        'Around the world, which of these is NOT a common term for ziplining?': 2,
         }
 
 with open('../data/log', 'r') as f:
