@@ -80,6 +80,10 @@ ANSWERS = {
         'The boys who inspired “Peter Pan” were cousins of the author of what novel?': 0,
         'Which actor has NOT played Inspector Clouseau?': 0,
         'Around the world, which of these is NOT a common term for ziplining?': 2,
+        'Which of these is a current flavor of ICEE?': 1,
+        'The law stating that “current equals voltage over resistance” is named for whom?': 2,
+        'Which of these comedians is famous for being a cruciverbalist?': 2,
+        'Which artist did NOT perform at the event where Michael Jackson premiered the moonwalk?': 2,
         }
 
 with open('../data/log', 'r') as f:

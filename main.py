@@ -7,6 +7,7 @@ import os
 parent_dir_name = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(parent_dir_name + "/src")
 
+from multiprocessing import Process
 from argparser import get_args
 from answerer import Answerer
 from pprint import pprint
@@ -31,7 +32,9 @@ def on_message(ws, message):
         print "Question: " + question
         print "Answers: " + str(answers)
         if not args.collect:
-            pprint(on_message.solver.answer(question, answers))
+            p = Process(target=on_message.solver.answer, args=(question, answers,))
+            p.start()
+            p.join()
     elif data['type'] == 'broadcastEnded' and 'reason' not in data:
         print 'The broadcast ended'
         ws.close()
