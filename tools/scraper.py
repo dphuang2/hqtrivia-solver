@@ -86,6 +86,8 @@ ANSWERS = {
         'Which artist did NOT perform at the event where Michael Jackson premiered the moonwalk?': 2,
         'Which of these countries has a National Diet?': 2,
         'In “Meet the Parents,” lyrics from which musical are recited during family grace?': 0,
+        'The duo behind the R&B hit “All My Life” was once a part of which group?': 0,
+        'Which of these commercial mascots was originally drawn by a teenage boy?': 0,
         }
 
 with open('../data/log', 'r') as f:
