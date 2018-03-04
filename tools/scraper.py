@@ -84,6 +84,8 @@ ANSWERS = {
         'The law stating that “current equals voltage over resistance” is named for whom?': 2,
         'Which of these comedians is famous for being a cruciverbalist?': 2,
         'Which artist did NOT perform at the event where Michael Jackson premiered the moonwalk?': 2,
+        'Which of these countries has a National Diet?': 2,
+        'In “Meet the Parents,” lyrics from which musical are recited during family grace?': 0,
         }
 
 with open('../data/log', 'r') as f:
@@ -99,11 +101,13 @@ def encode_unicode(string):
 
 questions_without_answers = set()
 questions_with_answers = set()
+categories = set()
 with open('../data/questions_clean', 'w') as f_clean:
     with open('../data/questions', 'w') as f:
         for question in questions:
             data = json.loads(question)
             if data["type"] == "question":
+                categories.add(data['category'])
                 line = delimiter.join([encode_unicode(data['question'])] + [encode_unicode(answer['text']) for answer in data['answers']])
                 questions_without_answers.add(encode_unicode(data['question']))
                 f_clean.write(line + '\n')
@@ -115,6 +119,8 @@ with open('../data/questions_clean', 'w') as f_clean:
                 questions_with_answers.add(encode_unicode(data['question']))
                 f_clean.write(line + '\n')
             f.write(question + '\n')
+
+print categories
 
 questions_without_answers = questions_without_answers - questions_with_answers
 print 'Removing duplicate questions'
