@@ -10,10 +10,11 @@ sys.path.append(parent_dir_name + "/src")
 from argparser import get_args
 from answerer import Answerer
 from pprint import pprint
+import threading
 import websocket
 import requests
-import time
 import json 
+import time
 import pdb
 
 BEARER_TOKEN  = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEwMzY5MjkwLCJ1c2VybmFtZSI6ImJhbHBodXMiLCJhdmF0YXJVcmwiOiJzMzovL2h5cGVzcGFjZS1xdWl6L2RlZmF1bHRfYXZhdGFycy9VbnRpdGxlZC0xXzAwMDRfZ29sZC5wbmciLCJ0b2tlbiI6bnVsbCwicm9sZXMiOltdLCJjbGllbnQiOiIiLCJndWVzdElkIjpudWxsLCJpYXQiOjE1MTc3MzEyMTcsImV4cCI6MTUyNTUwNzIxNywiaXNzIjoiaHlwZXF1aXovMSJ9.2r6bo9ANnsbXOL7VeK-3HdAE-9A_ttrMs6ll4_PrbKU"
@@ -22,19 +23,24 @@ DEBUG = args.d
 
 def on_message(ws, message):
     data = json.loads(message)
-    if not DEBUG:
-        on_message.logger.write(message)
-        on_message.logger.write('\n')
     if data['type'] == 'question':
         question = data['question']
         answers = [answer['text'] for answer in data['answers']]
         print "Question: " + question
         print "Answers: " + str(answers)
         if not args.collect:
-            pprint(on_message.solver.answer(question, answers))
+            t = threading.Thread(target=on_message.solver.answer, args=(question, answers,))
+            t.start()
+            t.join()
     elif data['type'] == 'broadcastEnded' and 'reason' not in data:
         print 'The broadcast ended'
         ws.close()
+    if data_watch.check_data is True:
+        print 'Still getting data...'
+        data_watch.check_data = False
+    if not DEBUG:
+        on_message.logger.write(message)
+        on_message.logger.write('\n')
 print 'Instantiating Answerer class...make take a while'
 on_message.solver = Answerer()
 print 'Done Instantiating Answerer class!'
@@ -58,8 +64,29 @@ def setup_websocket(url, header):
     ws.on_close = on_close
     ws.on_message = on_message
     ws.on_error = on_error
+    # Start data watch daemon thread
+    t = threading.Thread(target=data_watch)
+    t.daemon = True
+    t.start()
     return ws
 
+def data_watch():
+    while True:
+        start = time.time()
+        while time.time() - start <= 5 and not data_watch.check_data:
+            time.sleep(1)
+            continue
+        data_watch.check_data = True
+        # time how long we do not get data
+        start = time.time()
+        # avoid race condition by spinning here
+        while data_watch.check_data:
+            time.sleep(1)
+            if (int(time.time()) - int(start)) % 5 == 0:
+                print 'Have not gotten data for {} seconds'.format(int(time.time()) - int(start))
+            continue
+data_watch.check_data = False
+        
 def prompt_continue():
     key = ''
     while key != 'y' or key != 'n':
@@ -82,18 +109,17 @@ if __name__ == "__main__":
     if args.collect:
         print "Running in collect mode"
     while True:
-        # Send GET request to receive live show status and socketUrl
-        print 'QUERYING SHOW STATUS'
-        show_status = get_show_status()
-        if not show_status['active']: # Reset if show is not acrtive
-            print 'The show is not live.'
-            if not DEBUG:
+        if not DEBUG:
+            # Send GET request to receive live show status and socketUrl
+            print 'QUERYING SHOW STATUS'
+            show_status = get_show_status()
+            if not show_status['active']: # Reset if show is not acrtive
+                print 'The show is not live.'
                 if prompt_continue():
                     print
                     continue
                 else:
                     exit()
-
         try:
             if DEBUG:
                 websocket_url = 'ws://localhost:8080' 

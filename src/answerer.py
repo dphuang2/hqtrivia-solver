@@ -149,7 +149,7 @@ class Answerer():
         except KeyError:
             print 'there was no answer?'
         best_answer = np.append(np.array(self.answers)[np_max], answer_position)
-        return {
+        ret_dict = {
                 'z-best_answer_by_ml': list(best_answer), # the 'z-' is so pprint prints the answer last
                 'ml_answers': {k:v for k,v in zip(self.answers, Y_pred)},
                 'question': self.question,
@@ -161,6 +161,8 @@ class Answerer():
                 'columns_in_order': sorted(list(self.data.keys())) + sorted(list(self.categorical_data.keys())), 
                 'rate_limited': self.rate_limited
                 }
+        pprint(ret_dict)
+        return ret_dict
     
     def question_answer_similarity(self):
         counts = []
