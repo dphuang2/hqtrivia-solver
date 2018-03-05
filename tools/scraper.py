@@ -90,6 +90,8 @@ ANSWERS = {
         'Which of these commercial mascots was originally drawn by a teenage boy?': 0,
         "After whom is the Oscars' Academy Honorary Award named?": 2,
         "Which element is NOT on the same row of the periodic table as the other two?": 2,
+        'Which of these words can NOT be typed exclusively using one row of a QWERTY keyboard?': 2,
+
 
         }
 
