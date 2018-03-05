@@ -88,6 +88,9 @@ ANSWERS = {
         'In “Meet the Parents,” lyrics from which musical are recited during family grace?': 0,
         'The duo behind the R&B hit “All My Life” was once a part of which group?': 0,
         'Which of these commercial mascots was originally drawn by a teenage boy?': 0,
+        "After whom is the Oscars' Academy Honorary Award named?": 2,
+        "Which element is NOT on the same row of the periodic table as the other two?": 2,
+
         }
 
 with open('../data/log', 'r') as f:
