@@ -562,7 +562,10 @@ class Answerer():
                 pass
             curr_counts = []
             for answer in self.answers:
-                curr_counts.append(float(contents[answer].count(word)))
+                try:
+                    curr_counts.append(float(contents[answer].count(word)))
+                except KeyError:
+                    curr_counts.append(float(0))
             try:
                 curr_counts = [count / sum(curr_counts) for count in curr_counts]
             except ZeroDivisionError:

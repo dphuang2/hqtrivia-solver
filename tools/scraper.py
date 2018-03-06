@@ -94,6 +94,9 @@ ANSWERS = {
         "San Francisco's Waldo Tunnel was renamed in 2016 after a noted what?": 0,
         'Which of these is NOT an official Tetris sequel?': 1,
         'Which Baby-Sitters Club member was NOT included in the film version?': 2,
+        "Which of these contributed to John McEnroe's infamous Australian Open ejection?": 1,
+        'Which of these items could FDR have used before he was president?': 1,
+        'New Jersey native John Taylor is credited with creating what processed meat product?': 2,
         }
 
 with open('../data/log', 'r') as f:
