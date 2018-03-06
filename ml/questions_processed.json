@@ -3693,6 +3693,177 @@
             0
         ]
     },
+    "Where is carpeting most commonly installed?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "floors",
+                "top"
+            ],
+            "question": "where is carpeting most commonly installed?",
+            "lines": [
+                [
+                    0.6666666666666666,
+                    0.6666666666666667,
+                    0.6649962879954658,
+                    0.3328351114676576,
+                    0.3709594663930221,
+                    0.7084785133565621,
+                    0.3504410585404972,
+                    0.3269729529455354,
+                    0.3333333333333333,
+                    0.4237885462555066,
+                    0.39166666666666666,
+                    0.3244958708870364,
+                    0,
+                    0,
+                    3.0
+                ],
+                [
+                    0.0,
+                    0.16666666666666669,
+                    0.15734055429388843,
+                    0.37538322018406073,
+                    0.38943047716777834,
+                    0.17479674796747968,
+                    0.3809141940657578,
+                    0.6261578362356428,
+                    0.0,
+                    0.2511013215859031,
+                    0.3416666666666667,
+                    0.35730292534375097,
+                    0,
+                    0,
+                    3.0
+                ],
+                [
+                    0.3333333333333333,
+                    0.16666666666666669,
+                    0.17766315771064578,
+                    0.2917816683482817,
+                    0.23961005643919958,
+                    0.11672473867595819,
+                    0.268644747393745,
+                    0.04686921081882178,
+                    0.6666666666666667,
+                    0.3251101321585903,
+                    0.26666666666666666,
+                    0.3182012037692126,
+                    0,
+                    0,
+                    3.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "floors",
+                "walls",
+                "roofs"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "roofs": 0.0004914763086652733,
+                "walls": 0.14159662258528888,
+                "floors": 0.6977230857823579
+            },
+            "categorical_data": {
+                "question_type": 3
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.9734876126611092,
+                    1.071908776031253,
+                    0.9546036113076379
+                ],
+                "result_count_important_words": [
+                    437000.0,
+                    475000.0,
+                    335000.0
+                ],
+                "wikipedia_search": [
+                    0.6666666666666666,
+                    0.0,
+                    1.3333333333333335
+                ],
+                "word_count_appended_bing": [
+                    47.0,
+                    41.0,
+                    32.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.3333333333333333,
+                    0.3333333333333333,
+                    0.3333333333333333
+                ],
+                "cosine_similarity_raw": [
+                    0.19434668123722076,
+                    0.04598313570022583,
+                    0.05192246288061142
+                ],
+                "result_count_noun_chunks": [
+                    353000000.0,
+                    676000000.0,
+                    50600000.0
+                ],
+                "question_answer_similarity": [
+                    2.0208973363041878,
+                    2.2792395502328873,
+                    1.771630384027958
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    122000000.0,
+                    30100000.0,
+                    20100000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    723000.0,
+                    759000.0,
+                    467000.0
+                ],
+                "answer_relation_to_question": [
+                    2.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended": [
+                    481.0,
+                    285.0,
+                    369.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Which of these commercial mascots was originally drawn by a teenage boy?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -6129,6 +6300,95 @@
     },
     "What form of singing was historically used to communicate between mountaintops?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "yodeling",
+                "top"
+            ],
+            "question": "what form of singing was historically used to communicate between mountaintops?",
+            "lines": [
+                [
+                    0.5080128205128205,
+                    0.43481295365717476,
+                    0.5857331796019739,
+                    0.027039440866960147,
+                    0.7397603789356366,
+                    0.4134988363072149,
+                    0.7568460162377872,
+                    0.42071197411003236,
+                    0.670288685673301,
+                    0.8301886792452831,
+                    0.9166666666666666,
+                    0.44200351718668063,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                [
+                    0.22756410256410253,
+                    0.22012841987716358,
+                    0.19063479013659726,
+                    0.5805529271075551,
+                    0.25773195876288657,
+                    0.36850271528316525,
+                    0.23943855786431814,
+                    0.5717367853290184,
+                    0.08312712928097543,
+                    0.10062893081761007,
+                    0.05555555555555555,
+                    0.38645907787603473,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.2644230769230769,
+                    0.34505862646566166,
+                    0.22363203026142886,
+                    0.3924076320254847,
+                    0.0025076623014767345,
+                    0.21799844840961985,
+                    0.003715425897894592,
+                    0.007551240560949299,
+                    0.24658418504572346,
+                    0.06918238993710692,
+                    0.027777777777777776,
+                    0.17153740493728467,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "yodeling",
+                "opera arias",
+                "gregorian chanting"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "opera arias": 0.19816494819189295,
+                "gregorian chanting": 0.21242053300505095,
+                "yodeling": 0.8113754561310758
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     2.2100175859334033,
@@ -6201,96 +6461,7 @@
                     18.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "yodeling",
-                "top"
-            ],
-            "lines": [
-                [
-                    0.5080128205128205,
-                    0.43481295365717476,
-                    0.5857331796019739,
-                    0.027039440866960147,
-                    0.7397603789356366,
-                    0.4134988363072149,
-                    0.7568460162377872,
-                    0.42071197411003236,
-                    0.670288685673301,
-                    0.8301886792452831,
-                    0.9166666666666666,
-                    0.44200351718668063,
-                    1.0,
-                    1.0,
-                    1.0
-                ],
-                [
-                    0.22756410256410253,
-                    0.22012841987716358,
-                    0.19063479013659726,
-                    0.5805529271075551,
-                    0.25773195876288657,
-                    0.36850271528316525,
-                    0.23943855786431814,
-                    0.5717367853290184,
-                    0.08312712928097543,
-                    0.10062893081761007,
-                    0.05555555555555555,
-                    0.38645907787603473,
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                [
-                    0.2644230769230769,
-                    0.34505862646566166,
-                    0.22363203026142886,
-                    0.3924076320254847,
-                    0.0025076623014767345,
-                    0.21799844840961985,
-                    0.003715425897894592,
-                    0.007551240560949299,
-                    0.24658418504572346,
-                    0.06918238993710692,
-                    0.027777777777777776,
-                    0.17153740493728467,
-                    0.0,
-                    0.0,
-                    1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": 1
-            },
-            "question": "what form of singing was historically used to communicate between mountaintops?",
-            "rate_limited": false,
-            "answers": [
-                "yodeling",
-                "opera arias",
-                "gregorian chanting"
-            ],
-            "ml_answers": {
-                "opera arias": 0.19816494819189295,
-                "gregorian chanting": 0.21242053300505095,
-                "yodeling": 0.8113754561310758
-            }
+            "negative_question": false
         },
         "right_answer": [
             1,
@@ -8049,75 +8220,75 @@
             0
         ]
     },
-    "How did Mason jars get their name?": {
+    "By definition, an Anglophile would be most interested in which of these things?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "named after inventor"
+                "geometry"
             ],
             "lines": [
                 [
-                    0.0,
-                    0.0,
-                    0.15369554125848628,
-                    0.25523113929291164,
-                    1.1825046888881578e-05,
-                    0.3235955056179775,
-                    3.795049850826078e-06,
-                    4.292908695640097e-06,
-                    0.0,
-                    0.56,
-                    0.3333333333333333,
-                    0.08947846179237498,
-                    0,
-                    0,
-                    5.0
-                ],
-                [
-                    0.3608644144921624,
-                    0.3767123287671233,
-                    0.4403464473519183,
-                    0.39869682594891903,
-                    0.9999876608206377,
-                    0.31235955056179776,
-                    0.9999956356926716,
-                    0.9999952020432226,
-                    0.0,
-                    0.24,
-                    0.3333333333333333,
-                    0.8456345931671894,
-                    0,
-                    0,
-                    5.0
-                ],
-                [
-                    0.6391355855078377,
-                    0.6232876712328768,
-                    0.4059580113895955,
-                    0.34607203475816933,
-                    5.141324734296338e-07,
-                    0.36404494382022473,
-                    5.692574776239117e-07,
-                    5.050480818400113e-07,
+                    0.3846153846153846,
                     1.0,
-                    0.2,
-                    0.3333333333333333,
-                    0.06488694504043571,
+                    0.4353186990502371,
+                    0.3023327550698545,
+                    0.41313620105961785,
+                    0.9471673810211197,
+                    0.09572935319514939,
+                    0.41552019037703575,
+                    0.26666666666666666,
+                    0.6735537190082644,
+                    0.7575757575757576,
+                    0.40635178845756753,
                     0,
                     0,
-                    5.0
+                    -1.0
+                ],
+                [
+                    0.5384615384615384,
+                    0.0,
+                    0.40309302202234426,
+                    0.011893953872856482,
+                    0.5862326186332077,
+                    0.006418086122276755,
+                    0.903840593619177,
+                    0.5837733323417863,
+                    0.7333333333333334,
+                    0.2768595041322314,
+                    0.18181818181818182,
+                    0.4200617336577158,
+                    0,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.07692307692307693,
+                    0.0,
+                    0.1615882789274186,
+                    0.685773291057289,
+                    0.0006311803071744162,
+                    0.046414532856603526,
+                    0.00043005318567364064,
+                    0.0007064772811779579,
+                    0.0,
+                    0.049586776859504134,
+                    0.06060606060606061,
+                    0.17358647788471665,
+                    0,
+                    0,
+                    -1.0
                 ]
             ],
             "fraction_answers": {
-                "named after inventor": 0.14294615785837658,
-                "invented in mason, al": 0.525660499348248,
-                "masons used them": 0.3313933427933755
+                "geometry": 0.5081639913413879,
+                "downton abbey": 0.3871488248345541,
+                "trout fishing": 0.10468718382405795
             },
-            "question": "how did mason jars get their name?",
+            "question": "by definition, an anglophile would be most interested in which of these things?",
             "rate_limited": false,
             "answers": [
-                "named after inventor",
-                "invented in mason, al",
-                "masons used them"
+                "geometry",
+                "downton abbey",
+                "trout fishing"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -8137,95 +8308,95 @@
                 "question_type"
             ],
             "ml_answers": {
-                "named after inventor": 0.2952405103978026,
-                "invented in mason, al": 0.12681941571163238,
-                "masons used them": 0.18317508568592022
+                "geometry": 0.7970866997107331,
+                "downton abbey": 0.2861712414301517,
+                "trout fishing": 0.12191230027485045
             },
-            "integer_answers": {
-                "named after inventor": 2,
-                "invented in mason, al": 6,
-                "masons used them": 4
-            },
+            "negative_question": false,
             "categorical_data": {
-                "question_type": 5
+                "question_type": -1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    0.17895692358474996,
-                    1.6912691863343787,
-                    0.12977389008087142
+                    1.6254071538302701,
+                    1.6802469346308633,
+                    0.6943459115388666
                 ],
                 "result_count_important_words": [
-                    20.0,
-                    5270000.0,
-                    3.0
+                    197000.0,
+                    1860000.0,
+                    885.0
                 ],
                 "wikipedia_search": [
-                    0.0,
-                    0.0,
-                    1.0
+                    0.8,
+                    2.2,
+                    0.0
                 ],
                 "word_count_appended_bing": [
-                    2.0,
-                    2.0,
-                    2.0
+                    50.0,
+                    12.0,
+                    4.0
                 ],
                 "answer_relation_to_question_bing": [
+                    1.0,
                     0.0,
-                    0.3767123287671233,
-                    0.6232876712328768
+                    0.0
                 ],
                 "cosine_similarity_raw": [
-                    0.0738634318113327,
-                    0.2116229236125946,
-                    0.1950964331626892
+                    0.05387365072965622,
+                    0.04988550394773483,
+                    0.019997648894786835
                 ],
                 "result_count_noun_chunks": [
-                    17.0,
-                    3960000.0,
-                    2.0
+                    44700.0,
+                    62800.0,
+                    76.0
                 ],
                 "question_answer_similarity": [
-                    6.142987018451095,
-                    9.59596635773778,
-                    8.329375572502613
+                    2.0908243283629417,
+                    0.08225429663434625,
+                    4.74256082624197
                 ],
                 "word_count_noun_chunks": [
                     0.0,
                     0.0,
                     0.0
                 ],
-                "result_count_bing": [
-                    1440000.0,
-                    1390000.0,
-                    1620000.0
-                ],
                 "word_count_raw": [
                     0.0,
                     0.0,
                     0.0
                 ],
-                "result_count": [
-                    46.0,
-                    3890000.0,
-                    2.0
-                ],
-                "answer_relation_to_question": [
-                    0.0,
-                    0.7217288289843247,
-                    1.2782711710156751
+                "result_count_bing": [
+                    8530000.0,
+                    57800.0,
+                    418000.0
                 ],
                 "word_count_appended": [
-                    14.0,
-                    6.0,
-                    5.0
+                    163.0,
+                    67.0,
+                    12.0
+                ],
+                "answer_relation_to_question": [
+                    1.1538461538461537,
+                    1.6153846153846154,
+                    0.23076923076923078
+                ],
+                "result_count": [
+                    43200.0,
+                    61300.0,
+                    66.0
                 ]
             },
-            "negative_question": false
+            "integer_answers": {
+                "geometry": 5,
+                "downton abbey": 6,
+                "trout fishing": 1
+            }
         },
         "right_answer": [
-            1,
             0,
+            1,
             0
         ]
     },
@@ -14668,6 +14839,95 @@
     },
     "Basketball was invented in the U.S. state that is also home to which of these islands?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "martha's vineyard",
+                "bottom"
+            ],
+            "question": "basketball was invented in the u.s. state that is also home to which of these islands?",
+            "lines": [
+                [
+                    0.28024553571428573,
+                    0.24890350877192982,
+                    0.12339652814946596,
+                    0.3712577187680735,
+                    0.8180188256387271,
+                    0.3130434782608696,
+                    0.4437264404954227,
+                    0.8591331269349846,
+                    0.5007168458781363,
+                    0.4831081081081081,
+                    0.4,
+                    0.3635244621492097,
+                    0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.4259486607142857,
+                    0.37938596491228066,
+                    0.1097085699798259,
+                    0.1871836448851615,
+                    0.0340654415060511,
+                    0.22318840579710145,
+                    0.4534194938072159,
+                    0.02476780185758514,
+                    0.0078125,
+                    0.125,
+                    0.2222222222222222,
+                    0.28631436800212223,
+                    0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.2938058035714286,
+                    0.3717105263157895,
+                    0.7668949018707081,
+                    0.44155863634676495,
+                    0.14791573285522186,
+                    0.463768115942029,
+                    0.10285406569736133,
+                    0.11609907120743033,
+                    0.4914706541218638,
+                    0.3918918918918919,
+                    0.37777777777777777,
+                    0.35016116984866813,
+                    0,
+                    1.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "hilton head",
+                "hatteras island",
+                "martha's vineyard"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "hatteras island": 0.057837337707666164,
+                "martha's vineyard": 0.794581097522409,
+                "hilton head": 0.1450596861503687
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     2.181146772895258,
@@ -14740,96 +15000,7 @@
                     13200.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "martha's vineyard",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.28024553571428573,
-                    0.24890350877192982,
-                    0.12339652814946596,
-                    0.3712577187680735,
-                    0.8180188256387271,
-                    0.3130434782608696,
-                    0.4437264404954227,
-                    0.8591331269349846,
-                    0.5007168458781363,
-                    0.4831081081081081,
-                    0.4,
-                    0.3635244621492097,
-                    0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.4259486607142857,
-                    0.37938596491228066,
-                    0.1097085699798259,
-                    0.1871836448851615,
-                    0.0340654415060511,
-                    0.22318840579710145,
-                    0.4534194938072159,
-                    0.02476780185758514,
-                    0.0078125,
-                    0.125,
-                    0.2222222222222222,
-                    0.28631436800212223,
-                    0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.2938058035714286,
-                    0.3717105263157895,
-                    0.7668949018707081,
-                    0.44155863634676495,
-                    0.14791573285522186,
-                    0.463768115942029,
-                    0.10285406569736133,
-                    0.11609907120743033,
-                    0.4914706541218638,
-                    0.3918918918918919,
-                    0.37777777777777777,
-                    0.35016116984866813,
-                    0,
-                    1.0,
-                    -1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "basketball was invented in the u.s. state that is also home to which of these islands?",
-            "rate_limited": false,
-            "answers": [
-                "hilton head",
-                "hatteras island",
-                "martha's vineyard"
-            ],
-            "ml_answers": {
-                "hatteras island": 0.057837337707666164,
-                "martha's vineyard": 0.794581097522409,
-                "hilton head": 0.1450596861503687
-            }
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -15541,6 +15712,95 @@
     },
     "A famously counterintuitive logic puzzle is named for what game show host?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "monty hall",
+                "bottom"
+            ],
+            "question": "a famously counterintuitive logic puzzle is named for what game show host?",
+            "lines": [
+                [
+                    0.13469335301998742,
+                    0.32543424317617864,
+                    0.03810195718486411,
+                    0.35415226684617,
+                    0.03636363636363636,
+                    0.9554667034330622,
+                    0.08196721311475409,
+                    0.07246376811594203,
+                    0.4579512051734274,
+                    0.10752688172043011,
+                    0.05405405405405406,
+                    0.19549350582538985,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.08102370601263227,
+                    0.10607940446650124,
+                    0.05023706628035403,
+                    0.1850725671534683,
+                    0.32727272727272727,
+                    0.021646215359161725,
+                    0.0,
+                    0.0,
+                    0.05185185185185185,
+                    0.26881720430107525,
+                    0.08108108108108109,
+                    0.3353228034892832,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.7842829409673804,
+                    0.56848635235732,
+                    0.9116609765347818,
+                    0.46077516600036167,
+                    0.6363636363636364,
+                    0.02288708120777609,
+                    0.9180327868852459,
+                    0.927536231884058,
+                    0.49019694297472083,
+                    0.6236559139784946,
+                    0.8648648648648649,
+                    0.46918369068532695,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "bob barker",
+                "richard dawson",
+                "monty hall"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "richard dawson": 0.07245864339844504,
+                "monty hall": 0.8956658444839137,
+                "bob barker": 0.06507672019178376
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     1.3684545407777289,
@@ -15613,96 +15873,7 @@
                     35.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "monty hall",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.13469335301998742,
-                    0.32543424317617864,
-                    0.03810195718486411,
-                    0.35415226684617,
-                    0.03636363636363636,
-                    0.9554667034330622,
-                    0.08196721311475409,
-                    0.07246376811594203,
-                    0.4579512051734274,
-                    0.10752688172043011,
-                    0.05405405405405406,
-                    0.19549350582538985,
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                [
-                    0.08102370601263227,
-                    0.10607940446650124,
-                    0.05023706628035403,
-                    0.1850725671534683,
-                    0.32727272727272727,
-                    0.021646215359161725,
-                    0.0,
-                    0.0,
-                    0.05185185185185185,
-                    0.26881720430107525,
-                    0.08108108108108109,
-                    0.3353228034892832,
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                [
-                    0.7842829409673804,
-                    0.56848635235732,
-                    0.9116609765347818,
-                    0.46077516600036167,
-                    0.6363636363636364,
-                    0.02288708120777609,
-                    0.9180327868852459,
-                    0.927536231884058,
-                    0.49019694297472083,
-                    0.6236559139784946,
-                    0.8648648648648649,
-                    0.46918369068532695,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": 1
-            },
-            "question": "a famously counterintuitive logic puzzle is named for what game show host?",
-            "rate_limited": false,
-            "answers": [
-                "bob barker",
-                "richard dawson",
-                "monty hall"
-            ],
-            "ml_answers": {
-                "richard dawson": 0.07245864339844504,
-                "monty hall": 0.8956658444839137,
-                "bob barker": 0.06507672019178376
-            }
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -16242,6 +16413,95 @@
     },
     "Which company provided audio equipment that helped Disney produce \u201cFantasia\u201d?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "hewlett-packard",
+                "middle"
+            ],
+            "question": "which company provided audio equipment that helped disney produce \u201cfantasia\u201d?",
+            "lines": [
+                [
+                    0.1634640522875817,
+                    0.2630208333333333,
+                    0.24892684858952624,
+                    0.35299614924918826,
+                    0.8560659298537021,
+                    0.3242798353909465,
+                    0.9845561232922981,
+                    0.2564102564102564,
+                    0.1808014571948998,
+                    0.0,
+                    0.0,
+                    0.34039181456608136,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.3792156862745098,
+                    0.5606060606060607,
+                    0.5489587473265085,
+                    0.23897165407825138,
+                    0.1376732894652782,
+                    0.5925925925925926,
+                    0.013007639293131822,
+                    0.7026815423761988,
+                    0.6733547626700954,
+                    0.9101123595505618,
+                    0.864406779661017,
+                    0.3698787746072956,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.45732026143790855,
+                    0.17637310606060608,
+                    0.2021144040839652,
+                    0.4080321966725603,
+                    0.006260780681019613,
+                    0.0831275720164609,
+                    0.0024362374145699933,
+                    0.04090820121354472,
+                    0.14584378013500482,
+                    0.0898876404494382,
+                    0.13559322033898305,
+                    0.28972941082662307,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "bang & olufsen",
+                "hewlett-packard",
+                "dolby laboratories"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "bang & olufsen": 0.16912554122549114,
+                "dolby laboratories": 0.052006659650182196,
+                "hewlett-packard": 0.9102853399983615
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     2.723134516528651,
@@ -16314,96 +16574,7 @@
                     1960.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "hewlett-packard",
-                "middle"
-            ],
-            "lines": [
-                [
-                    0.1634640522875817,
-                    0.2630208333333333,
-                    0.24892684858952624,
-                    0.35299614924918826,
-                    0.8560659298537021,
-                    0.3242798353909465,
-                    0.9845561232922981,
-                    0.2564102564102564,
-                    0.1808014571948998,
-                    0.0,
-                    0.0,
-                    0.34039181456608136,
-                    0.0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.3792156862745098,
-                    0.5606060606060607,
-                    0.5489587473265085,
-                    0.23897165407825138,
-                    0.1376732894652782,
-                    0.5925925925925926,
-                    0.013007639293131822,
-                    0.7026815423761988,
-                    0.6733547626700954,
-                    0.9101123595505618,
-                    0.864406779661017,
-                    0.3698787746072956,
-                    1.0,
-                    1.0,
-                    -1.0
-                ],
-                [
-                    0.45732026143790855,
-                    0.17637310606060608,
-                    0.2021144040839652,
-                    0.4080321966725603,
-                    0.006260780681019613,
-                    0.0831275720164609,
-                    0.0024362374145699933,
-                    0.04090820121354472,
-                    0.14584378013500482,
-                    0.0898876404494382,
-                    0.13559322033898305,
-                    0.28972941082662307,
-                    0.0,
-                    0.0,
-                    -1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which company provided audio equipment that helped disney produce \u201cfantasia\u201d?",
-            "rate_limited": false,
-            "answers": [
-                "bang & olufsen",
-                "hewlett-packard",
-                "dolby laboratories"
-            ],
-            "ml_answers": {
-                "bang & olufsen": 0.16912554122549114,
-                "dolby laboratories": 0.052006659650182196,
-                "hewlett-packard": 0.9102853399983615
-            }
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -17265,6 +17436,95 @@
     },
     "Which of these words can NOT be typed exclusively using one row of a QWERTY keyboard?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "powertripper",
+                "top"
+            ],
+            "question": "which of these words can not be typed exclusively using one row of a qwerty keyboard?",
+            "lines": [
+                [
+                    0.39400584795321636,
+                    0.16470917225950782,
+                    0.4490085045172552,
+                    0.5,
+                    0.5,
+                    0.33333333333333337,
+                    0.5,
+                    0.49993607954545455,
+                    0.5,
+                    0.48081534772182255,
+                    0.34090909090909094,
+                    0.4743929587397195,
+                    0.5,
+                    0.5,
+                    -1.0
+                ],
+                [
+                    0.2330043859649123,
+                    0.41950969425801643,
+                    0.1363674979159204,
+                    0.0,
+                    0.0023098537886364623,
+                    0.33333333333333337,
+                    0.00038529608522241965,
+                    0.002840909090909116,
+                    0.024242424242424232,
+                    0.11510791366906475,
+                    0.3125,
+                    0.17525344446686364,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.37298976608187134,
+                    0.41578113348247575,
+                    0.41462399756682444,
+                    0.5,
+                    0.49769014621136354,
+                    0.33333333333333337,
+                    0.4996147039147776,
+                    0.49722301136363634,
+                    0.47575757575757577,
+                    0.4040767386091127,
+                    0.34659090909090906,
+                    0.35035359679341693,
+                    0.5,
+                    0.5,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "powertripper",
+                "typewriter",
+                "pirouetted"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "powertripper": 0.5415519432340417,
+                "pirouetted": 0.4302291378633239,
+                "typewriter": 0.10195275350975658
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     0.3072844951233661,
@@ -17337,96 +17597,7 @@
                     97.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "powertripper",
-                "top"
-            ],
-            "lines": [
-                [
-                    0.39400584795321636,
-                    0.16470917225950782,
-                    0.4490085045172552,
-                    0.5,
-                    0.5,
-                    0.33333333333333337,
-                    0.5,
-                    0.49993607954545455,
-                    0.5,
-                    0.48081534772182255,
-                    0.34090909090909094,
-                    0.4743929587397195,
-                    0.5,
-                    0.5,
-                    -1.0
-                ],
-                [
-                    0.2330043859649123,
-                    0.41950969425801643,
-                    0.1363674979159204,
-                    0.0,
-                    0.0023098537886364623,
-                    0.33333333333333337,
-                    0.00038529608522241965,
-                    0.002840909090909116,
-                    0.024242424242424232,
-                    0.11510791366906475,
-                    0.3125,
-                    0.17525344446686364,
-                    0.0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.37298976608187134,
-                    0.41578113348247575,
-                    0.41462399756682444,
-                    0.5,
-                    0.49769014621136354,
-                    0.33333333333333337,
-                    0.4996147039147776,
-                    0.49722301136363634,
-                    0.47575757575757577,
-                    0.4040767386091127,
-                    0.34659090909090906,
-                    0.35035359679341693,
-                    0.5,
-                    0.5,
-                    -1.0
-                ]
-            ],
-            "negative_question": true,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which of these words can not be typed exclusively using one row of a qwerty keyboard?",
-            "rate_limited": false,
-            "answers": [
-                "powertripper",
-                "typewriter",
-                "pirouetted"
-            ],
-            "ml_answers": {
-                "powertripper": 0.5415519432340417,
-                "pirouetted": 0.4302291378633239,
-                "typewriter": 0.10195275350975658
-            }
+            "negative_question": true
         },
         "right_answer": [
             0,
@@ -19533,6 +19704,177 @@
         "right_answer": [
             1,
             0,
+            0
+        ]
+    },
+    "Which planet is famous for its massive and picturesque rings?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "saturn",
+                "middle"
+            ],
+            "question": "which planet is famous for its massive and picturesque rings?",
+            "lines": [
+                [
+                    0.25513364779874215,
+                    0.24086021505376345,
+                    0.2257305525773044,
+                    0.2528924970790268,
+                    0.4802798982188295,
+                    0.3107011070110701,
+                    0.042310024723608716,
+                    0.06532988357050452,
+                    0.1517907716439371,
+                    0.28140096618357485,
+                    0.2168141592920354,
+                    0.3466840092880173,
+                    0.0,
+                    0.058823529411764705,
+                    -1.0
+                ],
+                [
+                    0.4245990566037736,
+                    0.6139784946236558,
+                    0.6992109214311293,
+                    0.25530806571954284,
+                    0.1183206106870229,
+                    0.407380073800738,
+                    0.4258991463357746,
+                    0.40426908150064683,
+                    0.8345932639100693,
+                    0.45169082125603865,
+                    0.4336283185840708,
+                    0.3220837897355647,
+                    0.9565217391304348,
+                    0.8823529411764706,
+                    -1.0
+                ],
+                [
+                    0.3202672955974843,
+                    0.14516129032258066,
+                    0.0750585259915663,
+                    0.4917994372014303,
+                    0.4013994910941476,
+                    0.2819188191881919,
+                    0.5317908289406167,
+                    0.5304010349288486,
+                    0.013615964445993639,
+                    0.2669082125603865,
+                    0.3495575221238938,
+                    0.3312322009764181,
+                    0.043478260869565216,
+                    0.058823529411764705,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "venus",
+                "saturn",
+                "mercury"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "mercury": 0.1958277387346288,
+                "venus": 0.09752563093621743,
+                "saturn": 0.8425407187531819
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.7334200464400864,
+                    1.6104189486778233,
+                    1.6561610048820905
+                ],
+                "result_count_important_words": [
+                    907000.0,
+                    9130000.0,
+                    11400000.0
+                ],
+                "wikipedia_search": [
+                    0.6071630865757484,
+                    3.338373055640277,
+                    0.054463857783974556
+                ],
+                "word_count_appended_bing": [
+                    49.0,
+                    98.0,
+                    79.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.7225806451612904,
+                    1.8419354838709676,
+                    0.43548387096774194
+                ],
+                "cosine_similarity_raw": [
+                    0.08877935260534286,
+                    0.27499818801879883,
+                    0.029520360752940178
+                ],
+                "result_count_noun_chunks": [
+                    1010000.0,
+                    6250000.0,
+                    8200000.0
+                ],
+                "question_answer_similarity": [
+                    0.8733001565560699,
+                    0.8816417107591406,
+                    1.6983047360554338
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    110.0,
+                    5.0
+                ],
+                "result_count_bing": [
+                    421000.0,
+                    552000.0,
+                    382000.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    15.0,
+                    1.0
+                ],
+                "result_count": [
+                    755000.0,
+                    186000.0,
+                    631000.0
+                ],
+                "answer_relation_to_question": [
+                    1.0205345911949686,
+                    1.6983962264150945,
+                    1.2810691823899372
+                ],
+                "word_count_appended": [
+                    233.0,
+                    374.0,
+                    221.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            1,
             0
         ]
     },
@@ -23791,9 +24133,9 @@
                 ]
             ],
             "fraction_answers": {
-                "jean jacket / jeans": 0.4796516226019257,
                 "wool sweater / slacks": 0.27120655062760796,
-                "cotton t-shirt / shorts": 0.24914182677046628
+                "cotton t-shirt / shorts": 0.24914182677046628,
+                "jean jacket / jeans": 0.4796516226019257
             },
             "question": "which of these outfits can be defined as a \u201ccanadian tuxedo\u201d?",
             "rate_limited": false,
@@ -23820,9 +24162,9 @@
                 "question_type"
             ],
             "ml_answers": {
-                "jean jacket / jeans": 0.47217137453320795,
                 "wool sweater / slacks": 0.1017591768970551,
-                "cotton t-shirt / shorts": 0.10103074982006632
+                "cotton t-shirt / shorts": 0.10103074982006632,
+                "jean jacket / jeans": 0.47217137453320795
             },
             "negative_question": false,
             "categorical_data": {
@@ -23901,9 +24243,9 @@
                 ]
             },
             "integer_answers": {
-                "jean jacket / jeans": 7,
                 "wool sweater / slacks": 4,
-                "cotton t-shirt / shorts": 1
+                "cotton t-shirt / shorts": 1,
+                "jean jacket / jeans": 7
             }
         },
         "right_answer": [
@@ -25297,6 +25639,95 @@
     },
     "Rumspringa is a rite of passage among which of these groups?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "amish",
+                "bottom"
+            ],
+            "question": "rumspringa is a rite of passage among which of these groups?",
+            "lines": [
+                [
+                    0.21296296296296294,
+                    0.303030303030303,
+                    0.05355995915836022,
+                    0.09788193896719209,
+                    0.010886777513855899,
+                    0.3835616438356164,
+                    0.007250580046403712,
+                    0.3894151255450308,
+                    0.1233974358974359,
+                    0.16377952755905512,
+                    0.30337078651685395,
+                    0.2534687156104613,
+                    0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.07407407407407407,
+                    0.3787878787878788,
+                    0.011822106356558048,
+                    0.806464480633831,
+                    0.009303246239113222,
+                    0.14440639269406394,
+                    0.006670533642691415,
+                    0.03924221921515562,
+                    0.2774503722084367,
+                    0.03307086614173228,
+                    0.0449438202247191,
+                    0.18978366254502538,
+                    0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.7129629629629629,
+                    0.3181818181818182,
+                    0.9346179344850817,
+                    0.09565358039897688,
+                    0.9798099762470309,
+                    0.4720319634703196,
+                    0.9860788863109049,
+                    0.5713426552398135,
+                    0.5991521918941274,
+                    0.8031496062992126,
+                    0.651685393258427,
+                    0.5567476218445133,
+                    0,
+                    1.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "mormons",
+                "jehovah's witnesses",
+                "amish"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "mormons": 0.0906198262097304,
+                "jehovah's witnesses": 0.07980045920925545,
+                "amish": 0.8617523033079275
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     1.0138748624418452,
@@ -25369,96 +25800,7 @@
                     4950.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "amish",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.21296296296296294,
-                    0.303030303030303,
-                    0.05355995915836022,
-                    0.09788193896719209,
-                    0.010886777513855899,
-                    0.3835616438356164,
-                    0.007250580046403712,
-                    0.3894151255450308,
-                    0.1233974358974359,
-                    0.16377952755905512,
-                    0.30337078651685395,
-                    0.2534687156104613,
-                    0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.07407407407407407,
-                    0.3787878787878788,
-                    0.011822106356558048,
-                    0.806464480633831,
-                    0.009303246239113222,
-                    0.14440639269406394,
-                    0.006670533642691415,
-                    0.03924221921515562,
-                    0.2774503722084367,
-                    0.03307086614173228,
-                    0.0449438202247191,
-                    0.18978366254502538,
-                    0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.7129629629629629,
-                    0.3181818181818182,
-                    0.9346179344850817,
-                    0.09565358039897688,
-                    0.9798099762470309,
-                    0.4720319634703196,
-                    0.9860788863109049,
-                    0.5713426552398135,
-                    0.5991521918941274,
-                    0.8031496062992126,
-                    0.651685393258427,
-                    0.5567476218445133,
-                    0,
-                    1.0,
-                    -1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "rumspringa is a rite of passage among which of these groups?",
-            "rate_limited": false,
-            "answers": [
-                "mormons",
-                "jehovah's witnesses",
-                "amish"
-            ],
-            "ml_answers": {
-                "mormons": 0.0906198262097304,
-                "jehovah's witnesses": 0.07980045920925545,
-                "amish": 0.8617523033079275
-            }
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -27570,6 +27912,95 @@
     },
     "Which nation does NOT have land on the island of Borneo?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "myanmar",
+                "bottom"
+            ],
+            "question": "which nation does not have land on the island of borneo?",
+            "lines": [
+                [
+                    0.31828510500781976,
+                    0.2944422675026124,
+                    0.3102442992796069,
+                    0.22379416566219812,
+                    0.3445121951219512,
+                    0.38645180543121455,
+                    0.31279342723004694,
+                    0.3078087167070218,
+                    0.2548786688588479,
+                    0.29380603096984514,
+                    0.33850931677018636,
+                    0.3222813838811389,
+                    0.15895953757225434,
+                    0.21999999999999997,
+                    -1.0
+                ],
+                [
+                    0.2571204438096454,
+                    0.26356778996865204,
+                    0.3111299121601604,
+                    0.29643322217526535,
+                    0.31371951219512195,
+                    0.3806326469710534,
+                    0.35387323943661975,
+                    0.3411016949152542,
+                    0.30499756424308855,
+                    0.32070089649551753,
+                    0.25465838509316774,
+                    0.3244440471927934,
+                    0.34104046242774566,
+                    0.3,
+                    -1.0
+                ],
+                [
+                    0.42459445118253486,
+                    0.44198994252873564,
+                    0.3786257885602327,
+                    0.47977261216253647,
+                    0.34176829268292686,
+                    0.23291554759773203,
+                    0.33333333333333337,
+                    0.35108958837772397,
+                    0.44012376689806354,
+                    0.3854930725346373,
+                    0.40683229813664595,
+                    0.3532745689260677,
+                    0.5,
+                    0.48,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "malaysia",
+                "indonesia",
+                "myanmar"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "malaysia": 0.0849696539498588,
+                "indonesia": 0.12772384106161683,
+                "myanmar": 0.7669440806468716
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     1.421748928950889,
@@ -27642,96 +28073,7 @@
                     519000.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "myanmar",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.31828510500781976,
-                    0.2944422675026124,
-                    0.3102442992796069,
-                    0.22379416566219812,
-                    0.3445121951219512,
-                    0.38645180543121455,
-                    0.31279342723004694,
-                    0.3078087167070218,
-                    0.2548786688588479,
-                    0.29380603096984514,
-                    0.33850931677018636,
-                    0.3222813838811389,
-                    0.15895953757225434,
-                    0.21999999999999997,
-                    -1.0
-                ],
-                [
-                    0.2571204438096454,
-                    0.26356778996865204,
-                    0.3111299121601604,
-                    0.29643322217526535,
-                    0.31371951219512195,
-                    0.3806326469710534,
-                    0.35387323943661975,
-                    0.3411016949152542,
-                    0.30499756424308855,
-                    0.32070089649551753,
-                    0.25465838509316774,
-                    0.3244440471927934,
-                    0.34104046242774566,
-                    0.3,
-                    -1.0
-                ],
-                [
-                    0.42459445118253486,
-                    0.44198994252873564,
-                    0.3786257885602327,
-                    0.47977261216253647,
-                    0.34176829268292686,
-                    0.23291554759773203,
-                    0.33333333333333337,
-                    0.35108958837772397,
-                    0.44012376689806354,
-                    0.3854930725346373,
-                    0.40683229813664595,
-                    0.3532745689260677,
-                    0.5,
-                    0.48,
-                    -1.0
-                ]
-            ],
-            "negative_question": true,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which nation does not have land on the island of borneo?",
-            "rate_limited": false,
-            "answers": [
-                "malaysia",
-                "indonesia",
-                "myanmar"
-            ],
-            "ml_answers": {
-                "malaysia": 0.0849696539498588,
-                "indonesia": 0.12772384106161683,
-                "myanmar": 0.7669440806468716
-            }
+            "negative_question": true
         },
         "right_answer": [
             0,
@@ -33163,6 +33505,186 @@
             0
         ]
     },
+    "Which of these is a French territory?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "french guiana"
+            ],
+            "lines": [
+                [
+                    0.7015376166941242,
+                    0.71712158808933,
+                    0.7572529712598172,
+                    0.22107387686146088,
+                    0.9998595287788639,
+                    0.5757561278608629,
+                    0.9981115148908668,
+                    0.9982419187232177,
+                    0.48484848484848486,
+                    0.6218181818181818,
+                    0.8235294117647058,
+                    0.48912059909511674,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.18753432180120816,
+                    0.184863523573201,
+                    0.09038061833842549,
+                    0.3876407651729475,
+                    0.00013822347490870598,
+                    0.008552725882746429,
+                    0.0018839855903562545,
+                    0.0017539203805604197,
+                    0.18181818181818182,
+                    0.3018181818181818,
+                    0.11764705882352941,
+                    0.32189921472775496,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.11092806150466777,
+                    0.09801488833746898,
+                    0.15236641040175739,
+                    0.3912853579655916,
+                    2.247746227487368e-06,
+                    0.41569114625639064,
+                    4.499518776967863e-06,
+                    4.160896221967805e-06,
+                    0.3333333333333333,
+                    0.07636363636363637,
+                    0.058823529411764705,
+                    0.1889801861771283,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "fraction_answers": {
+                "french guiana": 0.7420194157632166,
+                "french stewart": 0.12756648010014301,
+                "french cyprus": 0.1304141041366404
+            },
+            "question": "which of these is a french territory?",
+            "rate_limited": false,
+            "answers": [
+                "french guiana",
+                "french stewart",
+                "french cyprus"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "french guiana": 0.8130286131296881,
+                "french stewart": 0.17421635870487695,
+                "french cyprus": 0.07792305784352663
+            },
+            "integer_answers": {
+                "french guiana": 12,
+                "french stewart": 0,
+                "french cyprus": 1
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.9782411981902335,
+                    0.6437984294555099,
+                    0.3779603723542566
+                ],
+                "result_count_important_words": [
+                    99600000.0,
+                    188000.0,
+                    449.0
+                ],
+                "wikipedia_search": [
+                    0.9696969696969697,
+                    0.36363636363636365,
+                    0.6666666666666666
+                ],
+                "answer_relation_to_question": [
+                    1.4030752333882481,
+                    0.37506864360241626,
+                    0.22185612300933552
+                ],
+                "word_count_appended_bing": [
+                    28.0,
+                    4.0,
+                    2.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.43424317617866,
+                    0.369727047146402,
+                    0.19602977667493796
+                ],
+                "cosine_similarity_raw": [
+                    0.13738316297531128,
+                    0.016397129744291306,
+                    0.027642782777547836
+                ],
+                "result_count_noun_chunks": [
+                    107000000.0,
+                    188000.0,
+                    446.0
+                ],
+                "question_answer_similarity": [
+                    1.5891291573643684,
+                    2.786449721083045,
+                    2.8126478805206716
+                ],
+                "word_count_noun_chunks": [
+                    4.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    24100000.0,
+                    358000.0,
+                    17400000.0
+                ],
+                "word_count_raw": [
+                    1.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    38700000.0,
+                    5350.0,
+                    87.0
+                ],
+                "word_count_appended": [
+                    171.0,
+                    83.0,
+                    21.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Which of these utensils is tined?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -37357,6 +37879,95 @@
     },
     "What are candles commonly made out of?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "paraffin wax",
+                "bottom"
+            ],
+            "question": "what are candles commonly made out of?",
+            "lines": [
+                [
+                    0.01282051282051282,
+                    0.0,
+                    0.06219104025754133,
+                    0.37044284474516,
+                    5.849547955290512e-06,
+                    0.323943661971831,
+                    7.24042453854777e-05,
+                    6.536011545451198e-05,
+                    0.0,
+                    0.06993006993006994,
+                    0.14666666666666667,
+                    0.10809280334267965,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.0,
+                    0.0,
+                    0.05497577101306363,
+                    0.30550739268549004,
+                    0.6949820070690395,
+                    0.3440643863179074,
+                    0.5679988215584889,
+                    0.6671239370529499,
+                    0.0,
+                    0.5,
+                    0.41333333333333333,
+                    0.31069465061300783,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.9871794871794872,
+                    1.0,
+                    0.8828331887293951,
+                    0.32404976256935,
+                    0.3050121433830053,
+                    0.3319919517102616,
+                    0.43192877419612563,
+                    0.33281070283159553,
+                    1.0,
+                    0.43006993006993005,
+                    0.44,
+                    0.5812125460443125,
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "old legos",
+                "greek yogurt",
+                "paraffin wax"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "old legos": 0.06698779979394044,
+                "greek yogurt": 0.13007263477913922,
+                "paraffin wax": 0.8566170093953316
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     0.2161856066853593,
@@ -37429,96 +38040,7 @@
                     2190000.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "paraffin wax",
-                "bottom"
-            ],
-            "lines": [
-                [
-                    0.01282051282051282,
-                    0.0,
-                    0.06219104025754133,
-                    0.37044284474516,
-                    5.849547955290512e-06,
-                    0.323943661971831,
-                    7.24042453854777e-05,
-                    6.536011545451198e-05,
-                    0.0,
-                    0.06993006993006994,
-                    0.14666666666666667,
-                    0.10809280334267965,
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                [
-                    0.0,
-                    0.0,
-                    0.05497577101306363,
-                    0.30550739268549004,
-                    0.6949820070690395,
-                    0.3440643863179074,
-                    0.5679988215584889,
-                    0.6671239370529499,
-                    0.0,
-                    0.5,
-                    0.41333333333333333,
-                    0.31069465061300783,
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                [
-                    0.9871794871794872,
-                    1.0,
-                    0.8828331887293951,
-                    0.32404976256935,
-                    0.3050121433830053,
-                    0.3319919517102616,
-                    0.43192877419612563,
-                    0.33281070283159553,
-                    1.0,
-                    0.43006993006993005,
-                    0.44,
-                    0.5812125460443125,
-                    1.0,
-                    1.0,
-                    1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": 1
-            },
-            "question": "what are candles commonly made out of?",
-            "rate_limited": false,
-            "answers": [
-                "old legos",
-                "greek yogurt",
-                "paraffin wax"
-            ],
-            "ml_answers": {
-                "old legos": 0.06698779979394044,
-                "greek yogurt": 0.13007263477913922,
-                "paraffin wax": 0.8566170093953316
-            }
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -40661,99 +41183,11 @@
     },
     "Which of these animals is technically a fish?": {
         "raw_data": {
-            "data": {
-                "word_count_appended_relation_to_question": [
-                    1.0129460901772522,
-                    1.047398747273994,
-                    0.9396551625487536
-                ],
-                "result_count_important_words": [
-                    203000.0,
-                    416000.0,
-                    274000.0
-                ],
-                "wikipedia_search": [
-                    0.331002331002331,
-                    1.0769230769230769,
-                    0.5920745920745921
-                ],
-                "word_count_appended_bing": [
-                    76.0,
-                    68.0,
-                    24.0
-                ],
-                "answer_relation_to_question_bing": [
-                    0.25263157894736843,
-                    0.23859649122807017,
-                    1.5087719298245612
-                ],
-                "word_count_appended": [
-                    418.0,
-                    451.0,
-                    227.0
-                ],
-                "cosine_similarity_raw": [
-                    0.03819655627012253,
-                    0.05332100763916969,
-                    0.13411502540111542
-                ],
-                "result_count_noun_chunks": [
-                    832000.0,
-                    1020000.0,
-                    1020000.0
-                ],
-                "question_answer_similarity": [
-                    0.40250661777099594,
-                    0.45514686475507915,
-                    4.569922976195812
-                ],
-                "word_count_noun_chunks": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
-                    1.0
-                ],
-                "result_count_bing": [
-                    2830000.0,
-                    3610000.0,
-                    2490000.0
-                ],
-                "result_count": [
-                    169000.0,
-                    221000.0,
-                    221000.0
-                ],
-                "answer_relation_to_question": [
-                    0.3020893233659191,
-                    0.26682001150086254,
-                    1.4310906651332185
-                ]
-            },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
             "z-best_answer_by_ml": [
                 "whale shark",
                 "bottom"
             ],
+            "question": "which of these animals is technically a fish?",
             "lines": [
                 [
                     0.15104466168295955,
@@ -40807,22 +41241,110 @@
                     -1.0
                 ]
             ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which of these animals is technically a fish?",
             "rate_limited": false,
             "answers": [
                 "porpoise",
                 "orca",
                 "whale shark"
             ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
             "ml_answers": {
                 "whale shark": 0.6153047598985923,
                 "porpoise": 0.07421041335420196,
                 "orca": 0.12059552398842137
-            }
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.0129460901772522,
+                    1.047398747273994,
+                    0.9396551625487536
+                ],
+                "result_count_important_words": [
+                    203000.0,
+                    416000.0,
+                    274000.0
+                ],
+                "wikipedia_search": [
+                    0.331002331002331,
+                    1.0769230769230769,
+                    0.5920745920745921
+                ],
+                "word_count_appended_bing": [
+                    76.0,
+                    68.0,
+                    24.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.25263157894736843,
+                    0.23859649122807017,
+                    1.5087719298245612
+                ],
+                "cosine_similarity_raw": [
+                    0.03819655627012253,
+                    0.05332100763916969,
+                    0.13411502540111542
+                ],
+                "result_count_noun_chunks": [
+                    832000.0,
+                    1020000.0,
+                    1020000.0
+                ],
+                "question_answer_similarity": [
+                    0.40250661777099594,
+                    0.45514686475507915,
+                    4.569922976195812
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "result_count_bing": [
+                    2830000.0,
+                    3610000.0,
+                    2490000.0
+                ],
+                "word_count_appended": [
+                    418.0,
+                    451.0,
+                    227.0
+                ],
+                "answer_relation_to_question": [
+                    0.3020893233659191,
+                    0.26682001150086254,
+                    1.4310906651332185
+                ],
+                "result_count": [
+                    169000.0,
+                    221000.0,
+                    221000.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -43604,6 +44126,177 @@
             1
         ]
     },
+    "Which Baby-Sitters Club member was NOT included in the film version?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "logan",
+                "middle"
+            ],
+            "question": "which baby-sitters club member was not included in the film version?",
+            "lines": [
+                [
+                    0.3763888888888889,
+                    0.20833333333333337,
+                    0.3295411200021567,
+                    -0.09736283114737776,
+                    2.5697003282532105e-05,
+                    0.4048811013767209,
+                    0.36089385474860336,
+                    0.35551811288963775,
+                    0.25,
+                    0.3248987854251012,
+                    0.3157894736842105,
+                    0.3180168633154533,
+                    0.2857142857142857,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.24459706959706962,
+                    0.4129310344827586,
+                    0.3269949963080826,
+                    0.5825800199143827,
+                    0.4999881291017445,
+                    0.2546933667083855,
+                    0.3067039106145252,
+                    0.3100252737994945,
+                    0.5,
+                    0.3299595141700405,
+                    0.33458646616541354,
+                    0.3366517613839981,
+                    0.4285714285714286,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.3790140415140415,
+                    0.37873563218390804,
+                    0.3434638836897608,
+                    0.5147828112329951,
+                    0.499986173894973,
+                    0.3404255319148936,
+                    0.3324022346368715,
+                    0.33445661331086773,
+                    0.25,
+                    0.3451417004048583,
+                    0.34962406015037595,
+                    0.3453313753005486,
+                    0.2857142857142857,
+                    0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "jessi",
+                "logan",
+                "abby"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "logan": 0.44415963385851803,
+                "jessi": 0.06209524780704606,
+                "abby": 0.3552498727044096
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.5477639135836534,
+                    2.286875340624027,
+                    2.16536074579232
+                ],
+                "result_count_important_words": [
+                    2490000.0,
+                    3460000.0,
+                    3000000.0
+                ],
+                "wikipedia_search": [
+                    1.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended_bing": [
+                    49.0,
+                    44.0,
+                    40.0
+                ],
+                "answer_relation_to_question_bing": [
+                    2.9166666666666665,
+                    0.8706896551724138,
+                    1.2126436781609196
+                ],
+                "cosine_similarity_raw": [
+                    0.03919529914855957,
+                    0.03978075459599495,
+                    0.035993900150060654
+                ],
+                "result_count_noun_chunks": [
+                    3430000.0,
+                    4510000.0,
+                    3930000.0
+                ],
+                "question_answer_similarity": [
+                    -1.3476518038660288,
+                    0.18630069866776466,
+                    0.03335005324333906
+                ],
+                "word_count_noun_chunks": [
+                    3.0,
+                    1.0,
+                    3.0
+                ],
+                "result_count_bing": [
+                    152000.0,
+                    392000.0,
+                    255000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    346.0,
+                    336.0,
+                    306.0
+                ],
+                "answer_relation_to_question": [
+                    1.2361111111111112,
+                    2.554029304029304,
+                    1.2098595848595848
+                ],
+                "result_count": [
+                    3580000.0,
+                    85.0,
+                    99.0
+                ]
+            },
+            "negative_question": true
+        },
+        "right_answer": [
+            0,
+            0,
+            1
+        ]
+    },
     "Which of these activities has been an Olympic event?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -44004,8 +44697,8 @@
                 ]
             ],
             "fraction_answers": {
-                "city in california": 0.4643450531815426,
                 "japanese for \u201cvegetable\u201d": 0.26914601169097385,
+                "city in california": 0.4643450531815426,
                 "scientist edward napa": 0.26650893512748347
             },
             "question": "napa cabbage is named after what?",
@@ -44033,13 +44726,13 @@
                 "question_type"
             ],
             "ml_answers": {
-                "city in california": 0.5757220238212634,
                 "japanese for \u201cvegetable\u201d": 0.1226139585438765,
+                "city in california": 0.5757220238212634,
                 "scientist edward napa": 0.36705948320355886
             },
             "integer_answers": {
-                "city in california": 8,
                 "japanese for \u201cvegetable\u201d": 3,
+                "city in california": 8,
                 "scientist edward napa": 2
             },
             "categorical_data": {
@@ -46393,6 +47086,177 @@
         "right_answer": [
             0,
             1,
+            0
+        ]
+    },
+    "Where on the body would you find the manipura chakra?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "within the heart",
+                "middle"
+            ],
+            "question": "where on the body would you find the manipura chakra?",
+            "lines": [
+                [
+                    0.25798872180451127,
+                    0.25836562169778093,
+                    0.43018673862594775,
+                    0.3661990103487777,
+                    0.0,
+                    0.002857950441254986,
+                    0.7415708117728487,
+                    0.0,
+                    1.0,
+                    0.0625,
+                    0.25,
+                    0.04674519307894388,
+                    0,
+                    0,
+                    3.0
+                ],
+                [
+                    0.5643796992481203,
+                    0.29975343430785495,
+                    0.4019047055674782,
+                    0.31929720906221065,
+                    0.0018192263500574493,
+                    0.4773719418359976,
+                    5.6500633277931327e-05,
+                    0.0002337481659217704,
+                    0.0,
+                    0.453125,
+                    0.25,
+                    0.42947023479243784,
+                    0,
+                    0,
+                    3.0
+                ],
+                [
+                    0.17763157894736842,
+                    0.44188094399436423,
+                    0.16790855580657404,
+                    0.31450378058901163,
+                    0.9981807736499425,
+                    0.5197701077227475,
+                    0.25837268759387344,
+                    0.9997662518340782,
+                    0.0,
+                    0.484375,
+                    0.5,
+                    0.5237845721286183,
+                    0,
+                    0,
+                    3.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "over the belly button",
+                "within the heart",
+                "between the eyes"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "over the belly button": 0.13265469212714484,
+                "within the heart": 0.41999139127883744,
+                "between the eyes": 0.3105289929303942
+            },
+            "categorical_data": {
+                "question_type": 3
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.1869807723157755,
+                    1.7178809391697514,
+                    2.095138288514473
+                ],
+                "result_count_important_words": [
+                    1260000.0,
+                    96.0,
+                    439000.0
+                ],
+                "wikipedia_search": [
+                    2.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended_bing": [
+                    2.0,
+                    2.0,
+                    4.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.5167312433955618,
+                    0.5995068686157098,
+                    0.8837618879887283
+                ],
+                "cosine_similarity_raw": [
+                    0.11053303629159927,
+                    0.10326619446277618,
+                    0.043142758309841156
+                ],
+                "result_count_noun_chunks": [
+                    0,
+                    83.0,
+                    355000.0
+                ],
+                "question_answer_similarity": [
+                    15.068062618374825,
+                    13.138184987008572,
+                    12.940948843955994
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    182000.0,
+                    30400000.0,
+                    33100000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    4.0,
+                    29.0,
+                    31.0
+                ],
+                "answer_relation_to_question": [
+                    0.5159774436090225,
+                    1.1287593984962405,
+                    0.35526315789473684
+                ],
+                "result_count": [
+                    0,
+                    76.0,
+                    41700.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
             0
         ]
     },
@@ -50099,75 +50963,75 @@
             1
         ]
     },
-    "By definition, an Anglophile would be most interested in which of these things?": {
+    "How did Mason jars get their name?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "geometry"
+                "named after inventor"
             ],
             "lines": [
                 [
-                    0.3846153846153846,
+                    0.0,
+                    0.0,
+                    0.15369554125848628,
+                    0.25523113929291164,
+                    1.1825046888881578e-05,
+                    0.3235955056179775,
+                    3.795049850826078e-06,
+                    4.292908695640097e-06,
+                    0.0,
+                    0.56,
+                    0.3333333333333333,
+                    0.08947846179237498,
+                    0,
+                    0,
+                    5.0
+                ],
+                [
+                    0.3608644144921624,
+                    0.3767123287671233,
+                    0.4403464473519183,
+                    0.39869682594891903,
+                    0.9999876608206377,
+                    0.31235955056179776,
+                    0.9999956356926716,
+                    0.9999952020432226,
+                    0.0,
+                    0.24,
+                    0.3333333333333333,
+                    0.8456345931671894,
+                    0,
+                    0,
+                    5.0
+                ],
+                [
+                    0.6391355855078377,
+                    0.6232876712328768,
+                    0.4059580113895955,
+                    0.34607203475816933,
+                    5.141324734296338e-07,
+                    0.36404494382022473,
+                    5.692574776239117e-07,
+                    5.050480818400113e-07,
                     1.0,
-                    0.4353186990502371,
-                    0.3023327550698545,
-                    0.41313620105961785,
-                    0.9471673810211197,
-                    0.09572935319514939,
-                    0.41552019037703575,
-                    0.26666666666666666,
-                    0.6735537190082644,
-                    0.7575757575757576,
-                    0.40635178845756753,
+                    0.2,
+                    0.3333333333333333,
+                    0.06488694504043571,
                     0,
                     0,
-                    -1.0
-                ],
-                [
-                    0.5384615384615384,
-                    0.0,
-                    0.40309302202234426,
-                    0.011893953872856482,
-                    0.5862326186332077,
-                    0.006418086122276755,
-                    0.903840593619177,
-                    0.5837733323417863,
-                    0.7333333333333334,
-                    0.2768595041322314,
-                    0.18181818181818182,
-                    0.4200617336577158,
-                    0,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.07692307692307693,
-                    0.0,
-                    0.1615882789274186,
-                    0.685773291057289,
-                    0.0006311803071744162,
-                    0.046414532856603526,
-                    0.00043005318567364064,
-                    0.0007064772811779579,
-                    0.0,
-                    0.049586776859504134,
-                    0.06060606060606061,
-                    0.17358647788471665,
-                    0,
-                    0,
-                    -1.0
+                    5.0
                 ]
             ],
             "fraction_answers": {
-                "geometry": 0.5081639913413879,
-                "downton abbey": 0.3871488248345541,
-                "trout fishing": 0.10468718382405795
+                "named after inventor": 0.14294615785837658,
+                "invented in mason, al": 0.525660499348248,
+                "masons used them": 0.3313933427933755
             },
-            "question": "by definition, an anglophile would be most interested in which of these things?",
+            "question": "how did mason jars get their name?",
             "rate_limited": false,
             "answers": [
-                "geometry",
-                "downton abbey",
-                "trout fishing"
+                "named after inventor",
+                "invented in mason, al",
+                "masons used them"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -50187,95 +51051,95 @@
                 "question_type"
             ],
             "ml_answers": {
-                "geometry": 0.7970866997107331,
-                "downton abbey": 0.2861712414301517,
-                "trout fishing": 0.12191230027485045
+                "named after inventor": 0.2952405103978026,
+                "invented in mason, al": 0.12681941571163238,
+                "masons used them": 0.18317508568592022
             },
-            "negative_question": false,
+            "integer_answers": {
+                "named after inventor": 2,
+                "invented in mason, al": 6,
+                "masons used them": 4
+            },
             "categorical_data": {
-                "question_type": -1
+                "question_type": 5
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    1.6254071538302701,
-                    1.6802469346308633,
-                    0.6943459115388666
+                    0.17895692358474996,
+                    1.6912691863343787,
+                    0.12977389008087142
                 ],
                 "result_count_important_words": [
-                    197000.0,
-                    1860000.0,
-                    885.0
+                    20.0,
+                    5270000.0,
+                    3.0
                 ],
                 "wikipedia_search": [
-                    0.8,
-                    2.2,
-                    0.0
+                    0.0,
+                    0.0,
+                    1.0
                 ],
                 "word_count_appended_bing": [
-                    50.0,
-                    12.0,
-                    4.0
+                    2.0,
+                    2.0,
+                    2.0
                 ],
                 "answer_relation_to_question_bing": [
-                    1.0,
                     0.0,
-                    0.0
+                    0.3767123287671233,
+                    0.6232876712328768
                 ],
                 "cosine_similarity_raw": [
-                    0.05387365072965622,
-                    0.04988550394773483,
-                    0.019997648894786835
+                    0.0738634318113327,
+                    0.2116229236125946,
+                    0.1950964331626892
                 ],
                 "result_count_noun_chunks": [
-                    44700.0,
-                    62800.0,
-                    76.0
+                    17.0,
+                    3960000.0,
+                    2.0
                 ],
                 "question_answer_similarity": [
-                    2.0908243283629417,
-                    0.08225429663434625,
-                    4.74256082624197
+                    6.142987018451095,
+                    9.59596635773778,
+                    8.329375572502613
                 ],
                 "word_count_noun_chunks": [
                     0.0,
                     0.0,
                     0.0
                 ],
+                "result_count_bing": [
+                    1440000.0,
+                    1390000.0,
+                    1620000.0
+                ],
                 "word_count_raw": [
                     0.0,
                     0.0,
                     0.0
                 ],
-                "result_count_bing": [
-                    8530000.0,
-                    57800.0,
-                    418000.0
-                ],
-                "word_count_appended": [
-                    163.0,
-                    67.0,
-                    12.0
+                "result_count": [
+                    46.0,
+                    3890000.0,
+                    2.0
                 ],
                 "answer_relation_to_question": [
-                    1.1538461538461537,
-                    1.6153846153846154,
-                    0.23076923076923078
+                    0.0,
+                    0.7217288289843247,
+                    1.2782711710156751
                 ],
-                "result_count": [
-                    43200.0,
-                    61300.0,
-                    66.0
+                "word_count_appended": [
+                    14.0,
+                    6.0,
+                    5.0
                 ]
             },
-            "integer_answers": {
-                "geometry": 5,
-                "downton abbey": 6,
-                "trout fishing": 1
-            }
+            "negative_question": false
         },
         "right_answer": [
-            0,
             1,
+            0,
             0
         ]
     },
@@ -52713,6 +53577,177 @@
                 ]
             },
             "negative_question": false
+        },
+        "right_answer": [
+            0,
+            1,
+            0
+        ]
+    },
+    "Nerf balls were initially marketed as the world\u2019s first what?": {
+        "raw_data": {
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.1748832105725149,
+                    2.5754581155197322,
+                    1.2496586739077529
+                ],
+                "result_count_important_words": [
+                    3.0,
+                    42.0,
+                    27.0
+                ],
+                "wikipedia_search": [
+                    0.0,
+                    0.18,
+                    1.8199999999999998
+                ],
+                "word_count_appended_bing": [
+                    2.0,
+                    22.0,
+                    2.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.26506024096385544,
+                    1.2289156626506024,
+                    0.5060240963855421
+                ],
+                "cosine_similarity_raw": [
+                    0.03736530989408493,
+                    0.11996807903051376,
+                    0.03960432857275009
+                ],
+                "result_count_noun_chunks": [
+                    1160.0,
+                    2810000.0,
+                    6520.0
+                ],
+                "question_answer_similarity": [
+                    5.963911361992359,
+                    5.1238993145525455,
+                    6.4164922423660755
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    43300.0,
+                    42200.0,
+                    42200.0
+                ],
+                "word_count_appended": [
+                    14.0,
+                    34.0,
+                    20.0
+                ],
+                "answer_relation_to_question": [
+                    0.1920909540286703,
+                    1.9423628274839349,
+                    0.865546218487395
+                ],
+                "result_count": [
+                    22.0,
+                    36.0,
+                    34.0
+                ]
+            },
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "z-best_answer_by_ml": [
+                "indoor ball",
+                "middle"
+            ],
+            "lines": [
+                [
+                    0.06403031800955676,
+                    0.13253012048192772,
+                    0.1897316083933386,
+                    0.3407111605426559,
+                    0.2391304347826087,
+                    0.33907595927956147,
+                    0.041666666666666664,
+                    0.0004116862099315749,
+                    0.0,
+                    0.20588235294117646,
+                    0.07692307692307693,
+                    0.23497664211450298,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.6474542758279783,
+                    0.6144578313253012,
+                    0.6091676117457225,
+                    0.29272227167737597,
+                    0.391304347826087,
+                    0.33046202036021927,
+                    0.5833333333333334,
+                    0.9972743533687289,
+                    0.09000000000000001,
+                    0.5,
+                    0.8461538461538461,
+                    0.5150916231039464,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.288515406162465,
+                    0.25301204819277107,
+                    0.2011007798609388,
+                    0.3665665677799681,
+                    0.3695652173913043,
+                    0.33046202036021927,
+                    0.375,
+                    0.0023139604213395417,
+                    0.91,
+                    0.29411764705882354,
+                    0.07692307692307693,
+                    0.24993173478155056,
+                    0,
+                    0,
+                    1.0
+                ]
+            ],
+            "negative_question": false,
+            "categorical_data": {
+                "question_type": 1
+            },
+            "question": "nerf balls were initially marketed as the world\u2019s first what?",
+            "rate_limited": false,
+            "answers": [
+                "safety ball",
+                "indoor ball",
+                "baby ball"
+            ],
+            "ml_answers": {
+                "safety ball": 0.05962817656946524,
+                "baby ball": 0.03847410826580065,
+                "indoor ball": 0.7134338504020628
+            }
         },
         "right_answer": [
             0,
@@ -55524,6 +56559,95 @@
     },
     "Which of these is a synonym for the opposite of a financial bull market?": {
         "raw_data": {
+            "z-best_answer_by_ml": [
+                "ursine market",
+                "top"
+            ],
+            "question": "which of these is a synonym for the opposite of a financial bull market?",
+            "lines": [
+                [
+                    0.5348185847432269,
+                    0.4080717488789237,
+                    0.7802610545855261,
+                    0.2512218070583205,
+                    0.5211267605633803,
+                    0.0862521891418564,
+                    0.33093525179856115,
+                    0.33088235294117646,
+                    0.375,
+                    0.4,
+                    0.3333333333333333,
+                    0.44926350785505476,
+                    0,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.3477969158074659,
+                    0.47533632286995514,
+                    0.11151132625946364,
+                    0.3608636755742677,
+                    0.4788732394366197,
+                    0.0862521891418564,
+                    0.6690647482014388,
+                    0.6691176470588235,
+                    0.5,
+                    0.4,
+                    0.3333333333333333,
+                    0.4210813546708607,
+                    0,
+                    0,
+                    -1.0
+                ],
+                [
+                    0.11738449944930729,
+                    0.11659192825112107,
+                    0.10822761915501032,
+                    0.3879145173674118,
+                    0.0,
+                    0.8274956217162872,
+                    0.0,
+                    0.0,
+                    0.125,
+                    0.2,
+                    0.3333333333333333,
+                    0.1296551374740845,
+                    0,
+                    0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "ursine market",
+                "taurine market",
+                "porcine market"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "taurine market": 0.16003110577253557,
+                "porcine market": 0.04173196503083852,
+                "ursine market": 0.8428619714735222
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
             "data": {
                 "word_count_appended_relation_to_question": [
                     2.2463175392752737,
@@ -55596,96 +56720,7 @@
                     3.0
                 ]
             },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
-            "z-best_answer_by_ml": [
-                "ursine market",
-                "top"
-            ],
-            "lines": [
-                [
-                    0.5348185847432269,
-                    0.4080717488789237,
-                    0.7802610545855261,
-                    0.2512218070583205,
-                    0.5211267605633803,
-                    0.0862521891418564,
-                    0.33093525179856115,
-                    0.33088235294117646,
-                    0.375,
-                    0.4,
-                    0.3333333333333333,
-                    0.44926350785505476,
-                    0,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.3477969158074659,
-                    0.47533632286995514,
-                    0.11151132625946364,
-                    0.3608636755742677,
-                    0.4788732394366197,
-                    0.0862521891418564,
-                    0.6690647482014388,
-                    0.6691176470588235,
-                    0.5,
-                    0.4,
-                    0.3333333333333333,
-                    0.4210813546708607,
-                    0,
-                    0,
-                    -1.0
-                ],
-                [
-                    0.11738449944930729,
-                    0.11659192825112107,
-                    0.10822761915501032,
-                    0.3879145173674118,
-                    0.0,
-                    0.8274956217162872,
-                    0.0,
-                    0.0,
-                    0.125,
-                    0.2,
-                    0.3333333333333333,
-                    0.1296551374740845,
-                    0,
-                    0,
-                    -1.0
-                ]
-            ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which of these is a synonym for the opposite of a financial bull market?",
-            "rate_limited": false,
-            "answers": [
-                "ursine market",
-                "taurine market",
-                "porcine market"
-            ],
-            "ml_answers": {
-                "taurine market": 0.16003110577253557,
-                "porcine market": 0.04173196503083852,
-                "ursine market": 0.8428619714735222
-            }
+            "negative_question": false
         },
         "right_answer": [
             1,
@@ -59922,8 +60957,8 @@
                 "question_type"
             ],
             "ml_answers": {
-                "kayak paddle": 0.5403381919653253,
                 "cricket bat": 0.10264073518269452,
+                "kayak paddle": 0.5403381919653253,
                 "bowling ball": 0.6567002338661903
             },
             "categorical_data": {
@@ -61942,6 +62977,177 @@
             0
         ]
     },
+    "In western media, what are astronauts from China called?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "taikonauts",
+                "top"
+            ],
+            "question": "in western media, what are astronauts from china called?",
+            "lines": [
+                [
+                    0.34600189782269625,
+                    0.5,
+                    0.8168590644701155,
+                    0,
+                    0.9748677248677249,
+                    0.334453781512605,
+                    0.9757653061224489,
+                    0.9874917709019092,
+                    0.5,
+                    0.7241379310344828,
+                    0.3761467889908257,
+                    0.70611839401766,
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                [
+                    0.15804195804195803,
+                    0.26666666666666666,
+                    0.036772840031078086,
+                    0,
+                    0.0,
+                    0.33277310924369746,
+                    0.0,
+                    0.0,
+                    0.0,
+                    0.08150470219435736,
+                    0.24770642201834864,
+                    0.08785053899983056,
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.4959561441353458,
+                    0.2333333333333333,
+                    0.14636809549880644,
+                    0,
+                    0.02513227513227513,
+                    0.33277310924369746,
+                    0.02423469387755102,
+                    0.012508229098090849,
+                    0.5,
+                    0.19435736677115986,
+                    0.3761467889908257,
+                    0.20603106698250953,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "taikonauts",
+                "sinonauts",
+                "spationauts"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "spationauts": 0.0526209568374667,
+                "taikonauts": 0.9633777924817981,
+                "sinonauts": 0.03424476088227854
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    3.5305919700882997,
+                    0.4392526949991528,
+                    1.0301553349125476
+                ],
+                "result_count_important_words": [
+                    765.0,
+                    0,
+                    19.0
+                ],
+                "wikipedia_search": [
+                    2.0,
+                    0.0,
+                    2.0
+                ],
+                "word_count_appended_bing": [
+                    41.0,
+                    27.0,
+                    41.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.5,
+                    0.8,
+                    0.7
+                ],
+                "cosine_similarity_raw": [
+                    0.552805483341217,
+                    0.024885844439268112,
+                    0.09905391186475754
+                ],
+                "result_count_noun_chunks": [
+                    1500.0,
+                    0,
+                    19.0
+                ],
+                "question_answer_similarity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_noun_chunks": [
+                    5.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    1990000.0,
+                    1980000.0,
+                    1980000.0
+                ],
+                "word_count_raw": [
+                    11.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    737.0,
+                    0,
+                    19.0
+                ],
+                "answer_relation_to_question": [
+                    1.7300094891134812,
+                    0.7902097902097902,
+                    2.479780720676729
+                ],
+                "word_count_appended": [
+                    231.0,
+                    26.0,
+                    62.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "Which three-letter-titled movie grossed the most worldwide?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -62286,6 +63492,177 @@
                 ]
             },
             "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
+    "Which of these words likely came into English through Yiddish?": {
+        "raw_data": {
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.4661930847941007,
+                    1.1101505116009078,
+                    1.4236564036049915
+                ],
+                "result_count_important_words": [
+                    189000.0,
+                    27600.0,
+                    17700.0
+                ],
+                "wikipedia_search": [
+                    0.2,
+                    0.0,
+                    0.8
+                ],
+                "word_count_appended_bing": [
+                    42.0,
+                    27.0,
+                    36.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.16666666666666666,
+                    0.3333333333333333,
+                    0.5
+                ],
+                "cosine_similarity_raw": [
+                    0.07635357975959778,
+                    0.017388587817549706,
+                    0.03865063935518265
+                ],
+                "result_count_noun_chunks": [
+                    174000.0,
+                    7290.0,
+                    4660.0
+                ],
+                "question_answer_similarity": [
+                    1.561606370843947,
+                    -0.22739162761718035,
+                    0.12052942626178265
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    5.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    504000.0,
+                    83900.0,
+                    93600.0
+                ],
+                "word_count_appended": [
+                    202.0,
+                    98.0,
+                    158.0
+                ],
+                "answer_relation_to_question": [
+                    1.8405797101449275,
+                    0.4806763285024155,
+                    2.6787439613526574
+                ],
+                "result_count": [
+                    88.0,
+                    53.0,
+                    65.0
+                ]
+            },
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "z-best_answer_by_ml": [
+                "glitch",
+                "top"
+            ],
+            "lines": [
+                [
+                    0.3681159420289855,
+                    0.16666666666666666,
+                    0.5767200010996394,
+                    1.073457727892436,
+                    0.42718446601941745,
+                    0.7395451210564931,
+                    0.8066581306017926,
+                    0.9357354127453616,
+                    0.2,
+                    0.4410480349344978,
+                    0.4,
+                    0.49323861695882015,
+                    0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.0961352657004831,
+                    0.3333333333333333,
+                    0.13134088037303662,
+                    -0.1563103894048432,
+                    0.25728155339805825,
+                    0.12311078503301541,
+                    0.117797695262484,
+                    0.039204087120193604,
+                    0.0,
+                    0.21397379912663755,
+                    0.2571428571428571,
+                    0.22203010232018155,
+                    0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.5357487922705315,
+                    0.5,
+                    0.291939118527324,
+                    0.08285266151240717,
+                    0.3155339805825243,
+                    0.13734409391049157,
+                    0.07554417413572344,
+                    0.025060500134444743,
+                    0.8,
+                    0.34497816593886466,
+                    0.34285714285714286,
+                    0.2847312807209983,
+                    0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "negative_question": false,
+            "categorical_data": {
+                "question_type": -1
+            },
+            "question": "which of these words likely came into english through yiddish?",
+            "rate_limited": false,
+            "answers": [
+                "glitch",
+                "ritzy",
+                "kerfuffle"
+            ],
+            "ml_answers": {
+                "glitch": 0.8515389479831187,
+                "kerfuffle": 0.4210460951483592,
+                "ritzy": 0.09681410671519936
+            }
         },
         "right_answer": [
             1,
@@ -66338,8 +67715,8 @@
                 ]
             ],
             "fraction_answers": {
-                "mascara": 0.23031878577761722,
                 "lipstick": 0.6017582158364523,
+                "mascara": 0.23031878577761722,
                 "eyeliner": 0.1679229983859305
             },
             "question": "what makeup item often contains dried cochineal bugs as an ingredient?",
@@ -66367,8 +67744,8 @@
                 "question_type"
             ],
             "ml_answers": {
-                "mascara": 0.3221183380254922,
                 "lipstick": 0.7745553692078216,
+                "mascara": 0.3221183380254922,
                 "eyeliner": 0.13918375967050825
             },
             "negative_question": false,
@@ -66448,8 +67825,8 @@
                 ]
             },
             "integer_answers": {
-                "mascara": 1,
                 "lipstick": 13,
+                "mascara": 1,
                 "eyeliner": 0
             }
         },
@@ -68013,6 +69390,177 @@
                     118000.0,
                     17000.0,
                     183000.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
+    "San Francisco's Waldo Tunnel was renamed in 2016 after a noted what?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "actor",
+                "top"
+            ],
+            "question": "san francisco's waldo tunnel was renamed in 2016 after a noted what?",
+            "lines": [
+                [
+                    0.31451612903225806,
+                    0.1417910447761194,
+                    0.6463897874195897,
+                    0.3317064476395488,
+                    0.08569868995633188,
+                    0.45289063637687493,
+                    0.08644668666484866,
+                    0.414985590778098,
+                    0.7346153846153847,
+                    0.40988372093023256,
+                    0.38461538461538464,
+                    0.4045882640940392,
+                    0.7777777777777778,
+                    1.0,
+                    1.0
+                ],
+                [
+                    0.6532258064516129,
+                    0.1417910447761194,
+                    0.28154838497465184,
+                    0.3552129343473499,
+                    0.37936681222707425,
+                    0.05198776758409786,
+                    0.37905644941368966,
+                    0.22622478386167147,
+                    0.2653846153846154,
+                    0.311046511627907,
+                    0.2967032967032967,
+                    0.3242749602386578,
+                    0.2222222222222222,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.03225806451612903,
+                    0.7164179104477612,
+                    0.07206182760575836,
+                    0.3130806180131013,
+                    0.5349344978165939,
+                    0.4951215960390272,
+                    0.5344968639214617,
+                    0.35878962536023057,
+                    0.0,
+                    0.27906976744186046,
+                    0.31868131868131866,
+                    0.27113677566730293,
+                    0.0,
+                    0.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "actor",
+                "politician",
+                "athlete"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "athlete": 0.03851678815706887,
+                "politician": 0.08233153119771888,
+                "actor": 0.8376023601519037
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.8321178486582745,
+                    2.269924721670605,
+                    1.8979574296711206
+                ],
+                "result_count_important_words": [
+                    31700.0,
+                    139000.0,
+                    196000.0
+                ],
+                "wikipedia_search": [
+                    1.4692307692307693,
+                    0.5307692307692308,
+                    0.0
+                ],
+                "word_count_appended_bing": [
+                    35.0,
+                    27.0,
+                    29.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.2835820895522388,
+                    0.2835820895522388,
+                    1.4328358208955223
+                ],
+                "cosine_similarity_raw": [
+                    0.12913711369037628,
+                    0.05624832957983017,
+                    0.014396663755178452
+                ],
+                "result_count_noun_chunks": [
+                    5760000.0,
+                    3140000.0,
+                    4980000.0
+                ],
+                "question_answer_similarity": [
+                    2.3233485650271177,
+                    2.4879934266209602,
+                    2.192888952791691
+                ],
+                "word_count_noun_chunks": [
+                    14.0,
+                    4.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    31100.0,
+                    3570.0,
+                    34000.0
+                ],
+                "word_count_raw": [
+                    5.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_appended": [
+                    141.0,
+                    107.0,
+                    96.0
+                ],
+                "answer_relation_to_question": [
+                    1.2580645161290323,
+                    2.6129032258064515,
+                    0.12903225806451613
+                ],
+                "result_count": [
+                    31400.0,
+                    139000.0,
+                    196000.0
                 ]
             },
             "negative_question": false
@@ -70818,75 +72366,71 @@
             0
         ]
     },
-    "Which of these is a French territory?": {
+    "The part of a book disclosing its publication info is known as what?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "french guiana"
+                "colophon",
+                "middle"
             ],
+            "question": "the part of a book disclosing its publication info is known as what?",
             "lines": [
                 [
-                    0.7015376166941242,
-                    0.71712158808933,
-                    0.7572529712598172,
-                    0.22107387686146088,
-                    0.9998595287788639,
-                    0.5757561278608629,
-                    0.9981115148908668,
-                    0.9982419187232177,
-                    0.48484848484848486,
-                    0.6218181818181818,
-                    0.8235294117647058,
-                    0.48912059909511674,
-                    1.0,
-                    1.0,
-                    -1.0
-                ],
-                [
-                    0.18753432180120816,
-                    0.184863523573201,
-                    0.09038061833842549,
-                    0.3876407651729475,
-                    0.00013822347490870598,
-                    0.008552725882746429,
-                    0.0018839855903562545,
-                    0.0017539203805604197,
-                    0.18181818181818182,
-                    0.3018181818181818,
-                    0.11764705882352941,
-                    0.32189921472775496,
-                    0.0,
-                    0.0,
-                    -1.0
-                ],
-                [
-                    0.11092806150466777,
-                    0.09801488833746898,
-                    0.15236641040175739,
-                    0.3912853579655916,
-                    2.247746227487368e-06,
-                    0.41569114625639064,
-                    4.499518776967863e-06,
-                    4.160896221967805e-06,
+                    0.32449118265072685,
+                    0.16501867721379918,
+                    0.35975608287271055,
+                    -0.0,
+                    0.0003862495171881035,
                     0.3333333333333333,
-                    0.07636363636363637,
-                    0.058823529411764705,
-                    0.1889801861771283,
+                    0.001296616448505804,
+                    0.0001508393130346715,
+                    0.35389831687300044,
+                    0.15492957746478872,
+                    0.32926829268292684,
+                    0.19335487049280956,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.6294194318744128,
+                    0.7196220610854757,
+                    0.6356767634506988,
+                    1.0,
+                    0.9996137504828119,
+                    0.3333333333333333,
+                    0.9987033835514942,
+                    0.9998491606869653,
+                    0.6461016831269996,
+                    0.7887323943661971,
+                    0.34146341463414637,
+                    0.7445214005042982,
+                    0,
+                    0,
+                    1.0
+                ],
+                [
+                    0.046089385474860335,
+                    0.11535926170072512,
+                    0.004567153676590644,
+                    -0.0,
+                    0.0,
+                    0.3333333333333333,
                     0.0,
                     0.0,
-                    -1.0
+                    0.0,
+                    0.056338028169014086,
+                    0.32926829268292684,
+                    0.062123729002892245,
+                    0,
+                    0,
+                    1.0
                 ]
             ],
-            "fraction_answers": {
-                "french guiana": 0.7420194157632166,
-                "french stewart": 0.12756648010014301,
-                "french cyprus": 0.1304141041366404
-            },
-            "question": "which of these is a french territory?",
             "rate_limited": false,
             "answers": [
-                "french guiana",
-                "french stewart",
-                "french cyprus"
+                "propindex",
+                "colophon",
+                "rectograf"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -70906,95 +72450,90 @@
                 "question_type"
             ],
             "ml_answers": {
-                "french guiana": 0.8130286131296881,
-                "french stewart": 0.17421635870487695,
-                "french cyprus": 0.07792305784352663
-            },
-            "integer_answers": {
-                "french guiana": 12,
-                "french stewart": 0,
-                "french cyprus": 1
+                "propindex": 0.08172597999358781,
+                "colophon": 0.8294154544982598,
+                "rectograf": 0.05170071795827859
             },
             "categorical_data": {
-                "question_type": -1
+                "question_type": 1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    0.9782411981902335,
-                    0.6437984294555099,
-                    0.3779603723542566
+                    0.9667743524640477,
+                    3.722607002521491,
+                    0.31061864501446124
                 ],
                 "result_count_important_words": [
-                    99600000.0,
-                    188000.0,
-                    449.0
+                    84.0,
+                    64700.0,
+                    0
                 ],
                 "wikipedia_search": [
-                    0.9696969696969697,
-                    0.36363636363636365,
-                    0.6666666666666666
+                    1.4155932674920018,
+                    2.5844067325079982,
+                    0.0
                 ],
                 "answer_relation_to_question": [
-                    1.4030752333882481,
-                    0.37506864360241626,
-                    0.22185612300933552
+                    1.2979647306029074,
+                    2.5176777274976514,
+                    0.18435754189944134
                 ],
                 "word_count_appended_bing": [
+                    27.0,
                     28.0,
-                    4.0,
-                    2.0
+                    27.0
                 ],
                 "answer_relation_to_question_bing": [
-                    1.43424317617866,
-                    0.369727047146402,
-                    0.19602977667493796
+                    0.49505603164139755,
+                    2.158866183256427,
+                    0.34607778510217535
                 ],
                 "cosine_similarity_raw": [
-                    0.13738316297531128,
-                    0.016397129744291306,
-                    0.027642782777547836
+                    0.25056949257850647,
+                    0.4427477717399597,
+                    0.0031810146756470203
                 ],
                 "result_count_noun_chunks": [
-                    107000000.0,
-                    188000.0,
-                    446.0
+                    700.0,
+                    4640000.0,
+                    0
                 ],
                 "question_answer_similarity": [
-                    1.5891291573643684,
-                    2.786449721083045,
-                    2.8126478805206716
+                    0.0,
+                    -0.27694059861823916,
+                    0.0
                 ],
                 "word_count_noun_chunks": [
-                    4.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
                 "result_count_bing": [
-                    24100000.0,
-                    358000.0,
-                    17400000.0
+                    339000.0,
+                    339000.0,
+                    339000.0
                 ],
                 "word_count_raw": [
-                    1.0,
+                    0.0,
                     0.0,
                     0.0
                 ],
                 "result_count": [
-                    38700000.0,
-                    5350.0,
-                    87.0
+                    25.0,
+                    64700.0,
+                    0
                 ],
                 "word_count_appended": [
-                    171.0,
-                    83.0,
-                    21.0
+                    44.0,
+                    224.0,
+                    16.0
                 ]
             },
             "negative_question": false
         },
         "right_answer": [
-            1,
             0,
+            1,
             0
         ]
     },
@@ -72022,99 +73561,11 @@
     },
     "Which Billy Joel album opens with a sound effect that\u2019s appropriate to its title?": {
         "raw_data": {
-            "data": {
-                "word_count_appended_relation_to_question": [
-                    2.5594621981119223,
-                    2.717530202068418,
-                    2.7230075998196597
-                ],
-                "result_count_important_words": [
-                    1700.0,
-                    1770.0,
-                    7090.0
-                ],
-                "wikipedia_search": [
-                    1.5819611355322445,
-                    0.30472958373359826,
-                    5.113309280734157
-                ],
-                "word_count_appended_bing": [
-                    8.0,
-                    43.0,
-                    8.0
-                ],
-                "answer_relation_to_question_bing": [
-                    1.3018447837150129,
-                    1.2963104325699746,
-                    3.401844783715013
-                ],
-                "word_count_appended": [
-                    42.0,
-                    183.0,
-                    47.0
-                ],
-                "cosine_similarity_raw": [
-                    0.15543712675571442,
-                    0.027941009029746056,
-                    0.0724606066942215
-                ],
-                "result_count_noun_chunks": [
-                    2220.0,
-                    2210.0,
-                    12600.0
-                ],
-                "question_answer_similarity": [
-                    8.24098151922226,
-                    0.013104887679219246,
-                    6.601095989346504
-                ],
-                "word_count_noun_chunks": [
-                    5.0,
-                    3.0,
-                    6.0
-                ],
-                "word_count_raw": [
-                    2.0,
-                    0.0,
-                    2.0
-                ],
-                "result_count_bing": [
-                    14400.0,
-                    263000.0,
-                    16800.0
-                ],
-                "result_count": [
-                    1230.0,
-                    1680.0,
-                    2180.0
-                ],
-                "answer_relation_to_question": [
-                    2.299170857269862,
-                    3.4739415921336003,
-                    1.2268875505965382
-                ]
-            },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
             "z-best_answer_by_ml": [
                 "glass houses",
                 "bottom"
             ],
+            "question": "which billy joel album opens with a sound effect that\u2019s appropriate to its title?",
             "lines": [
                 [
                     0.32845297960998027,
@@ -72168,22 +73619,110 @@
                     -1.0
                 ]
             ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which billy joel album opens with a sound effect that\u2019s appropriate to its title?",
             "rate_limited": false,
             "answers": [
                 "storm front",
                 "turnstiles",
                 "glass houses"
             ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
             "ml_answers": {
                 "turnstiles": 0.2151157602690617,
                 "storm front": 0.26056389887179504,
                 "glass houses": 0.35152267732224707
-            }
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    2.5594621981119223,
+                    2.717530202068418,
+                    2.7230075998196597
+                ],
+                "result_count_important_words": [
+                    1700.0,
+                    1770.0,
+                    7090.0
+                ],
+                "wikipedia_search": [
+                    1.5819611355322445,
+                    0.30472958373359826,
+                    5.113309280734157
+                ],
+                "word_count_appended_bing": [
+                    8.0,
+                    43.0,
+                    8.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.3018447837150129,
+                    1.2963104325699746,
+                    3.401844783715013
+                ],
+                "cosine_similarity_raw": [
+                    0.15543712675571442,
+                    0.027941009029746056,
+                    0.0724606066942215
+                ],
+                "result_count_noun_chunks": [
+                    2220.0,
+                    2210.0,
+                    12600.0
+                ],
+                "question_answer_similarity": [
+                    8.24098151922226,
+                    0.013104887679219246,
+                    6.601095989346504
+                ],
+                "word_count_noun_chunks": [
+                    5.0,
+                    3.0,
+                    6.0
+                ],
+                "word_count_raw": [
+                    2.0,
+                    0.0,
+                    2.0
+                ],
+                "result_count_bing": [
+                    14400.0,
+                    263000.0,
+                    16800.0
+                ],
+                "word_count_appended": [
+                    42.0,
+                    183.0,
+                    47.0
+                ],
+                "answer_relation_to_question": [
+                    2.299170857269862,
+                    3.4739415921336003,
+                    1.2268875505965382
+                ],
+                "result_count": [
+                    1230.0,
+                    1680.0,
+                    2180.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             0,
@@ -74285,99 +75824,11 @@
     },
     "Which piece of clothing is meant to protect your head from the cold?": {
         "raw_data": {
-            "data": {
-                "word_count_appended_relation_to_question": [
-                    1.88151070177167,
-                    0.5909078308885537,
-                    3.5275814673397767
-                ],
-                "result_count_important_words": [
-                    173000.0,
-                    10.0,
-                    1330000.0
-                ],
-                "wikipedia_search": [
-                    2.4048195549406204,
-                    1.163265306122449,
-                    1.4319151389369307
-                ],
-                "word_count_appended_bing": [
-                    48.0,
-                    13.0,
-                    2.0
-                ],
-                "answer_relation_to_question_bing": [
-                    2.36697247706422,
-                    0.26605504587155965,
-                    1.3669724770642202
-                ],
-                "word_count_appended": [
-                    155.0,
-                    11.0,
-                    28.0
-                ],
-                "cosine_similarity_raw": [
-                    0.0878666341304779,
-                    0.022495003417134285,
-                    0.06358690559864044
-                ],
-                "result_count_noun_chunks": [
-                    199000.0,
-                    5.0,
-                    60900.0
-                ],
-                "question_answer_similarity": [
-                    0.2584211565554142,
-                    9.463522233068943,
-                    6.439001560211182
-                ],
-                "word_count_noun_chunks": [
-                    2.0,
-                    0.0,
-                    0.0
-                ],
-                "word_count_raw": [
-                    0.0,
-                    0.0,
-                    0.0
-                ],
-                "result_count_bing": [
-                    671000.0,
-                    551000.0,
-                    556000.0
-                ],
-                "result_count": [
-                    32.0,
-                    4.0,
-                    181000.0
-                ],
-                "answer_relation_to_question": [
-                    3.0287859824780976,
-                    1.2230392156862746,
-                    0.7481748018356278
-                ]
-            },
-            "columns_in_order": [
-                "answer_relation_to_question",
-                "answer_relation_to_question_bing",
-                "cosine_similarity_raw",
-                "question_answer_similarity",
-                "result_count",
-                "result_count_bing",
-                "result_count_important_words",
-                "result_count_noun_chunks",
-                "wikipedia_search",
-                "word_count_appended",
-                "word_count_appended_bing",
-                "word_count_appended_relation_to_question",
-                "word_count_noun_chunks",
-                "word_count_raw",
-                "question_type"
-            ],
             "z-best_answer_by_ml": [
                 "earmuffs",
                 "top"
             ],
+            "question": "which piece of clothing is meant to protect your head from the cold?",
             "lines": [
                 [
                     0.6057571964956195,
@@ -74431,22 +75882,110 @@
                     -1.0
                 ]
             ],
-            "negative_question": false,
-            "categorical_data": {
-                "question_type": -1
-            },
-            "question": "which piece of clothing is meant to protect your head from the cold?",
             "rate_limited": false,
             "answers": [
                 "earmuffs",
                 "giant clock necklace",
                 "toe socks"
             ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
             "ml_answers": {
                 "earmuffs": 0.6271627993683373,
                 "giant clock necklace": 0.1376032062764532,
                 "toe socks": 0.2892014602012273
-            }
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.88151070177167,
+                    0.5909078308885537,
+                    3.5275814673397767
+                ],
+                "result_count_important_words": [
+                    173000.0,
+                    10.0,
+                    1330000.0
+                ],
+                "wikipedia_search": [
+                    2.4048195549406204,
+                    1.163265306122449,
+                    1.4319151389369307
+                ],
+                "word_count_appended_bing": [
+                    48.0,
+                    13.0,
+                    2.0
+                ],
+                "answer_relation_to_question_bing": [
+                    2.36697247706422,
+                    0.26605504587155965,
+                    1.3669724770642202
+                ],
+                "cosine_similarity_raw": [
+                    0.0878666341304779,
+                    0.022495003417134285,
+                    0.06358690559864044
+                ],
+                "result_count_noun_chunks": [
+                    199000.0,
+                    5.0,
+                    60900.0
+                ],
+                "question_answer_similarity": [
+                    0.2584211565554142,
+                    9.463522233068943,
+                    6.439001560211182
+                ],
+                "word_count_noun_chunks": [
+                    2.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    671000.0,
+                    551000.0,
+                    556000.0
+                ],
+                "word_count_appended": [
+                    155.0,
+                    11.0,
+                    28.0
+                ],
+                "answer_relation_to_question": [
+                    3.0287859824780976,
+                    1.2230392156862746,
+                    0.7481748018356278
+                ],
+                "result_count": [
+                    32.0,
+                    4.0,
+                    181000.0
+                ]
+            },
+            "negative_question": false
         },
         "right_answer": [
             1,
@@ -77615,6 +79154,177 @@
             0,
             0,
             1
+        ]
+    },
+    "Which of these is NOT an official Tetris sequel?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "maptris",
+                "middle"
+            ],
+            "question": "which of these is not an official tetris sequel?",
+            "lines": [
+                [
+                    0.3635371179039302,
+                    0.3958333333333333,
+                    0.25495946796672464,
+                    0,
+                    0.28651928912006935,
+                    0.4068384539147671,
+                    0.28776978417266186,
+                    0.20317479858289905,
+                    0.5,
+                    0.2932489451476793,
+                    0.34210526315789475,
+                    0.2890955956383422,
+                    0.5,
+                    0.5,
+                    -1.0
+                ],
+                [
+                    0.49272197962154296,
+                    0.4635416666666667,
+                    0.4562486178253029,
+                    0,
+                    0.499566536627655,
+                    0.1861579121242154,
+                    0.4784172661870504,
+                    0.49995212496751334,
+                    0.5,
+                    0.4757383966244726,
+                    0.35789473684210527,
+                    0.4748931429987312,
+                    0.5,
+                    0.5,
+                    -1.0
+                ],
+                [
+                    0.14374090247452692,
+                    0.140625,
+                    0.28879191420797246,
+                    0,
+                    0.21391417425227566,
+                    0.4070036339610175,
+                    0.23381294964028776,
+                    0.2968730764495876,
+                    0.0,
+                    0.2310126582278481,
+                    0.3,
+                    0.2360112613629266,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "wordtris",
+                "maptris",
+                "welltris"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "wordtris": 0.3239285424244527,
+                "maptris": 0.599654110481121,
+                "welltris": 0.07988538111794924
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.265426426169947,
+                    0.15064114200761264,
+                    1.5839324318224404
+                ],
+                "result_count_important_words": [
+                    59.0,
+                    6.0,
+                    74.0
+                ],
+                "wikipedia_search": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "word_count_appended_bing": [
+                    30.0,
+                    27.0,
+                    38.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.4166666666666667,
+                    0.14583333333333334,
+                    1.4375
+                ],
+                "cosine_similarity_raw": [
+                    0.14220568537712097,
+                    0.025390474125742912,
+                    0.12257152050733566
+                ],
+                "result_count_noun_chunks": [
+                    43400.0,
+                    7.0,
+                    29700.0
+                ],
+                "question_answer_similarity": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    37.0
+                ],
+                "result_count_bing": [
+                    56400.0,
+                    190000.0,
+                    56300.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    1.0
+                ],
+                "result_count": [
+                    1970.0,
+                    4.0,
+                    2640.0
+                ],
+                "answer_relation_to_question": [
+                    0.8187772925764192,
+                    0.043668122270742356,
+                    2.1375545851528384
+                ],
+                "word_count_appended": [
+                    196.0,
+                    23.0,
+                    255.0
+                ]
+            },
+            "negative_question": true
+        },
+        "right_answer": [
+            0,
+            1,
+            0
         ]
     },
     "Which player won Rookie of the Year in their sport most recently?": {
@@ -84095,6 +85805,177 @@
             0
         ]
     },
+    "Which of these is a popular form of live comedy?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "stand-up",
+                "top"
+            ],
+            "question": "which of these is a popular form of live comedy?",
+            "lines": [
+                [
+                    0.7155871212121212,
+                    0.42724039829302984,
+                    0.7565605689049214,
+                    0.3551901324230994,
+                    0.9526553346778066,
+                    0.3333333333333333,
+                    0.9642719938532462,
+                    0.9887404657169377,
+                    0.768146681749623,
+                    0.5280437756497948,
+                    0.45098039215686275,
+                    0.38801807083706674,
+                    1.0,
+                    1.0,
+                    -1.0
+                ],
+                [
+                    0.091875,
+                    0.18805120910384068,
+                    0.10603541535126657,
+                    0.32609243562761175,
+                    0.022279842504561605,
+                    0.3333333333333333,
+                    0.017928031758227686,
+                    0.005649945518382501,
+                    0.02879901960784314,
+                    0.23529411764705882,
+                    0.28431372549019607,
+                    0.3281836191404068,
+                    0.0,
+                    0.0,
+                    -1.0
+                ],
+                [
+                    0.19253787878787879,
+                    0.38470839260312945,
+                    0.13740401574381209,
+                    0.31871743194928887,
+                    0.025064822817631807,
+                    0.3333333333333333,
+                    0.017799974388526058,
+                    0.00560958876467977,
+                    0.20305429864253394,
+                    0.23666210670314639,
+                    0.2647058823529412,
+                    0.28379831002252653,
+                    0.0,
+                    0.0,
+                    -1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "stand-up",
+                "run-around",
+                "lie-down"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "run-around": 0.07945502905598636,
+                "lie-down": 0.16159705010025313,
+                "stand-up": 0.9729513181429825
+            },
+            "categorical_data": {
+                "question_type": -1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    1.552072283348267,
+                    1.3127344765616271,
+                    1.1351932400901061
+                ],
+                "result_count_important_words": [
+                    75300000.0,
+                    1400000.0,
+                    1390000.0
+                ],
+                "wikipedia_search": [
+                    3.072586726998492,
+                    0.11519607843137256,
+                    0.8122171945701357
+                ],
+                "word_count_appended_bing": [
+                    46.0,
+                    29.0,
+                    27.0
+                ],
+                "answer_relation_to_question_bing": [
+                    1.7089615931721194,
+                    0.7522048364153627,
+                    1.5388335704125178
+                ],
+                "cosine_similarity_raw": [
+                    0.22082194685935974,
+                    0.030949203297495842,
+                    0.0401049479842186
+                ],
+                "result_count_noun_chunks": [
+                    245000000.0,
+                    1400000.0,
+                    1390000.0
+                ],
+                "question_answer_similarity": [
+                    9.747255761176348,
+                    8.948746267706156,
+                    8.746358755975962
+                ],
+                "word_count_noun_chunks": [
+                    62.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    52600000.0,
+                    52600000.0,
+                    52600000.0
+                ],
+                "word_count_raw": [
+                    12.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count": [
+                    99200000.0,
+                    2320000.0,
+                    2610000.0
+                ],
+                "answer_relation_to_question": [
+                    2.862348484848485,
+                    0.3675,
+                    0.7701515151515151
+                ],
+                "word_count_appended": [
+                    386.0,
+                    172.0,
+                    173.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            1,
+            0,
+            0
+        ]
+    },
     "How do you spell the last name of Duke University\u2019s men's basketball coach?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -88631,6 +90512,177 @@
             1
         ]
     },
+    "The fastest you can legally drive on a road is called what?": {
+        "raw_data": {
+            "z-best_answer_by_ml": [
+                "speed limit",
+                "bottom"
+            ],
+            "question": "the fastest you can legally drive on a road is called what?",
+            "lines": [
+                [
+                    0.06015037593984962,
+                    0.0,
+                    0.04057745579314055,
+                    0.48912995981234453,
+                    4.6436253648984426e-05,
+                    0.31743278404163056,
+                    2.8992594853650305e-05,
+                    0.01215728165216949,
+                    0.007131661442006269,
+                    0.08849557522123894,
+                    0.06666666666666667,
+                    0.18084436064257076,
+                    0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.12481203007518796,
+                    0.0,
+                    0.08426393563649183,
+                    0.23548957335756926,
+                    0.05548738783480342,
+                    0.3217692974848222,
+                    0.793193632788546,
+                    0.3418281703036777,
+                    0.03125,
+                    0.19469026548672566,
+                    0.06666666666666667,
+                    0.3526404556874575,
+                    0,
+                    0.0,
+                    1.0
+                ],
+                [
+                    0.8150375939849624,
+                    1.0,
+                    0.8751586085703676,
+                    0.2753804668300862,
+                    0.9444661759115476,
+                    0.36079791847354725,
+                    0.20677737461660028,
+                    0.6460145480441528,
+                    0.9616183385579937,
+                    0.7168141592920354,
+                    0.8666666666666667,
+                    0.46651518366997174,
+                    0,
+                    1.0,
+                    1.0
+                ]
+            ],
+            "rate_limited": false,
+            "answers": [
+                "speed 2: cruise control",
+                "speed dating",
+                "speed limit"
+            ],
+            "columns_in_order": [
+                "answer_relation_to_question",
+                "answer_relation_to_question_bing",
+                "cosine_similarity_raw",
+                "question_answer_similarity",
+                "result_count",
+                "result_count_bing",
+                "result_count_important_words",
+                "result_count_noun_chunks",
+                "wikipedia_search",
+                "word_count_appended",
+                "word_count_appended_bing",
+                "word_count_appended_relation_to_question",
+                "word_count_noun_chunks",
+                "word_count_raw",
+                "question_type"
+            ],
+            "ml_answers": {
+                "speed limit": 0.8600464850226911,
+                "speed 2: cruise control": 0.05615028898593993,
+                "speed dating": 0.1876923981540177
+            },
+            "categorical_data": {
+                "question_type": 1
+            },
+            "data": {
+                "word_count_appended_relation_to_question": [
+                    0.9042218032128538,
+                    1.7632022784372876,
+                    2.3325759183498587
+                ],
+                "result_count_important_words": [
+                    53.0,
+                    1450000.0,
+                    378000.0
+                ],
+                "wikipedia_search": [
+                    0.028526645768025077,
+                    0.125,
+                    3.846473354231975
+                ],
+                "word_count_appended_bing": [
+                    2.0,
+                    2.0,
+                    26.0
+                ],
+                "answer_relation_to_question_bing": [
+                    0.0,
+                    0.0,
+                    3.0
+                ],
+                "cosine_similarity_raw": [
+                    0.016554994508624077,
+                    0.034378424286842346,
+                    0.3570516109466553
+                ],
+                "result_count_noun_chunks": [
+                    239000.0,
+                    6720000.0,
+                    12700000.0
+                ],
+                "question_answer_similarity": [
+                    14.544052932411432,
+                    7.002173453569412,
+                    8.188310705125332
+                ],
+                "word_count_noun_chunks": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "result_count_bing": [
+                    36600000.0,
+                    37100000.0,
+                    41600000.0
+                ],
+                "word_count_raw": [
+                    0.0,
+                    0.0,
+                    16.0
+                ],
+                "word_count_appended": [
+                    20.0,
+                    44.0,
+                    162.0
+                ],
+                "answer_relation_to_question": [
+                    0.3007518796992481,
+                    0.6240601503759398,
+                    4.075187969924812
+                ],
+                "result_count": [
+                    59.0,
+                    70500.0,
+                    1200000.0
+                ]
+            },
+            "negative_question": false
+        },
+        "right_answer": [
+            0,
+            0,
+            1
+        ]
+    },
     "Which of these is a current flavor of ICEE?": {
         "raw_data": {
             "z-best_answer_by_ml": [
@@ -88802,71 +90854,71 @@
             0
         ]
     },
-    "The fastest you can legally drive on a road is called what?": {
+    "Which pair of countries can be found on the Horn of Africa?": {
         "raw_data": {
             "z-best_answer_by_ml": [
-                "speed limit",
-                "bottom"
+                "egypt / ethiopia",
+                "top"
             ],
-            "question": "the fastest you can legally drive on a road is called what?",
+            "question": "which pair of countries can be found on the horn of africa?",
             "lines": [
                 [
-                    0.06015037593984962,
-                    0.0,
-                    0.04057745579314055,
-                    0.48912995981234453,
-                    4.6436253648984426e-05,
-                    0.31743278404163056,
-                    2.8992594853650305e-05,
-                    0.01215728165216949,
-                    0.007131661442006269,
-                    0.08849557522123894,
-                    0.06666666666666667,
-                    0.18084436064257076,
+                    0.2671025992685475,
+                    0.44259545923632615,
+                    0.15893818278104793,
+                    0.5231882070383691,
+                    0.07997320830542531,
+                    0.2903225806451613,
+                    0.08029794764785124,
+                    0.07742831880762915,
+                    0.17693663382199792,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.3547888342624844,
                     0,
-                    0.0,
-                    1.0
+                    0,
+                    -1.0
                 ],
                 [
-                    0.12481203007518796,
-                    0.0,
-                    0.08426393563649183,
-                    0.23548957335756926,
-                    0.05548738783480342,
-                    0.3217692974848222,
-                    0.793193632788546,
-                    0.3418281703036777,
-                    0.03125,
-                    0.19469026548672566,
-                    0.06666666666666667,
-                    0.3526404556874575,
+                    0.31058565177638453,
+                    0.4885190918472652,
+                    0.5497629308221496,
+                    0.14139001992562925,
+                    0.8774279973208305,
+                    0.2897937599153887,
+                    0.9192001901793497,
+                    0.8791208791208791,
+                    0.2498468686644606,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.37825065495892213,
                     0,
-                    0.0,
-                    1.0
+                    0,
+                    -1.0
                 ],
                 [
-                    0.8150375939849624,
-                    1.0,
-                    0.8751586085703676,
-                    0.2753804668300862,
-                    0.9444661759115476,
-                    0.36079791847354725,
-                    0.20677737461660028,
-                    0.6460145480441528,
-                    0.9616183385579937,
-                    0.7168141592920354,
-                    0.8666666666666667,
-                    0.46651518366997174,
+                    0.42231174895506796,
+                    0.06888544891640866,
+                    0.2912988863968025,
+                    0.3354217730360017,
+                    0.04259879437374414,
+                    0.41988365943945005,
+                    0.0005018621727990702,
+                    0.043450802071491726,
+                    0.5732164975135415,
+                    0.3333333333333333,
+                    0.3333333333333333,
+                    0.26696051077859345,
                     0,
-                    1.0,
-                    1.0
+                    0,
+                    -1.0
                 ]
             ],
             "rate_limited": false,
             "answers": [
-                "speed 2: cruise control",
-                "speed dating",
-                "speed limit"
+                "egypt / ethiopia",
+                "ethiopia / eritrea",
+                "eritrea / egypt"
             ],
             "columns_in_order": [
                 "answer_relation_to_question",
@@ -88886,53 +90938,53 @@
                 "question_type"
             ],
             "ml_answers": {
-                "speed limit": 0.8600464850226911,
-                "speed 2: cruise control": 0.05615028898593993,
-                "speed dating": 0.1876923981540177
+                "egypt / ethiopia": 0.3606010277781207,
+                "eritrea / egypt": 0.19228025584983974,
+                "ethiopia / eritrea": 0.25069081797070686
             },
             "categorical_data": {
-                "question_type": 1
+                "question_type": -1
             },
             "data": {
                 "word_count_appended_relation_to_question": [
-                    0.9042218032128538,
-                    1.7632022784372876,
-                    2.3325759183498587
+                    1.773944171312422,
+                    1.8912532747946107,
+                    1.3348025538929673
                 ],
                 "result_count_important_words": [
-                    53.0,
-                    1450000.0,
-                    378000.0
+                    6080.0,
+                    69600.0,
+                    38.0
                 ],
                 "wikipedia_search": [
-                    0.028526645768025077,
-                    0.125,
-                    3.846473354231975
+                    0.8846831691099897,
+                    1.249234343322303,
+                    2.8660824875677076
                 ],
                 "word_count_appended_bing": [
                     2.0,
                     2.0,
-                    26.0
+                    2.0
                 ],
                 "answer_relation_to_question_bing": [
-                    0.0,
-                    0.0,
-                    3.0
+                    1.7703818369453046,
+                    1.9540763673890609,
+                    0.27554179566563464
                 ],
                 "cosine_similarity_raw": [
-                    0.016554994508624077,
-                    0.034378424286842346,
-                    0.3570516109466553
+                    0.05132279545068741,
+                    0.17752417922019958,
+                    0.09406344592571259
                 ],
                 "result_count_noun_chunks": [
-                    239000.0,
-                    6720000.0,
-                    12700000.0
+                    6130.0,
+                    69600.0,
+                    3440.0
                 ],
                 "question_answer_similarity": [
-                    14.544052932411432,
-                    7.002173453569412,
-                    8.188310705125332
+                    3.5062913075089455,
+                    0.9475645497441292,
+                    2.2479223180562258
                 ],
                 "word_count_noun_chunks": [
                     0.0,
@@ -88940,37 +90992,37 @@
                     0.0
                 ],
                 "result_count_bing": [
-                    36600000.0,
-                    37100000.0,
-                    41600000.0
+                    549000.0,
+                    548000.0,
+                    794000.0
                 ],
                 "word_count_raw": [
                     0.0,
                     0.0,
-                    16.0
-                ],
-                "word_count_appended": [
-                    20.0,
-                    44.0,
-                    162.0
-                ],
-                "answer_relation_to_question": [
-                    0.3007518796992481,
-                    0.6240601503759398,
-                    4.075187969924812
+                    0.0
                 ],
                 "result_count": [
-                    59.0,
-                    70500.0,
-                    1200000.0
+                    5970.0,
+                    65500.0,
+                    3180.0
+                ],
+                "answer_relation_to_question": [
+                    1.06841039707419,
+                    1.2423426071055381,
+                    1.6892469958202718
+                ],
+                "word_count_appended": [
+                    4.0,
+                    4.0,
+                    4.0
                 ]
             },
             "negative_question": false
         },
         "right_answer": [
             0,
-            0,
-            1
+            1,
+            0
         ]
     }
 }

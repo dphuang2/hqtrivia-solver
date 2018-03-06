@@ -91,8 +91,9 @@ ANSWERS = {
         "After whom is the Oscars' Academy Honorary Award named?": 2,
         "Which element is NOT on the same row of the periodic table as the other two?": 2,
         'Which of these words can NOT be typed exclusively using one row of a QWERTY keyboard?': 2,
-
-
+        "San Francisco's Waldo Tunnel was renamed in 2016 after a noted what?": 0,
+        'Which of these is NOT an official Tetris sequel?': 1,
+        'Which Baby-Sitters Club member was NOT included in the film version?': 2,
         }
 
 with open('../data/log', 'r') as f:
