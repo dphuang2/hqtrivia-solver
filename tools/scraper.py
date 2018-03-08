@@ -97,6 +97,9 @@ ANSWERS = {
         "Which of these contributed to John McEnroe's infamous Australian Open ejection?": 1,
         'Which of these items could FDR have used before he was president?': 1,
         'New Jersey native John Taylor is credited with creating what processed meat product?': 2,
+        'When the world’s oldest subway system opened, which was one of the stations?': 0,
+        'The only rock song to exit our solar system in hard-copy form is by what artist?': 1,
+        'Why did the Chicago Daily Tribune rush to print the wrong winner of the 1948 presidential election?': 0,
         }
 
 with open('../data/log', 'r') as f:
