@@ -25,7 +25,7 @@ lgb_eval = lgb.Dataset(X_test, y_test, reference=lgb_train)
 # specify your configurations as a dict
 params = {
     'task': 'train',
-    'boosting_type': 'gbdt',
+    'boosting_type': 'dart',
     'objective': 'regression',
     # 'metric': {'l2', 'auc'},
     'num_leaves': 100,

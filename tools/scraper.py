@@ -100,6 +100,14 @@ ANSWERS = {
         'When the world’s oldest subway system opened, which was one of the stations?': 0,
         'The only rock song to exit our solar system in hard-copy form is by what artist?': 1,
         'Why did the Chicago Daily Tribune rush to print the wrong winner of the 1948 presidential election?': 0,
+        'If a pair of brothers marries a pair of sisters, what would a genealogist call their kids?': 0,
+        'Which of these was the name of a real U.S. breakfast cereal?': 0,
+        'Edgar Allan Poe’s raven famously repeats what word?': 0,
+        'What nation’s currency shares its name with an iconic Sylvester Stallone character?': 0,
+        'Which of these is an official regulation for U.S. bourbon production?': 2,
+        'Which of these Amazon services was launched most recently?': 0,
+        'Which of these countries did NOT change its name in the 20th century?': 2,
+        'Which movie starring the rapper DMX is adapted from a novel?': 0,
         }
 
 with open('../data/log', 'r') as f:
@@ -119,7 +127,10 @@ categories = set()
 with open('../data/questions_clean', 'w') as f_clean:
     with open('../data/questions', 'w') as f:
         for question in questions:
-            data = json.loads(question)
+            try:
+                data = json.loads(question)
+            except ValueError:
+                continue
             if data["type"] == "question":
                 categories.add(data['category'])
                 line = delimiter.join([encode_unicode(data['question'])] + [encode_unicode(answer['text']) for answer in data['answers']])
