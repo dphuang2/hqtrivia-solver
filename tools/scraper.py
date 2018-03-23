@@ -108,6 +108,12 @@ ANSWERS = {
         'Which of these Amazon services was launched most recently?': 0,
         'Which of these countries did NOT change its name in the 20th century?': 2,
         'Which movie starring the rapper DMX is adapted from a novel?': 0,
+        'What is the line dividing Earth into northern and southern hemispheres called?': 2,
+        'The first YouTube Music Awards were co-hosted by the star of what film?': 0,
+        'In towns like Edinburgh and Glasgow, homes traditionally have red doors to signify what?': 0,
+        'According to a 1962 song by the Four Seasons, “Big Girls Don’t” what?': 1,
+        'What color was the original Livestrong bracelet?': 0,
+        'In order to legally drive in the U.S., which of these do you need?': 2,
         }
 
 with open('../data/log', 'r') as f:
